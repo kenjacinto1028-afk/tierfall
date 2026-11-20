@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-label="shift-ledger "><defs>
+<linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26313d"/><stop offset="1" stop-color="#0d1822"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#556572"/><stop offset=".48" stop-color="#293b4a"/><stop offset="1" stop-color="#182633"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24313e"/><stop offset="1" stop-color="#17232f"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1c38b"/><stop offset="1" stop-color="#987045"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+<pattern id="grain" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 8H30M8 0V30" stroke="#a2b5b6" stroke-width=".6" opacity=".09"/></pattern>
+</defs><rect width="480" height="560" fill="#151e28"/><rect x="17" y="17" width="446" height="526" rx="15" fill="url(#ground)" stroke="#526271" stroke-width="1.4"/><path d="M44 44H436M44 516H436" stroke="#bc9e6c" opacity=".47"/><path d="M44 54V92M436 54V92M44 468V506M436 468V506" stroke="#ac966b" stroke-width="2" opacity=".5"/><rect width="480" height="560" fill="url(#grain)" opacity=".65"/><g transform="rotate(-5 240 284)">
+<rect x="97" y="99" width="288" height="369" rx="9" fill="#0b131b" stroke="#8e7654" stroke-width="4"/>
+<rect x="103" y="93" width="273" height="364" rx="8" fill="url(#paper)" stroke="#b49b67" stroke-width="4"/>
+<path d="M128 165H351" stroke="#647988" stroke-width="3"/>
+<path d="M131 209H350M131 241H350M131 273H350M131 305H350M131 337H350M131 369H350M131 401H350" stroke="#6a8190" stroke-width="2.8" opacity=".58"/>
+<path d="M198 210V418M278 210V418" stroke="#73838c" opacity=".43" stroke-width="2"/>
+<rect x="130" y="121" width="223" height="33" fill="#394653"/>
+<text x="150" y="144" font-family="monospace" font-size="16" fill="#e7c48a" letter-spacing="2">SHIFT REGISTRY</text>
+<path d="M210 319L340 291" stroke="#d38c60" stroke-width="5" opacity=".75"/>
+<path d="M215 326L340 299" stroke="#bb6b58" stroke-width="2" opacity=".7"/>
+</g><text x="93" y="517" fill="#92a4b0" font-family="sans-serif" font-size="15" letter-spacing="4">WORK SECTOR FILE</text></svg>
