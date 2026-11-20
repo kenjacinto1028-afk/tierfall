@@ -20,7 +20,7 @@ Download and open [the current standalone Chapter 1 HTML](game/tierfall-chapter1
 
 ## Source status
 
-This is a public-safe snapshot. The HTML is playable; the complete original TypeScript source/build/test chain has not been recovered and should not be described as present. Approved character portraits are reference material and are not installed in the game.
+This is a public-safe snapshot. The HTML is playable; the complete original TypeScript source/build/test chain has not been recovered and should not be described as present. The 27 approved neutral character portraits are installed in `game/assets/portraits/` and referenced by the Chapter 1 HTML when the game is hosted with its asset folder. Offline HTML without accompanying image assets still works using built-in fallback portraits. Additional expression variants remain drafts and are not installed.
 
 ## Working rule
 
