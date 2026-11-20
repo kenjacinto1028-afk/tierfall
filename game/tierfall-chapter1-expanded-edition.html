@@ -208,6 +208,123 @@ body.tf-effects-off #game *,body.tf-effects-off #game *::before,body.tf-effects-
   body.tf-playing #tf-menu-toggle {font-size:0!important;}
   body.tf-playing #tf-menu-toggle::after {content:'☰';font-size:1.4rem;}
 }
+
+/* TierFall reference-inspired cinematic frame. Gameplay and saves remain unchanged. */
+:root{--tf-frame-gold:#c7a66c}
+body.tf-playing .shell{max-width:none;height:100dvh;min-height:0;overflow:hidden}
+body.tf-playing .topbar{height:70px;min-height:70px;z-index:55;padding:0 clamp(14px,2vw,32px);background:#0a1821;border-bottom:1px solid #bd9a63;box-shadow:0 3px 20px #0008}
+body.tf-playing .brand{font-size:clamp(1.05rem,1.65vw,1.75rem);color:#f0d7a6;letter-spacing:.22em;white-space:nowrap}
+body.tf-playing .brand-early{display:none}
+body.tf-playing .brand-symbol{width:40px;height:34px;border:0;border-radius:0;font-size:0;transform:skewX(-8deg);background:linear-gradient(110deg,transparent 7%,#d8ae6a 7% 20%,transparent 20% 31%,#d8ae6a 31% 44%,transparent 44% 55%,#d8ae6a 55% 68%,transparent 68%)}
+body.tf-playing .topbar .actions{display:none}
+.tf-reference-progress,.tf-reference-links{display:none}
+body.tf-playing .tf-reference-progress{min-width:150px;max-width:185px;padding:7px 17px;display:block;border:1px solid #7f7358;background:#142630;transform:skewX(-15deg)}
+.tf-reference-progress>span{display:block;color:#e7ca92;font-size:.74rem;font-weight:800;letter-spacing:.1em;transform:skewX(15deg)}
+.tf-reference-dots{margin-top:7px;display:flex;gap:4px;height:5px;transform:skewX(15deg)}
+.tf-reference-dots i{flex:1;border-radius:3px;background:#465563}
+.tf-reference-dots i.current{background:#ead39c;box-shadow:0 0 8px #d5a96799}
+body.tf-playing .tf-reference-links{display:flex;align-items:center;gap:4px;justify-content:flex-end;margin-left:auto}
+.tf-reference-links button{min-height:43px;border:0;border-bottom:2px solid transparent;background:transparent;color:#e5e3d8;padding:7px clamp(6px,.8vw,15px);display:flex;align-items:center;gap:8px;white-space:nowrap;text-transform:uppercase;font-weight:700;font-size:.78rem}
+.tf-reference-links button:hover,.tf-reference-links button:focus-visible{background:#203340;color:#f6d49e;border-bottom-color:#d1ad71}
+.tf-reference-links .tf-reference-symbol{font-size:1.25rem;color:#eed09a;line-height:1}
+.tf-reference-links #tf-reference-save{border-left:1px solid #54616a;padding-left:18px}
+.tf-reference-settings{display:none;position:absolute;right:13px;top:calc(100% + 3px);z-index:90;width:min(340px,calc(100vw - 26px));padding:13px;background:#13232f;border:1px solid #c3a270;box-shadow:0 19px 52px #000c}
+.tf-reference-settings.open{display:grid;gap:8px}
+.tf-reference-settings button{width:100%;text-align:left;padding:11px 13px;min-height:43px;background:#1e303b;color:#efece4;border:1px solid #4f626d}
+.tf-reference-settings button:hover{border-color:#d8b575;background:#293e48}
+body.tf-playing #game.game-layout{height:calc(100dvh - 140px);min-height:0;flex:1;padding-right:62px;overflow:hidden;background:#08151e}
+body.tf-playing #game .story-panel{height:100%;min-height:0;display:grid;grid-template-columns:minmax(320px,43%) minmax(0,57%);align-items:stretch;overflow:hidden}
+body.tf-playing #game .scene-art{height:100%;min-height:0;max-height:none;position:relative;top:auto;align-self:stretch;border-right:1px solid #c19c65;background-position:center,var(--tf-reference-position,center);box-shadow:inset -28px 0 50px #06131b77}
+#game .tf-reference-light{position:absolute;inset:0;z-index:2;background:var(--tf-reference-grade,linear-gradient(0deg,#091824d0,transparent 55%));pointer-events:none}
+#game .tf-reference-extras{position:absolute;z-index:2;inset:auto 0 0;height:32%;pointer-events:none}
+#game .tf-reference-extras span{position:absolute;bottom:-4%;width:7%;height:40%;border-radius:40% 40% 0 0;background:linear-gradient(#293842a8,#07121aa8);filter:blur(.6px)}
+#game .tf-reference-extras span::before{content:"";position:absolute;left:17%;top:-46%;width:68%;aspect-ratio:1;border-radius:50%;background:#233541c4}
+#game .tf-reference-extras span:nth-child(1){left:31%;height:35%;transform:scale(.82)}
+#game .tf-reference-extras span:nth-child(2){left:49%;height:48%;transform:scale(.72)}
+#game .tf-reference-extras span:nth-child(3){left:69%;height:39%;transform:scale(.9)}
+#game .tf-reference-extras span:nth-child(4){left:89%;height:43%;transform:scale(.67)}
+#game[data-scene-artwork="reach-routes"] .tf-reference-extras{display:none}
+#game .tf-reference-people{position:absolute;z-index:3;bottom:-3%;left:-3%;height:56%;width:95%;display:flex;align-items:flex-end;pointer-events:none;filter:drop-shadow(0 8px 18px #050a10bb)}
+#game .tf-reference-people img{width:clamp(130px,47%,300px);height:100%;object-fit:cover;object-position:center 15%;border-radius:40% 40% 0 0;-webkit-mask-image:radial-gradient(ellipse 74% 85% at 50% 35%,#000 42%,transparent 100%);mask-image:radial-gradient(ellipse 74% 85% at 50% 35%,#000 42%,transparent 100%);filter:saturate(.88) contrast(1.04)}
+#game .tf-reference-people img+img{width:43%;margin-left:-14%;transform:translateY(8%)}
+#game[data-scene-mood="night"] .tf-reference-people{filter:brightness(.76) drop-shadow(0 8px 18px #000c)}
+body.tf-playing #game .tf-scene-portrait{display:none}
+body.tf-playing #game .tf-scene-caption{left:auto;right:18px;bottom:18px;align-items:flex-end;text-align:right;max-width:58%;z-index:4}
+body.tf-playing #game .tf-scene-caption strong{font-size:.62rem}
+body.tf-playing #game .tf-scene-caption span{font-size:.76rem}
+body.tf-playing #game .story-content{height:100%;min-height:0;max-width:none;width:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#6e7e83 #102029;padding:clamp(21px,2.6vh,34px) clamp(24px,3.1vw,58px) 38px;background:linear-gradient(135deg,#142630,#101f29 60%,#0d1b25);border:1px solid #ad9161;border-left:0;box-shadow:inset 0 0 25px #03121a90}
+body.tf-playing #game .story-content>*{max-width:920px}
+body.tf-playing #game .story-meta{padding-bottom:8px;border-bottom:1px solid #645a48;letter-spacing:.18em;font-size:.72rem}
+body.tf-playing #game .story-heading{margin:11px auto 19px}
+body.tf-playing #game .story-heading .separator{display:none}
+body.tf-playing #game .story-heading h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.32;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f0d5a4}
+body.tf-playing #game .prose{font-size:calc(clamp(1.06rem,1.3vw,1.31rem)*var(--font-scale));line-height:1.51;letter-spacing:0;color:#f0eee7}
+body.tf-playing #game .narrative-paragraph{margin-bottom:.95em}
+body.tf-playing #game .speaker{gap:17px;margin:13px auto 17px}
+body.tf-playing #game .speaker-portrait{width:78px;height:78px;border-radius:50%;border:2px solid #d0a96d;box-shadow:0 0 0 4px #16252c;overflow:hidden}
+body.tf-playing #game .speaker-image{border-radius:50%;object-position:center 20%}
+body.tf-playing #game .speaker-caption{letter-spacing:.17em}
+body.tf-playing #game .speaker-name{text-transform:uppercase;letter-spacing:.12em;font-size:1.01rem;color:#e7cd98}
+body.tf-playing #game .choice-heading{padding-top:13px;margin:22px auto 12px;border-top:1px solid #605846}
+body.tf-playing #game .choices{gap:9px}
+body.tf-playing #game .choice{min-height:57px;padding:11px 15px;border:1px solid #6b7b83;border-radius:3px;background:#1b2d36;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px)}
+body.tf-playing #game .choice:hover,body.tf-playing #game .choice:focus-visible{background:linear-gradient(90deg,#5a492a,#333b38);border-color:#e4bd79;outline:1px solid #d6ad6c;outline-offset:1px}
+body.tf-playing #game .choice-letter{border:1px solid #a68a5b;border-radius:2px;color:#eed098}
+body.tf-playing #game .choice-copy strong{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:calc(clamp(.99rem,1.2vw,1.24rem)*var(--font-scale))}
+body.tf-playing #game .choice-chevron{color:#d9b47a}
+body.tf-playing #game .tf-side-rail{top:70px;bottom:70px;width:62px;z-index:32;background:#0c1b25;border-left:1px solid #9d8259}
+body.tf-playing #game .tf-side-rail button{width:49px;height:50px;border-radius:3px;background:#182a35;color:#e3c998;border-color:#4a5e69}
+body.tf-playing #game .tf-side-rail button[aria-pressed="true"]{border-color:#e5c48d;background:#3d392a}
+body.tf-playing #game .sidebar{top:70px;bottom:70px;right:62px}
+body.tf-playing #game .tf-panel-backdrop{inset:70px 62px 70px 0}
+.tf-reference-footer{display:none}
+body.tf-playing .tf-reference-footer{height:70px;min-height:70px;flex:none;padding:0 clamp(17px,2.1vw,38px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:#0b1b25;border-top:1px solid #b29159;z-index:25}
+.tf-reference-footer button{width:170px;max-width:41%;min-height:38px;border:1px solid #c4a16c;border-radius:6px;background:#172934;color:#efd5a7;font-size:.79rem;font-weight:700;letter-spacing:.07em;display:flex;align-items:center;justify-content:space-between;padding:8px 13px}
+.tf-reference-footer button:hover,.tf-reference-footer button:focus-visible{background:#2a3c45;border-color:#f1ce89}
+.tf-reference-footer button:disabled{opacity:.43;cursor:default}
+.tf-reference-footer .tf-reference-middle{display:flex;align-items:center;gap:13px;flex:1;max-width:530px;height:16px}
+.tf-reference-footer .tf-reference-middle::before,.tf-reference-footer .tf-reference-middle::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#c3a36d)}
+.tf-reference-footer .tf-reference-middle::after{transform:rotate(180deg)}
+.tf-reference-footer .tf-reference-diamond{height:15px;width:15px;flex:none;border:2px solid #e0bd7d;transform:rotate(45deg)}
+body.tf-playing .footer{display:none}
+@media(max-width:1390px) and (min-width:1151px){body.tf-playing .tf-reference-links button{font-size:.69rem;padding:7px}body.tf-playing .tf-reference-progress{min-width:117px;padding:7px 12px}body.tf-playing #game .story-content{padding:21px 26px 30px}}
+@media(max-width:1150px),(pointer:coarse) and (orientation:portrait){
+ body.tf-playing .shell{height:auto;min-height:100dvh;overflow:visible}
+ body.tf-playing .topbar{position:sticky;top:0;height:61px;min-height:61px}
+ body.tf-playing .tf-reference-progress{display:none}
+ body.tf-playing #game.game-layout{height:auto;min-height:0;padding-right:0;overflow:visible;display:block}
+ body.tf-playing #game .story-panel{height:auto;display:flex;flex-direction:column;overflow:visible}
+ body.tf-playing #game .scene-art{height:clamp(220px,32vh,345px);max-height:none;min-height:0;position:relative;top:auto;flex:none;border:0;border-bottom:1px solid #c19c65}
+ body.tf-playing #game .story-content{height:auto;overflow:visible;min-height:0;border:0;padding:26px clamp(18px,4vw,46px) 110px}
+ body.tf-playing #game .prose{font-size:calc(1.16rem*var(--font-scale));line-height:1.66}
+ body.tf-playing #game .tf-side-rail{display:none}
+ body.tf-playing #game .sidebar{top:61px;right:0;bottom:0;z-index:65}
+ body.tf-playing #game .tf-panel-backdrop{inset:61px 0 0;z-index:64}
+ body.tf-playing .tf-reference-footer{position:fixed;bottom:0;left:0;right:0;height:59px;min-height:59px;z-index:60;padding:0 15px;box-shadow:0 -7px 27px #06121ac7}
+ body.tf-playing #game .tf-reference-people{height:70%}
+}
+@media(max-width:780px){
+ body.tf-playing .topbar{padding:0 9px}
+ body.tf-playing .brand{font-size:.92rem;letter-spacing:.13em;gap:5px}
+ body.tf-playing .brand-symbol{width:29px}
+ body.tf-playing .tf-reference-links{gap:0}
+ body.tf-playing .tf-reference-links button{min-width:40px;min-height:42px;padding:5px;font-size:0;gap:0;justify-content:center}
+ body.tf-playing .tf-reference-links .tf-reference-symbol{font-size:1.22rem}
+ body.tf-playing .tf-reference-links button[data-reference-tab="people"],body.tf-playing .tf-reference-links button[data-reference-tab="glossary"]{display:none}
+ body.tf-playing .tf-reference-links #tf-reference-save{padding-left:7px}
+ body.tf-playing #game .scene-art{height:clamp(185px,27vh,280px)}
+ body.tf-playing #game .story-content{padding:23px 17px 98px}
+ body.tf-playing #game .prose{font-size:calc(1.1rem*var(--font-scale));line-height:1.63}
+ body.tf-playing #game .story-heading h1{font-size:1.14rem}
+ body.tf-playing #game .speaker-portrait{width:65px;height:65px}
+ body.tf-playing #game .tf-reference-people img{width:clamp(110px,33vw,175px)}
+ body.tf-playing #game .tf-scene-caption{right:12px;max-width:52%}
+ body.tf-playing .tf-reference-footer button{max-width:43%;padding:8px 10px;width:140px;font-size:.7rem}
+ body.tf-playing .tf-reference-footer .tf-reference-middle{max-width:80px}
+}
+@media(max-width:375px){body.tf-playing .brand{font-size:.8rem}body.tf-playing .brand-symbol{width:22px}body.tf-playing .tf-reference-links button{min-width:35px}}
+@media(prefers-reduced-motion:reduce){body.tf-playing .tf-reference-footer *,body.tf-playing .tf-reference-links *{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -1548,6 +1665,7 @@ if (typeof document !== 'undefined') {
     }
     currentScene=scene.id;
     syncPlaying();
+    referenceOnScene(game,scene);
   }
   function setupPanelShortcuts(){
     const tools=$('#game .sidebar-tools');
@@ -1560,6 +1678,108 @@ if (typeof document !== 'undefined') {
     save.addEventListener('click',()=>$('#save-button')?.click());
     tools.prepend(save);tools.prepend(effect);
   }
+
+  /* Reference frame: scene art and buttons use the game's existing state/actions. */
+  let referenceReady=false;
+  function refButton(label,icon,id){
+    const button=document.createElement('button');button.type='button';button.id=id;button.setAttribute('aria-label',label);
+    const glyph=document.createElement('span');glyph.className='tf-reference-symbol';glyph.textContent=icon;glyph.setAttribute('aria-hidden','true');
+    const word=document.createElement('span');word.textContent=label;button.append(glyph,word);return button;
+  }
+  function referenceSetup(){
+    if(referenceReady)return;
+    const top=$('.topbar'),root=$('#game');if(!top||!root)return;
+    referenceReady=true;
+    const progress=document.createElement('div');progress.className='tf-reference-progress';
+    const phase=document.createElement('span');phase.id='tf-reference-phase';
+    const dots=document.createElement('div');dots.className='tf-reference-dots';dots.id='tf-reference-dots';
+    for(let i=0;i<4;i++)dots.appendChild(document.createElement('i'));
+    progress.append(phase,dots);
+    const nav=document.createElement('nav');nav.className='tf-reference-links';nav.setAttribute('aria-label','Game navigation');
+    [['Journal','▤','journal'],['Map','◎','world'],['People','♙','people'],['Records','▣','glossary']].forEach(([label,icon,tab])=>{
+      const button=refButton(label,icon,'tf-reference-'+tab);button.dataset.referenceTab=tab;
+      button.addEventListener('click',()=>document.querySelector('#game .tf-side-rail [data-tf-tab="'+tab+'"]')?.click());nav.appendChild(button);
+    });
+    const save=refButton('Save','⇩','tf-reference-save');
+    save.addEventListener('click',()=>$('#save-button')?.click());nav.appendChild(save);
+    const settingsButton=refButton('Settings','⚙','tf-reference-settings-button');settingsButton.setAttribute('aria-expanded','false');
+    nav.appendChild(settingsButton);
+    const settings=document.createElement('div');settings.className='tf-reference-settings';settings.id='tf-reference-settings';
+    [['Larger text','font-up'],['Smaller text','font-down'],['Visual effects','tf-effects-toggle'],['How to play','help-button'],['People','tf-reference-people'],['Records','tf-reference-glossary'],['Export save','export-button'],['Import save','import-button']].forEach(([label,id])=>{
+      const b=document.createElement('button');b.type='button';b.textContent=label;
+      b.addEventListener('click',()=>{$('#'+id)?.click();settings.classList.remove('open');settingsButton.setAttribute('aria-expanded','false');});settings.appendChild(b);
+    });
+    settingsButton.addEventListener('click',()=>{const open=settings.classList.toggle('open');settingsButton.setAttribute('aria-expanded',String(open));});
+    document.addEventListener('click',event=>{if(!settings.contains(event.target)&&!settingsButton.contains(event.target)){settings.classList.remove('open');settingsButton.setAttribute('aria-expanded','false');}});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&settings.classList.contains('open')){settings.classList.remove('open');settingsButton.setAttribute('aria-expanded','false');settingsButton.focus();}});
+    top.querySelector('.actions')?.before(progress,nav);top.appendChild(settings);
+    const footer=document.createElement('nav');footer.className='tf-reference-footer';footer.id='tf-reference-footer';footer.setAttribute('aria-label','Reading page navigation');
+    const prev=document.createElement('button');prev.type='button';prev.id='tf-reference-prev';prev.textContent='❮  PREVIOUS';prev.title='Previous part of this scene';
+    const middle=document.createElement('span');middle.className='tf-reference-middle';middle.setAttribute('aria-hidden','true');
+    const diamond=document.createElement('span');diamond.className='tf-reference-diamond';middle.appendChild(diamond);
+    const next=document.createElement('button');next.type='button';next.id='tf-reference-next';next.textContent='NEXT  ❯';next.title='Next part of the scene or focus your choice';
+    footer.append(prev,middle,next);$('.footer')?.before(footer);
+    const reading=$('#game .story-content');
+    const smooth=()=>effectsAllowed()?'smooth':'instant';
+    const internal=()=>['auto','scroll'].includes(window.getComputedStyle(reading).overflowY);
+    const amount=()=>Math.max(300,(internal()?reading.clientHeight:window.innerHeight)*.72);
+    const updatePrev=()=>{prev.disabled=(internal()?reading.scrollTop:window.scrollY)<15;};
+    prev.addEventListener('click',()=>{(internal()?reading:window).scrollBy({top:-amount(),behavior:smooth()});updatePrev();});
+    next.addEventListener('click',()=>{
+      if(internal()){
+        if(reading.scrollTop+reading.clientHeight>=reading.scrollHeight-35)$('#choices .choice:not(:disabled)')?.focus();
+        else reading.scrollBy({top:amount(),behavior:smooth()});
+      }else if($('#choices')?.getBoundingClientRect().top<window.innerHeight-110)$('#choices .choice:not(:disabled)')?.focus();
+      else window.scrollBy({top:amount(),behavior:smooth()});
+      updatePrev();
+    });
+    reading.addEventListener('scroll',updatePrev,{passive:true});window.addEventListener('scroll',updatePrev,{passive:true});
+    updatePrev();
+    const sceneArt=$('#game .scene-art');
+    const light=document.createElement('div');light.className='tf-reference-light';sceneArt.appendChild(light);
+    const extras=document.createElement('div');extras.className='tf-reference-extras';extras.setAttribute('aria-hidden','true');
+    for(let i=0;i<4;i++)extras.appendChild(document.createElement('span'));
+    sceneArt.appendChild(extras);
+    const portraits=document.createElement('div');portraits.className='tf-reference-people';portraits.setAttribute('aria-hidden','true');sceneArt.appendChild(portraits);
+  }
+  const referenceScenes={
+    'p-reach':['center','#0b1922d0'], 'p-ranks':['center 58%','#413222b0'],
+    'p-powers':['65% 50%','#2c1c23c7'], 'p-thule':['center 35%','#172936b8'],
+    'c1-wake':['30% 36%','#0b2530c4'], 'c1-duty':['center 61%','#352619ab'],
+    'c1-quiet':['40% 50%','#2c241cac'], 'c1-home':['55% 48%','#312b21bb'],
+    'c1-notice':['63% 49%','#382024cb'], 'c1-cross':['25% 53%','#301b24bd'],
+    'c1-ally':['60% 65%','#2c2d1ebc'], 'c1-walk':['65% 50%','#061d32d8'],
+    'c1-door':['50% 41%','#391a22c9'], 'c1-cost':['28% 52%','#252536c9'],
+    'c1-dusk':['75% 50%','#091a30d9'], 'c1-end':['center 55%','#0f2831cc']
+  };
+  function referenceOnScene(game,scene){
+    referenceSetup();
+    const root=$('#game'),stage=root?.querySelector('.scene-art');if(!root||!stage)return;
+    root.dataset.sceneId=scene.id;
+    const [position,shade]=referenceScenes[scene.id]||['center','#0b1b27bc'];
+    stage.style.setProperty('--tf-reference-position',position);
+    stage.style.setProperty('--tf-reference-grade','linear-gradient(0deg,'+shade+',transparent 67%)');
+    const group=stage.querySelector('.tf-reference-people');
+    if(group){
+      group.replaceChildren();
+      // Named faces only when already present in the current scene; approved portraits unchanged.
+      const cast=scene.id==='c1-ally'?['Jalen Orr','Sera Venn']:
+        ['Sera Venn','Jalen Orr'].includes(scene.speaker)?[scene.speaker]:[];
+      cast.forEach(name=>{
+        const src=Tierfall.portraitFor(game,name);if(!src)return;
+        const image=document.createElement('img');image.src=src;image.alt='';image.decoding='async';
+        image.addEventListener('error',()=>image.remove(),{once:true});group.appendChild(image);
+      });
+    }
+    $('#tf-reference-phase').textContent=scene.id.startsWith('p-')?'PROLOGUE':'CHAPTER ONE';
+    const all=Object.keys(ART).filter(id=>id.startsWith(scene.id.startsWith('p-')?'p-':'c1-'));
+    const positionIndex=Math.max(0,all.indexOf(scene.id));
+    const active=Math.min(4,Math.max(1,Math.ceil((positionIndex+1)/all.length*4)));
+    document.querySelectorAll('#tf-reference-dots i').forEach((dot,i)=>dot.classList.toggle('current',i<active));
+    const reading=$('#game .story-content');if(reading)reading.scrollTop=0;
+    const back=$('#tf-reference-prev');if(back)back.disabled=true;
+  }
+
   function initialize(){
     const toggle=$('#tf-menu-toggle'), effects=$('#tf-effects-toggle');
     if(!toggle||!effects||!$('#tf-sidebar'))return;
@@ -1573,6 +1793,7 @@ if (typeof document !== 'undefined') {
       if(event.key==='Escape' && menuOpen){event.preventDefault();setMenuOpen(false,true);}
     });
     setupPanelShortcuts();
+    referenceSetup();
     const game=$('#game');
     new MutationObserver(syncPlaying).observe(game,{attributes:true,attributeFilter:['class']});
     try{window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',updateEffects);}catch{}
