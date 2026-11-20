@@ -38,3 +38,12 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Verified updated HTML, four WebP scene assets, and regression test `tests/reader-presentation.test.mjs` on `main`.
 - [ ] Verify the deployed GitHub Pages game visually on desktop and mobile; hosting access was unavailable during this run.
 - [ ] Optional future art refinement: dedicated clinic, agricultural deck, and records-hall illustrations (these currently reuse location-family backgrounds).
+
+## Mobile reading layout correction — 2026-11-20
+- [x] Corrected the live hybrid layout after phone screenshot revealed that artwork and text were squeezed into a desktop split.
+- [x] On narrow or portrait touch screens, show location artwork above a full-width reading panel; no permanent icon rail reduces reading space.
+- [x] Added Save and Visual Effects controls to the collapsible right menu when compact top controls are hidden.
+- [x] Preserved the desktop 38/62 hybrid layout, approved character portraits, story text, choices, and existing save schema.
+- [x] Tested mobile (390 px), simulated desktop-site phone viewport (980 px touch), tablet (1024 px) and desktop (1440 px) using Chromium: no horizontal overflow, full-width text on compact screens, functional menu/effects/save, narrator and major portrait presentation.
+- [x] Verified updated HTML and `tests/mobile-reader.test.mjs` on GitHub `main`.
+- [ ] Confirm visual appearance on an actual Android/Brave browser and clear cached content if necessary; automated local fixtures cannot reproduce every browser setting.
