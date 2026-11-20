@@ -60,4 +60,37 @@ for(const upbringing of Object.keys(engine.upbringings)){
  variants++;
 }
 assert.equal(variants,12);
+// Exercise the real resampler logic with a Canvas substitute. No artwork files are altered.
+const sharpStart=ui.indexOf('  const clarityCache=new Map();');
+const sharpEnd=ui.indexOf('  function paintPortraitCards(',sharpStart);
+assert.ok(sharpStart>=0&&sharpEnd>sharpStart,'Clarity helper cannot be isolated');
+const mockCanvas={
+ width:0,height:0,
+ getContext(){return{
+  drawImage(){},
+  getImageData(){return{data:new Uint8ClampedArray(mockCanvas.width*mockCanvas.height*4)};},
+  putImageData(){}
+ }},
+ toDataURL(){return 'data:image/webp;base64,c2hhcnA=';}
+};
+const fakeDocument={createElement(tag){assert.equal(tag,'canvas');return mockCanvas;}};
+const sharpContext={document:fakeDocument,Uint8ClampedArray};
+const sharpen=vm.runInNewContext(ui.slice(sharpStart,sharpEnd)+'\nimprovePortraitDisplay;',sharpContext);
+const image={
+ naturalWidth:240,naturalHeight:300,
+ currentSrc:'https://example.test/assets/portraits/01-sera-venn/neutral.webp',
+ src:'https://example.test/assets/portraits/01-sera-venn/neutral.webp',
+ dataset:{},
+ addEventListener(event,handler){if(event==='load')this.onload=handler;}
+};
+sharpen(image);
+assert.equal(typeof image.onload,'function');
+image.onload();
+assert.equal(mockCanvas.width,480);
+assert.equal(mockCanvas.height,600);
+assert.equal(image.dataset.tfHd,'1');
+assert.ok(image.src.startsWith('data:image/webp;base64,'));
+image.onload();
+assert.equal(image.dataset.tfHd,'1','Enhanced image must not reprocess itself');
+
 console.log('PASS: 7 vector object cards, safe beat reveals, approved portrait integrity, clarity fallback, 12 story variants');
