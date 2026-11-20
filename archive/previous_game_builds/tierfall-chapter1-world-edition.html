@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0B0D12" />
+  <meta name="description" content="Tierfall — a story-first science-fiction RPG where your choices matter." />
+  <title>Tierfall | A Choice-Driven Story</title>
+  <style>
+:root{--void:#0b0d12;--slate:#141923;--slate2:#1b222e;--ink:#0c1017;--line:#313a46;--muted:#aeb7c2;--light:#f2f0e7;--brass:#d9b873;--alert:#e37752;--font-scale:1;color-scheme:dark}
+*{box-sizing:border-box}html{background:var(--void);scroll-behavior:smooth}body{margin:0;color:var(--light);background:radial-gradient(ellipse at 80% 0%,#242734 0%,transparent 45%),var(--void);font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer;transition:background .18s,border-color .18s,transform .18s}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--brass);outline-offset:3px}button:active{transform:translateY(1px)}.hidden{display:none!important}.shell{max-width:1420px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,48px);border-bottom:1px solid #343a45;position:relative;z-index:5;background:rgba(11,13,18,.92)}.brand{display:flex;align-items:center;gap:12px;letter-spacing:.29em;font-weight:850;font-size:1.03rem}.brand-symbol{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--brass);border-radius:3px;color:var(--brass);font-size:1.6rem;letter-spacing:0}.brand-early{font-size:.57rem;font-weight:600;letter-spacing:.19em;color:#9da6b2;border-left:1px solid #48505a;padding-left:13px;margin-left:3px}.actions{display:flex;align-items:center;gap:7px}.small-button{border:1px solid #48515e;background:#161c25;color:#d5dce3;padding:8px 11px;border-radius:7px;font-size:.84rem;font-weight:600;min-height:36px}.small-button:hover{background:#28313e}.help-panel{padding:18px clamp(20px,4vw,48px);background:#282e39;border-bottom:1px solid #566170}.help-panel p{max-width:800px;margin:5px 0 0;color:#d6dce2;font-size:.91rem}.help-panel kbd{border:1px solid #737c89;padding:1px 5px;border-radius:4px}.eyebrow,.rank-label{color:var(--brass);text-transform:uppercase;font-size:.68rem;letter-spacing:.2em;font-weight:750}.muted{color:var(--muted)}.small{font-size:.82rem}.setup-page{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(345px,.88fr);flex:1}.setup-hero{position:relative;isolation:isolate;min-height:680px;overflow:hidden;padding:clamp(50px,7vw,110px) 36px 60px clamp(26px,5vw,74px);background:linear-gradient(148deg,rgba(11,13,18,.8),rgba(12,16,26,.6) 40%,rgba(14,22,31,.9)),radial-gradient(ellipse at 70% 72%,#3d414c,transparent 48%),#10151e}.setup-hero:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 81px,rgba(196,206,215,.035) 82px,transparent 84px);z-index:-1}.setup-hero h1{position:relative;font-size:clamp(3rem,5vw,5.3rem);line-height:1.04;letter-spacing:-.055em;font-weight:850;margin:28px 0 24px;max-width:600px}.setup-hero h1 em{font-style:normal;color:var(--brass)}.setup-hero>p{position:relative;max-width:470px;color:#ced3da;font-size:1.08rem;line-height:1.75}.planet{position:absolute;right:-140px;bottom:-280px;width:min(800px,95vw);height:min(800px,95vw);border-radius:50%;background:radial-gradient(circle at 28% 19%,rgba(224,234,244,.18),transparent 23%),radial-gradient(circle at 37% 38%,#7b8290 0%,#404c59 28%,#202c39 46%,#0d1320 65%);box-shadow:inset -70px -100px 120px #0c111a,0 0 120px rgba(159,183,209,.13);z-index:-2;opacity:.8}.planet:after{content:'';position:absolute;inset:30px;border:1px solid rgba(230,235,244,.14);border-radius:50%}.create-card{margin:auto;width:min(500px,94%);padding:35px 28px 38px}.create-card h2{font-size:2.15rem;letter-spacing:-.04em;margin:8px 0 12px}.create-card>.muted{max-width:430px;margin:0 0 25px}.create-card label{display:block;margin:15px 0 6px;font-size:.82rem;font-weight:700;color:#e1e6ed}.create-card select,.create-card input{display:block;background:#1c2430;color:#f2f0e7;padding:12px 14px;border:1px solid #495360;border-radius:8px;width:100%;min-height:47px}.create-card option{background:#1c2430}.create-card input:hover,.create-card select:hover{border-color:#939da8}.setup-buttons{display:grid;gap:10px;margin-top:25px}.primary-button{border:1px solid #d6b56f;background:#d9b873;color:#171c23;border-radius:8px;padding:13px 18px;font-weight:800;display:flex;justify-content:space-between;align-items:center}.primary-button:hover{background:#efd090}.secondary-button{background:#1a212c;color:#e0e7ef;border:1px solid #5b6674;border-radius:7px;padding:10px 15px;font-size:.88rem;font-weight:700}.secondary-button:hover{background:#2a3443}.footnote{font-size:.74rem;margin-top:22px}.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:0;flex:1}.story-panel{background:#0e141d;min-width:0;border-right:1px solid #323b4b}.scene-art{height:260px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(12,17,24,.18) 0%,rgba(13,18,27,.1) 65%,#121924 100%),radial-gradient(ellipse at 62% 24%,#556174 0%,#273343 24%,#111925 60%,#0b1119 100%)}.scene-art:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0d141e 0%,transparent 38%),repeating-linear-gradient(90deg,transparent 0 62px,rgba(168,182,196,.13) 64px,transparent 65px);opacity:.5}.art-moon{position:absolute;width:210px;height:210px;border-radius:100%;right:15%;top:-115px;background:radial-gradient(circle at 33% 45%,#adb8c7,#535e6d 48%,#1a2732 72%);box-shadow:0 0 46px rgba(153,185,206,.19)}.art-city{position:absolute;bottom:-4px;right:0;left:0;height:120px;background:linear-gradient(0deg,#0b121b,#273340 72%,transparent);clip-path:polygon(0 100%,0 57%,5% 57%,5% 30%,9% 30%,9% 67%,14% 67%,14% 43%,19% 43%,19% 20%,23% 20%,23% 67%,29% 67%,29% 37%,35% 37%,35% 66%,40% 66%,40% 21%,46% 21%,46% 42%,50% 42%,50% 7%,54% 7%,54% 60%,58% 60%,58% 44%,65% 44%,65% 72%,70% 72%,70% 25%,75% 25%,75% 60%,81% 60%,81% 44%,86% 44%,86% 14%,90% 14%,90% 69%,96% 69%,96% 40%,100% 40%,100% 100%)}.art-rail{position:absolute;top:0;bottom:0;width:28px;border-left:3px solid rgba(148,159,171,.26);border-right:3px solid rgba(148,159,171,.12);transform:skewX(-13deg)}.rail-one{left:20%}.rail-two{left:72%}.story-content{max-width:790px;margin:0 auto;padding:36px clamp(20px,5vw,65px) 70px}.story-meta{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;color:#aab9c7;font-size:.7rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase}.story-meta span:first-child{color:var(--brass)}.story-heading{margin:24px 0 25px}.separator{width:40px;height:2px;background:var(--brass);margin-bottom:16px}.story-heading h1{font-size:clamp(1.9rem,3vw,2.55rem);letter-spacing:-.035em;line-height:1.17;margin:0}.speaker{display:flex;align-items:center;gap:14px;margin-bottom:22px}.speaker-portrait{height:55px;width:55px;flex:none;border:1px solid #687889;background:linear-gradient(140deg,#354454,#131f2b);display:grid;place-items:center;border-radius:7px;font-family:Georgia,serif;font-size:1.2rem;color:#e4c892}.speaker-caption{display:block;font-size:.62rem;color:#a5afbd;letter-spacing:.15em}.speaker strong{display:block;font-size:.94rem;margin-top:2px}.prose{font-family:ui-serif,Georgia,Cambria,'Times New Roman',serif;font-size:calc(1.09rem * var(--font-scale));line-height:1.86;letter-spacing:.003em;color:#e2e5e5}.narrative-paragraph{margin:0 0 1.2em}.narrative-paragraph:last-child{margin-bottom:0}.choice-heading{margin:34px 0 15px;padding-top:19px;border-top:1px solid #37414d;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.68rem;font-weight:800;letter-spacing:.18em;color:var(--brass)}.choice-subtitle{color:#a0aebc;letter-spacing:0;font-size:.76rem;font-weight:500}.choices{display:grid;gap:10px}.choice{display:flex;align-items:center;text-align:left;padding:14px 18px;gap:16px;min-height:70px;background:#1b2632;border:1px solid #44515e;color:#f0f1f3;border-radius:9px;width:100%}.choice:hover,.choice:focus-visible{border-color:#c9a25b;background:#2a3542}.choice-letter{height:31px;width:31px;border:1px solid #718090;border-radius:6px;display:grid;place-items:center;flex:none;color:#d6c39c;font-size:.83rem;font-weight:750}.choice-copy{flex:1}.choice-copy strong{display:block;font-weight:680;line-height:1.35;font-size:calc(.96rem * var(--font-scale))}.choice-copy small{display:block;color:#b1bdc8;margin-top:4px;font-size:.76rem}.choice-chevron{color:#d5b06a;font-size:1.5rem}.saved-text{font-size:.69rem;letter-spacing:.04em;color:#8795a6;text-align:right;margin-top:18px}.end-note{background:#252d34;padding:24px;border:1px solid #80714c;border-radius:9px}.end-note p{margin:8px 0 0;color:#ccd5df}.sidebar{background:linear-gradient(180deg,#161c25,#121821);min-width:0;display:flex;flex-direction:column}.identity-card{padding:29px 23px 19px;border-bottom:1px solid #333f4b}.identity-card h2{font-size:1.3rem;margin:10px 0 8px;line-height:1.2}.identity-card .rank-label{margin:0 0 9px;font-size:.72rem}.identity-card .small{margin:0;line-height:1.6}.side-section{padding:20px 23px;border-bottom:1px solid #333f4b}.stat-row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.77rem;margin-bottom:12px;color:#a6b0bc}.stat-row strong{color:#dbdfe5;font-size:.77rem;text-align:right}.progress-track{height:4px;background:#374452;overflow:hidden;border-radius:6px;margin-top:15px}.progress-inner{height:100%;width:0;background:var(--brass);transition:width .35s}.aside-tabs{display:grid;grid-template-columns:1fr 1fr;padding:0 23px;border-bottom:1px solid #333f4b}.aside-tab{padding:17px 8px;background:transparent;color:#aeb8c5;font-weight:650;font-size:.84rem;border:0;border-bottom:2px solid transparent}.aside-tab.selected{color:var(--brass);border-bottom-color:var(--brass)}.aside-content{padding:20px 23px;max-height:410px;overflow:auto;flex:1}.journal-entry{margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid #34404c}.journal-entry h4{font-size:.82rem;margin:0 0 7px;color:#e8d1a2}.journal-entry p{font-size:.78rem;line-height:1.65;color:#bdc7d2;margin:0}.person-entry{display:flex;gap:12px;margin-bottom:15px;align-items:center}.mini-portrait{flex:none;height:37px;width:37px;border:1px solid #5e6d7a;border-radius:5px;background:#273648;display:grid;place-items:center;color:#ead7a9;font-size:.75rem}.person-entry strong{font-size:.8rem}.person-entry p{margin:2px 0 0}.sidebar-tools{display:grid;gap:9px;padding:18px 23px 26px;border-top:1px solid #333f4b}.text-button{background:transparent;border:0;color:#aeb8c5;font-size:.8rem;padding:8px;text-decoration:underline;text-underline-offset:3px}.text-button:hover{color:#f4d49e}.footer{display:flex;justify-content:space-between;padding:17px clamp(18px,4vw,48px);color:#7f8b99;font-size:.65rem;letter-spacing:.13em;border-top:1px solid #303744;gap:12px}.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,12px);background:#26313d;border:1px solid #a99a75;color:#f4eddf;border-radius:8px;padding:12px 20px;box-shadow:0 16px 40px #0009;opacity:0;pointer-events:none;z-index:40;transition:opacity .2s,transform .2s;font-size:.84rem;max-width:min(90vw,550px)}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1030px){.game-layout{grid-template-columns:minmax(0,1fr) 270px}.story-content{padding:30px 32px 58px}.sidebar-tools,.aside-content,.identity-card,.side-section{padding-left:17px;padding-right:17px}.setup-page{grid-template-columns:1fr 1fr}.setup-hero{padding-left:32px}}
+@media(max-width:760px){.topbar{height:61px;padding:0 16px}.brand{font-size:.86rem;gap:8px;letter-spacing:.18em}.brand-symbol{width:28px;height:28px}.brand-early{display:none}.hide-on-mobile{display:none}.setup-page{display:flex;flex-direction:column}.setup-hero{min-height:290px;padding:38px 23px}.setup-hero h1{font-size:2.6rem;margin:14px 0 10px}.setup-hero>p{font-size:.95rem;max-width:420px}.planet{right:-100px;bottom:-220px;width:440px;height:440px}.create-card{padding:25px 17px 40px;width:min(510px,100%)}.game-layout{display:flex;flex-direction:column}.story-panel{border-right:0}.scene-art{height:165px}.story-content{padding:27px 22px 40px}.story-heading{margin:16px 0 21px}.choice{padding:13px 12px;gap:11px}.choice-heading{align-items:flex-start;flex-direction:column;gap:4px}.sidebar{border-top:1px solid #49535e}.aside-content{max-height:300px}.sidebar-tools{grid-template-columns:1fr 1fr}.sidebar-tools .text-button{grid-column:1 / -1}.footer{font-size:.56rem;letter-spacing:.05em;flex-direction:column;gap:3px}}
+@media(max-width:420px){.actions{gap:4px}.small-button{min-height:34px;padding:7px 8px}.story-content{padding:24px 17px 38px}.prose{font-size:calc(1.02rem * var(--font-scale));line-height:1.78}.scene-art{height:138px}.story-meta{font-size:.59rem}.choice-copy strong{font-size:.88rem}.choice-copy small{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button,.progress-inner,.toast{transition:none!important}}
+
+
+/* World introduction and reference guide */
+.world-map{border:1px solid #4a5a68;border-radius:12px;background:radial-gradient(ellipse at center,#253446 0%,#131b28 66%);margin-bottom:27px;padding:18px 14px 8px;overflow:hidden}
+.world-map-header{display:flex;justify-content:space-between;gap:12px;color:#ead39f;letter-spacing:.13em;font-size:.71rem}
+.world-map-header span{color:#aab6c3;font-size:.62rem}.reach-chart{display:block;width:100%;height:auto;max-height:310px}.map-caption{color:#bdc9d4;font-size:.75rem;line-height:1.5;margin:0 8px 9px}
+.aside-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aside-tab{padding:15px 3px;font-size:.76rem}
+.world-guide h3{font-size:1rem;margin:0 0 12px}.world-guide h4{font-size:.83rem;color:#ead39f;margin:19px 0 9px}.world-guide .world-map{padding:6px;margin:0 -4px 12px}.world-guide .world-map-header{font-size:.53rem}.world-guide .reach-chart{min-height:140px}.world-guide .map-caption{font-size:.66rem}.guide-entry{font-size:.8rem;color:#d4dce3;line-height:1.55;padding:0 0 8px;margin:0}
+@media(max-width:760px){.world-map{padding:12px 8px 4px}.world-map-header{font-size:.61rem}.world-map-header span{font-size:.53rem}.reach-chart{min-height:140px}}
+
+.name-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.name-fields label{margin-top:12px}.name-tip{font-size:.72rem;margin:7px 0 0}.identity-card #profile-alias{margin-bottom:10px;color:#c7d2df}@media(max-width:430px){.name-fields{grid-template-columns:1fr;gap:0}}
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="Tierfall"><span class="brand-symbol" aria-hidden="true">◇</span><span>TIERFALL</span><span class="brand-early">PROLOGUE + CHAPTER ONE</span></div>
+      <div class="actions">
+        <button id="font-down" class="small-button" title="Smaller text" aria-label="Decrease text size">A−</button>
+        <button id="font-up" class="small-button" title="Larger text" aria-label="Increase text size">A+</button>
+        <button id="help-button" class="small-button" title="Help" aria-label="Help">?</button>
+        <button id="save-button" class="small-button hide-on-mobile" title="Save progress">Save</button>
+      </div>
+    </header>
+    <section id="help-panel" class="help-panel hidden" aria-label="How to play"><strong>How to play</strong><p>Read each scene and choose what you want to say or do. Press <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, or <kbd>4</kbd> to pick a choice. The journal remembers decisions. Your game saves after every choice on this device. Use Export to keep a backup.</p></section>
+    <main id="setup" class="setup-page hidden">
+      <div class="setup-hero">
+        <span class="eyebrow">THE HALCYON REACH</span>
+        <h1>YOUR STORY<br/><em>BEGINS BELOW.</em></h1>
+        <p>Five ranks decide where people live, work, and belong. You were born at the bottom. What happens next depends on you.</p>
+        <div class="planet" aria-hidden="true"></div>
+      </div>
+      <section class="create-card" aria-labelledby="create-title">
+        <p class="eyebrow">NEW STORY</p><h2 id="create-title">Who are you?</h2>
+        <p class="muted">Your job and past change the way you experience the story. No choice is the wrong one.</p>
+        <div class="name-fields"><div><label for="player-first">First name</label><input id="player-first" maxlength="26" autocomplete="given-name" value="Kesh" /></div><div><label for="player-second">Second name / surname</label><input id="player-second" maxlength="26" autocomplete="family-name" value="Varro" /></div></div><label for="player-nickname">Nickname (optional)</label><input id="player-nickname" maxlength="26" autocomplete="off" placeholder="What close friends call you" /><p class="muted name-tip">Friends may use your nickname. Officials use your full name.</p>
+        <label for="pronouns">Pronouns</label><select id="pronouns"><option value="they">They / them</option><option value="she">She / her</option><option value="he">He / him</option></select>
+        <label for="origin">Your job</label><select id="origin"><option value="ward">Ward Attendant — care for patients</option><option value="reclamation">Reclamation Worker — recover machines</option><option value="farmer">Farmer — grow food for the station</option><option value="cargo">Cargo Runner — move goods and cargo</option></select>
+        <label for="upbringing">Your upbringing</label><select id="upbringing"><option value="family">Family Household — raised with relatives</option><option value="communal">Communal Upbringing — raised by a community</option><option value="estranged">Estranged Household — distant family ties</option></select>
+        <div class="setup-buttons"><button id="random-start" class="secondary-button">Random background</button><button id="start" class="primary-button">Enter the Reach <span>→</span></button></div>
+        <button id="setup-import" class="text-button" type="button">Have a previous save? Import it</button>
+        <p class="muted footnote">Estimated campaign: 5–10 hours when complete. This early playable preview contains Chapter One only.</p>
+      </section>
+    </main>
+    <div id="game" class="game-layout hidden">
+      <section class="story-panel" id="narrative" aria-label="Story">
+        <div class="scene-art" aria-hidden="true"><div class="art-moon"></div><div class="art-rail rail-one"></div><div class="art-rail rail-two"></div><div class="art-city"></div></div>
+        <div class="story-content">
+<div id="world-map" class="world-map hidden" aria-label="Schematic map of the Halcyon Reach">
+  <div class="world-map-header"><strong>THE HALCYON REACH</strong><span>NOT TO SCALE · KNOWN REGIONS</span></div>
+  <svg class="reach-chart" viewBox="0 0 720 310" role="img" aria-label="Thule worker station, foundry orbits, garden moons, ruling courts, and outer Bastion stations arranged around the central routes">
+    <defs><radialGradient id="starGlow"><stop offset="0" stop-color="#e6c687" stop-opacity=".82"/><stop offset="1" stop-color="#e6c687" stop-opacity=".03"/></radialGradient></defs>
+    <circle cx="367" cy="156" r="118" fill="none" stroke="#586778" stroke-dasharray="3 8" opacity=".55"/>
+    <circle cx="367" cy="156" r="70" fill="none" stroke="#5e7186" stroke-dasharray="3 7" opacity=".45"/>
+    <g stroke="#8294a7" stroke-width="1.5" opacity=".64"><path d="M367 156 L133 206"/><path d="M367 156 L282 66"/><path d="M367 156 L528 70"/><path d="M367 156 L611 212"/><path d="M367 156 L446 252"/></g>
+    <circle cx="367" cy="156" r="30" fill="url(#starGlow)"/><circle cx="367" cy="156" r="6" fill="#efd28e"/>
+    <g font-family="system-ui,sans-serif" font-size="14" fill="#e5ebf0" text-anchor="middle">
+      <circle cx="133" cy="206" r="9" fill="#c9a25b"/><text x="133" y="233" font-weight="700">THULE</text><text x="133" y="252" font-size="11" fill="#aab9c7">Workers' station</text>
+      <circle cx="282" cy="66" r="7" fill="#8fabbf"/><text x="282" y="42">Foundry orbits</text>
+      <circle cx="528" cy="70" r="8" fill="#9aba91"/><text x="528" y="44">Garden moons</text>
+      <circle cx="611" cy="212" r="8" fill="#d3d8e0"/><text x="611" y="238">Ruling courts</text>
+      <circle cx="446" cy="252" r="8" fill="#c08179"/><text x="446" y="284">Bastion stations</text>
+      <text x="367" y="193" font-size="11" fill="#e6cf9c">Central routes</text>
+    </g>
+  </svg>
+  <p class="map-caption">This chart shows major regions, not exact distances or travel routes. Different moons and stations depend on each other for food, parts, labor, and security.</p>
+</div>
+          <div class="story-meta"><span id="chapter-label">ACT I / CHAPTER 1</span><span id="scene-location"></span></div>
+          <div class="story-heading"><div class="separator"></div><h1 id="scene-title"></h1></div>
+          <div class="speaker"><div id="speaker-initials" class="speaker-portrait" aria-hidden="true">✦</div><div><span class="speaker-caption">CURRENT SCENE</span><strong id="speaker-name">Narrator</strong></div></div>
+          <div id="prose" class="prose"></div>
+          <div class="choice-heading"><span>YOUR DECISION</span><span class="choice-subtitle">Choose what matters to you.</span></div>
+          <div id="choices" class="choices" role="group" aria-label="Story choices"></div>
+          <p id="save-status" class="saved-text" role="status">Saved on this device</p>
+        </div>
+      </section>
+      <aside class="sidebar" aria-label="Player and journal">
+        <div class="identity-card"><span class="eyebrow">YOUR IDENTITY</span><h2 id="profile-name"></h2><p id="profile-alias" class="muted small"></p><p id="profile-rank" class="rank-label"></p><p id="profile-background" class="muted small"></p></div>
+        <div class="side-section"><div class="stat-row"><span>Public attention</span><strong id="cover"></strong></div><div class="stat-row"><span id="progress-count">Chapter 1</span><span>Act I</span></div><div class="progress-track"><div id="progress-bar" class="progress-inner"></div></div></div>
+        <div id="aside-tabs" class="aside-tabs" role="tablist" aria-label="Story records"><button class="aside-tab selected" aria-selected="true" data-tab="journal">Journal</button><button class="aside-tab" aria-selected="false" data-tab="people">People</button><button class="aside-tab" aria-selected="false" data-tab="world">World guide</button></div>
+        <div id="aside-content" class="aside-content" aria-live="polite"></div>
+        <div class="sidebar-tools"><button id="export-button" class="secondary-button">Export save</button><button id="import-button" class="secondary-button">Import save</button><input id="import-file" type="file" accept=".json,application/json" hidden /><button id="new-game" class="text-button">Start a new story</button></div>
+      </aside>
+    </div>
+    <footer class="footer"><span>TIERFALL • FIRST PLAYABLE CHAPTER</span><span>Story-first RPG • Your choices are remembered</span></footer>
+  </div>
+  <div id="notice" role="status" aria-live="polite" class="toast"></div>
+  <script>
+"use strict";
+// SPOILERS possible in story-related source. Player-safe UI and tests must not expose story routes.
+var Tierfall;
+(function (Tierfall) {
+    Tierfall.origins = {
+        ward: 'Ward Attendant', reclamation: 'Reclamation Worker', farmer: 'Farmer', cargo: 'Cargo Runner'
+    };
+    Tierfall.upbringings = {
+        family: 'Family Household', communal: 'Communal Upbringing', estranged: 'Estranged Household'
+    };
+    Tierfall.SAVE_KEY = 'tierfall.chapter1.v1';
+    function newGame(name, pronouns, origin, upbringing, identity = {}) {
+        const previous = safeName(name, 54).split(/\s+/);
+        const firstName = safeNamePart(identity.firstName ?? previous[0]) || 'Kesh';
+        const secondName = safeNamePart(identity.secondName ?? previous.slice(1).join(' '));
+        const nickname = safeNamePart(identity.nickname ?? '');
+        return {
+            version: 1, name: [firstName, secondName].filter(Boolean).join(' '), firstName, secondName, nickname,
+            pronouns, origin, upbringing,
+            sceneId: 'p-reach', flags: { evidence: 'none', witnessProtected: false, friendTrust: 0,
+                workerTrust: 0, officialAttention: 0, homeCommitment: 'none', route: 'none', promise: 'none',
+                caution: 0, clueType: origin }, history: [], journal: [],
+            startedAt: new Date().toISOString(), finished: false
+        };
+    }
+    Tierfall.newGame = newGame;
+    function pass(state, checks) {
+        return (checks || []).every(c => {
+            const v = state.flags[c.key];
+            if ('equals' in c && v !== c.equals)
+                return false;
+            if ('not' in c && v === c.not)
+                return false;
+            if ('min' in c && (typeof v !== 'number' || v < c.min))
+                return false;
+            return true;
+        });
+    }
+    Tierfall.pass = pass;
+    function applyEffects(flags, effects = []) {
+        const out = { ...flags };
+        for (const effect of effects) {
+            if ('set' in effect && effect.set !== undefined)
+                out[effect.key] = effect.set;
+            if ('add' in effect && effect.add !== undefined)
+                out[effect.key] =
+                    (typeof out[effect.key] === 'number' ? out[effect.key] : 0) + effect.add;
+        }
+        return out;
+    }
+    Tierfall.applyEffects = applyEffects;
+    function step(state, choiceId) {
+        if (state.finished)
+            throw new Error('Chapter already complete');
+        const scene = Tierfall.scenes[state.sceneId];
+        if (!scene)
+            throw new Error('Missing scene: ' + state.sceneId);
+        const choice = scene.choices.find(c => c.id === choiceId);
+        if (!choice || !pass(state, choice.when))
+            throw new Error('Choice unavailable');
+        if (!Tierfall.scenes[choice.next])
+            throw new Error('Missing next scene: ' + choice.next);
+        if (scene.id.startsWith('p-')) return { ...state, sceneId: choice.next };
+        const journal = [...state.journal];
+        if (choice.journal)
+            journal.push({ scene: scene.id, title: choice.journalTitle || scene.title, text: choice.journal });
+        const flags = applyEffects(state.flags, choice.effects);
+        const next = { ...state, flags, journal, history: [...state.history, `${scene.id}:${choice.id}`],
+            sceneId: choice.next, finished: choice.next === 'c1-end' };
+        return next;
+    }
+    Tierfall.step = step;
+    function safeName(s, max = 26) { return String(s ?? '').replace(/[<>\u0000-\u001f]/g, '').trim().slice(0, max) || 'Kesh Varro'; }
+    function safeNamePart(s) { return String(s ?? '').replace(/[<>\u0000-\u001f]/g, '').trim().slice(0, 26); }
+    function getNames(state) {
+        const pieces = safeName(state.name, 54).split(/\s+/);
+        const first = safeNamePart(state.firstName ?? pieces[0]) || 'Kesh';
+        const second = safeNamePart(state.secondName ?? pieces.slice(1).join(' '));
+        const nickname = safeNamePart(state.nickname ?? '');
+        return { first, second, nickname, full: [first, second].filter(Boolean).join(' ') };
+    }
+    Tierfall.safeName = safeName;
+    Tierfall.getNames = getNames;
+    function tokens(str, state) {
+        const subject = { they: 'they', she: 'she', he: 'he' };
+        const possessive = { they: 'their', she: 'her', he: 'his' };
+        const names = getNames(state);
+        return str.replace(/\{(name|formalName|first|second|nickname|friendName|origin|upbringing|they|their)\}/g, (_, key) => {
+            const r = { name: names.full, formalName: names.full, first: names.first, second: names.second,
+                nickname: names.nickname || names.first, friendName: names.nickname || names.first,
+                origin: Tierfall.origins[state.origin],
+                upbringing: Tierfall.upbringings[state.upbringing], they: subject[state.pronouns], their: possessive[state.pronouns] };
+            return r[key];
+        });
+    }
+    Tierfall.tokens = tokens;
+    function sceneParagraphs(state) {
+        const scene = Tierfall.scenes[state.sceneId];
+        if (!scene)
+            throw Error('Scene not found');
+        const blocks = [...scene.text, ...(scene.byOrigin?.[state.origin] || []),
+            ...(scene.byUpbringing?.[state.upbringing] || [])];
+        for (const extra of scene.byFlag || [])
+            if (pass(state, extra.when))
+                blocks.push(...extra.text);
+        return blocks.map(x => tokens(x, state));
+    }
+    Tierfall.sceneParagraphs = sceneParagraphs;
+    function saveState(state, storage) {
+        storage.setItem(Tierfall.SAVE_KEY, JSON.stringify(state));
+    }
+    Tierfall.saveState = saveState;
+    function validateState(value) {
+        if (!value || typeof value !== 'object')
+            throw new Error('Invalid save data');
+        const v = value;
+        if (v.version !== 1 || typeof v.sceneId !== 'string' || !Tierfall.scenes[v.sceneId])
+            throw new Error('Unsupported or broken save');
+        if (typeof v.name !== 'string' || !['they', 'he', 'she'].includes(String(v.pronouns)) ||
+            !Object.keys(Tierfall.origins).includes(String(v.origin)) || !Object.keys(Tierfall.upbringings).includes(String(v.upbringing)) ||
+            !v.flags || typeof v.flags !== 'object' || Array.isArray(v.flags) ||
+            !Array.isArray(v.history) || !v.history.every(x => typeof x === 'string') ||
+            !Array.isArray(v.journal) || v.journal.length > 500 || !v.journal.every(x => !!x && typeof x.title === 'string' && typeof x.text === 'string') ||
+            typeof v.finished !== 'boolean' || typeof v.startedAt !== 'string')
+            throw new Error('Invalid save content');
+        const g = v;
+        g.name = safeName(g.name, 54);
+        const names = getNames(g);
+        g.firstName = names.first; g.secondName = names.second; g.nickname = names.nickname;
+        g.name = names.full;
+        return g;
+    }
+    Tierfall.validateState = validateState;
+    function loadState(storage) {
+        const raw = storage.getItem(Tierfall.SAVE_KEY);
+        if (!raw)
+            return null;
+        return validateState(JSON.parse(raw));
+    }
+    Tierfall.loadState = loadState;
+    function sceneCount() { return Object.keys(Tierfall.scenes).length; }
+    Tierfall.sceneCount = sceneCount;
+})(Tierfall || (Tierfall = {}));
+// SPOILERS — DEVELOPMENT ONLY. Do not share story source with a player who wants to play blind.
+var Tierfall;
+(function (Tierfall) {
+    Tierfall.scenes = {
+        'p-reach': {
+            id: 'p-reach', title: 'Welcome to the Reach', location: 'The Halcyon Reach · A World Before Your Story', speaker: 'Narrator',
+            text: [
+                'Human life stretches across the Halcyon Reach, a system of moons and stations connected by ships and supply routes. No single place can survive alone. Farms grow food, foundries build ships, and distant stations protect the routes between them.',
+                'Thule lies far from the ruling courts. Workers there repair failing machines, grow food under lamps, and keep the air flowing. Far above them, wealthy families decide which shipments arrive and which debts must be paid.',
+                'The Concord says this order saved humanity from the Long Dark, a time of hunger and war three hundred years ago. Many people believe that story. Others wonder why the same families still hold power.',
+                'Today, shipments are late and workers are asking difficult questions. At the foundries, crews wait for spare parts; on the garden moons, growers warn that food prices may rise. The Drift Guild wants the trade routes kept open, while Concord officers call for stricter checks. On Thule, those distant arguments decide whether a family has enough to eat.'
+            ],
+            choices: [{ id: 'continue', label: 'Learn about the Five Ranks.', next: 'p-ranks' }]
+        },
+        'p-ranks': {
+            id: 'p-ranks', title: 'The Five Ranks', location: 'The Halcyon Reach · Law and Status', speaker: 'Narrator',
+            text: [
+                'Every person is born into a rank, marked on their wrist. Rank I is highest and Rank V is lowest. The mark affects where a person can live, what work they may do, and who has the power to command them.',
+                'Rank I · Platinum · Crestborn: noble houses and rulers. Rank II · Steel · Steelward: soldiers, officers, and guards. Rank III · Brass · Brasswright: doctors, engineers, and scientists.',
+                'Rank IV · Copper · Copperhand: traders, clerks, and recordkeepers. Rank V · Lead · Leadborn: farm workers, ward attendants, cargo crews, and other laborers. Leadborn does not mean a person mines lead. It is a rank assigned at birth.',
+                'A person may be a free worker or bound by a service contract. Rank and freedom are not the same thing. A skilled Leadborn can save lives but still be ordered around by someone born above them.'
+            ],
+            choices: [{ id: 'continue', label: 'Learn who holds power.', next: 'p-powers' }]
+        },
+        'p-powers': {
+            id: 'p-powers', title: 'Those Who Hold Power', location: 'The Halcyon Reach · Three Political Forces', speaker: 'Narrator',
+            text: [
+                'The Concord governs the Reach. Its leaders say strict ranks keep the peace. Some want stronger control; others believe the laws must change before anger breaks the system apart.',
+                'The Undertow is a hidden network that opposes the ranks. Some members want a careful path to freedom. Others believe the Concord will never give up power without a fight.',
+                'The Drift Guild moves goods, ships, and information between worlds. It deals with almost everyone. Its traders value open routes, but they do not always agree on what matters more: profit, safety, or freedom.',
+                'A rank tells you what society expects from someone. A faction tells you what they believe. A noble can oppose the Concord, and a worker can defend it. Few people fit neatly into one side.',
+                'One news channel calls the growing complaints a threat to public order. A Guild report calls them a risk to trade. A private message passed between workers calls them a plea to be heard. The event is the same; the words change depending on who controls the story.'
+            ],
+            choices: [{ id: 'continue', label: 'Return to Thule.', next: 'p-thule' }]
+        },
+        'p-thule': {
+            id: 'p-thule', title: 'A Life on Thule', location: 'Thule · Before the First Bell', speaker: 'Narrator',
+            text: [
+                'This is where you live. Your name is {name}, and the wrist mark you have carried since childhood reads Rank V · Lead · Leadborn. People in the upper rings rarely ask what you want. They usually ask whether your work is done.',
+                'You know Sera Venn from childhood. She is quick to speak, slower to give up, and one of the few people who remembers who you were before work became your whole life.',
+                'You also know of Jalen Orr. He is a local worker organizer, not a secret leader: when wages go missing or families need food, he helps people make requests and find support. You have crossed paths while helping neighbors. You have not joined his group or any political movement.',
+                'Your work and home have shaped what you notice and whom you trust. Tomorrow will begin as an ordinary shift. At least, that is what you expect.'
+            ],
+            byOrigin: {
+                ward: ['You care for patients in the crowded wards. You have learned how to listen when someone is frightened and the doctors are too busy to notice.'],
+                reclamation: ['You salvage parts from broken machines. You know that one small piece of equipment can keep an entire work ring running.'],
+                farmer: ['You grow food beneath artificial light. You know how quickly an empty supply crate becomes an empty table.'],
+                cargo: ['You move crates through the loading bays. You recognize the crews, cargo marks, and doors most people never think about.']
+            },
+            byUpbringing: {
+                family: ['Your family lives close enough to ask you for help and worry when you come home late. Their lives are tied to your choices.'],
+                communal: ['You were raised among neighbors who share work, food, and hard times. You learned early that family does not always mean blood.'],
+                estranged: ['You have family somewhere in the Reach, but you are no longer close. Even so, old ties can be hard to forget.']
+            },
+            choices: [{ id: 'begin', label: 'Begin Chapter One.', next: 'c1-wake' }]
+        },
+        'c1-wake': {
+            id: 'c1-wake', title: 'Before the First Bell', location: 'Thule · Workers’ Ring', speaker: 'Narrator',
+            text: [
+                'The first bell rings before the station lights come on, sending pale light across the walls. Cold seeps through your boots, and beyond the thick glass, Thule’s ice catches a distant sun.',
+                'Your wrist mark reads Rank V · Lead · Leadborn. That mark decides which doors open for you, where you may sleep, and whose word carries more weight. It cannot describe the person you are, although some days it feels as if the Concord would prefer you to forget that.',
+                'A notice flashes on the wall: “All Leadborn workers must report early today. Missed shifts will be charged to the household.” Beneath it, someone has written: “We are not machines.” A cleaning unit rolls past. One letter vanishes, then another.',
+                'Your shift is about to start when a tired worker struggles toward the same lift. The guard rubs his eyes until the second bell sounds; then he straightens and begins checking wrist marks.'
+            ],
+            byOrigin: {
+                ward: ['You work as a Ward Attendant. You clean rooms, move patients, and help people who cannot stand on their own. The doctors know their charts. You know which patients are afraid to call for help.'],
+                reclamation: ['You work in Reclamation. You strip broken machines for parts that still work. People throw away all kinds of things. Sometimes they forget that machines remember.'],
+                farmer: ['You work in the farm domes. You check water lines, tend the crops, and count every tray of food. On Thule, a bad harvest does not just mean an empty shelf. It means someone goes hungry.'],
+                cargo: ['You work as a Cargo Runner. You move crates between station locks and loading bays. You know which lifts are slow, which doors stick, and which guards will hear a reason.']
+            },
+            choices: [
+                { id: 'help', label: 'Help the tired worker reach the lift.', hint: 'You may be late.', next: 'c1-duty', effects: [{ key: 'workerTrust', add: 1 }, { key: 'caution', add: 1 }], journal: 'You helped a worker before your shift, even though it could cost you time.' },
+                { id: 'quiet', label: 'Keep your head down and go to work.', hint: 'Avoid trouble this morning.', next: 'c1-duty', effects: [{ key: 'caution', add: 1 }] },
+                { id: 'ask', label: 'Ask the guard why the shift began early.', hint: 'Find out what changed.', next: 'c1-duty', effects: [{ key: 'officialAttention', add: 1 }], journal: 'You questioned an early work order. A guard noticed your interest.' }
+            ]
+        },
+        'c1-duty': {
+            id: 'c1-duty', title: 'The Wrong Line', location: 'Thule · Work Sector', speaker: 'Narrator',
+            text: [
+                'The work floor is louder than the living ring. Pumps shake the walls while warning tones cut through the noise, and everyone moves faster than usual without explaining why.',
+                'You know what a normal shift looks like, and one small detail does not belong. Most workers would pass without noticing it. Perhaps someone expected them to.',
+                'You check the line again. Transit 17 should be listed as a routine worker transport, but the record has been marked for removal. The system will soon clear the entry as if the journey never took place.',
+                'A coworker notices your expression. “Something wrong?” they ask. Before you can answer, the terminal warns that the next record check is about to begin. If you want to act, it has to be now.'
+            ],
+            byOrigin: {
+                ward: [
+                    'A patient called Mira Doss has been removed from the ward list. Her bed is still warm, and her cup of water sits by the wall. Her transfer note names Transit 17. A new page claims she was never admitted.',
+                    'The night nurse lowers her voice. “Mira was scared. She made me promise not to tell anyone where her little brother lives.” Her eyes flick toward the camera. “Please. Leave my name out of this.”'
+                ],
+                reclamation: [
+                    'A damaged control unit arrives inside a bin marked EMPTY. Its memory light still blinks. When you test it, a saved departure tag appears: Transit 17, Bay Six, 03:40.',
+                    'Your supervisor reaches for the unit. “That was meant for disposal.” He glances over his shoulder before lowering his voice. “Put it back. Whatever you saw, put it back.”'
+                ],
+                farmer: [
+                    'A food shipment sheet lists thirty crates sent to Transit 17. The sheet beneath it claims those crates were never packed. You carried three of them yourself yesterday.',
+                    'The farm officer is speaking quietly into a comm. “The balance must match,” she says. Then she spots you reading. “Those pages belong in storage. Put them away.”'
+                ],
+                cargo: [
+                    'A route sheet lists Transit 17 leaving Bay Six at 03:40. On the central board, the same time slot is empty. The driver’s initials are scratched out, but you still know who signs their letters that way.',
+                    'Another runner leans close. “There was a ship. I loaded it myself.” He catches sight of a passing guard. “Forget I said anything. My children are waiting at home.”'
+                ]
+            },
+            byFlag: [
+                { when: [{ key: 'workerTrust', min: 1 }], text: ['A coworker you helped this morning catches your eye. They give a small nod, then stand where the camera cannot see your hands. It may only buy you a few seconds, but it is a kindness returned.'] },
+                { when: [{ key: 'officialAttention', min: 1 }], text: ['The guard from the early lift passes the door and looks in. It might mean nothing. Still, you know a person in uniform can make an ordinary day difficult with just one question.'] }
+            ],
+            choices: [
+                { id: 'copy', label: 'Make a private copy of what you found.', hint: 'Keep proof, but risk being seen.', next: 'c1-quiet', effects: [{ key: 'evidence', set: 'copy' }, { key: 'officialAttention', add: 1 }], journal: 'You kept a copy of a work record linked to Transit 17.' },
+                { id: 'protect', label: 'Protect the person who may be blamed.', hint: 'Their safety matters more than a clean record.', next: 'c1-quiet', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 1 }, { key: 'evidence', set: 'memory' }], journal: 'You chose to protect a person connected to the strange record. You remember what you saw.' },
+                { id: 'ask', label: 'Ask a careful question before you leave.', hint: 'Learn more, but draw attention.', next: 'c1-quiet', effects: [{ key: 'officialAttention', add: 2 }, { key: 'evidence', set: 'memory' }], journal: 'You asked about Transit 17. Someone may remember that you asked.' }
+            ]
+        },
+        'c1-quiet': {
+            id: 'c1-quiet', title: 'A Familiar Face', location: 'Thule · Service Walk', speaker: 'Sera Venn',
+            text: [
+                'Sera Venn waits beside a narrow window, holding two cups of bitter tea. One look at your face is enough to raise her eyebrow, a familiar warning since you were children.',
+                '“You only walk that fast, {friendName}, when you’re hiding something,” she says. “Or when you owe me money.” She hands you a cup. “So. Which is it?”',
+                'You and Sera grew up a few doors apart, sharing meals when supplies ran short and taking turns helping neighbors after your shifts. She still tells the story of your first attempt to ride a cargo lift without holding the rail. Official records know your rank; Sera knows the person behind it.',
+                '“People keep saying the morning ship was canceled, but I heard a launch during the night,” she says. “Maybe it was something else.” She waits for your answer, still holding the cup she brought for you.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['You touch the edge of the copy hidden inside your coat. For a moment you consider showing it to her. This piece of paper could change what she thinks of the people who run Thule.'] },
+                { when: [{ key: 'witnessProtected', equals: true }], text: ['You also think of the frightened person at work. If Sera learns their name, she might want to help. Or she might draw attention without meaning to.'] }
+            ],
+            choices: [
+                { id: 'tell', label: 'Tell Sera what you found.', hint: 'Trust your oldest friend.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 2 }, { key: 'seraKnows', set: true }], journal: 'You trusted Sera with the first clue about Transit 17.' },
+                { id: 'half', label: 'Say you saw a record that makes no sense.', hint: 'Be careful without lying.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 1 }, { key: 'seraKnows', set: false }], journal: 'You told Sera that something seemed wrong, but kept the details to yourself.' },
+                { id: 'deflect', label: 'Ask how her own shift went.', hint: 'Keep the worry private.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 0 }, { key: 'seraKnows', set: false }] }
+            ]
+        },
+        'c1-home': {
+            id: 'c1-home', title: 'The People Who Know You', location: 'Thule · Living Ring', speaker: 'Narrator',
+            text: [
+                'The living ring smells of bread, machine oil, and damp clothes. Visitors rarely come this far down. The halls are narrow, and the lights dim before anyone is ready for bed.',
+                'You stop near home for a short rest while the next shift changes over. The morning has left you uneasy: an official record has changed, someone is frightened, and a ship may have left Thule even though the Concord denies it.',
+                'You could spend this quiet moment taking care of your own life. You could also use it to prepare for what might come next.'
+            ],
+            byUpbringing: {
+                family: [
+                    'Your family shares a small set of rooms behind the laundry pipes. One of your relatives is repairing a heater that has failed again. “We need a new filter,” they say. “The shop will not give us one until the old debt is cleared.”',
+                    'They look at you more closely. “You have that face. Something is wrong at work, is it?” They do not demand an answer. That makes it harder to stay silent.'
+                ],
+                communal: [
+                    'You were raised in the shared kitchens and crowded halls. The people here call you family even when there is no blood tie. Today the kitchen line is short of food, and a neighbor asks if you can help carry water.',
+                    'An older worker smiles when you arrive. “You used to be too small to reach this table,” they say. “Now everyone thinks you can fix the whole station. Try the water pump first.”'
+                ],
+                estranged: [
+                    'You stop in a rented room with a door that closes badly. A message waits on your terminal. It comes from someone in your family whom you have not seen in years.',
+                    '“I heard there are checks at the port,” the message says. “If you get a chance, tell me you are safe.” There is no apology for the last time you spoke. There is also no demand.'
+                ]
+            },
+            choices: [
+                { id: 'care', label: 'Help the people connected to your home.', hint: 'Make time for someone else.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'care' }, { key: 'workerTrust', add: 1 }], journal: 'You made time for the people who have been part of your life on Thule.' },
+                { id: 'truth', label: 'Share that something strange happened at work.', hint: 'Ask for advice, but spread the risk.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'confided' }, { key: 'officialAttention', add: 1 }], journal: 'You shared a worry from your shift with someone from home.' },
+                { id: 'rest', label: 'Rest briefly and keep your worry to yourself.', hint: 'Save your strength.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'private' }, { key: 'caution', add: 1 }] }
+            ]
+        },
+        'c1-notice': {
+            id: 'c1-notice', title: 'No Such Ship', location: 'Thule · Public Records Hall', speaker: 'Narrator',
+            text: [
+                'By midday, a new notice appears outside the records hall. A cluster of workers stands around the screen. Nobody speaks above a whisper.',
+                'The notice is short: “There was no worker transport from Thule during the last night cycle. All claims of a departure are false. Anyone spreading such claims may be questioned.”',
+                'You read the notice twice. It offers no explanation and leaves no room for questions. Everyone who watched a ship leave last night has effectively been called a liar.',
+                'A woman beside the screen says, “My husband was on that ship.” She presses a hand against her mouth. A guard turns to look at her.',
+                'This can no longer be dismissed as a mistake in a work record. Someone has made a public claim that witnesses know is false, and the guard is already looking for people willing to challenge it.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['Your hidden copy feels heavy against your side. It is a small thing, but it has a time, a number, and an answer the Concord does not want people to see.'] },
+                { when: [{ key: 'evidence', equals: 'memory' }], text: ['You have no clear paper to show the crowd. You can still name what you saw at work, but you know that memory alone is easy for an officer to dismiss.'] },
+                { when: [{ key: 'homeCommitment', equals: 'care' }], text: ['You still feel the work of helping at home in your hands. The small needs of ordinary people have not stopped because a transport record changed.'] },
+                { when: [{ key: 'homeCommitment', equals: 'confided' }], text: ['Someone at home now knows you are worried. You wonder whether you did the right thing by bringing them close to this problem.'] },
+                { when: [{ key: 'homeCommitment', equals: 'private' }], text: ['You had wanted a few quiet hours. The notice has taken that hope away.'] },
+            ],
+            choices: [
+                { id: 'copy', label: 'Record the public notice before it changes.', hint: 'Keep a second piece of evidence.', next: 'c1-cross', effects: [{ key: 'noticeCopy', set: true }, { key: 'officialAttention', add: 1 }], journal: 'You saved the official denial. It conflicts with what you saw at work.' },
+                { id: 'woman', label: 'Help the frightened woman move away from the guard.', hint: 'Protect a stranger.', next: 'c1-cross', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 1 }, { key: 'noticeCopy', set: false }], journal: 'You helped a witness leave the records hall before the guard could question her.' },
+                { id: 'guard', label: 'Ask the guard where families can request answers.', hint: 'Use the official process.', next: 'c1-cross', effects: [{ key: 'officialAttention', add: 2 }, { key: 'noticeCopy', set: false }], journal: 'You asked the authorities how families could check a missing transport.' }
+            ]
+        },
+        'c1-cross': {
+            id: 'c1-cross', title: 'The One Who Stayed', location: 'Thule · Narrow Service Lane', speaker: 'Narrator',
+            text: [
+                'A few streets from the records hall, the woman who spoke about her husband calls to you from a service doorway. Her name is Ada, and she works at a food counter near the ports. She must have noticed that you stopped when the guard turned toward her.',
+                '“I saw my husband enter Bay Six,” she says. “He carried his lunch tin. I watched him join the line. They told us the ship would return in five days.”',
+                'Ada holds out a paper tag. A name and a number are printed on it; one corner has been torn away. Her hand shakes. “I kept it. They can say what they like. I know what I saw.”',
+                'Footsteps echo along the lane as two officers turn the corner toward the records hall. Ada closes her fist around the tag so quickly that the torn corner splits further.',
+                'Ada looks from the tag to the officers approaching behind you. There is time to protect her or secure the proof, but perhaps not both.'
+            ],
+            choices: [
+                { id: 'hide', label: 'Help Ada reach a safe door.', hint: 'Protect the witness; the tag may be lost.', next: 'c1-ally', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 2 }, { key: 'adaSafe', set: true }], journal: 'You helped Ada avoid questioning. She knows a passenger was on Transit 17.' },
+                { id: 'tag', label: 'Take a clear copy of the tag.', hint: 'Keep proof; Ada must find her own way.', next: 'c1-ally', effects: [{ key: 'evidence', set: 'copy' }, { key: 'adaSafe', set: false }, { key: 'officialAttention', add: 1 }], journal: 'You kept a clear image of a passenger tag, but Ada was left to avoid the officers herself.' },
+                { id: 'sera', label: 'Ask Sera to meet Ada and help her.', hint: 'Share the risk with your friend.', next: 'c1-ally', effects: [{ key: 'friendTrust', add: 1 }, { key: 'witnessProtected', set: true }, { key: 'adaSafe', set: true }], journal: 'You trusted Sera to help a witness. Your friend is now part of the risk.' },
+                { id: 'jalen', label: 'Call Jalen, who knows the worker shelters.', hint: 'Bring in a local organizer.', next: 'c1-ally', effects: [{ key: 'workerTrust', add: 1 }, { key: 'witnessProtected', set: true }, { key: 'adaSafe', set: true }, { key: 'jalenContact', set: true }], journal: 'You involved Jalen in protecting Ada from the officers.' }
+            ]
+        },
+        'c1-ally': {
+            id: 'c1-ally', title: 'Two Ways to Help', location: 'Thule · Closed Food Stall', speaker: 'Jalen Orr',
+            text: [
+                'Sera asked you to meet her at a closed food stall after the afternoon bell. Jalen Orr is waiting with her. You know him from the workers’ ring: he helps families fill out complaints, find missing wages, and get food when employers cut their rations. You have helped at some of his supply drives, but you are not part of a political group. “Thanks for coming, {first},” he says.',
+                '“Sera told me you were at the records hall,” Jalen says. “I also heard from people waiting for missing family members. I asked you here because you saw the notice and spoke with someone who may know what happened. We need to understand what is true before we decide how to help.”',
+                'Sera folds her arms. “And when you gather a crowd, the Concord sends guards. We should find out what happened before we ask people to risk their lives.”',
+                '“And waiting has a cost,” Jalen replies. “Ask the families how much more time they can afford.”',
+                'Their disagreement is why Sera wanted you here. She trusts you to speak for yourself, and Jalen needs a first-hand account before he asks others to act. They are not asking you to join a movement or lead a protest. They are asking what you believe should happen next, knowing the families may live with the result.'
+            ],
+            byFlag: [
+                { when: [{ key: 'seraKnows', equals: true }], text: ['Sera glances at you. She already knows about the first record. You see that she is choosing not to say more than you have allowed.'] },
+                { when: [{ key: 'seraKnows', equals: false }], text: ['Sera studies your face. She can tell that you know more than you have said, but she lets you decide when to speak.'] },
+                { when: [{ key: 'adaSafe', equals: true }], text: ['You tell them Ada is away from the guards for now. Jalen releases a breath he has been holding. “Good,” he says. “Then we can ask what she needs without putting her in front of a crowd.”'] },
+                { when: [{ key: 'adaSafe', equals: false }], text: ['You tell them that Ada had to leave on her own. Sera looks toward the hall. “I can go check on her,” she says. Jalen nods, but neither of them seems satisfied.'] },
+            ],
+            choices: [
+                { id: 'sera', label: 'Work quietly with Sera first.', hint: 'Protect the people close to you.', next: 'c1-walk', effects: [{ key: 'route', set: 'sera' }, { key: 'friendTrust', add: 1 }], journal: 'You chose to investigate quietly with Sera rather than make the issue public.' },
+                { id: 'jalen', label: 'Help Jalen speak for the missing families.', hint: 'Bring people together.', next: 'c1-walk', effects: [{ key: 'route', set: 'jalen' }, { key: 'workerTrust', add: 1 }, { key: 'officialAttention', add: 1 }], journal: 'You agreed to help Jalen gather the workers who need answers.' },
+                { id: 'office', label: 'File an official request for the ship record.', hint: 'Leave a formal trail.', next: 'c1-walk', effects: [{ key: 'route', set: 'office' }, { key: 'officialAttention', add: 2 }], journal: 'You chose to ask the Concord for a formal answer.' },
+                { id: 'alone', label: 'Keep the clue and investigate alone for now.', hint: 'Trust fewer people.', next: 'c1-walk', effects: [{ key: 'route', set: 'alone' }, { key: 'caution', add: 1 }], journal: 'You held back the clue and chose to search alone.' }
+            ]
+        },
+        'c1-walk': {
+            id: 'c1-walk', title: 'A City Between Bells', location: 'Thule · Night Walk', speaker: 'Sera Venn',
+            text: [
+                'The station is quieter after the evening shift, although the air pumps never stop working behind the walls. If they failed, everyone on Thule would feel it within minutes.',
+                'You and Sera walk past a small garden kept alive by borrowed water and lamps that are older than both of you. Someone has placed a broken toy ship in its center. Children once fought over who got to fly it.',
+                '“Remember when we thought the upper ring had a real sky?” Sera asks. “You said the rich kept the sun behind a giant window.” She smiles. “I told everyone you’d seen it.”',
+                'Her smile fades. “When we were small, I thought growing up meant learning how things worked.” She looks up at the pipes overhead. “Now I’m starting to wonder how much they’ve kept from us.”',
+                'She stops by the garden gate. “Whatever you do next, {friendName}, remember who has to live with it. Look them in the eye when you make your choice.”'
+            ],
+            byFlag: [
+                { when: [{ key: 'route', equals: 'jalen' }], text: ['The workers’ gathering is already being planned. Sera does not tell you to stop. She asks only that you warn people before you ask them to stand against the guards.'] },
+                { when: [{ key: 'route', equals: 'office' }], text: ['“An official request?” Sera asks. “Maybe someone will answer you. Just remember that offices keep a record of who asks the questions.”'] },
+                { when: [{ key: 'route', equals: 'alone' }], text: ['Sera notices that you have stayed apart from the others. “You can be careful,” she says, “without carrying every worry by yourself.”'] },
+                { when: [{ key: 'route', equals: 'sera' }], text: ['Sera holds the garden gate open for you. “All right,” she says. “We work quietly. But if anyone is in danger, I want to know.”'] },
+            ],
+            choices: [
+                { id: 'promise', label: 'Promise Sera you will not forget the people here.', hint: 'Give your friend your word.', next: 'c1-door', effects: [{ key: 'friendTrust', add: 2 }, { key: 'seraPromise', set: true }], journal: 'You promised Sera you would remember the people of Thule, even if your life changed.' },
+                { id: 'uncertain', label: 'Admit that you do not know what is right yet.', hint: 'Be honest about your doubt.', next: 'c1-door', effects: [{ key: 'friendTrust', add: 1 }, { key: 'seraPromise', set: false }], journal: 'You told Sera that you were unsure what the right action would be.' },
+                { id: 'focus', label: 'Tell Sera the facts matter more than promises.', hint: 'Stay focused on finding proof.', next: 'c1-door', effects: [{ key: 'seraPromise', set: false }, { key: 'caution', add: 1 }] }
+            ]
+        },
+        'c1-door': {
+            id: 'c1-door', title: 'Someone Has Noticed', location: 'Thule · Checkpoint Nine', speaker: 'Narrator',
+            text: [
+                'You are almost home when the checkpoint light turns red and a guard you have never met steps into your path. His coat is spotless, and his polished boots look out of place in the workers’ ring.',
+                '“There’s been a report about a missing transport,” he says. “You were near the records hall.” He steps aside, blocking the narrow path. “I have some questions.”',
+                'Behind him, two people wait to cross. One looks away. The other watches as if your answer could decide whether they will speak tomorrow.',
+                'The guard opens a small notebook and reads your full name from a page that already carries your shift number. “{formalName}. Did you see any evidence of a ship leaving Thule last night?” You had not told him where you worked.'
+            ],
+            byFlag: [
+                { when: [{ key: 'route', equals: 'office' }], text: ['He turns a page. “You filed a request. That was a bold thing to do. Tell me why.” The note already has your name.'] },
+                { when: [{ key: 'route', equals: 'jalen' }], text: ['He taps the notebook. “Someone says you have been gathering people to talk about the notice.” His voice is calm, which makes it harder to read.'] },
+                { when: [{ key: 'route', equals: 'sera' }], text: ['He glances down the hall. “A friend was seen with you.” You wonder whether Sera reached home safely.'] },
+                { when: [{ key: 'route', equals: 'alone' }], text: ['His notebook has almost nothing about you. That may be the only advantage you have tonight.'] }
+            ],
+            choices: [
+                { id: 'plain', label: 'Tell him you saw a record that did not match.', hint: 'Speak carefully, without naming a witness.', next: 'c1-cost', effects: [{ key: 'officialAttention', add: 1 }, { key: 'toldGuard', set: true }], journal: 'You told a guard that the official records did not match what you saw.' },
+                { id: 'deny', label: 'Say you cannot prove any ship left.', hint: 'Protect the people who spoke to you.', next: 'c1-cost', effects: [{ key: 'caution', add: 1 }, { key: 'toldGuard', set: false }], journal: 'You avoided naming witnesses or giving the guard useful proof.' },
+                { id: 'rights', label: 'Ask for the reason you are being questioned.', hint: 'Stand up for your right to an answer.', next: 'c1-cost', effects: [{ key: 'officialAttention', add: 2 }, { key: 'workerTrust', add: 1 }, { key: 'toldGuard', set: false }], journal: 'You asked the guard to explain the questioning before answering.' }
+            ]
+        },
+        'c1-cost': {
+            id: 'c1-cost', title: 'What You Can Carry', location: 'Thule · Home Passage', speaker: 'Narrator',
+            text: [
+                'At last the guard lets you through without raising his voice or making a direct threat. “We may speak again,” he says, and the rest of the walk home feels longer than it should.',
+                'Your shift has ended, but the questions have followed you home. People may be missing, yet the public record insists no one went anywhere. You must decide what to carry into tomorrow.',
+                'You think of what you have left: a record, perhaps, or only a memory. A witness who spoke because they trusted you. A friend who may now be in danger. None of them asked to carry this alone.',
+                'You cannot protect everyone with one decision, and the Concord has already begun asking questions.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['You still have a copy connected to the transport. It could help another person believe you. It could also bring an officer to your door.'] },
+                { when: [{ key: 'evidence', equals: 'memory' }], text: ['You know what you saw, but a report with no copy will be easy to dismiss. Perhaps another person can tell the same story.'] },
+                { when: [{ key: 'witnessProtected', equals: true }], text: ['At least one frightened person is safer because of what you did today. That does not tell you where the missing workers went.'] },
+                { when: [{ key: 'toldGuard', equals: true }], text: ['You answered the guard with part of the truth. That may help if he checks the records for himself. It may also make him return for the rest.'] },
+                { when: [{ key: 'toldGuard', equals: false }], text: ['You gave the guard little to use. For tonight, that feels like a small kind of safety. It does not erase the questions he asked.'] }
+            ],
+            choices: [
+                { id: 'secure', label: 'Hide the evidence in a place only you know.', hint: 'Protect what you can prove.', next: 'c1-dusk', effects: [{ key: 'evidenceSecured', set: true }, { key: 'caution', add: 1 }], journal: 'You secured the evidence you have, or wrote down a clear memory to preserve it.' },
+                { id: 'people', label: 'Check whether the witnesses are safe.', hint: 'Put people before paper.', next: 'c1-dusk', effects: [{ key: 'witnessProtected', set: true }, { key: 'evidenceSecured', set: false }, { key: 'workerTrust', add: 1 }], journal: 'You spent the evening checking on the people whose words might put them at risk.' },
+                { id: 'message', label: 'Write a careful message about what happened.', hint: 'Create a record that may outlast you.', next: 'c1-dusk', effects: [{ key: 'messageWritten', set: true }, { key: 'officialAttention', add: 1 }], journal: 'You made a private written account of the day and stored a copy.' }
+            ]
+        },
+        'c1-dusk': {
+            id: 'c1-dusk', title: 'A Promise for Tomorrow', location: 'Thule · Sleeping Ring', speaker: 'Narrator',
+            text: [
+                'The final bell marks the end of the day, and most of the living ring falls quiet. Your room is warm enough for sleep, but you remain awake in your chair.',
+                'One notice has told an entire station not to trust its own eyes. You’ve seen what fear can do in a single day. You’ve also seen what people are willing to risk for someone they barely know.',
+                'A soft knock draws you to the door, but no one answers when you call. The corridor is empty. Only a plain envelope rests on the floor, with no name or mark to show who left it.',
+                'Inside is a card with four words: “Ask who wrote it.” There is no address, no signature, and no hint of who knows you were looking at Transit 17.',
+                'You set the card beside your bed. In the morning, the bells will ring again, and the station will expect you to work as though nothing happened. But someone has found your door, and whoever sent the card may be closer than you think.'
+            ],
+            byFlag: [
+                { when: [{ key: 'seraPromise', equals: true }], text: ['You remember what you promised Sera. Promises are easy beside a quiet garden. Keeping one may be much harder when someone offers you a way out.'] },
+                { when: [{ key: 'homeCommitment', equals: 'care' }], text: ['Someone at home is sleeping more easily because you made time for them today. You hope the next few days will let you do that again.'] },
+                { when: [{ key: 'evidenceSecured', equals: true }], text: ['Your notes are hidden, though you cannot know whether their hiding place will stay safe.'] },
+            ],
+            choices: [
+                { id: 'search', label: 'Find out who changed the record.', hint: 'Follow the truth wherever it leads.', next: 'c1-end', effects: [{ key: 'promise', set: 'search' }], journal: 'You decided to search for the person who changed the transport record.' },
+                { id: 'families', label: 'Stand beside the families asking for answers.', hint: 'Protect people before chasing power.', next: 'c1-end', effects: [{ key: 'promise', set: 'families' }, { key: 'workerTrust', add: 1 }], journal: 'You decided to help the families who want answers about the missing workers.' },
+                { id: 'careful', label: 'Move carefully and learn who can be trusted.', hint: 'Protect your future while investigating.', next: 'c1-end', effects: [{ key: 'promise', set: 'careful' }, { key: 'caution', add: 1 }], journal: 'You decided to keep investigating, but to watch whom you trust.' }
+            ]
+        },
+        'c1-end': {
+            id: 'c1-end', title: 'Chapter One Complete', location: 'Thule · End of Day', speaker: 'Narrator',
+            text: [
+                'The first day is over. You made choices that other people will remember. Some of them may thank you. Others may ask difficult questions.',
+                'Your journal now holds the decisions you made. Your job and upbringing remain part of your history. They will matter again when the story continues.',
+                'The next chapter is still in development. You can save your progress, export your game, or begin a new life on Thule with a different background.'
+            ], choices: []
+        }
+    };
+})(Tierfall || (Tierfall = {}));
+var Tierfall;
+(function (Tierfall) {
+    let game = null;
+    let currentTab = 'journal';
+    let fontScale = 1;
+    let showHelp = false;
+    const $ = (sel) => {
+        const el = document.querySelector(sel);
+        if (!el)
+            throw new Error('Missing element ' + sel);
+        return el;
+    };
+    function el(tag, cls = '', textValue) {
+        const x = document.createElement(tag);
+        if (cls)
+            x.className = cls;
+        if (textValue !== undefined)
+            x.textContent = textValue;
+        return x;
+    }
+    function announce(text) {
+        $('#notice').textContent = text;
+        $('#notice').classList.add('show');
+        window.setTimeout(() => $('#notice').classList.remove('show'), 3200);
+    }
+    function storagePut() {
+        if (!game)
+            return;
+        try {
+            Tierfall.saveState(game, localStorage);
+            $('#save-status').textContent = 'Saved on this device';
+        }
+        catch {
+            $('#save-status').textContent = 'Local saving unavailable · use Export';
+        }
+    }
+    function buildSetup() {
+        $('#setup').classList.remove('hidden');
+        $('#game').classList.add('hidden');
+        const first = $('#player-first');
+        first.value = 'Kesh';
+        $('#player-second').value = 'Varro';
+        $('#player-nickname').value = '';
+        first.focus();
+        const random = $('#random-start');
+        random.onclick = () => {
+            const o = Object.keys(Tierfall.origins);
+            const u = Object.keys(Tierfall.upbringings);
+            $('#origin').value = o[Math.floor(Math.random() * o.length)];
+            $('#upbringing').value = u[Math.floor(Math.random() * u.length)];
+            announce('Random background selected. You can still change it.');
+        };
+        $('#setup-import').onclick = () => $('#import-file').click();
+        $('#start').onclick = () => {
+            const firstName = $('#player-first').value.trim() || 'Kesh';
+            const secondName = $('#player-second').value.trim();
+            const nickname = $('#player-nickname').value.trim();
+            const n = [firstName, secondName].filter(Boolean).join(' ');
+            const origin = $('#origin').value;
+            const home = $('#upbringing').value;
+            const pronouns = $('#pronouns').value;
+            game = Tierfall.newGame(n, pronouns, origin, home, { firstName, secondName, nickname });
+            storagePut();
+            render();
+        };
+    }
+    function makeTextBlock(text, className = 'narrative-paragraph') {
+        return el('p', className, text);
+    }
+    function choose(choice) {
+        if (!game)
+            return;
+        try {
+            game = Tierfall.step(game, choice.id);
+            storagePut();
+            render();
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        }
+        catch {
+            announce('This choice could not be completed. Please reload your save.');
+        }
+    }
+    function getCoverText() {
+        if (!game)
+            return 'Unknown';
+        const n = Number(game.flags.officialAttention || 0);
+        return n >= 7 ? 'Under Watch' : n >= 4 ? 'Questions Raised' : 'Noted Quietly';
+    }
+    function status() {
+        if (!game)
+            return;
+        $('#profile-name').textContent = Tierfall.getNames(game).full;
+        $('#profile-alias').textContent = Tierfall.getNames(game).nickname ? 'Known as “' + Tierfall.getNames(game).nickname + '” to close friends' : 'Your friends know your first name';
+        $('#profile-background').textContent = Tierfall.origins[game.origin] + ' · ' + Tierfall.upbringings[game.upbringing];
+        $('#profile-rank').textContent = 'RANK V  ·  LEAD  ·  LEADBORN';
+        $('#cover').textContent = getCoverText();
+        const isPrologue = game.sceneId.startsWith('p-');
+        const progress = Math.min(100, Math.round(game.history.length / 11 * 100));
+        $('#progress-bar').style.width = progress + '%';
+        $('#progress-count').textContent = isPrologue ? 'Prologue · World introduction' : game.finished ? 'Chapter complete' : `Chapter 1 · ${progress}%`;
+        $('#chapter-label').textContent = isPrologue ? 'PROLOGUE · THE REACH' : game.finished ? 'CHAPTER COMPLETE' : 'ACT I   /   CHAPTER 1';
+    }
+    function renderAside() {
+        if (!game)
+            return;
+        $('#aside-tabs').querySelectorAll('.aside-tab').forEach(btn => {
+            btn.setAttribute('aria-selected', String(btn.dataset.tab === currentTab));
+            btn.classList.toggle('selected', btn.dataset.tab === currentTab);
+        });
+        const target = $('#aside-content');
+        target.replaceChildren();
+        if (currentTab === 'journal') {
+            if (!game.journal.length)
+                target.appendChild(el('p', 'muted small', 'Your decisions will appear here as you play.'));
+            else
+                [...game.journal].reverse().forEach(e => {
+                    const item = el('article', 'journal-entry');
+                    item.appendChild(el('h4', '', e.title));
+                    item.appendChild(el('p', '', e.text));
+                    target.appendChild(item);
+                });
+        }
+        else if (currentTab === 'world') {
+            const world = el('div', 'world-guide');
+            const title = el('h3', '', 'The Halcyon Reach');
+            world.appendChild(title);
+            const chart = document.querySelector('#world-map');
+            if (chart) { const map = chart.cloneNode(true); map.removeAttribute('id'); map.classList.remove('hidden'); world.appendChild(map); }
+            const rankTitle = el('h4', '', 'The Five Ranks · Highest to Lowest');
+            world.appendChild(rankTitle);
+            const ranks = [
+                'I · Platinum · Crestborn — rulers and noble houses',
+                'II · Steel · Steelward — soldiers and guards',
+                'III · Brass · Brasswright — engineers and physicians',
+                'IV · Copper · Copperhand — clerks and traders',
+                'V · Lead · Leadborn — workers and laborers'
+            ];
+            ranks.forEach(x => world.appendChild(el('p', 'guide-entry', x)));
+            world.appendChild(el('h4', '', 'Political Groups'));
+            [
+                'Concord — the ruling government; some defend the ranks, others want reform.',
+                'Undertow — a secret resistance; its members disagree on how change should happen.',
+                'Drift Guild — traders and transport operators who deal with many sides.'
+            ].forEach(x => world.appendChild(el('p', 'guide-entry', x)));
+            world.appendChild(el('p', 'muted small', 'Birth rank, legal freedom, job, and political beliefs are different things.'));
+            target.appendChild(world);
+        }
+        else {
+            [
+                { name: 'Sera Venn', desc: 'Old friend · Rank V · Leadborn' },
+                ...(game.history.length >= 6 ? [{ name: 'Jalen Orr', desc: 'Worker organizer · Rank V · Leadborn' }] : [])
+            ].forEach(p => {
+                const item = el('article', 'person-entry');
+                item.appendChild(el('span', 'mini-portrait', p.name.split(' ').map(w => w[0]).join('')));
+                const texts = el('div');
+                texts.append(el('strong', '', p.name), el('p', 'muted small', p.desc));
+                item.appendChild(texts);
+                target.appendChild(item);
+            });
+            target.appendChild(el('p', 'muted small', 'New people appear as you meet them. Your rank is different from a political faction.'));
+        }
+    }
+    function render() {
+        if (!game) {
+            buildSetup();
+            return;
+        }
+        $('#setup').classList.add('hidden');
+        $('#game').classList.remove('hidden');
+        const scene = Tierfall.scenes[game.sceneId];
+        $('#world-map').classList.toggle('hidden', game.sceneId !== 'p-reach');
+        $('#scene-title').textContent = scene.title;
+        $('#scene-location').textContent = scene.location;
+        $('#speaker-name').textContent = scene.speaker || 'Narrator';
+        $('#speaker-initials').textContent = scene.speaker === 'Sera Venn' ? 'SV' : scene.speaker === 'Jalen Orr' ? 'JO' : '✦';
+        $('#prose').replaceChildren(...Tierfall.sceneParagraphs(game).map(t => makeTextBlock(t)));
+        const buttons = $('#choices');
+        buttons.replaceChildren();
+        if (game.finished) {
+            const end = el('div', 'end-note');
+            end.append(el('strong', '', 'Your chapter is complete.'), el('p', '', 'Your choices are saved. The next chapter is in development. You can export your save or try another background.'));
+            buttons.appendChild(end);
+        }
+        else {
+            scene.choices.filter(c => Tierfall.pass(game, c.when)).forEach((choice, index) => {
+                const btn = el('button', 'choice');
+                btn.setAttribute('type', 'button');
+                const letter = el('span', 'choice-letter', String(index + 1));
+                const middle = el('span', 'choice-copy');
+                middle.appendChild(el('strong', '', Tierfall.tokens(choice.label, game)));
+                if (choice.hint)
+                    middle.appendChild(el('small', '', Tierfall.tokens(choice.hint, game)));
+                btn.append(letter, middle, el('span', 'choice-chevron', '›'));
+                btn.onclick = () => choose(choice);
+                buttons.appendChild(btn);
+            });
+        }
+        $('#narrative').setAttribute('aria-label', 'Story: ' + scene.title);
+        status();
+        renderAside();
+    }
+    function exportSave() {
+        if (!game)
+            return announce('Start a game first.');
+        const blob = new Blob([JSON.stringify(game, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'tierfall-save.json';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        announce('Save exported. Keep the file somewhere safe.');
+    }
+    function importSave(file) {
+        if (!file)
+            return;
+        if (file.size > 1024 * 1024)
+            return announce('That save file is too large.');
+        file.text().then(content => {
+            const state = Tierfall.validateState(JSON.parse(content));
+            game = state;
+            storagePut();
+            render();
+            announce('Save imported.');
+        }).catch(() => announce('The selected file is not a valid Tierfall save.'));
+    }
+    function setupControls() {
+        $('#save-button').onclick = () => { if (!game) {
+            announce('Start a game first.');
+            return;
+        } storagePut(); announce('Progress saved.'); };
+        $('#export-button').onclick = exportSave;
+        $('#import-button').onclick = () => $('#import-file').click();
+        $('#import-file').onchange = e => {
+            importSave(e.target.files?.[0]);
+            e.target.value = '';
+        };
+        $('#new-game').onclick = () => {
+            if (game && !confirm('Begin a new story? This will replace your current device save. Export it first if you want to keep it.'))
+                return;
+            game = null;
+            buildSetup();
+        };
+        $('#font-up').onclick = () => { fontScale = Math.min(1.3, +(fontScale + 0.1).toFixed(2)); document.documentElement.style.setProperty('--font-scale', String(fontScale)); };
+        $('#font-down').onclick = () => { fontScale = Math.max(.85, +(fontScale - 0.1).toFixed(2)); document.documentElement.style.setProperty('--font-scale', String(fontScale)); };
+        $('#help-button').onclick = () => { showHelp = !showHelp; $('#help-panel').classList.toggle('hidden', !showHelp); };
+        $('#aside-tabs').querySelectorAll('.aside-tab').forEach(button => button.onclick = () => {
+            currentTab = ['people', 'world'].includes(button.dataset.tab) ? button.dataset.tab : 'journal';
+            renderAside();
+        });
+        document.addEventListener('keydown', ev => {
+            if (!game || ev.ctrlKey || ev.altKey || ev.metaKey || /INPUT|TEXTAREA|SELECT/.test(ev.target?.tagName || ''))
+                return;
+            const number = Number(ev.key);
+            if (number >= 1 && number <= 5 && !game.finished) {
+                const choice = Tierfall.scenes[game.sceneId].choices.filter(c => Tierfall.pass(game, c.when))[number - 1];
+                if (choice) {
+                    ev.preventDefault();
+                    choose(choice);
+                }
+            }
+        });
+    }
+    function boot() {
+        setupControls();
+        try {
+            game = Tierfall.loadState(localStorage);
+        }
+        catch {
+            game = null;
+            announce('Could not read a saved game. You can import a save or start again.');
+        }
+        render();
+    }
+    Tierfall.boot = boot;
+})(Tierfall || (Tierfall = {}));
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading')
+        document.addEventListener('DOMContentLoaded', () => Tierfall.boot());
+    else
+        Tierfall.boot();
+}
+
+</script>
+</body>
+</html>
