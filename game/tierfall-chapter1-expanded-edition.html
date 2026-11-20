@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0B0D12" />
+  <meta name="description" content="Tierfall — a story-first science-fiction RPG where your choices matter." />
+  <title>Tierfall | A Choice-Driven Story</title>
+  <style>
+:root{--void:#0b0d12;--slate:#141923;--slate2:#1b222e;--ink:#0c1017;--line:#313a46;--muted:#aeb7c2;--light:#f2f0e7;--brass:#d9b873;--alert:#e37752;--font-scale:1;color-scheme:dark}
+*{box-sizing:border-box}html{background:var(--void);scroll-behavior:smooth}body{margin:0;color:var(--light);background:radial-gradient(ellipse at 80% 0%,#242734 0%,transparent 45%),var(--void);font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer;transition:background .18s,border-color .18s,transform .18s}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--brass);outline-offset:3px}button:active{transform:translateY(1px)}.hidden{display:none!important}.shell{max-width:1420px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,48px);border-bottom:1px solid #343a45;position:relative;z-index:5;background:rgba(11,13,18,.92)}.brand{display:flex;align-items:center;gap:12px;letter-spacing:.29em;font-weight:850;font-size:1.03rem}.brand-symbol{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--brass);border-radius:3px;color:var(--brass);font-size:1.6rem;letter-spacing:0}.brand-early{font-size:.57rem;font-weight:600;letter-spacing:.19em;color:#9da6b2;border-left:1px solid #48505a;padding-left:13px;margin-left:3px}.actions{display:flex;align-items:center;gap:7px}.small-button{border:1px solid #48515e;background:#161c25;color:#d5dce3;padding:8px 11px;border-radius:7px;font-size:.84rem;font-weight:600;min-height:36px}.small-button:hover{background:#28313e}.help-panel{padding:18px clamp(20px,4vw,48px);background:#282e39;border-bottom:1px solid #566170}.help-panel p{max-width:800px;margin:5px 0 0;color:#d6dce2;font-size:.91rem}.help-panel kbd{border:1px solid #737c89;padding:1px 5px;border-radius:4px}.eyebrow,.rank-label{color:var(--brass);text-transform:uppercase;font-size:.68rem;letter-spacing:.2em;font-weight:750}.muted{color:var(--muted)}.small{font-size:.82rem}.setup-page{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(345px,.88fr);flex:1}.setup-hero{position:relative;isolation:isolate;min-height:680px;overflow:hidden;padding:clamp(50px,7vw,110px) 36px 60px clamp(26px,5vw,74px);background:linear-gradient(148deg,rgba(11,13,18,.8),rgba(12,16,26,.6) 40%,rgba(14,22,31,.9)),radial-gradient(ellipse at 70% 72%,#3d414c,transparent 48%),#10151e}.setup-hero:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 81px,rgba(196,206,215,.035) 82px,transparent 84px);z-index:-1}.setup-hero h1{position:relative;font-size:clamp(3rem,5vw,5.3rem);line-height:1.04;letter-spacing:-.055em;font-weight:850;margin:28px 0 24px;max-width:600px}.setup-hero h1 em{font-style:normal;color:var(--brass)}.setup-hero>p{position:relative;max-width:470px;color:#ced3da;font-size:1.08rem;line-height:1.75}.planet{position:absolute;right:-140px;bottom:-280px;width:min(800px,95vw);height:min(800px,95vw);border-radius:50%;background:radial-gradient(circle at 28% 19%,rgba(224,234,244,.18),transparent 23%),radial-gradient(circle at 37% 38%,#7b8290 0%,#404c59 28%,#202c39 46%,#0d1320 65%);box-shadow:inset -70px -100px 120px #0c111a,0 0 120px rgba(159,183,209,.13);z-index:-2;opacity:.8}.planet:after{content:'';position:absolute;inset:30px;border:1px solid rgba(230,235,244,.14);border-radius:50%}.create-card{margin:auto;width:min(500px,94%);padding:35px 28px 38px}.create-card h2{font-size:2.15rem;letter-spacing:-.04em;margin:8px 0 12px}.create-card>.muted{max-width:430px;margin:0 0 25px}.create-card label{display:block;margin:15px 0 6px;font-size:.82rem;font-weight:700;color:#e1e6ed}.create-card select,.create-card input{display:block;background:#1c2430;color:#f2f0e7;padding:12px 14px;border:1px solid #495360;border-radius:8px;width:100%;min-height:47px}.create-card option{background:#1c2430}.create-card input:hover,.create-card select:hover{border-color:#939da8}.setup-buttons{display:grid;gap:10px;margin-top:25px}.primary-button{border:1px solid #d6b56f;background:#d9b873;color:#171c23;border-radius:8px;padding:13px 18px;font-weight:800;display:flex;justify-content:space-between;align-items:center}.primary-button:hover{background:#efd090}.secondary-button{background:#1a212c;color:#e0e7ef;border:1px solid #5b6674;border-radius:7px;padding:10px 15px;font-size:.88rem;font-weight:700}.secondary-button:hover{background:#2a3443}.footnote{font-size:.74rem;margin-top:22px}.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:0;flex:1}.story-panel{background:#0e141d;min-width:0;border-right:1px solid #323b4b}.scene-art{height:260px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(12,17,24,.18) 0%,rgba(13,18,27,.1) 65%,#121924 100%),radial-gradient(ellipse at 62% 24%,#556174 0%,#273343 24%,#111925 60%,#0b1119 100%)}.scene-art:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0d141e 0%,transparent 38%),repeating-linear-gradient(90deg,transparent 0 62px,rgba(168,182,196,.13) 64px,transparent 65px);opacity:.5}.art-moon{position:absolute;width:210px;height:210px;border-radius:100%;right:15%;top:-115px;background:radial-gradient(circle at 33% 45%,#adb8c7,#535e6d 48%,#1a2732 72%);box-shadow:0 0 46px rgba(153,185,206,.19)}.art-city{position:absolute;bottom:-4px;right:0;left:0;height:120px;background:linear-gradient(0deg,#0b121b,#273340 72%,transparent);clip-path:polygon(0 100%,0 57%,5% 57%,5% 30%,9% 30%,9% 67%,14% 67%,14% 43%,19% 43%,19% 20%,23% 20%,23% 67%,29% 67%,29% 37%,35% 37%,35% 66%,40% 66%,40% 21%,46% 21%,46% 42%,50% 42%,50% 7%,54% 7%,54% 60%,58% 60%,58% 44%,65% 44%,65% 72%,70% 72%,70% 25%,75% 25%,75% 60%,81% 60%,81% 44%,86% 44%,86% 14%,90% 14%,90% 69%,96% 69%,96% 40%,100% 40%,100% 100%)}.art-rail{position:absolute;top:0;bottom:0;width:28px;border-left:3px solid rgba(148,159,171,.26);border-right:3px solid rgba(148,159,171,.12);transform:skewX(-13deg)}.rail-one{left:20%}.rail-two{left:72%}.story-content{max-width:790px;margin:0 auto;padding:36px clamp(20px,5vw,65px) 70px}.story-meta{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;color:#aab9c7;font-size:.7rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase}.story-meta span:first-child{color:var(--brass)}.story-heading{margin:24px 0 25px}.separator{width:40px;height:2px;background:var(--brass);margin-bottom:16px}.story-heading h1{font-size:clamp(1.9rem,3vw,2.55rem);letter-spacing:-.035em;line-height:1.17;margin:0}.speaker{display:flex;align-items:center;gap:14px;margin-bottom:22px}.speaker-portrait{height:55px;width:55px;flex:none;border:1px solid #687889;background:linear-gradient(140deg,#354454,#131f2b);display:grid;place-items:center;border-radius:7px;font-family:Georgia,serif;font-size:1.2rem;color:#e4c892}.speaker-caption{display:block;font-size:.62rem;color:#a5afbd;letter-spacing:.15em}.speaker strong{display:block;font-size:.94rem;margin-top:2px}.prose{font-family:ui-serif,Georgia,Cambria,'Times New Roman',serif;font-size:calc(1.09rem * var(--font-scale));line-height:1.86;letter-spacing:.003em;color:#e2e5e5}.narrative-paragraph{margin:0 0 1.2em}.narrative-paragraph:last-child{margin-bottom:0}.choice-heading{margin:34px 0 15px;padding-top:19px;border-top:1px solid #37414d;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.68rem;font-weight:800;letter-spacing:.18em;color:var(--brass)}.choice-subtitle{color:#a0aebc;letter-spacing:0;font-size:.76rem;font-weight:500}.choices{display:grid;gap:10px}.choice{display:flex;align-items:center;text-align:left;padding:14px 18px;gap:16px;min-height:70px;background:#1b2632;border:1px solid #44515e;color:#f0f1f3;border-radius:9px;width:100%}.choice:hover,.choice:focus-visible{border-color:#c9a25b;background:#2a3542}.choice-letter{height:31px;width:31px;border:1px solid #718090;border-radius:6px;display:grid;place-items:center;flex:none;color:#d6c39c;font-size:.83rem;font-weight:750}.choice-copy{flex:1}.choice-copy strong{display:block;font-weight:680;line-height:1.35;font-size:calc(.96rem * var(--font-scale))}.choice-copy small{display:block;color:#b1bdc8;margin-top:4px;font-size:.76rem}.choice-chevron{color:#d5b06a;font-size:1.5rem}.saved-text{font-size:.69rem;letter-spacing:.04em;color:#8795a6;text-align:right;margin-top:18px}.end-note{background:#252d34;padding:24px;border:1px solid #80714c;border-radius:9px}.end-note p{margin:8px 0 0;color:#ccd5df}.sidebar{background:linear-gradient(180deg,#161c25,#121821);min-width:0;display:flex;flex-direction:column}.identity-card{padding:29px 23px 19px;border-bottom:1px solid #333f4b}.identity-card h2{font-size:1.3rem;margin:10px 0 8px;line-height:1.2}.identity-card .rank-label{margin:0 0 9px;font-size:.72rem}.identity-card .small{margin:0;line-height:1.6}.side-section{padding:20px 23px;border-bottom:1px solid #333f4b}.stat-row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.77rem;margin-bottom:12px;color:#a6b0bc}.stat-row strong{color:#dbdfe5;font-size:.77rem;text-align:right}.progress-track{height:4px;background:#374452;overflow:hidden;border-radius:6px;margin-top:15px}.progress-inner{height:100%;width:0;background:var(--brass);transition:width .35s}.aside-tabs{display:grid;grid-template-columns:1fr 1fr;padding:0 23px;border-bottom:1px solid #333f4b}.aside-tab{padding:17px 8px;background:transparent;color:#aeb8c5;font-weight:650;font-size:.84rem;border:0;border-bottom:2px solid transparent}.aside-tab.selected{color:var(--brass);border-bottom-color:var(--brass)}.aside-content{padding:20px 23px;max-height:410px;overflow:auto;flex:1}.journal-entry{margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid #34404c}.journal-entry h4{font-size:.82rem;margin:0 0 7px;color:#e8d1a2}.journal-entry p{font-size:.78rem;line-height:1.65;color:#bdc7d2;margin:0}.person-entry{display:flex;gap:12px;margin-bottom:15px;align-items:center}.mini-portrait{flex:none;height:37px;width:37px;border:1px solid #5e6d7a;border-radius:5px;background:#273648;display:grid;place-items:center;color:#ead7a9;font-size:.75rem}.person-entry strong{font-size:.8rem}.person-entry p{margin:2px 0 0}.sidebar-tools{display:grid;gap:9px;padding:18px 23px 26px;border-top:1px solid #333f4b}.text-button{background:transparent;border:0;color:#aeb8c5;font-size:.8rem;padding:8px;text-decoration:underline;text-underline-offset:3px}.text-button:hover{color:#f4d49e}.footer{display:flex;justify-content:space-between;padding:17px clamp(18px,4vw,48px);color:#7f8b99;font-size:.65rem;letter-spacing:.13em;border-top:1px solid #303744;gap:12px}.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,12px);background:#26313d;border:1px solid #a99a75;color:#f4eddf;border-radius:8px;padding:12px 20px;box-shadow:0 16px 40px #0009;opacity:0;pointer-events:none;z-index:40;transition:opacity .2s,transform .2s;font-size:.84rem;max-width:min(90vw,550px)}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1030px){.game-layout{grid-template-columns:minmax(0,1fr) 270px}.story-content{padding:30px 32px 58px}.sidebar-tools,.aside-content,.identity-card,.side-section{padding-left:17px;padding-right:17px}.setup-page{grid-template-columns:1fr 1fr}.setup-hero{padding-left:32px}}
+@media(max-width:760px){.topbar{height:61px;padding:0 16px}.brand{font-size:.86rem;gap:8px;letter-spacing:.18em}.brand-symbol{width:28px;height:28px}.brand-early{display:none}.hide-on-mobile{display:none}.setup-page{display:flex;flex-direction:column}.setup-hero{min-height:290px;padding:38px 23px}.setup-hero h1{font-size:2.6rem;margin:14px 0 10px}.setup-hero>p{font-size:.95rem;max-width:420px}.planet{right:-100px;bottom:-220px;width:440px;height:440px}.create-card{padding:25px 17px 40px;width:min(510px,100%)}.game-layout{display:flex;flex-direction:column}.story-panel{border-right:0}.scene-art{height:165px}.story-content{padding:27px 22px 40px}.story-heading{margin:16px 0 21px}.choice{padding:13px 12px;gap:11px}.choice-heading{align-items:flex-start;flex-direction:column;gap:4px}.sidebar{border-top:1px solid #49535e}.aside-content{max-height:300px}.sidebar-tools{grid-template-columns:1fr 1fr}.sidebar-tools .text-button{grid-column:1 / -1}.footer{font-size:.56rem;letter-spacing:.05em;flex-direction:column;gap:3px}}
+@media(max-width:420px){.actions{gap:4px}.small-button{min-height:34px;padding:7px 8px}.story-content{padding:24px 17px 38px}.prose{font-size:calc(1.02rem * var(--font-scale));line-height:1.78}.scene-art{height:138px}.story-meta{font-size:.59rem}.choice-copy strong{font-size:.88rem}.choice-copy small{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button,.progress-inner,.toast{transition:none!important}}
+
+
+/* World introduction and reference guide */
+.world-map{border:1px solid #4a5a68;border-radius:12px;background:radial-gradient(ellipse at center,#253446 0%,#131b28 66%);margin-bottom:27px;padding:18px 14px 8px;overflow:hidden}
+.world-map-header{display:flex;justify-content:space-between;gap:12px;color:#ead39f;letter-spacing:.13em;font-size:.71rem}
+.world-map-header span{color:#aab6c3;font-size:.62rem}.reach-chart{display:block;width:100%;height:auto;max-height:310px}.map-caption{color:#bdc9d4;font-size:.75rem;line-height:1.5;margin:0 8px 9px}
+.aside-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aside-tab{padding:15px 3px;font-size:.76rem}
+.world-guide h3{font-size:1rem;margin:0 0 12px}.world-guide h4{font-size:.83rem;color:#ead39f;margin:19px 0 9px}.world-guide .world-map{padding:6px;margin:0 -4px 12px}.world-guide .world-map-header{font-size:.53rem}.world-guide .reach-chart{min-height:140px}.world-guide .map-caption{font-size:.66rem}.guide-entry{font-size:.8rem;color:#d4dce3;line-height:1.55;padding:0 0 8px;margin:0}
+@media(max-width:760px){.world-map{padding:12px 8px 4px}.world-map-header{font-size:.61rem}.world-map-header span{font-size:.53rem}.reach-chart{min-height:140px}}
+
+.name-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.name-fields label{margin-top:12px}.name-tip{font-size:.72rem;margin:7px 0 0}.identity-card #profile-alias{margin-bottom:10px;color:#c7d2df}@media(max-width:430px){.name-fields{grid-template-columns:1fr;gap:0}}
+
+/* Immediate, spoiler-safe response to the last chosen action */
+.choice-response{padding:15px 18px 16px;margin:0 0 23px;background:#1c2931;border-left:3px solid #d9b873;border-radius:0 9px 9px 0}.choice-response p{margin:7px 0 0;color:#e2e5e5;font-family:ui-serif,Georgia,serif;line-height:1.7;font-size:calc(1rem * var(--font-scale))}.response-label{color:#edd5a3;text-transform:uppercase;font-size:.67rem;font-weight:800;letter-spacing:.11em}
+.option-line{display:flex!important;align-items:center;gap:10px;margin:19px 0 0!important;font-weight:500!important;font-size:.82rem!important;color:#d1d9df!important}.option-line input{appearance:auto;width:18px;height:18px;min-height:0;flex:none;accent-color:#d9b873}.prologue-skip{margin-top:15px;padding:8px 0;color:#ddc79b;text-decoration:underline;text-underline-offset:4px}
+.aside-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:0 8px;gap:0}.aside-tab{padding:13px 2px;font-size:.69rem}.glossary-head h3,.recap-heading{font-size:1rem;color:#e6c68c;margin:0 0 7px}.glossary-head p{margin:0 0 14px}.glossary-search{width:100%;min-height:39px;border-radius:7px;border:1px solid #556371;background:#111a23;color:#f2f0e7;padding:9px 11px;font-size:.82rem;margin-bottom:9px}.glossary-entry{border-bottom:1px solid #323f4b;padding:12px 0}.glossary-group{text-transform:uppercase;letter-spacing:.1em;color:#abbdcb;font-size:.6rem}.glossary-entry h4{margin:3px 0;font-size:.84rem;color:#e5d09d}.glossary-entry p{margin:4px 0 0;font-size:.78rem;color:#c0cad3;line-height:1.65}
+@media(max-width:380px){.aside-tab{font-size:.62rem;letter-spacing:-.03em}}
+
+.recap-subheading{font-size:.84rem;margin:18px 0 5px;color:#ead3a6}.recap-summary{font-size:.81rem;color:#dce0e3;line-height:1.7}.recap-beat{border-left:2px solid #8b7650;padding:2px 0 4px 10px;margin:12px 0}.recap-place{font-size:.68rem;color:#b7c4ce}.recap-beat p{font-size:.81rem;margin:4px 0 0;color:#efebdf}.recap-overlay{position:fixed;inset:0;z-index:60;background:rgba(4,7,11,.84);display:flex;justify-content:center;align-items:center;padding:22px}.recap-modal-card{width:min(490px,95vw);max-height:90vh;overflow:auto;border:1px solid #766b53;background:#19212d;border-radius:14px;padding:28px;box-shadow:0 25px 80px #000b}.recap-modal-card h2{font-size:1.6rem;margin:8px 0 12px}.recap-modal-decision{font-size:.85rem;border-left:2px solid #c3a66e;padding-left:10px;color:#dce2e5}.recap-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.recap-actions button{flex:1;min-width:140px}.modal-open{overflow:hidden}
+
+.speaker-portrait{width:84px;height:100px;overflow:hidden;background:linear-gradient(140deg,#354454,#131f2b)}.speaker-image{height:100%;width:100%;display:block;object-fit:cover;object-position:center 24%}.person-picture{width:56px;height:72px;object-fit:cover;object-position:center 25%;display:block}.person-details{flex:1;min-width:0}.person-appearance{color:#b6c0ca!important;font-size:.69rem!important}.person-rename-button{padding:5px 0;text-decoration:underline;text-underline-offset:3px;font-size:.74rem}.person-name-input{width:100%;background:#111c27;color:#f2f0e7;border:1px solid #83909a;border-radius:5px;padding:7px;font-size:.83rem;margin-top:7px}.person-details>.small-button{font-size:.73rem;margin-top:7px;padding:5px 9px}.edit-player-name{padding:2px 0 8px;font-size:.73rem}.person-entry{align-items:flex-start;padding-bottom:12px;border-bottom:1px solid #2d3642}
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="Tierfall"><span class="brand-symbol" aria-hidden="true">◇</span><span>TIERFALL</span><span class="brand-early">PROLOGUE + CHAPTER ONE</span></div>
+      <div class="actions">
+        <button id="font-down" class="small-button" title="Smaller text" aria-label="Decrease text size">A−</button>
+        <button id="font-up" class="small-button" title="Larger text" aria-label="Increase text size">A+</button>
+        <button id="help-button" class="small-button" title="Help" aria-label="Help">?</button>
+        <button id="save-button" class="small-button hide-on-mobile" title="Save progress">Save</button>
+      </div>
+    </header>
+    <section id="help-panel" class="help-panel hidden" aria-label="How to play"><strong>How to play</strong><p>Read each scene and choose what you want to say or do. Press <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, or <kbd>4</kbd> to pick a choice. The journal remembers decisions. Your game saves after every choice on this device. Use Export to keep a backup.</p></section>
+    <main id="setup" class="setup-page hidden">
+      <div class="setup-hero">
+        <span class="eyebrow">THE HALCYON REACH</span>
+        <h1>YOUR STORY<br/><em>BEGINS BELOW.</em></h1>
+        <p>Five ranks decide where people live, work, and belong. You were born at the bottom. What happens next depends on you.</p>
+        <div class="planet" aria-hidden="true"></div>
+      </div>
+      <section class="create-card" aria-labelledby="create-title">
+        <p class="eyebrow">NEW STORY</p><h2 id="create-title">Who are you?</h2>
+        <p class="muted">Your job and past change the way you experience the story. No choice is the wrong one.</p>
+        <div class="name-fields"><div><label for="player-first">First name</label><input id="player-first" maxlength="26" autocomplete="given-name" value="Kesh" /></div><div><label for="player-second">Second name / surname</label><input id="player-second" maxlength="26" autocomplete="family-name" value="Varro" /></div></div><label for="player-nickname">Nickname (optional)</label><input id="player-nickname" maxlength="26" autocomplete="off" placeholder="What close friends call you" /><p class="muted name-tip">Friends may use your nickname. Officials use your full name.</p>
+        <label for="pronouns">Pronouns</label><select id="pronouns"><option value="they">They / them</option><option value="she">She / her</option><option value="he">He / him</option></select>
+        <label for="origin">Your job</label><select id="origin"><option value="ward">Ward Attendant — care for patients</option><option value="reclamation">Reclamation Worker — recover machines</option><option value="farmer">Farmer — grow food for the station</option><option value="cargo">Cargo Runner — move goods and cargo</option></select>
+        <label for="upbringing">Your upbringing</label><select id="upbringing"><option value="family">Family Household — raised with relatives</option><option value="communal">Communal Upbringing — raised by a community</option><option value="estranged">Estranged Household — distant family ties</option></select>
+        <label class="option-line"><input id="skip-prologue" type="checkbox" /> Skip world prologue (recommended for replaying)</label>
+        <div class="setup-buttons"><button id="random-start" class="secondary-button">Random background</button><button id="start" class="primary-button">Enter the Reach <span>→</span></button></div>
+        <button id="setup-import" class="text-button" type="button">Have a previous save? Import it</button>
+        <p class="muted footnote">Estimated campaign: 5–10 hours when complete. This early playable preview contains Chapter One only.</p>
+      </section>
+    </main>
+    <div id="game" class="game-layout hidden">
+      <section class="story-panel" id="narrative" aria-label="Story">
+        <div class="scene-art" aria-hidden="true"><div class="art-moon"></div><div class="art-rail rail-one"></div><div class="art-rail rail-two"></div><div class="art-city"></div></div>
+        <div class="story-content">
+<div id="world-map" class="world-map hidden" aria-label="Schematic map of the Halcyon Reach">
+  <div class="world-map-header"><strong>THE HALCYON REACH</strong><span>NOT TO SCALE · KNOWN REGIONS</span></div>
+  <svg class="reach-chart" viewBox="0 0 720 310" role="img" aria-label="Thule worker station, foundry orbits, garden moons, ruling courts, and outer Bastion stations arranged around the central routes">
+    <defs><radialGradient id="starGlow"><stop offset="0" stop-color="#e6c687" stop-opacity=".82"/><stop offset="1" stop-color="#e6c687" stop-opacity=".03"/></radialGradient></defs>
+    <circle cx="367" cy="156" r="118" fill="none" stroke="#586778" stroke-dasharray="3 8" opacity=".55"/>
+    <circle cx="367" cy="156" r="70" fill="none" stroke="#5e7186" stroke-dasharray="3 7" opacity=".45"/>
+    <g stroke="#8294a7" stroke-width="1.5" opacity=".64"><path d="M367 156 L133 206"/><path d="M367 156 L282 66"/><path d="M367 156 L528 70"/><path d="M367 156 L611 212"/><path d="M367 156 L446 252"/></g>
+    <circle cx="367" cy="156" r="30" fill="url(#starGlow)"/><circle cx="367" cy="156" r="6" fill="#efd28e"/>
+    <g font-family="system-ui,sans-serif" font-size="14" fill="#e5ebf0" text-anchor="middle">
+      <circle cx="133" cy="206" r="9" fill="#c9a25b"/><text x="133" y="233" font-weight="700">THULE</text><text x="133" y="252" font-size="11" fill="#aab9c7">Workers' station</text>
+      <circle cx="282" cy="66" r="7" fill="#8fabbf"/><text x="282" y="42">Foundry orbits</text>
+      <circle cx="528" cy="70" r="8" fill="#9aba91"/><text x="528" y="44">Garden moons</text>
+      <circle cx="611" cy="212" r="8" fill="#d3d8e0"/><text x="611" y="238">Ruling courts</text>
+      <circle cx="446" cy="252" r="8" fill="#c08179"/><text x="446" y="284">Bastion stations</text>
+      <text x="367" y="193" font-size="11" fill="#e6cf9c">Central routes</text>
+    </g>
+  </svg>
+  <p class="map-caption">This chart shows major regions, not exact distances or travel routes. Different moons and stations depend on each other for food, parts, labor, and security.</p>
+</div>
+          <div class="story-meta"><span id="chapter-label">ACT I / CHAPTER 1</span><span id="scene-location"></span></div>
+          <div class="story-heading"><div class="separator"></div><h1 id="scene-title"></h1></div>
+          <div class="speaker"><div id="speaker-initials" class="speaker-portrait" aria-hidden="true">✦</div><div><span class="speaker-caption">CURRENT SCENE</span><strong id="speaker-name">Narrator</strong></div></div>
+          <div id="choice-response" class="choice-response hidden" aria-live="polite"><span class="response-label">Your choice mattered</span><p id="choice-response-text"></p></div>
+          <div id="prose" class="prose"></div>
+          <button id="skip-prologue-game" class="text-button prologue-skip hidden" type="button">Skip prologue and begin Chapter 1</button>
+          <div class="choice-heading"><span>YOUR DECISION</span><span class="choice-subtitle">Choose what matters to you.</span></div>
+          <div id="choices" class="choices" role="group" aria-label="Story choices"></div>
+          <p id="save-status" class="saved-text" role="status">Saved on this device</p>
+        </div>
+      </section>
+      <aside class="sidebar" aria-label="Player and journal">
+        <div class="identity-card"><span class="eyebrow">YOUR IDENTITY</span><h2 id="profile-name"></h2><button id="edit-player-name" class="text-button edit-player-name" type="button">Edit your names</button><p id="profile-alias" class="muted small"></p><p id="profile-rank" class="rank-label"></p><p id="profile-background" class="muted small"></p></div>
+        <div class="side-section"><div class="stat-row"><span>Public attention</span><strong id="cover"></strong></div><div class="stat-row"><span id="progress-count">Chapter 1</span><span>Act I</span></div><div class="progress-track"><div id="progress-bar" class="progress-inner"></div></div></div>
+        <div id="aside-tabs" class="aside-tabs" role="tablist" aria-label="Story records"><button class="aside-tab selected" aria-selected="true" data-tab="journal">Journal</button><button class="aside-tab" aria-selected="false" data-tab="people">People</button><button class="aside-tab" aria-selected="false" data-tab="world">World</button><button class="aside-tab" aria-selected="false" data-tab="glossary">Glossary</button><button class="aside-tab" aria-selected="false" data-tab="recap">Recap</button></div>
+        <div id="aside-content" class="aside-content" aria-live="polite"></div>
+        <div class="sidebar-tools"><button id="export-button" class="secondary-button">Export save</button><button id="import-button" class="secondary-button">Import save</button><input id="import-file" type="file" accept=".json,application/json" hidden /><button id="new-game" class="text-button">Start a new story</button></div>
+      </aside>
+    </div>
+    <div id="recap-modal" class="recap-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="recap-modal-title">
+      <section class="recap-modal-card">
+        <span class="eyebrow">WELCOME BACK</span>
+        <h2 id="recap-modal-title">Your story so far</h2>
+        <div id="recap-modal-body"></div>
+        <div class="recap-actions"><button id="recap-review" class="secondary-button">Read full recap</button><button id="recap-continue" class="primary-button">Continue the story →</button></div>
+      </section>
+    </div>
+    <footer class="footer"><span>TIERFALL • FIRST PLAYABLE CHAPTER</span><span>Story-first RPG • Your choices are remembered</span></footer>
+  </div>
+  <div id="notice" role="status" aria-live="polite" class="toast"></div>
+  <script>
+"use strict";
+// SPOILERS possible in story-related source. Player-safe UI and tests must not expose story routes.
+var Tierfall;
+(function (Tierfall) {
+    Tierfall.origins = {
+        ward: 'Ward Attendant', reclamation: 'Reclamation Worker', farmer: 'Farmer', cargo: 'Cargo Runner'
+    };
+    Tierfall.upbringings = {
+        family: 'Family Household', communal: 'Communal Upbringing', estranged: 'Estranged Household'
+    };
+    Tierfall.SAVE_KEY = 'tierfall.chapter1.v1';
+    function newGame(name, pronouns, origin, upbringing, identity = {}) {
+        const previous = safeName(name, 54).split(/\s+/);
+        const firstName = safeNamePart(identity.firstName ?? previous[0]) || 'Kesh';
+        const secondName = safeNamePart(identity.secondName ?? previous.slice(1).join(' '));
+        const nickname = safeNamePart(identity.nickname ?? '');
+        return {
+            version: 1, name: [firstName, secondName].filter(Boolean).join(' '), firstName, secondName, nickname,
+            pronouns, origin, upbringing,
+            sceneId: 'p-reach', flags: { evidence: 'none', witnessProtected: false, friendTrust: 0,
+                workerTrust: 0, officialAttention: 0, homeCommitment: 'none', route: 'none', promise: 'none',
+                caution: 0, clueType: origin }, history: [], journal: [],
+            aliases: {}, startedAt: new Date().toISOString(), finished: false
+        };
+    }
+    Tierfall.newGame = newGame;
+    function pass(state, checks) {
+        return (checks || []).every(c => {
+            const v = state.flags[c.key];
+            if ('equals' in c && v !== c.equals)
+                return false;
+            if ('not' in c && v === c.not)
+                return false;
+            if ('min' in c && (typeof v !== 'number' || v < c.min))
+                return false;
+            return true;
+        });
+    }
+    Tierfall.pass = pass;
+    function applyEffects(flags, effects = []) {
+        const out = { ...flags };
+        for (const effect of effects) {
+            if ('set' in effect && effect.set !== undefined)
+                out[effect.key] = effect.set;
+            if ('add' in effect && effect.add !== undefined)
+                out[effect.key] =
+                    (typeof out[effect.key] === 'number' ? out[effect.key] : 0) + effect.add;
+        }
+        return out;
+    }
+    Tierfall.applyEffects = applyEffects;
+    function step(state, choiceId) {
+        if (state.finished)
+            throw new Error('Chapter already complete');
+        const scene = Tierfall.scenes[state.sceneId];
+        if (!scene)
+            throw new Error('Missing scene: ' + state.sceneId);
+        const choice = scene.choices.find(c => c.id === choiceId);
+        if (!choice || !pass(state, choice.when))
+            throw new Error('Choice unavailable');
+        if (!Tierfall.scenes[choice.next])
+            throw new Error('Missing next scene: ' + choice.next);
+        if (scene.id.startsWith('p-')) return { ...state, sceneId: choice.next };
+        const journal = [...state.journal];
+        if (choice.journal)
+            journal.push({ scene: scene.id, title: choice.journalTitle || scene.title, text: choice.journal });
+        const flags = applyEffects(state.flags, choice.effects);
+        const next = { ...state, flags, journal, history: [...state.history, `${scene.id}:${choice.id}`],
+            sceneId: choice.next, lastReactionKey: scene.id + ':' + choice.id, finished: choice.next === 'c1-end' };
+        return next;
+    }
+    Tierfall.step = step;
+    function safeName(s, max = 26) { return String(s ?? '').replace(/[<>\u0000-\u001f]/g, '').trim().slice(0, max) || 'Kesh Varro'; }
+    function safeNamePart(s) { return String(s ?? '').replace(/[<>\u0000-\u001f]/g, '').trim().slice(0, 26); }
+    function getNames(state) {
+        const pieces = safeName(state.name, 54).split(/\s+/);
+        const first = safeNamePart(state.firstName ?? pieces[0]) || 'Kesh';
+        const second = safeNamePart(state.secondName ?? pieces.slice(1).join(' '));
+        const nickname = safeNamePart(state.nickname ?? '');
+        return { first, second, nickname, full: [first, second].filter(Boolean).join(' ') };
+    }
+    Tierfall.safeName = safeName;
+    Tierfall.getNames = getNames;
+    function tokens(str, state) {
+        const subject = { they: 'they', she: 'she', he: 'he' };
+        const possessive = { they: 'their', she: 'her', he: 'his' };
+        const names = getNames(state);
+        const withTokens = str.replace(/\{(name|formalName|first|second|nickname|friendName|origin|upbringing|they|their)\}/g, (_, key) => {
+            const r = { name: names.full, formalName: names.full, first: names.first, second: names.second,
+                nickname: names.nickname || names.first, friendName: names.nickname || names.first,
+                origin: Tierfall.origins[state.origin],
+                upbringing: Tierfall.upbringings[state.upbringing], they: subject[state.pronouns], their: possessive[state.pronouns] };
+            return r[key];
+        });
+        const sera = Tierfall.characterName(state, 'Sera Venn');
+        const jalen = Tierfall.characterName(state, 'Jalen Orr');
+        return withTokens.replace(/\bSera Venn\b/g, sera).replace(/\bSera\b/g, sera.split(/\s+/)[0])
+            .replace(/\bJalen Orr\b/g, jalen).replace(/\bJalen\b/g, jalen.split(/\s+/)[0]);
+    }
+    Tierfall.tokens = tokens;
+    function sceneParagraphs(state) {
+        const scene = Tierfall.scenes[state.sceneId];
+        if (!scene)
+            throw Error('Scene not found');
+        const blocks = [...scene.text, ...(scene.byOrigin?.[state.origin] || []),
+            ...(scene.byUpbringing?.[state.upbringing] || [])];
+        for (const extra of scene.byFlag || [])
+            if (pass(state, extra.when))
+                blocks.push(...extra.text);
+        return blocks.map(x => tokens(x, state));
+    }
+    Tierfall.sceneParagraphs = sceneParagraphs;
+    function saveState(state, storage) {
+        storage.setItem(Tierfall.SAVE_KEY, JSON.stringify(state));
+    }
+    Tierfall.saveState = saveState;
+    function validateState(value) {
+        if (!value || typeof value !== 'object')
+            throw new Error('Invalid save data');
+        const v = value;
+        if (v.version !== 1 || typeof v.sceneId !== 'string' || !Tierfall.scenes[v.sceneId])
+            throw new Error('Unsupported or broken save');
+        if (typeof v.name !== 'string' || !['they', 'he', 'she'].includes(String(v.pronouns)) ||
+            !Object.keys(Tierfall.origins).includes(String(v.origin)) || !Object.keys(Tierfall.upbringings).includes(String(v.upbringing)) ||
+            !v.flags || typeof v.flags !== 'object' || Array.isArray(v.flags) ||
+            !Array.isArray(v.history) || !v.history.every(x => typeof x === 'string') ||
+            !Array.isArray(v.journal) || v.journal.length > 500 || !v.journal.every(x => !!x && typeof x.title === 'string' && typeof x.text === 'string') ||
+            typeof v.finished !== 'boolean' || typeof v.startedAt !== 'string')
+            throw new Error('Invalid save content');
+        const g = v;
+        g.name = safeName(g.name, 54);
+        const names = getNames(g);
+        g.firstName = names.first; g.secondName = names.second; g.nickname = names.nickname;
+        g.name = names.full;
+        const rawAliases = g.aliases && typeof g.aliases === 'object' && !Array.isArray(g.aliases) ? g.aliases : {};
+        g.aliases = {};
+        for (const canonical of ['Sera Venn','Jalen Orr']) {
+            const value = rawAliases[canonical];
+            if (typeof value === 'string' && value.length <= 100) {
+                const cleaned = value.replace(/[<>\u0000-\u001f]/g,'').trim().slice(0,38);
+                if (cleaned) g.aliases[canonical] = cleaned;
+            }
+        }
+        if (g.lastReactionKey && !Tierfall.reactions[g.lastReactionKey]) delete g.lastReactionKey;
+        return g;
+    }
+    Tierfall.validateState = validateState;
+    function loadState(storage) {
+        const raw = storage.getItem(Tierfall.SAVE_KEY);
+        if (!raw)
+            return null;
+        return validateState(JSON.parse(raw));
+    }
+    Tierfall.loadState = loadState;
+    function sceneCount() { return Object.keys(Tierfall.scenes).length; }
+    Tierfall.sceneCount = sceneCount;
+
+    // Character IDs are permanent. Portraits and visible names can change as the story grows.
+    Tierfall.portraitAssets = {"Sera Venn": {"calm": "data:image/webp;base64,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", "amused": "data:image/webp;base64,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", "worried": "data:image/webp;base64,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", "hooded": "data:image/webp;base64,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"}, "Jalen Orr": {"calm": "data:image/webp;base64,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", "watchful": "data:image/webp;base64,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", "firm": "data:image/webp;base64,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", "worn": "data:image/webp;base64,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"}};
+    Tierfall.characterName = function(state, canonical) {
+        const aliases = state.aliases || {};
+        const value = aliases[canonical];
+        return typeof value === 'string' && value.trim() ? value.trim() : canonical;
+    };
+    Tierfall.characterAppearance = function(state, canonical) {
+        const steps = state.history.length;
+        if (canonical === 'Sera Venn') {
+            if (state.sceneId === 'c1-quiet') return 'amused';
+            if (steps >= 8 && Number(state.flags.officialAttention || 0) >= 4) return 'hooded';
+            if (state.sceneId === 'c1-walk' && Number(state.flags.friendTrust || 0) >= 2) return 'amused';
+            if (steps >= 3 && Number(state.flags.friendTrust || 0) < 1) return 'worried';
+            if (state.sceneId === 'c1-walk') return 'worried';
+            return 'calm';
+        }
+        if (canonical === 'Jalen Orr') {
+            if (steps >= 10 && Number(state.flags.officialAttention || 0) >= 4) return 'worn';
+            if (state.sceneId === 'c1-ally') return 'firm';
+            if (state.flags.route === 'jalen') return 'watchful';
+            return 'calm';
+        }
+        return 'calm';
+    };
+    Tierfall.portraitFor = function(state,canonical){
+        const set=Tierfall.portraitAssets[canonical];
+        return set ? set[Tierfall.characterAppearance(state,canonical)] || set.calm : null;
+    };
+    Tierfall.setCharacterName = function(state,canonical,newName) {
+        if (!['Sera Venn','Jalen Orr'].includes(canonical)) return state;
+        const cleaned=String(newName ?? '').replace(/[<>\u0000-\u001f]/g,'').replace(/\s+/g,' ').trim().slice(0,38);
+        const aliases={...(state.aliases||{})};
+        if (cleaned && cleaned!==canonical) aliases[canonical]=cleaned;
+        else delete aliases[canonical];
+        return {...state,aliases};
+    };
+
+    // Recap is assembled only from scenes the player has already completed.
+    Tierfall.recapData = function(state) {
+        const names = Tierfall.getNames(state);
+        const intro = names.full + ' is a Rank V Leadborn ' + Tierfall.origins[state.origin].toLowerCase() +
+            ' with a ' + Tierfall.upbringings[state.upbringing].toLowerCase() + ' background.';
+        const prologue = state.sceneId.startsWith('p-');
+        const current = Tierfall.scenes[state.sceneId];
+        const beats = state.history.map(entry => {
+            const split = entry.lastIndexOf(':');
+            const scene = Tierfall.scenes[entry.slice(0,split)];
+            const choice = scene && scene.choices.find(c => c.id === entry.slice(split+1));
+            return scene && choice ? {place:scene.title,action:Tierfall.tokens(choice.label,state)} : null;
+        }).filter(Boolean);
+        return {intro,prologue,location:current?.location || 'Thule',sceneTitle:current?.title || 'Your story',
+            beats:beats.slice(-6), total:beats.length,
+            summary:prologue ? 'You are learning how life works in the Halcyon Reach. Your own story begins next.' :
+              !beats.length ? 'Your workday on Thule is beginning. Your choices will shape what follows.' :
+              'You have come across a troubling transport record. People close to you are looking for answers, and your decisions have shaped who knows what. The story is continuing from the moment you last saved.'};
+    };
+
+    // A growing, spoiler-safe dictionary. New chapters can add terms and unlock rules.
+    Tierfall.glossaryEntries = [
+        {
+                "term": "The Halcyon Reach",
+                "group": "Places",
+                "definition": "The system of moons and space stations where Tierfall takes place. Trade routes connect its settlements.",
+                "unlock": 0
+        },
+        {
+                "term": "Thule",
+                "group": "Places",
+                "definition": "A cold worker settlement far from the ruling courts. The protagonist lives and works here.",
+                "unlock": 0
+        },
+        {
+                "term": "The Concord",
+                "group": "Politics",
+                "definition": "The government that controls the Reach and the Five Ranks. Its leaders disagree about how much power should change.",
+                "unlock": 0
+        },
+        {
+                "term": "The Undertow",
+                "group": "Politics",
+                "definition": "A secret movement that wants to end rank-based oppression. Its members do not all agree on how to do it.",
+                "unlock": 0
+        },
+        {
+                "term": "The Drift Guild",
+                "group": "Politics",
+                "definition": "Independent ship owners, traders, and transport groups who move goods and information across the Reach.",
+                "unlock": 0
+        },
+        {
+                "term": "The Five Ranks",
+                "group": "Ranks",
+                "definition": "The Concord assigns people one of five birth ranks. Rank I is the highest; Rank V is the lowest. A rank is not the same as a faction.",
+                "unlock": 0
+        },
+        {
+                "term": "Crestborn",
+                "group": "Ranks",
+                "definition": "Rank I, Platinum. Noble families, top rulers, and powerful officials. Highest birth rank.",
+                "unlock": 0
+        },
+        {
+                "term": "Steelward",
+                "group": "Ranks",
+                "definition": "Rank II, Steel. Soldiers, guards, and security officers.",
+                "unlock": 0
+        },
+        {
+                "term": "Brasswright",
+                "group": "Ranks",
+                "definition": "Rank III, Brass. Engineers, physicians, and licensed technical experts.",
+                "unlock": 0
+        },
+        {
+                "term": "Copperhand",
+                "group": "Ranks",
+                "definition": "Rank IV, Copper. Record keepers, traders, clerks, and administrators.",
+                "unlock": 0
+        },
+        {
+                "term": "Leadborn",
+                "group": "Ranks",
+                "definition": "Rank V, Lead. Most workers and people in harsh service jobs. It does not mean they mine lead.",
+                "unlock": 0
+        },
+        {
+                "term": "Wrist mark",
+                "group": "Daily life",
+                "definition": "A mark on a person’s wrist that shows their legal birth rank.",
+                "unlock": 0
+        },
+        {
+                "term": "Bonded service",
+                "group": "Daily life",
+                "definition": "A legal work agreement that can prevent a person from leaving their employer. It is separate from birth rank.",
+                "unlock": 0
+        },
+        {
+                "term": "The Long Dark",
+                "group": "History",
+                "definition": "A period of hunger and war three centuries ago. The Concord says the Five Ranks helped humanity survive it.",
+                "unlock": 0
+        },
+        {
+                "term": "Service ring",
+                "group": "Daily life",
+                "definition": "Part of a station where workers live, move between shifts, and care for their families.",
+                "unlock": 0
+        },
+        {
+                "term": "Worker transport",
+                "group": "Daily life",
+                "definition": "A ship that moves workers between stations and settlements, sometimes under orders they cannot refuse.",
+                "unlock": 1
+        },
+        {
+                "term": "Transit 17",
+                "group": "Current events",
+                "definition": "A transport name found in the Chapter 1 records. The player is still learning what happened to it.",
+                "unlock": 1
+        }
+];
+    Tierfall.availableGlossary = function(state) {
+        const steps = state.history.length;
+        return Tierfall.glossaryEntries.filter(entry => steps >= entry.unlock);
+    };
+
+    // Player-facing, choice-specific next-scene responses. Keep one per playable choice.
+    Tierfall.reactions = {
+        "c1-wake:help": "The worker grips your arm as you guide them toward the lift. “Thanks,” they say, still catching their breath. You arrive a little late, but you know they made it safely.",
+        "c1-wake:quiet": "You stay with the shift crowd and pass the lift without stopping. Behind you, the worker calls for help again, but the work bell is already sounding.",
+        "c1-wake:ask": "The guard turns toward you, surprised that a Leadborn would question the schedule. “Orders changed,” he says. He studies your face before waving you onward.",
+        "c1-duty:copy": "You save the changed entry before the terminal closes. The file is small enough to hide, but the system records that someone opened it.",
+        "c1-duty:protect": "You quietly move the worker’s name out of the report before anyone else sees it. The record is gone from your screen, but you remember every part that mattered.",
+        "c1-duty:ask": "“Transit 17?” the clerk repeats, suddenly careful with their words. They tell you the list is closed and look toward the door before you can ask anything else.",
+        "c1-quiet:tell": "Sera stops joking. She lets you finish without interrupting, then lowers her voice. “All right,” she says. “Start from the beginning.”",
+        "c1-quiet:half": "“A record that makes no sense?” Sera asks. She waits for more, but you give her nothing. “Fine. I’m here when you’re ready,” she says.",
+        "c1-quiet:deflect": "Sera talks about a broken water pump, but she knows you changed the subject. When you part, she squeezes your shoulder and says, “You can still tell me.”",
+        "c1-home:care": "You spend your break helping at home instead of chasing the missing record. Someone thanks you for staying. The question about the ship has to wait.",
+        "c1-home:truth": "You tell someone close to you that the work records may have been altered. They listen, then ask you to lower your voice because the hallway door is open.",
+        "c1-home:rest": "For a short while, you sit in silence and let your hands stop shaking. The rest helps, even though you still have no answer when you stand again.",
+        "c1-notice:copy": "You record the public notice before the screen refreshes. Now you have two versions of the same day, and they cannot both be true.",
+        "c1-notice:woman": "You step between the woman and the guard long enough for her to reach a side passage. She looks back once, as if trying to remember your face.",
+        "c1-notice:guard": "The guard points to an office that is already closed. “Leave a request,” he says, loud enough for the people nearby to hear. Several faces turn toward you.",
+        "c1-cross:hide": "You guide Ada through a side door and wait until the footsteps pass. She catches her breath, then thanks you before slipping into the workers’ ring.",
+        "c1-cross:tag": "You take a clear image of the tag while Ada keeps watch. She leaves as soon as you finish, heading down the passage without anyone beside her.",
+        "c1-cross:sera": "Sera answers your message almost at once. She agrees to meet Ada, but warns you that bringing another person into this means putting them at risk too.",
+        "c1-cross:jalen": "Jalen sends the location of a shelter and says he will find Ada a safe place. His quick answer tells you he has handled frightened families before.",
+        "c1-ally:sera": "Sera nods and pulls you away from the open street. “Then we do this quietly,” she says. “And we tell each other when something goes wrong.”",
+        "c1-ally:jalen": "Jalen asks you to help reach the missing workers’ families. Before you leave, he gives you three names and warns you that some people are afraid to be seen.",
+        "c1-ally:office": "Jalen looks uneasy, but he does not stop you. At the records office, the clerk accepts your request and gives you a number instead of an answer.",
+        "c1-ally:alone": "You keep the clue and leave without making a promise. Sera watches you go, worried, while Jalen turns back to the families waiting outside.",
+        "c1-walk:promise": "Sera takes your promise seriously. “I’ll remind you,” she says, with a small smile. You know she means it, even if that reminder comes at the worst time.",
+        "c1-walk:uncertain": "“That makes two of us,” Sera says. She does not ask you to pretend otherwise, and the two of you walk on without needing to settle the question.",
+        "c1-walk:focus": "Sera lets the words sit between you. “Facts matter,” she says at last. “Just remember they belong to people.”",
+        "c1-door:plain": "You explain the broken record as plainly as you can. The guard writes something down and asks who else heard you speak about it.",
+        "c1-door:deny": "You say you cannot prove the ship left. The guard waits for you to change your answer, then steps aside without saying whether he believes you.",
+        "c1-door:rights": "You ask why you are being stopped. The guard studies your wrist mark before answering. “Because I’m asking,” he says, then lets you pass.",
+        "c1-cost:secure": "You place your record somewhere no casual search will find it. Only after you finish do you realize how much of the day you spent protecting a few lines of information.",
+        "c1-cost:people": "You check on the people caught up in the missing transport. Not everyone answers, but one familiar voice tells you they are safe for tonight.",
+        "c1-cost:message": "You write down the day’s events while you still remember them clearly. Before sending the message, you read it again and remove the names that could hurt someone.",
+        "c1-dusk:search": "You set aside a fresh page and write one question at the top: Who changed the manifest? It is the first thing you plan to pursue tomorrow.",
+        "c1-dusk:families": "You decide that the families deserve someone willing to stand beside them. You may not know where their loved ones went, but you know where to begin.",
+        "c1-dusk:careful": "You make a short list of people you might trust, then cross out two names. Tomorrow you will ask better questions and listen closely to the answers."
+};
+    Tierfall.skipPrologue = function(state) {
+        if (!state.sceneId.startsWith('p-')) return state;
+        return { ...state, sceneId: 'c1-wake', lastReactionKey: undefined };
+    };
+    Tierfall.lastChoiceResponse = function(state) {
+        const key = state.lastReactionKey;
+        return key && Tierfall.reactions[key] ? Tierfall.tokens(Tierfall.reactions[key], state) : '';
+    };
+})(Tierfall || (Tierfall = {}));
+// SPOILERS — DEVELOPMENT ONLY. Do not share story source with a player who wants to play blind.
+var Tierfall;
+(function (Tierfall) {
+    Tierfall.scenes = {
+        'p-reach': {
+            id: 'p-reach', title: 'Welcome to the Reach', location: 'The Halcyon Reach · A World Before Your Story', speaker: 'Narrator',
+            text: [
+                'Human life stretches across the Halcyon Reach, a system of moons and stations connected by ships and supply routes. No single place can survive alone. Farms grow food, foundries build ships, and distant stations protect the routes between them.',
+                'Thule lies far from the ruling courts. Workers there repair failing machines, grow food under lamps, and keep the air flowing. Far above them, wealthy families decide which shipments arrive and which debts must be paid.',
+                'The Concord says this order saved humanity from the Long Dark, a time of hunger and war three hundred years ago. Many people believe that story. Others wonder why the same families still hold power.',
+                'Today, shipments are late and workers are asking difficult questions. At the foundries, crews wait for spare parts; on the garden moons, growers warn that food prices may rise. The Drift Guild wants the trade routes kept open, while Concord officers call for stricter checks. On Thule, those distant arguments decide whether a family has enough to eat.'
+            ],
+            choices: [{ id: 'continue', label: 'Learn about the Five Ranks.', next: 'p-ranks' }]
+        },
+        'p-ranks': {
+            id: 'p-ranks', title: 'The Five Ranks', location: 'The Halcyon Reach · Law and Status', speaker: 'Narrator',
+            text: [
+                'Every person is born into a rank, marked on their wrist. Rank I is highest and Rank V is lowest. The mark affects where a person can live, what work they may do, and who has the power to command them.',
+                'Rank I · Platinum · Crestborn: noble houses and rulers. Rank II · Steel · Steelward: soldiers, officers, and guards. Rank III · Brass · Brasswright: doctors, engineers, and scientists.',
+                'Rank IV · Copper · Copperhand: traders, clerks, and recordkeepers. Rank V · Lead · Leadborn: farm workers, ward attendants, cargo crews, and other laborers. Leadborn does not mean a person mines lead. It is a rank assigned at birth.',
+                'A person may be a free worker or bound by a service contract. Rank and freedom are not the same thing. A skilled Leadborn can save lives but still be ordered around by someone born above them.'
+            ],
+            choices: [{ id: 'continue', label: 'Learn who holds power.', next: 'p-powers' }]
+        },
+        'p-powers': {
+            id: 'p-powers', title: 'Those Who Hold Power', location: 'The Halcyon Reach · Three Political Forces', speaker: 'Narrator',
+            text: [
+                'The Concord governs the Reach. Its leaders say strict ranks keep the peace. Some want stronger control; others believe the laws must change before anger breaks the system apart.',
+                'The Undertow is a hidden network that opposes the ranks. Some members want a careful path to freedom. Others believe the Concord will never give up power without a fight.',
+                'The Drift Guild moves goods, ships, and information between worlds. It deals with almost everyone. Its traders value open routes, but they do not always agree on what matters more: profit, safety, or freedom.',
+                'A rank tells you what society expects from someone. A faction tells you what they believe. A noble can oppose the Concord, and a worker can defend it. Few people fit neatly into one side.',
+                'One news channel calls the growing complaints a threat to public order. A Guild report calls them a risk to trade. A private message passed between workers calls them a plea to be heard. The event is the same; the words change depending on who controls the story.'
+            ],
+            choices: [{ id: 'continue', label: 'Return to Thule.', next: 'p-thule' }]
+        },
+        'p-thule': {
+            id: 'p-thule', title: 'A Life on Thule', location: 'Thule · Before the First Bell', speaker: 'Narrator',
+            text: [
+                'This is where you live. Your name is {name}, and the wrist mark you have carried since childhood reads Rank V · Lead · Leadborn. People in the upper rings rarely ask what you want. They usually ask whether your work is done.',
+                'You know Sera Venn from childhood. She is quick to speak, slower to give up, and one of the few people who remembers who you were before work became your whole life.',
+                'You also know of Jalen Orr. He is a local worker organizer, not a secret leader: when wages go missing or families need food, he helps people make requests and find support. You have crossed paths while helping neighbors. You have not joined his group or any political movement.',
+                'Your work and home have shaped what you notice and whom you trust. Tomorrow will begin as an ordinary shift. At least, that is what you expect.'
+            ],
+            byOrigin: {
+                ward: ['You care for patients in the crowded wards. You have learned how to listen when someone is frightened and the doctors are too busy to notice.'],
+                reclamation: ['You salvage parts from broken machines. You know that one small piece of equipment can keep an entire work ring running.'],
+                farmer: ['You grow food beneath artificial light. You know how quickly an empty supply crate becomes an empty table.'],
+                cargo: ['You move crates through the loading bays. You recognize the crews, cargo marks, and doors most people never think about.']
+            },
+            byUpbringing: {
+                family: ['Your family lives close enough to ask you for help and worry when you come home late. Their lives are tied to your choices.'],
+                communal: ['You were raised among neighbors who share work, food, and hard times. You learned early that family does not always mean blood.'],
+                estranged: ['You have family somewhere in the Reach, but you are no longer close. Even so, old ties can be hard to forget.']
+            },
+            choices: [{ id: 'begin', label: 'Begin Chapter One.', next: 'c1-wake' }]
+        },
+        'c1-wake': {
+            id: 'c1-wake', title: 'Before the First Bell', location: 'Thule · Workers’ Ring', speaker: 'Narrator',
+            text: [
+                'The first bell sounds before the station lights reach full strength. You pull your coat tight as cold rises through the floor, then glance through the thick window at the ice fields outside. Another day on Thule is starting early, and nobody looks pleased about it.',
+                'The mark on your wrist reads Rank V · Lead · Leadborn. To the Concord, that means you work where you are told and sleep where you are allowed. You have lived with the mark all your life, but it has never told the whole story of who you are.',
+                'An order flashes across the wall: “All Leadborn workers must report early. Missed shifts will be charged to the household.” Someone has written “We are not machines” underneath. A cleaning unit rolls by, scrubbing away the words while the people waiting for the lift pretend not to watch.',
+                'A worker ahead of you struggles to stay upright, one hand pressed against the lift rail. The guard at the gate looks half asleep until the next bell sounds. Then he stands straight, lifts his scanner, and calls for everyone to move faster.'
+            ],
+            byOrigin: {
+                ward: ['In the medical wards, you move patients, clean rooms, and do the work that busy doctors rarely have time for. You know the sound of someone trying not to cry behind a closed curtain, and you know when to check on them anyway.'],
+                reclamation: ['In Reclamation, you pull useful parts from machines that other people have given up on. A broken panel or old memory unit can still be valuable, especially on Thule, where a replacement might take months to arrive.'],
+                farmer: ['In the farm domes, you tend crops beneath artificial lights and keep a close watch on the water lines. Every harvest is counted before it leaves the dome, because a missing food crate can mean an empty table somewhere else.'],
+                cargo: ['As a Cargo Runner, you move freight between storage rooms, lifts, and loading bays. You know which guards enjoy making people wait, which doors jam in the cold, and how much trouble one misplaced crate can cause.']
+            },
+            choices: [
+                { id: 'help', label: 'Help the tired worker reach the lift.', hint: 'You may be late.', next: 'c1-duty', effects: [{ key: 'workerTrust', add: 1 }, { key: 'caution', add: 1 }], journal: 'You helped a worker before your shift, even though it could cost you time.' },
+                { id: 'quiet', label: 'Keep your head down and go to work.', hint: 'Avoid trouble this morning.', next: 'c1-duty', effects: [{ key: 'caution', add: 1 }] },
+                { id: 'ask', label: 'Ask the guard why the shift began early.', hint: 'Find out what changed.', next: 'c1-duty', effects: [{ key: 'officialAttention', add: 1 }], journal: 'You questioned an early work order. A guard noticed your interest.' }
+            ]
+        },
+        'c1-duty': {
+            id: 'c1-duty', title: 'The Wrong Line', location: 'Thule · Work Sector', speaker: 'Narrator',
+            text: [
+                'Your work area is already busy when you arrive. Warning tones cut through the steady noise of the pumps, and people keep checking the time as if they have been told something you have not.',
+                'At first, the problem is easy to miss: a record that should be part of the ordinary shift paperwork has been changed. You check it again, not quite trusting what you see.',
+                'The entry belongs to Transit 17, a worker ship scheduled to leave Thule during the night. Someone has marked the record for removal, and the next system check will wipe away the departure as though it never happened.',
+                'A coworker notices you staring at the screen. “Everything all right?” Before you can answer, a warning appears: the record check begins in moments. If you want to save what you found, ask a question, or protect the person beside you, now is your chance.'
+            ],
+            byOrigin: {
+                ward: [
+                    'A patient named Mira Doss has vanished from the ward list. Her bed is still warm, and her cup is beside it, but a new entry says she was never admitted. The earlier transfer note names Transit 17.',
+                    'The night nurse glances toward the camera before speaking. “Mira was frightened. She made me promise not to tell anyone where her little brother lives.” Her voice drops further. “Please don’t put my name in a report.”'
+                ],
+                reclamation: [
+                    'A damaged control unit arrives in a bin stamped EMPTY. Its memory light is still blinking, and when you test it, a saved tag appears on the screen: Transit 17, Bay Six, 03:40.',
+                    'Your supervisor reaches for the unit before you can turn it off. “That was supposed to be destroyed.” He looks toward the open door and lowers his voice. “Put it back. I mean it.”'
+                ],
+                farmer: [
+                    'One shipment sheet lists thirty food crates loaded onto Transit 17. Another says those crates were never packed, although you carried three of them to the loading cart yourself.',
+                    'Nearby, the farm officer speaks quietly into her comm. “The totals have to match.” When she sees you reading the sheets, she ends the call. “Those are old records. Put them away.”'
+                ],
+                cargo: [
+                    'A route sheet shows Transit 17 leaving Bay Six at 03:40, but the main departures board shows nothing at that time. Someone has scratched out the driver’s initials. You recognize them anyway.',
+                    'Another runner leans close enough to speak without being heard. “I loaded that ship myself.” A guard passes, and the runner steps back. “Forget I said anything. I’ve got children at home.”'
+                ]
+            },
+            byFlag: [
+                { when: [{ key: 'workerTrust', min: 1 }], text: ['The worker you helped at the lift notices what you are doing. Without a word, they move between your screen and the nearest camera. It may give you only a few seconds, but that is more than you had a moment ago.'] },
+                { when: [{ key: 'officialAttention', min: 1 }], text: ['The guard who noticed you at the lift passes the entrance and slows down. His eyes move from the workers to the open terminals. You look back at your screen, suddenly aware of how long you have been standing there.'] }
+            ],
+            choices: [
+                { id: 'copy', label: 'Make a private copy of what you found.', hint: 'Keep proof, but risk being seen.', next: 'c1-quiet', effects: [{ key: 'evidence', set: 'copy' }, { key: 'officialAttention', add: 1 }], journal: 'You kept a copy of a work record linked to Transit 17.' },
+                { id: 'protect', label: 'Protect the person who may be blamed.', hint: 'Their safety matters more than a clean record.', next: 'c1-quiet', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 1 }, { key: 'evidence', set: 'memory' }], journal: 'You chose to protect a person connected to the strange record. You remember what you saw.' },
+                { id: 'ask', label: 'Ask a careful question before you leave.', hint: 'Learn more, but draw attention.', next: 'c1-quiet', effects: [{ key: 'officialAttention', add: 2 }, { key: 'evidence', set: 'memory' }], journal: 'You asked about Transit 17. Someone may remember that you asked.' }
+            ]
+        },
+        'c1-quiet': {
+            id: 'c1-quiet', title: 'A Familiar Face', location: 'Thule · Service Walk', speaker: 'Sera Venn',
+            text: [
+                'Sera Venn is waiting on the service walk with two cups of bitter tea. She sees your face, raises one eyebrow, and offers you a cup before you can think of an excuse to leave.',
+                '“You only walk that fast, {friendName}, when you’re hiding something,” she says. “Or when you owe me money.” She watches you take the tea. “Please tell me it’s the money. That problem I can solve.”',
+                'You grew up a few doors apart, sharing meals when supplies ran short and helping neighbors who could not manage alone. Sera still laughs about the time you tried to ride a cargo lift without holding the rail. People in the upper rings know your rank; she remembers the person you were before work took over your life.',
+                '“Everyone says the morning ship was canceled,” she adds, her smile fading. “But I heard a launch during the night. Maybe I’m wrong.” She waits beside you, leaving room for an answer instead of asking twice.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['You can still recall every detail of the record you copied. Showing Sera would mean letting someone else carry part of the danger, even if neither of you knows how serious it is yet.'] },
+                { when: [{ key: 'witnessProtected', equals: true }], text: ['You remember the frightened person at work. Sera would want to help if she knew who they were, but her courage sometimes moves faster than her caution.'] }
+            ],
+            choices: [
+                { id: 'tell', label: 'Tell Sera what you found.', hint: 'Trust your oldest friend.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 2 }, { key: 'seraKnows', set: true }], journal: 'You trusted Sera with the first clue about Transit 17.' },
+                { id: 'half', label: 'Say you saw a record that makes no sense.', hint: 'Be careful without lying.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 1 }, { key: 'seraKnows', set: false }], journal: 'You told Sera that something seemed wrong, but kept the details to yourself.' },
+                { id: 'deflect', label: 'Ask how her own shift went.', hint: 'Keep the worry private.', next: 'c1-home', effects: [{ key: 'friendTrust', add: 0 }, { key: 'seraKnows', set: false }] }
+            ]
+        },
+        'c1-home': {
+            id: 'c1-home', title: 'The People Who Know You', location: 'Thule · Living Ring', speaker: 'Narrator',
+            text: [
+                'The living ring smells of warm bread, machine oil, and clothes that never quite dry. Few visitors come this far down the station. The halls are crowded, the doors are thin, and the lights begin to dim long before people are ready for bed.',
+                'You have a short break before the next shift change, but you cannot stop thinking about the altered record. Someone was frightened enough to beg for silence, and a ship that may have carried workers away is being removed from the system.',
+                'For a little while, the people at home need you more than the mystery does. You can help them, tell them what is troubling you, or keep your worry to yourself until you understand it better.'
+            ],
+            byUpbringing: {
+                family: [
+                    'Your family shares a few small rooms behind the laundry pipes. A relative is struggling with the heater again, holding a worn filter that should have been replaced weeks ago. “The shop won’t give us another until we pay the old bill,” they say.',
+                    'They set the filter down and study your face. “That look usually means work was bad.” There is no pressure to explain, just a space beside the table where you can sit.'
+                ],
+                communal: [
+                    'You were raised in shared kitchens and crowded halls, among neighbors who call one another family without needing the same name. The kitchen is short of food today, and someone asks whether you can help move the water containers.',
+                    'An older worker greets you with a tired smile. “You used to be too small to reach this table,” they say. “Now everyone thinks you can fix the station. Start with that water pump.”'
+                ],
+                estranged: [
+                    'Your rented room is quiet, except for the loose door that rattles whenever the air pumps start. A message waits on the terminal, sent by a family member you have not spoken to in years.',
+                    '“I heard they’re checking people at the port. Tell me you’re safe when you can.” There is no apology for the last argument, and perhaps that is why you read the message more than once.'
+                ]
+            },
+            choices: [
+                { id: 'care', label: 'Help the people connected to your home.', hint: 'Make time for someone else.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'care' }, { key: 'workerTrust', add: 1 }], journal: 'You made time for the people who have been part of your life on Thule.' },
+                { id: 'truth', label: 'Share that something strange happened at work.', hint: 'Ask for advice, but spread the risk.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'confided' }, { key: 'officialAttention', add: 1 }], journal: 'You shared a worry from your shift with someone from home.' },
+                { id: 'rest', label: 'Rest briefly and keep your worry to yourself.', hint: 'Save your strength.', next: 'c1-notice', effects: [{ key: 'homeCommitment', set: 'private' }, { key: 'caution', add: 1 }] }
+            ]
+        },
+        'c1-notice': {
+            id: 'c1-notice', title: 'No Such Ship', location: 'Thule · Public Records Hall', speaker: 'Narrator',
+            text: [
+                'By midday, workers have gathered outside the public records hall. A new notice fills the largest screen, and people press close enough to read it without having to speak to the guards posted nearby.',
+                'The Concord’s statement is plain: “There was no worker transport from Thule during the last night cycle. All claims of a departure are false. Anyone spreading such claims may be questioned.”',
+                'You read it twice. The notice does not explain the changed records or the people who remember a departure. Instead, it warns anyone who asks about the ship that the asking itself could bring trouble.',
+                'A woman standing beside you grips the edge of the screen. “My husband was on that ship,” she says, loud enough for several people to hear. A guard turns toward her, and the nearby workers quickly look away.',
+                'Until now, you could have hoped the record was a mistake. Looking at the woman’s face and the guard moving through the crowd, that hope feels much harder to hold on to.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['You have a saved record from work. It might help this woman, but taking it out in front of the guards would also tell them who kept it.'] },
+                { when: [{ key: 'evidence', equals: 'memory' }], text: ['You remember what you saw at work, but you have no clear copy to show anyone. In a hall full of official records, that makes your word dangerously easy to dismiss.'] },
+                { when: [{ key: 'homeCommitment', equals: 'care' }], text: ['You still feel the ache from helping at home. The ordinary needs of the people you love have not stopped just because this notice appeared.'] },
+                { when: [{ key: 'homeCommitment', equals: 'confided' }], text: ['Someone at home already knows you are worried. As the guard steps closer to the woman, you wonder whether telling them was a comfort or a risk.'] },
+                { when: [{ key: 'homeCommitment', equals: 'private' }], text: ['You had hoped for a few quiet hours after work. The crowd and the guard have put an end to that.'] },
+            ],
+            choices: [
+                { id: 'copy', label: 'Record the public notice before it changes.', hint: 'Keep a second piece of evidence.', next: 'c1-cross', effects: [{ key: 'noticeCopy', set: true }, { key: 'officialAttention', add: 1 }], journal: 'You saved the official denial. It conflicts with what you saw at work.' },
+                { id: 'woman', label: 'Help the frightened woman move away from the guard.', hint: 'Protect a stranger.', next: 'c1-cross', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 1 }, { key: 'noticeCopy', set: false }], journal: 'You helped a witness leave the records hall before the guard could question her.' },
+                { id: 'guard', label: 'Ask the guard where families can request answers.', hint: 'Use the official process.', next: 'c1-cross', effects: [{ key: 'officialAttention', add: 2 }, { key: 'noticeCopy', set: false }], journal: 'You asked the authorities how families could check a missing transport.' }
+            ]
+        },
+        'c1-cross': {
+            id: 'c1-cross', title: 'The One Who Stayed', location: 'Thule · Narrow Service Lane', speaker: 'Narrator',
+            text: [
+                'A few streets from the records hall, the woman calls to you from a service doorway. She introduces herself as Ada, a worker at the food counter near the docks. She says she noticed you hesitate when the guard turned toward her.',
+                '“I walked my husband to Bay Six,” she tells you. “He had his lunch tin. He joined the line, and they told us the ship would be back in five days.” She says the last part carefully, as if repeating a promise might make it true.',
+                'Ada shows you a passenger tag with a printed name and number. One corner has been torn away, and her hand trembles as she holds it out. “They can erase a notice. They can’t tell me I wasn’t there.”',
+                'Two officers turn into the lane behind you. Ada closes her fist around the tag, tearing its damaged edge a little further, and looks toward the nearest door.',
+                'You have only moments to decide whether to get her somewhere safe or secure the proof she is holding. Before you move, your wrist terminal flashes with a message from Sera: “Meet me at the closed food stall after the afternoon bell. Jalen can help us figure out what to do.”'
+            ],
+            choices: [
+                { id: 'hide', label: 'Help Ada reach a safe door.', hint: 'Protect the witness; the tag may be lost.', next: 'c1-ally', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 2 }, { key: 'adaSafe', set: true }], journal: 'You helped Ada avoid questioning. She knows a passenger was on Transit 17.' },
+                { id: 'tag', label: 'Take a clear copy of the tag.', hint: 'Keep proof; Ada must find her own way.', next: 'c1-ally', effects: [{ key: 'evidence', set: 'copy' }, { key: 'adaSafe', set: false }, { key: 'officialAttention', add: 1 }], journal: 'You kept a clear image of a passenger tag, but Ada was left to avoid the officers herself.' },
+                { id: 'sera', label: 'Ask Sera to meet Ada and help her.', hint: 'Share the risk with your friend.', next: 'c1-ally', effects: [{ key: 'friendTrust', add: 1 }, { key: 'witnessProtected', set: true }, { key: 'adaSafe', set: true }], journal: 'You trusted Sera to help a witness. Your friend is now part of the risk.' },
+                { id: 'jalen', label: 'Call Jalen, who knows the worker shelters.', hint: 'Bring in a local organizer.', next: 'c1-ally', effects: [{ key: 'workerTrust', add: 1 }, { key: 'witnessProtected', set: true }, { key: 'adaSafe', set: true }, { key: 'jalenContact', set: true }], journal: 'You involved Jalen in protecting Ada from the officers.' }
+            ]
+        },
+        'c1-ally': {
+            id: 'c1-ally', title: 'Two Ways to Help', location: 'Thule · Closed Food Stall', speaker: 'Jalen Orr',
+            text: [
+                'The food stall is closed when you arrive, but Sera is waiting beside it with Jalen Orr. You know Jalen from the workers’ ring: he helps families challenge missing wages and find food when their rations are cut. You have helped at a few of his supply drives, though you have never joined a political group. “Thanks for coming, {first},” he says.',
+                '“I heard you were at the records hall,” Jalen says. “Families are asking me where their people went, and I don’t have an answer. You saw the notice, and you may know someone who saw the ship. Tell us what you can.” He sounds tired rather than demanding.',
+                'Sera folds her arms. “And if we gather everyone in one place, the guards will know exactly whom to question. We need facts before we ask people to take that risk.”',
+                '“I know,” Jalen replies. “But some of those families are waiting by the port right now. They deserve more than another day of silence.”',
+                'They turn toward you, not because you have any authority, but because you were close enough to see what happened. Sera wants to protect people who might be named, and Jalen wants to help families who cannot afford to wait. Both are asking for your judgment, and neither can promise that your answer will be safe.'
+            ],
+            byFlag: [
+                { when: [{ key: 'seraKnows', equals: true }], text: ['Sera glances at you but keeps quiet about the first record. She knows more than she is saying, and for now she is leaving that decision to you.'] },
+                { when: [{ key: 'seraKnows', equals: false }], text: ['Sera watches you for a moment, as though she can tell there is more to the story. She does not press you in front of Jalen.'] },
+                { when: [{ key: 'adaSafe', equals: true }], text: ['When you tell them Ada has reached a safer place, Jalen lets out a long breath. “Good. Then we can ask what she needs without putting her in front of a crowd.”'] },
+                { when: [{ key: 'adaSafe', equals: false }], text: ['When you explain that Ada had to leave on her own, Sera looks toward the nearest passage. “I’ll check on her when we’re done,” she says. Jalen nods, but his worried expression does not change.'] },
+            ],
+            choices: [
+                { id: 'sera', label: 'Work quietly with Sera first.', hint: 'Protect the people close to you.', next: 'c1-walk', effects: [{ key: 'route', set: 'sera' }, { key: 'friendTrust', add: 1 }], journal: 'You chose to investigate quietly with Sera rather than make the issue public.' },
+                { id: 'jalen', label: 'Help Jalen speak for the missing families.', hint: 'Bring people together.', next: 'c1-walk', effects: [{ key: 'route', set: 'jalen' }, { key: 'workerTrust', add: 1 }, { key: 'officialAttention', add: 1 }], journal: 'You agreed to help Jalen gather the workers who need answers.' },
+                { id: 'office', label: 'File an official request for the ship record.', hint: 'Leave a formal trail.', next: 'c1-walk', effects: [{ key: 'route', set: 'office' }, { key: 'officialAttention', add: 2 }], journal: 'You chose to ask the Concord for a formal answer.' },
+                { id: 'alone', label: 'Keep the clue and investigate alone for now.', hint: 'Trust fewer people.', next: 'c1-walk', effects: [{ key: 'route', set: 'alone' }, { key: 'caution', add: 1 }], journal: 'You held back the clue and chose to search alone.' }
+            ]
+        },
+        'c1-walk': {
+            id: 'c1-walk', title: 'A City Between Bells', location: 'Thule · Night Walk', speaker: 'Sera Venn',
+            text: [
+                'After the evening shift, you walk with Sera past the smaller homes and storage rooms. The air pumps keep working behind the walls, steady enough that most people forget to hear them. If they stopped, every person on Thule would remember why they mattered.',
+                'A little garden sits behind a wire gate, kept alive with borrowed water and lamps older than either of you. Someone has left a broken toy ship among the plants. You remember children arguing over who would get to fly it next.',
+                '“Remember when we thought the upper ring had a real sky?” Sera asks. “You said the rich were hiding the sun behind a window.” She smiles at the memory. “I told everyone you’d seen it. Nobody believed me, of course.”',
+                'Her smile fades as you reach the gate. “I used to think growing up meant finding out how the station worked. Now I keep finding things nobody wants explained.” She rests a hand on the cold rail before turning to you.',
+                '“Whatever you do next, {friendName}, remember the people who have to live with it. You don’t have to be sure about everything, but at least look them in the eye.”'
+            ],
+            byFlag: [
+                { when: [{ key: 'route', equals: 'jalen' }], text: ['Sera knows people are considering a gathering. She does not ask you to stop them, only to make sure they understand the danger before they show up.'] },
+                { when: [{ key: 'route', equals: 'office' }], text: ['“You asked an office for answers?” Sera says. “Maybe someone there will help. Just don’t forget they keep a record of everyone who asks.”'] },
+                { when: [{ key: 'route', equals: 'alone' }], text: ['Sera notices how much you have kept to yourself. “You’re allowed to be careful,” she says. “That doesn’t mean you have to do everything alone.”'] },
+                { when: [{ key: 'route', equals: 'sera' }], text: ['Sera opens the garden gate and waits for you to follow. “We can work quietly,” she says. “But if somebody needs help, I want to hear about it.”'] },
+            ],
+            choices: [
+                { id: 'promise', label: 'Promise Sera you will not forget the people here.', hint: 'Give your friend your word.', next: 'c1-door', effects: [{ key: 'friendTrust', add: 2 }, { key: 'seraPromise', set: true }], journal: 'You promised Sera you would remember the people of Thule, even if your life changed.' },
+                { id: 'uncertain', label: 'Admit that you do not know what is right yet.', hint: 'Be honest about your doubt.', next: 'c1-door', effects: [{ key: 'friendTrust', add: 1 }, { key: 'seraPromise', set: false }], journal: 'You told Sera that you were unsure what the right action would be.' },
+                { id: 'focus', label: 'Tell Sera the facts matter more than promises.', hint: 'Stay focused on finding proof.', next: 'c1-door', effects: [{ key: 'seraPromise', set: false }, { key: 'caution', add: 1 }] }
+            ]
+        },
+        'c1-door': {
+            id: 'c1-door', title: 'Someone Has Noticed', location: 'Thule · Checkpoint Nine', speaker: 'Narrator',
+            text: [
+                'You are nearly home when the checkpoint light turns red. A guard you have never seen before steps across the passage, his clean coat and polished boots looking almost strange against the worn walls of the workers’ ring.',
+                '“There’s been a report about a missing transport,” he says. “You were at the records hall.” He moves to one side, but his position still blocks the narrow path. “I need to ask you a few questions.”',
+                'Two workers wait behind him to cross. One lowers their eyes, while the other looks at you for a moment before turning away. You cannot tell whether they are afraid for you or for themselves.',
+                'The guard opens a notebook and reads your name without asking for it. “{formalName}. Did you see anything that proves a ship left Thule last night?” Your shift number is already written beside your name. You have no idea who gave it to him.'
+            ],
+            byFlag: [
+                { when: [{ key: 'route', equals: 'office' }], text: ['He turns the page. “You filed a request. Tell me what you were hoping to find.” Your name is written beneath the entry.'] },
+                { when: [{ key: 'route', equals: 'jalen' }], text: ['He taps a note with his finger. “I’m told you’ve been speaking to people about the missing transport.” His voice stays polite, which does nothing to make the question easier.'] },
+                { when: [{ key: 'route', equals: 'sera' }], text: ['He glances toward the hall behind you. “A friend was seen with you.” You resist the urge to look back, wondering whether Sera has made it home.'] },
+                { when: [{ key: 'route', equals: 'alone' }], text: ['He checks his notebook once more. There is little written about you, and for the moment you hope to keep it that way.'] }
+            ],
+            choices: [
+                { id: 'plain', label: 'Tell him you saw a record that did not match.', hint: 'Speak carefully, without naming a witness.', next: 'c1-cost', effects: [{ key: 'officialAttention', add: 1 }, { key: 'toldGuard', set: true }], journal: 'You told a guard that the official records did not match what you saw.' },
+                { id: 'deny', label: 'Say you cannot prove any ship left.', hint: 'Protect the people who spoke to you.', next: 'c1-cost', effects: [{ key: 'caution', add: 1 }, { key: 'toldGuard', set: false }], journal: 'You avoided naming witnesses or giving the guard useful proof.' },
+                { id: 'rights', label: 'Ask for the reason you are being questioned.', hint: 'Stand up for your right to an answer.', next: 'c1-cost', effects: [{ key: 'officialAttention', add: 2 }, { key: 'workerTrust', add: 1 }, { key: 'toldGuard', set: false }], journal: 'You asked the guard to explain the questioning before answering.' }
+            ]
+        },
+        'c1-cost': {
+            id: 'c1-cost', title: 'What You Can Carry', location: 'Thule · Home Passage', speaker: 'Narrator',
+            text: [
+                'The guard finally lets you pass. He does not threaten you or raise his voice; he only says, “We may speak again.” Somehow, that makes the short walk home feel longer.',
+                'The workday is over, yet the missing transport has followed you from one end of Thule to the other. People remember a ship leaving, but the records say it never happened. Now the guards are asking who has been talking about it.',
+                'You think about what remains in your hands: perhaps a saved record, perhaps only a memory. There is also a witness who spoke because she was desperate, and a friend who may now be taking risks because you trusted her.',
+                'You cannot make everyone safe tonight. You can, however, decide what matters most before the station wakes and asks the same questions again.'
+            ],
+            byFlag: [
+                { when: [{ key: 'evidence', equals: 'copy' }], text: ['You still have a copy linked to the transport. It could help convince someone else, but it could also bring an officer to your door.'] },
+                { when: [{ key: 'evidence', equals: 'memory' }], text: ['You remember the record clearly, but without a copy, an official can dismiss your account as a mistake. You may need another witness.'] },
+                { when: [{ key: 'witnessProtected', equals: true }], text: ['At least one frightened person is safer because of what you did. You wish that meant you also knew where the missing workers were.'] },
+                { when: [{ key: 'toldGuard', equals: true }], text: ['You told the guard part of what you knew. He might check the records himself, or he might return to ask who else knows.'] },
+                { when: [{ key: 'toldGuard', equals: false }], text: ['You gave the guard little to work with. The silence may protect you tonight, but it will not stop him from asking other people.'] }
+            ],
+            choices: [
+                { id: 'secure', label: 'Hide the evidence in a place only you know.', hint: 'Protect what you can prove.', next: 'c1-dusk', effects: [{ key: 'evidenceSecured', set: true }, { key: 'caution', add: 1 }], journal: 'You secured the evidence you have, or wrote down a clear memory to preserve it.' },
+                { id: 'people', label: 'Check whether the witnesses are safe.', hint: 'Put people before paper.', next: 'c1-dusk', effects: [{ key: 'witnessProtected', set: true }, { key: 'evidenceSecured', set: false }, { key: 'workerTrust', add: 1 }], journal: 'You spent the evening checking on the people whose words might put them at risk.' },
+                { id: 'message', label: 'Write a careful message about what happened.', hint: 'Create a record that may outlast you.', next: 'c1-dusk', effects: [{ key: 'messageWritten', set: true }, { key: 'officialAttention', add: 1 }], journal: 'You made a private written account of the day and stored a copy.' }
+            ]
+        },
+        'c1-dusk': {
+            id: 'c1-dusk', title: 'A Promise for Tomorrow', location: 'Thule · Sleeping Ring', speaker: 'Narrator',
+            text: [
+                'The final bell sounds, and the living ring grows quiet. Your room is warm enough to sleep, but you sit awake, listening to the familiar hum of air moving through the walls.',
+                'By morning, the station had one version of what happened to Transit 17. By night, the Concord had given everyone a different one. The people you met today will have to live with the difference, and some of them have already paid for speaking up.',
+                'A gentle knock comes from the door. When you open it, the corridor is empty except for an envelope lying on the floor. It has no name, no official stamp, and no sign of who left it.',
+                'Inside is a small card bearing four words: “Ask who wrote it.” You read them again, trying to decide whether the message is meant to help you or warn you away.',
+                'You place the card beside your bed, but the unanswered question stays with you. Someone knows you have been asking about Transit 17, and they have found a way to reach your door without being seen.'
+            ],
+            byFlag: [
+                { when: [{ key: 'seraPromise', equals: true }], text: ['You remember your promise to Sera. It was easy to make beside a quiet garden; keeping it may be harder if the truth gives you a reason to run.'] },
+                { when: [{ key: 'homeCommitment', equals: 'care' }], text: ['Someone at home is safer or more comfortable because you made time for them today. You hope tomorrow gives you the chance to do it again.'] },
+                { when: [{ key: 'evidenceSecured', equals: true }], text: ['Your notes are hidden where you left them. Whether that place is safe is a question you cannot answer tonight.'] },
+            ],
+            choices: [
+                { id: 'search', label: 'Find out who changed the record.', hint: 'Follow the truth wherever it leads.', next: 'c1-end', effects: [{ key: 'promise', set: 'search' }], journal: 'You decided to search for the person who changed the transport record.' },
+                { id: 'families', label: 'Stand beside the families asking for answers.', hint: 'Protect people before chasing power.', next: 'c1-end', effects: [{ key: 'promise', set: 'families' }, { key: 'workerTrust', add: 1 }], journal: 'You decided to help the families who want answers about the missing workers.' },
+                { id: 'careful', label: 'Move carefully and learn who can be trusted.', hint: 'Protect your future while investigating.', next: 'c1-end', effects: [{ key: 'promise', set: 'careful' }, { key: 'caution', add: 1 }], journal: 'You decided to keep investigating, but to watch whom you trust.' }
+            ]
+        },
+        'c1-end': {
+            id: 'c1-end', title: 'Chapter One Complete', location: 'Thule · End of Day', speaker: 'Narrator',
+            text: [
+                'Chapter One is complete. Some people will remember what you did today, while others will remember only what they think you did.',
+                'Your journal keeps track of your decisions, and your work and upbringing remain part of your character’s story. Those choices will matter as Tierfall continues.',
+                'The next chapter is still in development. You can save, export your progress, or start again with a different background.'
+            ], choices: []
+        }
+    };
+})(Tierfall || (Tierfall = {}));
+var Tierfall;
+(function (Tierfall) {
+    let game = null;
+    let currentTab = 'journal';
+    let fontScale = 1;
+    let showHelp = false;
+    const $ = (sel) => {
+        const el = document.querySelector(sel);
+        if (!el)
+            throw new Error('Missing element ' + sel);
+        return el;
+    };
+    function el(tag, cls = '', textValue) {
+        const x = document.createElement(tag);
+        if (cls)
+            x.className = cls;
+        if (textValue !== undefined)
+            x.textContent = textValue;
+        return x;
+    }
+    function announce(text) {
+        $('#notice').textContent = text;
+        $('#notice').classList.add('show');
+        window.setTimeout(() => $('#notice').classList.remove('show'), 3200);
+    }
+    function storagePut() {
+        if (!game)
+            return;
+        try {
+            Tierfall.saveState(game, localStorage);
+            $('#save-status').textContent = 'Saved on this device';
+        }
+        catch {
+            $('#save-status').textContent = 'Local saving unavailable · use Export';
+        }
+    }
+    function buildSetup() {
+        $('#setup').classList.remove('hidden');
+        $('#game').classList.add('hidden');
+        const first = $('#player-first');
+        first.value = 'Kesh';
+        $('#player-second').value = 'Varro';
+        $('#player-nickname').value = '';
+        first.focus();
+        const random = $('#random-start');
+        random.onclick = () => {
+            const o = Object.keys(Tierfall.origins);
+            const u = Object.keys(Tierfall.upbringings);
+            $('#origin').value = o[Math.floor(Math.random() * o.length)];
+            $('#upbringing').value = u[Math.floor(Math.random() * u.length)];
+            announce('Random background selected. You can still change it.');
+        };
+        $('#setup-import').onclick = () => $('#import-file').click();
+        $('#start').onclick = () => {
+            const firstName = $('#player-first').value.trim() || 'Kesh';
+            const secondName = $('#player-second').value.trim();
+            const nickname = $('#player-nickname').value.trim();
+            const n = [firstName, secondName].filter(Boolean).join(' ');
+            const origin = $('#origin').value;
+            const home = $('#upbringing').value;
+            const pronouns = $('#pronouns').value;
+            game = Tierfall.newGame(n, pronouns, origin, home, { firstName, secondName, nickname });
+            if ($('#skip-prologue').checked) game = Tierfall.skipPrologue(game);
+            storagePut();
+            render();
+        };
+    }
+    function makeTextBlock(text, className = 'narrative-paragraph') {
+        return el('p', className, text);
+    }
+    function choose(choice) {
+        if (!game)
+            return;
+        try {
+            game = Tierfall.step(game, choice.id);
+            storagePut();
+            render();
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        }
+        catch {
+            announce('This choice could not be completed. Please reload your save.');
+        }
+    }
+    function getCoverText() {
+        if (!game)
+            return 'Unknown';
+        const n = Number(game.flags.officialAttention || 0);
+        return n >= 7 ? 'Under Watch' : n >= 4 ? 'Questions Raised' : 'Noted Quietly';
+    }
+    function status() {
+        if (!game)
+            return;
+        $('#profile-name').textContent = Tierfall.getNames(game).full;
+        $('#profile-alias').textContent = Tierfall.getNames(game).nickname ? 'Known as “' + Tierfall.getNames(game).nickname + '” to close friends' : 'Your friends know your first name';
+        $('#profile-background').textContent = Tierfall.origins[game.origin] + ' · ' + Tierfall.upbringings[game.upbringing];
+        $('#profile-rank').textContent = 'RANK V  ·  LEAD  ·  LEADBORN';
+        $('#cover').textContent = getCoverText();
+        const isPrologue = game.sceneId.startsWith('p-');
+        const progress = Math.min(100, Math.round(game.history.length / 11 * 100));
+        $('#progress-bar').style.width = progress + '%';
+        $('#progress-count').textContent = isPrologue ? 'Prologue · World introduction' : game.finished ? 'Chapter complete' : `Chapter 1 · ${progress}%`;
+        $('#chapter-label').textContent = isPrologue ? 'PROLOGUE · THE REACH' : game.finished ? 'CHAPTER COMPLETE' : 'ACT I   /   CHAPTER 1';
+    }
+    function renderAside() {
+        if (!game)
+            return;
+        $('#aside-tabs').querySelectorAll('.aside-tab').forEach(btn => {
+            btn.setAttribute('aria-selected', String(btn.dataset.tab === currentTab));
+            btn.classList.toggle('selected', btn.dataset.tab === currentTab);
+        });
+        const target = $('#aside-content');
+        target.replaceChildren();
+        if (currentTab === 'journal') {
+            if (!game.journal.length)
+                target.appendChild(el('p', 'muted small', 'Your decisions will appear here as you play.'));
+            else
+                [...game.journal].reverse().forEach(e => {
+                    const item = el('article', 'journal-entry');
+                    item.appendChild(el('h4', '', e.title));
+                    item.appendChild(el('p', '', e.text));
+                    target.appendChild(item);
+                });
+        }
+        else if (currentTab === 'world') {
+            const world = el('div', 'world-guide');
+            const title = el('h3', '', 'The Halcyon Reach');
+            world.appendChild(title);
+            const chart = document.querySelector('#world-map');
+            if (chart) { const map = chart.cloneNode(true); map.removeAttribute('id'); map.classList.remove('hidden'); world.appendChild(map); }
+            const rankTitle = el('h4', '', 'The Five Ranks · Highest to Lowest');
+            world.appendChild(rankTitle);
+            const ranks = [
+                'I · Platinum · Crestborn — rulers and noble houses',
+                'II · Steel · Steelward — soldiers and guards',
+                'III · Brass · Brasswright — engineers and physicians',
+                'IV · Copper · Copperhand — clerks and traders',
+                'V · Lead · Leadborn — workers and laborers'
+            ];
+            ranks.forEach(x => world.appendChild(el('p', 'guide-entry', x)));
+            world.appendChild(el('h4', '', 'Political Groups'));
+            [
+                'Concord — the ruling government; some defend the ranks, others want reform.',
+                'Undertow — a secret resistance; its members disagree on how change should happen.',
+                'Drift Guild — traders and transport operators who deal with many sides.'
+            ].forEach(x => world.appendChild(el('p', 'guide-entry', x)));
+            world.appendChild(el('p', 'muted small', 'Birth rank, legal freedom, job, and political beliefs are different things.'));
+            target.appendChild(world);
+        }
+        else if (currentTab === 'recap') {
+            const recap = Tierfall.recapData(game);
+            target.appendChild(el('h3','recap-heading','Your story so far'));
+            target.appendChild(el('p','muted small',recap.intro));
+            target.appendChild(el('p','recap-summary',recap.summary));
+            target.appendChild(el('h4','recap-subheading','Where you left off'));
+            target.appendChild(el('p','muted small',recap.sceneTitle+' · '+recap.location));
+            target.appendChild(el('h4','recap-subheading','Your recent decisions'));
+            if (!recap.beats.length) target.appendChild(el('p','muted small','Your decisions will appear here after you begin Chapter 1.'));
+            else recap.beats.forEach(beat => {
+                const item=el('article','recap-beat');
+                item.append(el('span','recap-place',beat.place),el('p','',beat.action));
+                target.appendChild(item);
+            });
+            if(recap.total>recap.beats.length) target.appendChild(el('p','muted small','See Journal for earlier decisions.'));
+        }
+        else if (currentTab === 'glossary') {
+            const head = el('div', 'glossary-head');
+            head.append(el('h3', '', 'Words of the Reach'), el('p', 'muted small', 'Simple meanings for words you have met in the story. This list grows as the story continues.'));
+            const search = el('input', 'glossary-search');
+            search.type = 'search'; search.placeholder = 'Search words or ranks';
+            search.setAttribute('aria-label', 'Search glossary');
+            head.appendChild(search);
+            const results = el('div', 'glossary-results');
+            const update = () => {
+                const query = search.value.trim().toLocaleLowerCase();
+                results.replaceChildren();
+                let count = 0;
+                Tierfall.availableGlossary(game).forEach(entry => {
+                    if (query && !(entry.term + ' ' + entry.group + ' ' + entry.definition).toLocaleLowerCase().includes(query)) return;
+                    const item = el('article','glossary-entry');
+                    item.append(el('span','glossary-group',entry.group),el('h4','',entry.term),el('p','',entry.definition));
+                    results.appendChild(item); count++;
+                });
+                if (!count) results.appendChild(el('p','muted small','No matching terms yet.'));
+            };
+            search.oninput = update; update();
+            target.append(head,results);
+        }
+        else {
+            [
+                { name: 'Sera Venn', desc: 'Old friend · Rank V · Leadborn' },
+                ...(game.history.length >= 6 ? [{ name: 'Jalen Orr', desc: 'Worker organizer · Rank V · Leadborn' }] : [])
+            ].forEach(p => {
+                const item = el('article','person-entry');
+                const picture = el('img','mini-portrait person-picture');
+                picture.src = Tierfall.portraitFor(game,p.name);
+                picture.alt = 'Portrait of '+Tierfall.characterName(game,p.name);
+                const texts=el('div','person-details');
+                texts.append(el('strong','',Tierfall.characterName(game,p.name)),el('p','muted small',p.desc));
+                const mood = Tierfall.characterAppearance(game,p.name);
+                texts.appendChild(el('p','person-appearance','Appearance: '+({hooded:'Travel hood',worn:'Tired',worried:'Worried',firm:'Determined',watchful:'Alert',amused:'Relaxed',calm:'Work clothes'}[mood]||'Work clothes')));
+                const edit=el('button','text-button person-rename-button','Rename');
+                edit.type='button';
+                edit.onclick=()=>{
+                    edit.classList.add('hidden');
+                    const input=el('input','person-name-input');
+                    input.value=Tierfall.characterName(game,p.name);
+                    input.setAttribute('aria-label','New name for '+p.name);
+                    const save=el('button','small-button','Save name'); save.type='button';
+                    const submit=()=>{ game=Tierfall.setCharacterName(game,p.name,input.value); storagePut(); render(); };
+                    save.onclick=submit; input.onkeydown=e=>{if(e.key==='Enter')submit();};
+                    const reset=el('button','text-button','Reset'); reset.type='button';
+                    reset.onclick=()=>{game=Tierfall.setCharacterName(game,p.name,'');storagePut();render();};
+                    texts.append(input,save,reset); input.focus();
+                };
+                texts.appendChild(edit);
+                item.append(picture,texts);target.appendChild(item);
+            });
+            target.appendChild(el('p', 'muted small', 'New people appear as you meet them. Your rank is different from a political faction.'));
+        }
+    }
+    function render() {
+        if (!game) {
+            buildSetup();
+            return;
+        }
+        $('#setup').classList.add('hidden');
+        $('#game').classList.remove('hidden');
+        const scene = Tierfall.scenes[game.sceneId];
+        $('#world-map').classList.toggle('hidden', game.sceneId !== 'p-reach');
+        $('#skip-prologue-game').classList.toggle('hidden', !game.sceneId.startsWith('p-'));
+        $('#scene-title').textContent = scene.title;
+        $('#scene-location').textContent = scene.location;
+        $('#speaker-name').textContent = Tierfall.characterName(game,scene.speaker || 'Narrator');
+        const portraitSlot=$('#speaker-initials');portraitSlot.replaceChildren();
+        const source=Tierfall.portraitFor(game,scene.speaker);
+        if(source){const picture=el('img','speaker-image');picture.src=source;picture.alt='';portraitSlot.appendChild(picture);}
+        else portraitSlot.textContent='✦';
+        const response = Tierfall.lastChoiceResponse(game);
+        $('#choice-response').classList.toggle('hidden', !response);
+        $('#choice-response-text').textContent = response;
+        $('#prose').replaceChildren(...Tierfall.sceneParagraphs(game).map(t => makeTextBlock(t)));
+        const buttons = $('#choices');
+        buttons.replaceChildren();
+        if (game.finished) {
+            const end = el('div', 'end-note');
+            end.append(el('strong', '', 'Your chapter is complete.'), el('p', '', 'Your choices are saved. The next chapter is in development. You can export your save or try another background.'));
+            buttons.appendChild(end);
+        }
+        else {
+            scene.choices.filter(c => Tierfall.pass(game, c.when)).forEach((choice, index) => {
+                const btn = el('button', 'choice');
+                btn.setAttribute('type', 'button');
+                const letter = el('span', 'choice-letter', String(index + 1));
+                const middle = el('span', 'choice-copy');
+                middle.appendChild(el('strong', '', Tierfall.tokens(choice.label, game)));
+                if (choice.hint)
+                    middle.appendChild(el('small', '', Tierfall.tokens(choice.hint, game)));
+                btn.append(letter, middle, el('span', 'choice-chevron', '›'));
+                btn.onclick = () => choose(choice);
+                buttons.appendChild(btn);
+            });
+        }
+        $('#narrative').setAttribute('aria-label', 'Story: ' + scene.title);
+        status();
+        renderAside();
+    }
+    function closeReturnRecap(){
+        $('#recap-modal').classList.add('hidden');
+        document.body.classList.remove('modal-open');
+    }
+    function showReturnRecap(){
+        if (!game || game.history.length < 2 || game.finished) return;
+        const info=Tierfall.recapData(game);
+        const body=$('#recap-modal-body'); body.replaceChildren();
+        body.append(el('p','recap-summary',info.summary),el('p','muted small','Last scene: '+info.sceneTitle));
+        const recent=info.beats.slice(-2);
+        recent.forEach(beat=>body.appendChild(el('p','recap-modal-decision',beat.action)));
+        $('#recap-modal').classList.remove('hidden');
+        document.body.classList.add('modal-open');
+        $('#recap-continue').focus();
+    }
+    function exportSave() {
+        if (!game)
+            return announce('Start a game first.');
+        const blob = new Blob([JSON.stringify(game, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'tierfall-save.json';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        announce('Save exported. Keep the file somewhere safe.');
+    }
+    function importSave(file) {
+        if (!file)
+            return;
+        if (file.size > 1024 * 1024)
+            return announce('That save file is too large.');
+        file.text().then(content => {
+            const state = Tierfall.validateState(JSON.parse(content));
+            game = state;
+            storagePut();
+            render();
+            announce('Save imported.');
+            showReturnRecap();
+        }).catch(() => announce('The selected file is not a valid Tierfall save.'));
+    }
+    function setupControls() {
+        $('#skip-prologue-game').onclick = () => {
+            game = Tierfall.skipPrologue(game); storagePut(); render();
+            window.scrollTo({top:0,behavior:'instant'});
+        };
+        $('#recap-continue').onclick = closeReturnRecap;
+        $('#recap-review').onclick = () => {
+            closeReturnRecap(); currentTab='recap'; renderAside(); $('#aside-content').scrollIntoView({behavior:'smooth',block:'nearest'});
+        };
+        $('#edit-player-name').onclick=()=>{
+            if(!game)return;
+            const old=Tierfall.getNames(game);
+            const first=window.prompt('First name',old.first);if(first===null)return;
+            const second=window.prompt('Second name / surname',old.second);if(second===null)return;
+            const nick=window.prompt('Nickname (optional)',old.nickname);if(nick===null)return;
+            const name=Tierfall.newGame([first,second].filter(Boolean).join(' '),game.pronouns,game.origin,game.upbringing,{firstName:first,secondName:second,nickname:nick});
+            game={...game,name:name.name,firstName:name.firstName,secondName:name.secondName,nickname:name.nickname};
+            storagePut();render();announce('Your name has been updated.');
+        };
+        $('#save-button').onclick = () => { if (!game) {
+            announce('Start a game first.');
+            return;
+        } storagePut(); announce('Progress saved.'); };
+        $('#export-button').onclick = exportSave;
+        $('#import-button').onclick = () => $('#import-file').click();
+        $('#import-file').onchange = e => {
+            importSave(e.target.files?.[0]);
+            e.target.value = '';
+        };
+        $('#new-game').onclick = () => {
+            if (game && !confirm('Begin a new story? This will replace your current device save. Export it first if you want to keep it.'))
+                return;
+            game = null;
+            buildSetup();
+        };
+        $('#font-up').onclick = () => { fontScale = Math.min(1.3, +(fontScale + 0.1).toFixed(2)); document.documentElement.style.setProperty('--font-scale', String(fontScale)); };
+        $('#font-down').onclick = () => { fontScale = Math.max(.85, +(fontScale - 0.1).toFixed(2)); document.documentElement.style.setProperty('--font-scale', String(fontScale)); };
+        $('#help-button').onclick = () => { showHelp = !showHelp; $('#help-panel').classList.toggle('hidden', !showHelp); };
+        $('#aside-tabs').querySelectorAll('.aside-tab').forEach(button => button.onclick = () => {
+            currentTab = ['people', 'world', 'glossary', 'recap'].includes(button.dataset.tab) ? button.dataset.tab : 'journal';
+            renderAside();
+        });
+        document.addEventListener('keydown', ev => {
+            if (!$('#recap-modal').classList.contains('hidden')) { if (ev.key === 'Escape') closeReturnRecap(); return; }
+            if (!game || ev.ctrlKey || ev.altKey || ev.metaKey || /INPUT|TEXTAREA|SELECT/.test(ev.target?.tagName || ''))
+                return;
+            const number = Number(ev.key);
+            if (number >= 1 && number <= 5 && !game.finished) {
+                const choice = Tierfall.scenes[game.sceneId].choices.filter(c => Tierfall.pass(game, c.when))[number - 1];
+                if (choice) {
+                    ev.preventDefault();
+                    choose(choice);
+                }
+            }
+        });
+    }
+    function boot() {
+        setupControls();
+        try {
+            game = Tierfall.loadState(localStorage);
+        }
+        catch {
+            game = null;
+            announce('Could not read a saved game. You can import a save or start again.');
+        }
+        render();
+        showReturnRecap();
+    }
+    Tierfall.boot = boot;
+})(Tierfall || (Tierfall = {}));
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading')
+        document.addEventListener('DOMContentLoaded', () => Tierfall.boot());
+    else
+        Tierfall.boot();
+}
+
+</script>
+</body>
+</html>
