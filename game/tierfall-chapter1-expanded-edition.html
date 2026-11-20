@@ -422,6 +422,7 @@ body.tf-playing #game .tf-page-off{display:none!important}
 #game .tf-beat-pager button:disabled{opacity:.35;cursor:default}
 #game .tf-beat-pager .tf-beat-next{border-color:#9c773e}
 #game .tf-beat-dots{display:flex;justify-content:center;align-items:center;gap:8px;flex:1}
+#game .tf-beat-pager button[hidden],#game .tf-beat-dots[hidden],#game .tf-beat-count[hidden]{display:none!important}
 #game .tf-beat-dot{height:6px;width:6px;border-radius:50%;background:#405060;transition:width .2s,background .2s}
 #game .tf-beat-dot.active{width:25px;background:#d6a451;border-radius:9px}
 #game .tf-beat-count{font-size:.76rem;color:#8b9ba9;text-align:right;flex:1}
@@ -2008,7 +2009,6 @@ if (typeof document !== 'undefined') {
       const img=readerNode('img');img.alt='Portrait of '+name;img.decoding='async';img.loading='eager';
       const fallback=()=>{img.remove();frame.appendChild(readerNode('span','tf-cast-missing','◇'));};
       if(Tierfall.applyPortrait(img,game,canonical,fallback))frame.appendChild(img);
-      else fallback();
       const details=readerNode('span','tf-cast-details');
       const title=readerNode('strong','tf-cast-name',name);
       const dot=readerNode('span','tf-cast-current-dot');dot.setAttribute('aria-hidden','true');title.appendChild(dot);
