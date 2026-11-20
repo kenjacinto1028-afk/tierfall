@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-label="rank-band "><defs>
+<linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26313d"/><stop offset="1" stop-color="#0d1822"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#556572"/><stop offset=".48" stop-color="#293b4a"/><stop offset="1" stop-color="#182633"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24313e"/><stop offset="1" stop-color="#17232f"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1c38b"/><stop offset="1" stop-color="#987045"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+<pattern id="grain" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 8H30M8 0V30" stroke="#a2b5b6" stroke-width=".6" opacity=".09"/></pattern>
+</defs><rect width="480" height="560" fill="#151e28"/><rect x="17" y="17" width="446" height="526" rx="15" fill="url(#ground)" stroke="#526271" stroke-width="1.4"/><path d="M44 44H436M44 516H436" stroke="#bc9e6c" opacity=".47"/><path d="M44 54V92M436 54V92M44 468V506M436 468V506" stroke="#ac966b" stroke-width="2" opacity=".5"/><rect width="480" height="560" fill="url(#grain)" opacity=".65"/><g transform="translate(0 11) rotate(-12 240 285)">
+<path d="M102 230Q105 188 142 172L351 156Q386 159 398 195L410 360Q405 399 370 413L144 422Q101 414 96 374Z" fill="#394b59" stroke="#a5afb4" stroke-width="8"/>
+<path d="M132 220Q135 202 154 196L341 185Q364 184 371 211L377 354Q376 376 356 385L155 397Q130 392 126 371Z" fill="url(#metal)" stroke="#6c7d86" stroke-width="4"/>
+<rect x="167" y="218" width="152" height="136" rx="9" fill="#192632" stroke="#ccad71" stroke-width="5"/>
+<text x="243" y="306" fill="#ead2a0" font-family="Georgia,serif" font-size="84" text-anchor="middle">V</text>
+<path d="M148 359H355" stroke="#c5a268" stroke-width="3" opacity=".8"/>
+<path d="M155 202L331 193M163 397L351 382" stroke="#cad4ce" stroke-opacity=".45" stroke-width="4"/>
+</g><g fill="#a4b4ba" font-family="sans-serif" font-size="16" letter-spacing="5"><text x="96" y="104">PERSONAL MARK</text><text x="137" y="475">RANK IDENTIFIER</text></g></svg>
