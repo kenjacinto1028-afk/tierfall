@@ -42,6 +42,106 @@
 .setup-page .opening-cover{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2}
 @media(max-width:760px){.setup-page .setup-hero{flex:none;height:min(54vh,540px);min-height:270px}.setup-page .opening-cover{object-position:center 20%}.setup-page .cover-fallback-title{font-size:clamp(2.2rem,9vw,3.8rem)}}
 @media(max-width:420px){.setup-page .setup-hero{height:44vh;min-height:230px;max-height:370px}}
+
+/* Tierfall — story-first reader layout, v1. Scope everything to the gameplay view. */
+:root { --tf-gold:#d7b978; --tf-cool:#4b8793; --tf-warm:#bd785a; --tf-panel:#111b24; }
+#game.game-layout{display:block;position:relative;padding-right:60px;min-height:calc(100dvh - 72px);background:#0b121b}
+#game .story-panel{display:grid;grid-template-columns:minmax(290px,38%) minmax(0,62%);align-items:start;min-height:calc(100dvh - 72px);border-right:0;background:#101923;min-width:0}
+#game .scene-art{height:calc(100dvh - 72px);min-height:575px;position:sticky;top:72px;align-self:start;overflow:hidden;isolation:isolate;background-color:#1e3540;background-image:linear-gradient(180deg,rgba(5,14,22,.12),rgba(5,14,22,.04) 48%,rgba(6,13,20,.42)),var(--tf-scene-image,linear-gradient(160deg,#254454,#0d1a27));background-position:center,center;background-size:cover;box-shadow:inset -25px 0 50px #0b131b;border-right:1px solid #52606b}
+#game .scene-art::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,rgba(7,15,24,.2)),linear-gradient(0deg,rgba(6,12,17,.64),transparent 30%);z-index:1;pointer-events:none;opacity:1}
+#game .scene-art::after{content:"";position:absolute;inset:-15%;z-index:1;pointer-events:none;background-image:radial-gradient(circle at 35% 42%,rgba(223,228,216,.17) 0 1px,transparent 2px),radial-gradient(circle at 69% 75%,rgba(199,226,225,.14) 0 1px,transparent 3px);background-size:140px 180px,220px 280px;opacity:.26;transform:translateY(0)}
+#game .scene-art .art-moon,#game .scene-art .art-rail,#game .scene-art .art-city{display:none}
+#game .tf-scene-caption{position:absolute;bottom:24px;left:clamp(16px,3vw,38px);right:20px;z-index:3;display:flex;flex-direction:column;gap:7px;text-shadow:0 2px 15px #07131d;color:#e7e8df;pointer-events:none}
+#game .tf-scene-caption strong{letter-spacing:.17em;text-transform:uppercase;font-size:.75rem;color:#eed19a}
+#game .tf-scene-caption span{font-size:.87rem;color:#e6edf2}
+#game .tf-scene-portrait{position:absolute;z-index:2;bottom:92px;left:clamp(14px,3.2vw,40px);width:clamp(130px,36%,245px);aspect-ratio:1;object-fit:cover;object-position:center 22%;border:2px solid #d0ac74;border-radius:50%;box-shadow:0 14px 42px rgba(0,0,0,.55),0 0 0 8px rgba(5,13,19,.34);background:#253843}
+#game .story-content{width:100%;max-width:none;min-width:0;margin:0;padding:clamp(25px,3vw,52px) clamp(23px,3.3vw,64px) 85px;min-height:calc(100dvh - 72px);background:linear-gradient(165deg,#13242c,#101820 68%,#101923);border-left:1px solid rgba(197,167,111,.2)}
+#game .story-content>*{max-width:900px;margin-left:auto;margin-right:auto}
+#game .story-meta{font-size:.72rem;letter-spacing:.16em;color:#b5c2cd}
+#game .story-heading{margin-top:21px;margin-bottom:24px}
+#game .story-heading h1{font-size:clamp(1.75rem,2.3vw,2.65rem);line-height:1.17;letter-spacing:-.015em}
+#game .prose{font-size:calc(1.18rem * var(--font-scale));line-height:1.82;letter-spacing:.005em;color:#e8e8e2}
+#game .narrative-paragraph{margin-bottom:1.25em}
+#game .choice-heading{margin-top:32px}
+#game .choices{display:grid;gap:12px}
+#game .choice{padding:15px 17px;min-height:62px;border:1px solid #616a72;background:#1d2832}
+#game .choice:hover,#game .choice:focus-visible{background:#293946;border-color:var(--tf-gold)}
+#game .speaker{margin-bottom:22px}
+#game .speaker-name{color:var(--tf-gold)}
+#game[data-presentation="narration"] .speaker{display:none}
+#game[data-presentation="minor"] .speaker-portrait{display:none}
+#game[data-presentation="minor"] .speaker{padding:11px 0 2px;border-top:1px solid #38444c}
+#game[data-presentation="major"] .speaker-portrait{border-color:var(--tf-gold)}
+#game .world-map{padding:13px 12px 5px}
+#game .tf-map-disclosure{max-width:900px;margin:0 auto 22px;border:1px solid #394d59;border-radius:9px;background:#172833}
+#game .tf-map-disclosure>summary{cursor:pointer;padding:10px 16px;color:#e6cf97;font-size:.82rem;letter-spacing:.08em}
+#game .tf-map-disclosure .world-map{margin:0;border:0;background:transparent}
+#game .choice-response{background:#1d2c35}
+#game .tf-side-rail{position:fixed;top:72px;bottom:0;right:0;z-index:30;width:60px;display:flex;flex-direction:column;gap:7px;align-items:center;padding:15px 5px;background:#0e1821;border-left:1px solid #51606a;box-shadow:-10px 0 32px #050b1180}
+#game .tf-side-rail button{width:46px;height:48px;color:#d7dfe5;background:#182732;border:1px solid #3c5261;border-radius:8px;display:grid;place-items:center;cursor:pointer;font-size:1.35rem}
+#game .tf-side-rail button:hover,#game .tf-side-rail button:focus-visible{border-color:#d6bd84;color:#f2dcaa;background:#293d48}
+#game .tf-side-rail button[aria-pressed="true"]{color:#f4d391;border-color:#caa86c;background:#273a47}
+#game .sidebar{position:fixed;right:60px;top:72px;bottom:0;width:min(365px,calc(100vw - 60px));z-index:29;overflow:auto;background:#141e29;box-shadow:-15px 4px 50px #0009;border:1px solid #526171;transform:translateX(calc(100% + 60px));visibility:hidden;pointer-events:none;transition:transform .25s ease,visibility 0s linear .25s}
+#game.tf-menu-open .sidebar{transform:translateX(0);visibility:visible;pointer-events:auto;transition:transform .25s ease,visibility 0s}
+#game .tf-sidebar-close{display:block;position:sticky;top:0;z-index:1;width:100%;border:0;border-bottom:1px solid #40515d;padding:13px 18px;background:#21303b;color:#f2dcaa;text-align:left;font-weight:700}
+#game .tf-panel-backdrop{position:fixed;inset:72px 60px 0 0;z-index:28;display:none;background:rgba(0,0,0,.55);border:0;border-radius:0;cursor:default}
+#game.tf-menu-open .tf-panel-backdrop{display:block}
+#tf-menu-toggle,#tf-effects-toggle{display:none}
+body.tf-playing #tf-menu-toggle,body.tf-playing #tf-effects-toggle{display:inline-flex;gap:6px;align-items:center}
+#game .sidebar .aside-tabs{padding-top:4px}
+/* Mood accent stays restrained: color varies with scene; body text remains high contrast. */
+#game[data-scene-mood="calm"]{--tf-gold:#c9ba91;--tf-cool:#72a7ad}
+#game[data-scene-mood="warm"]{--tf-gold:#d7ac7b;--tf-cool:#5c9293}
+#game[data-scene-mood="tense"]{--tf-gold:#d7a77d;--tf-cool:#a66d67}
+#game[data-scene-mood="tense"] .scene-art::before{background:linear-gradient(0deg,#211518b8,transparent 48%),linear-gradient(90deg,#331e2270,transparent 42%)}
+#game[data-scene-mood="calm"] .scene-art::before{background:linear-gradient(0deg,#12262cae,transparent 38%)}
+#game[data-scene-mood="warm"] .scene-art::before{background:linear-gradient(0deg,#2e2118a1,transparent 35%)}
+body:not(.tf-effects-off) #game .scene-art::after{animation:tf-drift 28s linear infinite alternate}
+body:not(.tf-effects-off) #game .tf-scene-caption{animation:tf-enter .35s ease-out both}
+body:not(.tf-effects-off) #game .story-heading,body:not(.tf-effects-off) #game .prose,body:not(.tf-effects-off) #game .choices{animation:tf-enter .3s ease-out both}
+body:not(.tf-effects-off) #game[data-scene-mood="tense"] .scene-art::after{opacity:.45}
+@keyframes tf-drift{from{transform:translateY(0)}to{transform:translateY(-7%)}}
+@keyframes tf-enter{from{opacity:.42;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+body.tf-effects-off #game .scene-art::after{display:none}
+body.tf-effects-off #game *,body.tf-effects-off #game *::before,body.tf-effects-off #game *::after{animation:none!important;transition:none!important}
+@media(max-width:920px){
+ #game .story-panel{grid-template-columns:minmax(0,38%) minmax(0,62%)}
+ #game .story-content{padding:28px 27px 60px}
+ #game .prose{font-size:calc(1.08rem * var(--font-scale))}
+ #game .tf-scene-portrait{width:48%}
+}
+@media(max-width:740px){
+ #game.game-layout{padding-right:48px}
+ #game .story-panel{display:block}
+ #game .scene-art{height:clamp(210px,37vh,315px);min-height:0;position:relative;top:auto;border-right:0;border-bottom:1px solid #596470}
+ #game .tf-scene-portrait{width:clamp(95px,27%,155px);bottom:48px;left:20px}
+ #game .tf-scene-caption{bottom:14px;left:20px}
+ #game .story-content{min-height:0;padding:25px 22px 70px}
+ #game .story-heading h1{font-size:1.85rem}
+ #game .prose{font-size:calc(1.1rem * var(--font-scale));line-height:1.75}
+ #game .tf-side-rail{top:61px;width:48px;padding:12px 3px;gap:7px}
+ #game .tf-side-rail button{width:40px;height:42px;font-size:1.15rem}
+ #game .sidebar{top:61px;right:48px;width:min(365px,calc(100vw - 48px));transform:translateX(calc(100% + 48px))}
+ #game .tf-panel-backdrop{inset:61px 48px 0 0}
+ body.tf-playing #tf-menu-toggle,body.tf-playing #tf-effects-toggle{display:inline-flex;font-size:.76rem;padding:7px}
+ .actions{gap:3px}
+}
+@media(max-width:420px){
+ #game .story-content{padding:23px 16px 65px}
+ #game .scene-art{height:210px}
+ #game .tf-scene-portrait{width:95px;bottom:49px}
+ #game .prose{font-size:calc(1.04rem * var(--font-scale))}
+ #tf-effects-toggle{font-size:0!important}
+ #tf-menu-toggle{font-size:0!important}
+ #tf-effects-toggle::after{content:'✧';font-size:1rem}
+ #tf-menu-toggle::after{content:'☰';font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){
+ #game *,#game *::before,#game *::after{animation:none!important;transition:none!important}
+}
+#game[data-scene-mood="night"]{--tf-gold:#bdc4b1;--tf-cool:#719da8}
+#game[data-scene-mood="night"] .scene-art::before{background:linear-gradient(0deg,#081523c7,rgba(4,19,33,.5) 55%,rgba(12,28,48,.53))}
+#game .tf-map-disclosure[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -52,6 +152,8 @@
         <button id="font-down" class="small-button" title="Smaller text" aria-label="Decrease text size">A−</button>
         <button id="font-up" class="small-button" title="Larger text" aria-label="Increase text size">A+</button>
         <button id="help-button" class="small-button" title="Help" aria-label="Help">?</button>
+        <button id="tf-effects-toggle" class="small-button" type="button" aria-pressed="true" title="Toggle visual effects">Effects: On</button>
+        <button id="tf-menu-toggle" class="small-button" type="button" aria-controls="tf-sidebar" aria-expanded="false">☰ Menu</button>
         <button id="save-button" class="small-button hide-on-mobile" title="Save progress">Save</button>
       </div>
     </header>
@@ -108,13 +210,21 @@
           <p id="save-status" class="saved-text" role="status">Saved on this device</p>
         </div>
       </section>
-      <aside class="sidebar" aria-label="Player and journal">
+      <aside class="sidebar" id="tf-sidebar" aria-label="Player and journal"><button id="tf-sidebar-close" class="tf-sidebar-close" type="button" aria-label="Close side menu">← Close menu</button>
         <div class="identity-card"><span class="eyebrow">YOUR IDENTITY</span><h2 id="profile-name"></h2><button id="edit-player-name" class="text-button edit-player-name" type="button">Edit your names</button><p id="profile-alias" class="muted small"></p><p id="profile-rank" class="rank-label"></p><p id="profile-background" class="muted small"></p></div>
         <div class="side-section"><div class="stat-row"><span>Public attention</span><strong id="cover"></strong></div><div class="stat-row"><span id="progress-count">Chapter 1</span><span>Act I</span></div><div class="progress-track"><div id="progress-bar" class="progress-inner"></div></div></div>
         <div id="aside-tabs" class="aside-tabs" role="tablist" aria-label="Story records"><button class="aside-tab selected" aria-selected="true" data-tab="journal">Journal</button><button class="aside-tab" aria-selected="false" data-tab="people">People</button><button class="aside-tab" aria-selected="false" data-tab="world">World</button><button class="aside-tab" aria-selected="false" data-tab="glossary">Glossary</button><button class="aside-tab" aria-selected="false" data-tab="recap">Recap</button></div>
         <div id="aside-content" class="aside-content" aria-live="polite"></div>
         <div class="sidebar-tools"><button id="export-button" class="secondary-button">Export save</button><button id="import-button" class="secondary-button">Import save</button><input id="import-file" type="file" accept=".json,application/json" hidden /><button id="new-game" class="text-button">Start a new story</button></div>
       </aside>
+      <button id="tf-panel-backdrop" class="tf-panel-backdrop" type="button" tabindex="-1" aria-label="Close side menu"></button>
+      <nav class="tf-side-rail" aria-label="Story menu">
+        <button type="button" data-tf-tab="journal" aria-label="Journal" title="Journal">▤</button>
+        <button type="button" data-tf-tab="people" aria-label="People" title="People">♧</button>
+        <button type="button" data-tf-tab="world" aria-label="World guide" title="World guide">◎</button>
+        <button type="button" data-tf-tab="glossary" aria-label="Glossary" title="Glossary">⌕</button>
+        <button type="button" data-tf-tab="recap" aria-label="Recap" title="Recap">◷</button>
+      </nav>
     </div>
     <div id="recap-modal" class="recap-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="recap-modal-title">
       <section class="recap-modal-card">
@@ -1113,6 +1223,7 @@ var Tierfall;
         $('#narrative').setAttribute('aria-label', 'Story: ' + scene.title);
         status();
         renderAside();
+        if (window.TierfallSceneUI) { try { window.TierfallSceneUI.onRender(game,scene); } catch (error) { console.warn('Reader UI unavailable',error); } }
     }
     function closeReturnRecap(){
         $('#recap-modal').classList.add('hidden');
@@ -1234,6 +1345,163 @@ if (typeof document !== 'undefined') {
         Tierfall.boot();
 }
 
+</script>
+<script>
+/* Tierfall reader UI. Presentation-only: does not modify scene text, choices, or save schema. */
+(function(){
+  'use strict';
+  const MAJOR = new Set([
+    'Sera Venn','Jalen Orr','Nera Sol','Lio Fen','Kell Ardent','Maren Oth',
+    'Daya Wren','Tarek Rhun','Garric Vale','Oren Vask','Ilyra Sen','Ysolde Kaine'
+  ]);
+  const ART = Object.freeze({
+    'p-reach': ['reach-routes','calm','The Halcyon Reach'],
+    'p-ranks': ['civic-concourse','warm','Society and status'],
+    'p-powers': ['reach-routes','tense','Across the Reach'],
+    'p-thule': ['living-ring','calm','Thule · Workers’ Ring'],
+    'c1-wake': ['living-ring','calm','Before the first bell'],
+    'c1-duty': ['work-sector','warm','A working shift on Thule'],
+    'c1-quiet': ['living-ring','calm','Thule · Service walk'],
+    'c1-home': ['living-ring','warm','Thule · Living ring'],
+    'c1-notice': ['civic-concourse','tense','Thule · Public records'],
+    'c1-cross': ['living-ring','tense','Thule · Service lane'],
+    'c1-ally': ['living-ring','warm','Thule · Food stalls'],
+    'c1-walk': ['living-ring','night','Thule · Night walk'],
+    'c1-door': ['work-sector','tense','Thule · Checkpoint'],
+    'c1-cost': ['living-ring','tense','Thule · Home passage'],
+    'c1-dusk': ['living-ring','night','Thule · Sleeping ring'],
+    'c1-end': ['reach-routes','calm','The Halcyon Reach']
+  });
+  const $ = (selector) => document.querySelector(selector);
+  const setting = 'tierfall.reader.effects.v1';
+  let menuOpen = false;
+  let currentScene = null;
+  let effectsOverride = null;
+  function effectsAllowed(){
+    let mode=effectsOverride;
+    if(mode===null){try{mode=localStorage.getItem(setting);}catch{mode=null;}}
+    return mode!=='off' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+  function updateEffects(){
+    const active = effectsAllowed();
+    document.body.classList.toggle('tf-effects-off',!active);
+    const btn=$('#tf-effects-toggle');
+    if(btn){btn.setAttribute('aria-pressed',String(active));btn.title=active?'Turn visual effects off':'Turn visual effects on';btn.setAttribute('aria-label',btn.title);btn.textContent=active?'Effects: On':'Effects: Off';}
+  }
+  function setEffects(active){
+    effectsOverride=active?'on':'off';
+    try {localStorage.setItem(setting,effectsOverride);}catch{}
+    updateEffects();
+  }
+  function activeMenuTab(){
+    return $('#aside-tabs .aside-tab.selected')?.dataset.tab || 'journal';
+  }
+  function setMenuOpen(value,focusControl=false){
+    menuOpen=Boolean(value);
+    const root=$('#game'), panel=$('#tf-sidebar'), toggle=$('#tf-menu-toggle');
+    if(!root||!panel)return;
+    root.classList.toggle('tf-menu-open',menuOpen);
+    panel.inert=!menuOpen;
+    panel.setAttribute('aria-hidden',String(!menuOpen));
+    toggle?.setAttribute('aria-expanded',String(menuOpen));
+    $('#tf-panel-backdrop')?.setAttribute('aria-hidden',String(!menuOpen));
+    if(menuOpen && focusControl) $('#tf-sidebar-close')?.focus();
+    else if(!menuOpen && focusControl) toggle?.focus();
+    updateRail();
+  }
+  function updateRail(){
+    const tab=activeMenuTab();
+    document.querySelectorAll('[data-tf-tab]').forEach(btn=>{
+      btn.setAttribute('aria-pressed',String(menuOpen && btn.dataset.tfTab===tab));
+    });
+  }
+  function openTab(tab){
+    const target=Array.from(document.querySelectorAll('#aside-tabs .aside-tab')).find(b=>b.dataset.tab===tab);
+    target?.click();
+    setMenuOpen(true,true);
+  }
+  function syncPlaying(){
+    const active=!$('#game')?.classList.contains('hidden');
+    document.body.classList.toggle('tf-playing',Boolean(active));
+    if(!active)setMenuOpen(false);
+  }
+  function ensureMapDisclosure(){
+    if($('#tf-map-disclosure'))return;
+    const map=$('#world-map');if(!map)return;
+    const disclosure=document.createElement('details');
+    disclosure.id='tf-map-disclosure';disclosure.className='tf-map-disclosure';
+    const summary=document.createElement('summary');summary.textContent='View schematic Reach map';
+    map.before(disclosure);disclosure.append(summary,map);
+  }
+  function setStagePortrait(mode){
+    const stage=$('#game .scene-art');if(!stage)return;
+    stage.querySelectorAll('.tf-scene-portrait').forEach(i=>i.remove());
+    if(mode!=='major')return;
+    const speakerPortrait=$('#speaker-initials img');
+    if(!speakerPortrait||!speakerPortrait.getAttribute('src'))return;
+    const img=document.createElement('img');
+    img.className='tf-scene-portrait';img.alt='';img.decoding='async';
+    img.src=speakerPortrait.getAttribute('src');
+    img.addEventListener('error',()=>img.remove(),{once:true});
+    stage.appendChild(img);
+  }
+  function renderPresentation(game,scene){
+    if(!scene||!game)return;
+    const root=$('#game'), stage=$('#game .scene-art');if(!root||!stage)return;
+    const info=ART[scene.id]||['living-ring','calm',scene.location||'Thule'];
+    let [art,mood,caption]=info;
+    // Opening work-sector artwork follows the protagonist's chosen occupation when possible.
+    if(scene.id==='c1-duty'){
+      if(game.origin==='ward'){art='civic-concourse';caption='Thule · Medical ward';mood='calm';}
+      if(game.origin==='farmer'){art='living-ring';caption='Thule · Agricultural deck';mood='warm';}
+      if(game.origin==='cargo'){art='work-sector';caption='Thule · Cargo bays';mood='warm';}
+      if(game.origin==='reclamation'){art='work-sector';caption='Thule · Reclamation sector';mood='warm';}
+    }
+    root.dataset.sceneMood=mood;
+    root.dataset.sceneArtwork=art;
+    stage.style.setProperty('--tf-scene-image',`url("assets/scenes/${art}.webp")`);
+    const speaker=scene.speaker||'Narrator';
+    const mode = speaker==='Narrator'?'narration':MAJOR.has(speaker)?'major':'minor';
+    root.dataset.presentation=mode;
+    setStagePortrait(mode);
+    let label=stage.querySelector('.tf-scene-caption');
+    if(!label){
+      label=document.createElement('div');label.className='tf-scene-caption';
+      const strong=document.createElement('strong');const span=document.createElement('span');
+      label.append(strong,span);stage.appendChild(label);
+    }
+    label.querySelector('strong').textContent=scene.id.startsWith('p-')?'PROLOGUE':'CHAPTER ONE';
+    label.querySelector('span').textContent=caption;
+    ensureMapDisclosure();
+    const mapDisclosure=$('#tf-map-disclosure');
+    if(mapDisclosure){
+      mapDisclosure.hidden=scene.id!=='p-reach';
+      if(currentScene!==scene.id)mapDisclosure.open=false;
+    }
+    currentScene=scene.id;
+    syncPlaying();
+  }
+  function initialize(){
+    const toggle=$('#tf-menu-toggle'), effects=$('#tf-effects-toggle');
+    if(!toggle||!effects||!$('#tf-sidebar'))return;
+    toggle.addEventListener('click',()=>setMenuOpen(!menuOpen,true));
+    effects.addEventListener('click',()=>setEffects(!effectsAllowed()));
+    $('#tf-sidebar-close')?.addEventListener('click',()=>setMenuOpen(false,true));
+    $('#tf-panel-backdrop')?.addEventListener('click',()=>setMenuOpen(false,false));
+    document.querySelectorAll('[data-tf-tab]').forEach(button=>button.addEventListener('click',()=>openTab(button.dataset.tfTab)));
+    document.querySelectorAll('#aside-tabs .aside-tab').forEach(button=>button.addEventListener('click',updateRail));
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape' && menuOpen){event.preventDefault();setMenuOpen(false,true);}
+    });
+    const game=$('#game');
+    new MutationObserver(syncPlaying).observe(game,{attributes:true,attributeFilter:['class']});
+    try{window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',updateEffects);}catch{}
+    setMenuOpen(false);updateEffects();syncPlaying();
+  }
+  window.TierfallSceneUI=Object.freeze({onRender:renderPresentation});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize);
+  else initialize();
+})();
 </script>
 </body>
 </html>
