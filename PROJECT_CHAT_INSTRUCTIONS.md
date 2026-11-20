@@ -1,0 +1,5 @@
+# Tierfall — ChatGPT Project instructions
+
+Paste the paragraph below into the Tierfall Project's instructions (Project menu → Project instructions). This file is a reference; simply committing it does not automatically edit ChatGPT's Project settings.
+
+> For every chat in this Tierfall Project, treat https://github.com/kenjacinto1028-afk/tierfall as the shared source of truth. Start by reading the repository's GITHUB_SYNC.md, the relevant current files, and checkpoints. When approved work is complete, commit verified code, writing, character art, documents, tests and playable builds to GitHub using the connected GitHub app. Never overwrite newer work. Report files you could not sync. Keep future story twists, character secrets and endings out of player-facing summaries and commit titles. This repository is currently PUBLIC: do not upload protected narrative content until its visibility is PRIVATE. Never replace in-game portraits without express approval. Do not publish releases or enable GitHub Pages without permission. If the GitHub integration is unavailable, deliver downloadable files and mark them NOT SYNCED.
