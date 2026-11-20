@@ -2046,11 +2046,16 @@ if (typeof document !== 'undefined') {
   function showPortraitPage(requested,scroll){
     const paragraphs=Array.from(document.querySelectorAll('#prose > .narrative-paragraph'));
     portraitCurrentPage=Math.min(portraitPageCount-1,Math.max(0,requested));
-    const size=Math.max(1,Math.ceil(paragraphs.length/portraitPageCount));
-    paragraphs.forEach((para,index)=>{
-      const page=Math.min(portraitPageCount-1,Math.floor(index/size));
-      para.classList.toggle('tf-page-off',page!==portraitCurrentPage);
-    });
+    // Distribute paragraphs without leaving an empty final decision beat.
+    const base=Math.floor(paragraphs.length/portraitPageCount);
+    const extra=paragraphs.length%portraitPageCount;
+    let cursor=0;
+    for(let beat=0;beat<portraitPageCount;beat++){
+      const count=base+(beat<extra?1:0);
+      for(let i=0;i<count;i++){
+        paragraphs[cursor++].classList.toggle('tf-page-off',beat!==portraitCurrentPage);
+      }
+    }
     const isFinal=portraitCurrentPage===portraitPageCount-1;
     const response=$('#choice-response');
     response?.classList.toggle('tf-page-off',portraitCurrentPage!==0);
