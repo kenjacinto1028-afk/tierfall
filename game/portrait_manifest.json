@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notice": "Player-safe inventory. Referenced image binaries not yet uploaded to GitHub. The HTML safely falls back to original embedded art until they are installed.",
+  "notice": "All 27 approved neutral portrait images are uploaded at game/assets/portraits/ on main and used by the game when hosted with the assets. Unfinished expression images are not uploaded; gameplay safely falls back to approved neutrals.",
   "characters": [
     {
       "id": 1,
@@ -16,7 +16,7 @@
         "determined": "assets/portraits/01-sera-venn/determined.webp",
         "surprised": "assets/portraits/01-sera-venn/surprised.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "draft_requires_likeness_review"
     },
     {
@@ -33,7 +33,7 @@
         "determined": "assets/portraits/02-jalen-orr/determined.webp",
         "surprised": "assets/portraits/02-jalen-orr/surprised.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "draft_requires_likeness_review"
     },
     {
@@ -50,7 +50,7 @@
         "determined": "assets/portraits/03-nera-sol/determined.webp",
         "surprised": "assets/portraits/03-nera-sol/surprised.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "draft_requires_likeness_review"
     },
     {
@@ -62,7 +62,7 @@
       "files": {
         "neutral": "assets/portraits/04-lio-fen/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -74,7 +74,7 @@
       "files": {
         "neutral": "assets/portraits/05-kell-ardent/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -86,7 +86,7 @@
       "files": {
         "neutral": "assets/portraits/06-maren-oth/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -98,7 +98,7 @@
       "files": {
         "neutral": "assets/portraits/07-daya-wren/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -110,7 +110,7 @@
       "files": {
         "neutral": "assets/portraits/08-tarek-rhun/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -122,7 +122,7 @@
       "files": {
         "neutral": "assets/portraits/09-garric-vale/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -134,7 +134,7 @@
       "files": {
         "neutral": "assets/portraits/10-oren-vask/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -146,7 +146,7 @@
       "files": {
         "neutral": "assets/portraits/11-ilyra-sen/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -158,7 +158,7 @@
       "files": {
         "neutral": "assets/portraits/12-ysolde-kaine/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -170,7 +170,7 @@
       "files": {
         "neutral": "assets/portraits/13-toma-baret/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -182,7 +182,7 @@
       "files": {
         "neutral": "assets/portraits/14-varo-quill/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -194,7 +194,7 @@
       "files": {
         "neutral": "assets/portraits/15-dr-cael-vey/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -206,7 +206,7 @@
       "files": {
         "neutral": "assets/portraits/16-captain-rovan-hest/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -218,7 +218,7 @@
       "files": {
         "neutral": "assets/portraits/17-lady-coris-vale/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -230,7 +230,7 @@
       "files": {
         "neutral": "assets/portraits/18-matria-celen/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -242,7 +242,7 @@
       "files": {
         "neutral": "assets/portraits/19-ina-lores/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -254,7 +254,7 @@
       "files": {
         "neutral": "assets/portraits/20-peli-serran/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -266,7 +266,7 @@
       "files": {
         "neutral": "assets/portraits/21-sima-dorr/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -278,7 +278,7 @@
       "files": {
         "neutral": "assets/portraits/22-eren-tal/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -290,7 +290,7 @@
       "files": {
         "neutral": "assets/portraits/23-mira-seln/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -302,7 +302,7 @@
       "files": {
         "neutral": "assets/portraits/24-osha-ren/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -314,7 +314,7 @@
       "files": {
         "neutral": "assets/portraits/25-dren-malek/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -326,7 +326,7 @@
       "files": {
         "neutral": "assets/portraits/26-suri-dane/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     },
     {
@@ -338,7 +338,7 @@
       "files": {
         "neutral": "assets/portraits/27-lucan-wrenholt/neutral.webp"
       },
-      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "artStatus": "approved_neutral_uploaded",
       "expressionStatus": "not_approved_for_import"
     }
   ]
