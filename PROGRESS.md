@@ -18,3 +18,12 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Updated `game/tierfall-chapter1-expanded-edition.html` to show it in the new-game setup panel; existing character creation and story scripts were preserved.
 - [x] Verified cover and updated HTML are present on `main`, including mobile layout and a fallback for a standalone offline HTML without the image asset.
 - [ ] Confirm visual appearance on the actual GitHub Pages deployment on desktop/mobile; browser rendering not yet independently validated.
+
+## Protagonist signature marks — 2026-11-20
+- [x] Exactly two permanent personal features across all backgrounds: thin diagonal left-eyebrow scar and pale crescent-shaped burn below right jaw.
+- [x] Shared childhood origin at age twelve: Thule living-ring pressure-door accident during a power failure.
+- [x] Chapter 1 uses unconditional references in the opening, Sera's memory, and checkpoint identification scene; existing Rank V wrist identifier remains distinct.
+- [x] Verified JavaScript syntax and ran story-model checks for all 12 job/upbringing combinations including Skip Prologue and an opening choice transition.
+- [x] Saved player-safe specification: `docs/player_safe/PROTAGONIST_APPEARANCE.md` and regression test: `tests/protagonist-marks.test.mjs`.
+- [ ] No protagonist artwork has been changed; any new/modified portrait requires separate approval.
+- [ ] Manual deployed-browser visual QA remains pending.
