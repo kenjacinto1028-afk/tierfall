@@ -14,7 +14,7 @@ assert.ok(ui.includes("canvas.toDataURL('image/webp',.96)"),'Higher quality rend
 assert.ok(ui.includes("image.dataset.tfHd='1'"),'Enhanced image must not reprocess indefinitely');
 assert.ok(ui.includes('if(image.naturalWidth>480||image.naturalHeight>600)return'),'Large original portraits must not be resampled');
 assert.ok(ui.includes("updateFocusCard(Tierfall.scenes[$('#game')?.dataset.sceneId],portraitCurrentPage)"),'Focus follows visible page');
-assert.ok(ui.includes('scene.id+\\':\\'+item.art'),'Focus card identity must change on scene transition');
+assert.ok(ui.includes("scene.id+':'+item.art"),'Focus card identity must change on scene transition');
 assert.ok(html.includes('max-width:650px'),'Mobile UI must be defined');
 assert.ok(html.includes('tf-focus-card'),'Object card styles must exist');
 assert.ok(html.includes('tf-portrait-rail'),'Portrait rail remains');
