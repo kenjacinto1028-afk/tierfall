@@ -77,3 +77,12 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Added \`tests/portrait-reader.test.mjs\`; verified both game scripts parse, 12/12 character background transitions, and non-empty/complete 3-beat paragraph distribution across 3–7 paragraph scene lengths.
 - [x] Verified code and test commits on GitHub \`main\` using content hash readbacks.
 - [ ] Live GitHub Pages screenshot and hands-on phone test still require browser access; there was no connected browser context in this run. No Pages configuration or release was changed.
+
+## Scene-focus objects and sharper portraits — 2026-11-21
+- [x] Added seven spoiler-safe, scalable vector illustrations under \`game/assets/focus/\`: route chart, rank band, civic seal, shift ledger, public notice, checkpoint reader, and station bell. Art reflects already playable, public scenes and does not add unreleased details.
+- [x] Narrator beats with important objects now show a Scene Focus card in the left rail (object picture, title, category, location, short description); when no relevant object exists, the text retains the full-width reader. Existing character portrait cards remain for character dialogue.
+- [x] The object view updates when advancing beats, so scene items are not revealed before their relevant beat. Repeated artwork also updates its description when the scene changes. Mobile stacks the compact focus card above the prose.
+- [x] Confirmed that uploaded neutral character portraits are only 240 × 300 WebP. Improved their presentation with 2× high-quality Canvas rendering, a mild sharpening pass and safe in-memory caching. The original approved art files, manifest and character identities were not altered.
+- [x] Added \`tests/object-focus-and-portrait-clarity.test.mjs\`; remote test checks all seven SVGs, beat appearance, portrait fallback, resampling behavior, and 12 background story transitions.
+- [ ] Genuine newly painted high-resolution character source art remains unavailable: resampling improves on-screen definition but cannot recreate detail absent from the small approved source files.
+- [ ] Confirm the live GitHub Pages appearance on desktop and phone; repository checks do not constitute a real-browser visual test.
