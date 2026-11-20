@@ -68,3 +68,12 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Upload the optional high-fidelity WebP asset to the public GitHub repository using a binary-capable upload route; the connected GitHub text-file tools were not suitable for transferring this generated binary directly.
 - [ ] Visually verify actual deployed GitHub Pages desktop and Android rendering, as the connected browser did not expose an active browser context this session.
 
+## Portrait-led story reader — 2026-11-21 (current)
+- [x] Replaced the illustrated gameplay split-screen with a centered, portrait-led reading panel styled after the player-provided three-beat example. The existing environment backgrounds remain in the repository but are not requested or displayed during reading.
+- [x] Added a compact cast rail using only already-approved in-game portrait sources, highlighting the current character. A narrator-only scene uses a wider reading surface without an empty portrait panel.
+- [x] Divided each scene's original paragraphs into one, two or three reading beats, keeping all source text, prior-choice response, location, and original narrative decisions intact. Decisions are visible only on the last beat.
+- [x] Added Previous/Next page navigation, progress dots, final-beat indicator, arrow-key reading, and protection against number-key shortcuts making a choice before its page is visible.
+- [x] Retained existing journal, people, world map, glossary, save/export/import and responsive mobile reading mode. Game model and save schema unchanged; live portrait files untouched.
+- [x] Added \`tests/portrait-reader.test.mjs\`; verified both game scripts parse, 12/12 character background transitions, and non-empty/complete 3-beat paragraph distribution across 3–7 paragraph scene lengths.
+- [x] Verified code and test commits on GitHub \`main\` using content hash readbacks.
+- [ ] Live GitHub Pages screenshot and hands-on phone test still require browser access; there was no connected browser context in this run. No Pages configuration or release was changed.
