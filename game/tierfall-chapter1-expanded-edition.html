@@ -325,6 +325,46 @@ body.tf-playing .footer{display:none}
 @media(max-width:375px){body.tf-playing .brand{font-size:.8rem}body.tf-playing .brand-symbol{width:22px}body.tf-playing .tf-reference-links button{min-width:35px}}
 @media(prefers-reduced-motion:reduce){body.tf-playing .tf-reference-footer *,body.tf-playing .tf-reference-links *{animation:none!important;transition:none!important}}
 
+
+/* Scene composition v2: keep anonymous crowds in public spaces, approved faces in conversations. */
+#game[data-scene-crowd="none"] .tf-reference-extras{display:none}
+#game[data-scene-crowd="sparse"] .tf-reference-extras{opacity:.25;filter:blur(1.4px);transform:scale(.7);transform-origin:bottom}
+#game[data-scene-crowd="busy"] .tf-reference-extras{opacity:.75}
+#game[data-scene-crowd="busy"] .tf-reference-extras span:nth-child(2){height:34%;width:6%;bottom:-8%}
+#game[data-scene-crowd="busy"] .tf-reference-extras span:nth-child(4){height:52%;width:5%;bottom:-6%}
+#game .tf-reference-people{left:0;bottom:0;width:100%;height:52%;align-items:flex-end;justify-content:flex-start;overflow:hidden;isolation:isolate;filter:drop-shadow(1px 0 16px #010b12cc)}
+#game .tf-reference-people::before{content:"";position:absolute;z-index:-1;left:0;right:18%;bottom:-12%;height:95%;border-radius:48% 48% 0 0;background:radial-gradient(ellipse at 36% 62%,rgba(218,155,94,.24),transparent 60%);pointer-events:none}
+#game .tf-reference-people img{height:100%;width:clamp(165px,51%,320px);flex:0 0 auto;object-fit:cover;object-position:50% 18%;border-radius:34% 34% 0 0;opacity:.97;-webkit-mask-image:linear-gradient(to top,transparent 0%,#000 19%,#000 79%,transparent 100%),linear-gradient(to right,transparent 0%,#000 9%,#000 88%,transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 74% 86% at 49% 36%,#000 42%,transparent 100%);filter:contrast(1.06) saturate(.84)}
+#game .tf-reference-people img+img{width:46%;height:95%;margin-left:-17%;transform:translateY(8%);object-position:50% 16%;opacity:.97}
+#game[data-scene-cast="one"] .tf-reference-people{height:48%}
+#game[data-scene-cast="two"] .tf-reference-people{height:57%}
+#game[data-scene-mood="warm"] .tf-reference-people{filter:drop-shadow(0 4px 16px #050e16cc) sepia(.08)}
+#game[data-scene-mood="night"] .tf-reference-people{filter:brightness(.77) drop-shadow(0 5px 20px #010811cc)}
+#game[data-scene-mood="tense"] .tf-reference-people{filter:contrast(1.11) saturate(.73) drop-shadow(0 4px 15px #050911ce)}
+#game .tf-scene-caption{pointer-events:none}
+#game[data-scene-cast="two"] .tf-scene-caption{max-width:42%}
+body.tf-playing #game .story-content{scrollbar-width:thin}
+body.tf-playing #game .story-heading h1{overflow-wrap:anywhere}
+body.tf-playing #game .choice-copy{min-width:0}
+body.tf-playing #game .choice-copy strong{overflow-wrap:break-word}
+body.tf-playing #game .choice:active{border-color:#f3d295;background:#51432b}
+@media(max-width:1150px),(pointer:coarse) and (orientation:portrait){
+ body.tf-playing #game .tf-reference-people{height:74%;overflow:hidden}
+ body.tf-playing #game[data-scene-cast="two"] .tf-reference-people{height:85%}
+ body.tf-playing #game .tf-reference-people img{width:clamp(125px,40vw,240px)}
+ body.tf-playing #game .tf-reference-people img+img{width:37%;margin-left:-12%}
+ body.tf-playing #game .tf-reference-extras{height:30%}
+ body.tf-playing #game .tf-scene-caption{bottom:10px;right:14px}
+}
+@media(max-width:480px){
+ body.tf-playing #game .tf-reference-people img{width:clamp(120px,42vw,180px)}
+ body.tf-playing #game .tf-reference-people img+img{width:37%;margin-left:-11%}
+ body.tf-playing #game[data-scene-cast="two"] .tf-scene-caption{max-width:42%}
+}
+@media(prefers-reduced-motion:reduce){
+ #game .tf-reference-people,#game .tf-reference-people img{transition:none!important;animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -1548,7 +1588,7 @@ if (typeof document !== 'undefined') {
     'c1-home': ['living-ring','warm','Thule · Living ring'],
     'c1-notice': ['records-hall','tense','Thule · Public records'],
     'c1-cross': ['living-ring','tense','Thule · Service lane'],
-    'c1-ally': ['living-ring','warm','Thule · Food stalls'],
+    'c1-ally': ['service-market','warm','Thule · Food stalls'],
     'c1-walk': ['living-ring','night','Thule · Night walk'],
     'c1-door': ['checkpoint','tense','Thule · Checkpoint'],
     'c1-cost': ['living-ring','tense','Thule · Home passage'],
@@ -1644,7 +1684,7 @@ if (typeof document !== 'undefined') {
     }
     root.dataset.sceneMood=mood;
     root.dataset.sceneArtwork=art;
-    const svgScenes={'medical-ward':'civic-concourse','garden-deck':'living-ring','records-hall':'civic-concourse','checkpoint':'work-sector'};
+    const svgScenes={'medical-ward':'civic-concourse','garden-deck':'living-ring','records-hall':'civic-concourse','checkpoint':'work-sector','service-market':'living-ring'};
     const image=svgScenes[art]?`url("assets/scenes/${art}.svg"),url("assets/scenes/${svgScenes[art]}.webp")`:`url("assets/scenes/${art}.webp")`;
     stage.style.setProperty('--tf-scene-image',image);
     const speaker=scene.speaker||'Narrator';
@@ -1766,7 +1806,11 @@ if (typeof document !== 'undefined') {
       group.replaceChildren();
       // Named faces only when already present in the current scene; approved portraits unchanged.
       const cast=scene.id==='c1-ally'?['Jalen Orr','Sera Venn']:
-        ['Sera Venn','Jalen Orr'].includes(scene.speaker)?[scene.speaker]:[];
+        MAJOR.has(scene.speaker)?[scene.speaker]:[];
+      root.dataset.sceneCast=cast.length===2?'two':cast.length===1?'one':'none';
+      const busy=new Set(['p-ranks','c1-duty','c1-notice','c1-ally']);
+      const sparse=new Set(['p-thule','c1-home','c1-cross']);
+      root.dataset.sceneCrowd=busy.has(scene.id)?'busy':sparse.has(scene.id)?'sparse':'none';
       cast.forEach(name=>{
         const src=Tierfall.portraitFor(game,name);if(!src)return;
         const image=document.createElement('img');image.src=src;image.alt='';image.decoding='async';
