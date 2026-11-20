@@ -17,6 +17,6 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Created 7 spoiler-safe SVG object-focus illustrations at `game/assets/focus/*.svg` (route chart, rank band, seal, ledger, notice, scanner, bell); verified upload.
 - [x] Added scene/beat-aware artifact cards and descriptions, with spoiler-safe reveal timing, narrator-only wide view when no object, and responsive layout (`game/tierfall-chapter1-expanded-edition.html`).
 - [x] Added 2× Canvas high-quality resampling with mild edge enhancement, in-memory cache and native-image fallback; original approved portraits remain unchanged.
-- [ ] Add regression tests and run model/UI checks.
-- [ ] Sync and verify all new code, assets, tests, and status notes on GitHub main.
+- [x] Added `tests/object-focus-and-portrait-clarity.test.mjs`, checked 7 SVGs, beat gating, Canvas 2× mock, source portrait integrity, JS syntax and all 12 story background transitions; all passed.
+- [x] Synced code, seven focus SVG assets, tests and PROGRESS.md to GitHub `main`; verified remote content hashes, two embedded scripts and byte-identical story engine. No portrait source files replaced.
 - [ ] Browser screenshot QA (desktop and phone) when actual connected browser access is available.
