@@ -9,7 +9,7 @@ permissions:
   contents: write
 jobs:
   capture:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
           (async () => {
             fs.mkdirSync('qa-screenshots', { recursive: true });
             const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
-            const url = pathToFileURL(resolve('game/tierfall-chapter1-expanded-edition.html')).href;
+            const url = 'https://kenjacinto1028-afk.github.io/tierfall/game/tierfall-chapter1-expanded-edition.html';
             const failures = [];
             async function capture(name, width, height, scene, menu=false) {
               const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, isMobile: width < 500, hasTouch: width < 500 });
@@ -57,7 +57,7 @@ jobs:
             await capture('06-chapter1-mobile', 390, 844, 'chapter1');
             await capture('07-chapter1-mobile-menu', 390, 844, 'chapter1', true);
             await browser.close();
-            fs.writeFileSync('qa-screenshots/README.md', '# TierFall actual browser captures\n\nCaptured from the exact Chapter 1 HTML on this QA branch using headless Chromium at desktop 1440×900 and mobile 390×844. No mocked UI.\n\nScreens represent the opening states only, without future story spoilers.\n\nBrowser errors: ' + (failures.length ? failures.join('; ') : 'None') + '\n');
+            fs.writeFileSync('qa-screenshots/README.md', '# TierFall actual browser captures\n\nCaptured from the deployed GitHub Pages Chapter 1 URL using headless Chromium at desktop 1440×900 and mobile 390×844. No mocked UI.\n\nScreens represent the opening states only, without future story spoilers.\n\nBrowser errors: ' + (failures.length ? failures.join('; ') : 'None') + '\n');
             if (failures.length) { console.error(failures.join('\n')); process.exitCode = 1; }
           })().catch(e => { console.error(e); process.exit(1); });
           NODE
