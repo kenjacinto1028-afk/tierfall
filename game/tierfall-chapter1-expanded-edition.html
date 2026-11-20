@@ -1546,11 +1546,11 @@ if (typeof document !== 'undefined') {
     'c1-duty': ['work-sector','warm','A working shift on Thule'],
     'c1-quiet': ['living-ring','calm','Thule · Service walk'],
     'c1-home': ['living-ring','warm','Thule · Living ring'],
-    'c1-notice': ['civic-concourse','tense','Thule · Public records'],
+    'c1-notice': ['records-hall','tense','Thule · Public records'],
     'c1-cross': ['living-ring','tense','Thule · Service lane'],
     'c1-ally': ['living-ring','warm','Thule · Food stalls'],
     'c1-walk': ['living-ring','night','Thule · Night walk'],
-    'c1-door': ['work-sector','tense','Thule · Checkpoint'],
+    'c1-door': ['checkpoint','tense','Thule · Checkpoint'],
     'c1-cost': ['living-ring','tense','Thule · Home passage'],
     'c1-dusk': ['living-ring','night','Thule · Sleeping ring'],
     'c1-end': ['reach-routes','calm','The Halcyon Reach']
@@ -1637,14 +1637,16 @@ if (typeof document !== 'undefined') {
     let [art,mood,caption]=info;
     // Opening work-sector artwork follows the protagonist's chosen occupation when possible.
     if(scene.id==='c1-duty'){
-      if(game.origin==='ward'){art='civic-concourse';caption='Thule · Medical ward';mood='calm';}
-      if(game.origin==='farmer'){art='living-ring';caption='Thule · Agricultural deck';mood='warm';}
+      if(game.origin==='ward'){art='medical-ward';caption='Thule · Medical ward';mood='calm';}
+      if(game.origin==='farmer'){art='garden-deck';caption='Thule · Agricultural deck';mood='warm';}
       if(game.origin==='cargo'){art='work-sector';caption='Thule · Cargo bays';mood='warm';}
       if(game.origin==='reclamation'){art='work-sector';caption='Thule · Reclamation sector';mood='warm';}
     }
     root.dataset.sceneMood=mood;
     root.dataset.sceneArtwork=art;
-    stage.style.setProperty('--tf-scene-image',`url("assets/scenes/${art}.webp")`);
+    const svgScenes={'medical-ward':'civic-concourse','garden-deck':'living-ring','records-hall':'civic-concourse','checkpoint':'work-sector'};
+    const image=svgScenes[art]?`url("assets/scenes/${art}.svg"),url("assets/scenes/${svgScenes[art]}.webp")`:`url("assets/scenes/${art}.webp")`;
+    stage.style.setProperty('--tf-scene-image',image);
     const speaker=scene.speaker||'Narrator';
     const mode = speaker==='Narrator'?'narration':MAJOR.has(speaker)?'major':'minor';
     root.dataset.presentation=mode;
