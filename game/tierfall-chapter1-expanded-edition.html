@@ -2074,7 +2074,7 @@ if (typeof document !== 'undefined') {
     if(!item){focus.replaceChildren();focus.hidden=true;focus.dataset.focusArt='';}
     else{
       focus.hidden=false;
-      if(focus.dataset.focusArt!==item.art){
+      if(focus.dataset.focusArt!==scene.id+':'+item.art){
         focus.replaceChildren();
         const card=readerNode('div','tf-focus-card');
         const picture=readerNode('span','tf-focus-picture');
@@ -2090,7 +2090,7 @@ if (typeof document !== 'undefined') {
         );
         card.append(picture,caption);
         focus.append(card,readerNode('p','tf-focus-description',item.description));
-        focus.dataset.focusArt=item.art;
+        focus.dataset.focusArt=scene.id+':'+item.art;
       }
     }
     const cast=portraitCharacters.length>0;
