@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "notice": "Player-safe inventory. Referenced image binaries not yet uploaded to GitHub. The HTML safely falls back to original embedded art until they are installed.",
+  "characters": [
+    {
+      "id": 1,
+      "name": "Sera Venn",
+      "age": 27,
+      "rank": "V",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/01-sera-venn/neutral.webp",
+        "pleased": "assets/portraits/01-sera-venn/pleased.webp",
+        "angry": "assets/portraits/01-sera-venn/angry.webp",
+        "worried": "assets/portraits/01-sera-venn/worried.webp",
+        "determined": "assets/portraits/01-sera-venn/determined.webp",
+        "surprised": "assets/portraits/01-sera-venn/surprised.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "draft_requires_likeness_review"
+    },
+    {
+      "id": 2,
+      "name": "Jalen Orr",
+      "age": 55,
+      "rank": "V",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/02-jalen-orr/neutral.webp",
+        "pleased": "assets/portraits/02-jalen-orr/pleased.webp",
+        "angry": "assets/portraits/02-jalen-orr/angry.webp",
+        "worried": "assets/portraits/02-jalen-orr/worried.webp",
+        "determined": "assets/portraits/02-jalen-orr/determined.webp",
+        "surprised": "assets/portraits/02-jalen-orr/surprised.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "draft_requires_likeness_review"
+    },
+    {
+      "id": 3,
+      "name": "Nera Sol",
+      "age": 41,
+      "rank": "V",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/03-nera-sol/neutral.webp",
+        "pleased": "assets/portraits/03-nera-sol/pleased.webp",
+        "angry": "assets/portraits/03-nera-sol/angry.webp",
+        "worried": "assets/portraits/03-nera-sol/worried.webp",
+        "determined": "assets/portraits/03-nera-sol/determined.webp",
+        "surprised": "assets/portraits/03-nera-sol/surprised.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "draft_requires_likeness_review"
+    },
+    {
+      "id": 4,
+      "name": "Lio Fen",
+      "age": 46,
+      "rank": "IV",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/04-lio-fen/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 5,
+      "name": "Kell Ardent",
+      "age": 36,
+      "rank": "IV",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/05-kell-ardent/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 6,
+      "name": "Maren Oth",
+      "age": 30,
+      "rank": "III",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/06-maren-oth/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 7,
+      "name": "Daya Wren",
+      "age": 35,
+      "rank": "III",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/07-daya-wren/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 8,
+      "name": "Tarek Rhun",
+      "age": 51,
+      "rank": "II",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/08-tarek-rhun/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 9,
+      "name": "Garric Vale",
+      "age": 43,
+      "rank": "II",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/09-garric-vale/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 10,
+      "name": "Oren Vask",
+      "age": 29,
+      "rank": "I",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/10-oren-vask/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 11,
+      "name": "Ilyra Sen",
+      "age": 42,
+      "rank": "I",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/11-ilyra-sen/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 12,
+      "name": "Ysolde Kaine",
+      "age": 49,
+      "rank": "I",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/12-ysolde-kaine/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 13,
+      "name": "Toma Baret",
+      "age": 48,
+      "rank": "V",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/13-toma-baret/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 14,
+      "name": "Varo Quill",
+      "age": 38,
+      "rank": "IV",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/14-varo-quill/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 15,
+      "name": "Dr. Cael Vey",
+      "age": 50,
+      "rank": "III",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/15-dr-cael-vey/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 16,
+      "name": "Captain Rovan Hest",
+      "age": 45,
+      "rank": "II",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/16-captain-rovan-hest/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 17,
+      "name": "Lady Coris Vale",
+      "age": 47,
+      "rank": "I",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/17-lady-coris-vale/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 18,
+      "name": "Matria Celen",
+      "age": 52,
+      "rank": "I",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/18-matria-celen/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 19,
+      "name": "Ina Lores",
+      "age": 33,
+      "rank": "V",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/19-ina-lores/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 20,
+      "name": "Peli Serran",
+      "age": 19,
+      "rank": "V",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/20-peli-serran/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 21,
+      "name": "Sima Dorr",
+      "age": 44,
+      "rank": "IV",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/21-sima-dorr/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 22,
+      "name": "Eren Tal",
+      "age": 29,
+      "rank": "IV",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/22-eren-tal/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 23,
+      "name": "Mira Seln",
+      "age": 31,
+      "rank": "III",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/23-mira-seln/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 24,
+      "name": "Osha Ren",
+      "age": 27,
+      "rank": "III",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/24-osha-ren/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 25,
+      "name": "Dren Malek",
+      "age": 34,
+      "rank": "II",
+      "approvedVariant": "C",
+      "files": {
+        "neutral": "assets/portraits/25-dren-malek/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 26,
+      "name": "Suri Dane",
+      "age": 39,
+      "rank": "II",
+      "approvedVariant": "A",
+      "files": {
+        "neutral": "assets/portraits/26-suri-dane/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    },
+    {
+      "id": 27,
+      "name": "Lucan Wrenholt",
+      "age": 26,
+      "rank": "I",
+      "approvedVariant": "B",
+      "files": {
+        "neutral": "assets/portraits/27-lucan-wrenholt/neutral.webp"
+      },
+      "artStatus": "approved_base_images_staged_local_not_uploaded",
+      "expressionStatus": "not_approved_for_import"
+    }
+  ]
+}
