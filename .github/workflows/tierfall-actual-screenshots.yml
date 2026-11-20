@@ -1,0 +1,78 @@
+name: TierFall one-time actual UI screenshot QA
+on:
+  push:
+    branches:
+      - qa/actual-game-screens-2026-11-20
+    paths:
+      - .github/workflows/tierfall-actual-screenshots.yml
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Capture real TierFall in Chromium
+        run: |
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          const { pathToFileURL } = require('url');
+          const { resolve } = require('path');
+          const fs = require('fs');
+          (async () => {
+            fs.mkdirSync('qa-screenshots', { recursive: true });
+            const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
+            const url = pathToFileURL(resolve('game/tierfall-chapter1-expanded-edition.html')).href;
+            const failures = [];
+            async function capture(name, width, height, scene, menu=false) {
+              const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, isMobile: width < 500, hasTouch: width < 500 });
+              const page = await context.newPage();
+              page.on('pageerror', error => failures.push(name + ': ' + error.message));
+              await page.goto(url, { waitUntil: 'load' });
+              await page.locator('#setup:not(.hidden)').waitFor();
+              if (scene === 'chapter1') await page.locator('#skip-prologue').check();
+              if (scene === 'prologue' || scene === 'chapter1') {
+                await page.locator('#start').click();
+                await page.locator('#game:not(.hidden)').waitFor();
+              }
+              if (menu) await page.locator('#tf-menu-toggle').click();
+              await page.waitForTimeout(800);
+              await page.screenshot({ path: 'qa-screenshots/' + name + '.png', fullPage: false, animations: 'disabled' });
+              console.log(name, 'title:', await page.locator('h1:visible,h2:visible').allTextContents());
+              await context.close();
+            }
+            await capture('01-cover-desktop', 1440, 900, 'cover');
+            await capture('02-prologue-desktop', 1440, 900, 'prologue');
+            await capture('03-chapter1-desktop', 1440, 900, 'chapter1');
+            await capture('04-cover-mobile', 390, 844, 'cover');
+            await capture('05-prologue-mobile', 390, 844, 'prologue');
+            await capture('06-chapter1-mobile', 390, 844, 'chapter1');
+            await capture('07-chapter1-mobile-menu', 390, 844, 'chapter1', true);
+            await browser.close();
+            fs.writeFileSync('qa-screenshots/README.md', '# TierFall actual browser captures\n\nCaptured from the exact Chapter 1 HTML on this QA branch using headless Chromium at desktop 1440×900 and mobile 390×844. No mocked UI.\n\nScreens represent the opening states only, without future story spoilers.\n\nBrowser errors: ' + (failures.length ? failures.join('; ') : 'None') + '\n');
+            if (failures.length) { console.error(failures.join('\n')); process.exitCode = 1; }
+          })().catch(e => { console.error(e); process.exit(1); });
+          NODE
+      - name: Save QA screenshots as workflow artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tierfall-real-ui-screenshots
+          path: qa-screenshots/
+          if-no-files-found: warn
+      - name: Commit QA screenshots only on QA branch
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add qa-screenshots/
+          git commit -m "checkpoint: capture actual TierFall browser screens" || exit 0
+          git push origin HEAD:qa/actual-game-screens-2026-11-20
