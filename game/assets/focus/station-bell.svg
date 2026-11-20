@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-label="station-bell "><defs>
+<linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26313d"/><stop offset="1" stop-color="#0d1822"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#556572"/><stop offset=".48" stop-color="#293b4a"/><stop offset="1" stop-color="#182633"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24313e"/><stop offset="1" stop-color="#17232f"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1c38b"/><stop offset="1" stop-color="#987045"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+<pattern id="grain" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 8H30M8 0V30" stroke="#a2b5b6" stroke-width=".6" opacity=".09"/></pattern>
+</defs><rect width="480" height="560" fill="#151e28"/><rect x="17" y="17" width="446" height="526" rx="15" fill="url(#ground)" stroke="#526271" stroke-width="1.4"/><path d="M44 44H436M44 516H436" stroke="#bc9e6c" opacity=".47"/><path d="M44 54V92M436 54V92M44 468V506M436 468V506" stroke="#ac966b" stroke-width="2" opacity=".5"/><rect width="480" height="560" fill="url(#grain)" opacity=".65"/><g>
+<path d="M137 155Q142 123 182 118H298Q337 123 343 155L364 383Q363 421 332 434H150Q117 424 117 388Z" fill="url(#metal)" stroke="#7f9298" stroke-width="8"/>
+<path d="M165 179H317V323H165Z" fill="#121e28" stroke="#bf9d64" stroke-width="5"/>
+<circle cx="241" cy="253" r="63" fill="#2c3c45" stroke="#957951" stroke-width="5"/>
+<path d="M241 211Q218 217 216 250L201 280H281L266 250Q265 219 241 211Z" fill="url(#gold)"/>
+<circle cx="241" cy="284" r="9" fill="#dcc58d"/>
+<path d="M171 354H311" stroke="#7c919b" stroke-width="6"/>
+<path d="M184 379H298" stroke="#7c919b" stroke-width="4"/>
+<circle cx="146" cy="145" r="8" fill="#e5c48b"/><circle cx="335" cy="145" r="8" fill="#e5c48b"/>
+</g><text x="112" y="511" fill="#a7b2b8" font-family="sans-serif" font-size="16" letter-spacing="4">SHIFT SIGNAL</text></svg>
