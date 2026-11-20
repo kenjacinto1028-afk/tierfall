@@ -1685,7 +1685,12 @@ if (typeof document !== 'undefined') {
     root.dataset.sceneMood=mood;
     root.dataset.sceneArtwork=art;
     const svgScenes={'medical-ward':'civic-concourse','garden-deck':'living-ring','records-hall':'civic-concourse','checkpoint':'work-sector','service-market':'living-ring'};
-    const image=svgScenes[art]?`url("assets/scenes/${art}.svg"),url("assets/scenes/${svgScenes[art]}.webp")`:`url("assets/scenes/${art}.webp")`;
+    // Optional higher-detail yard image; the existing work-sector WebP remains usable until the new file is uploaded.
+    const optionalYard=scene.id==='c1-duty' && ['cargo','reclamation'].includes(game.origin)
+      ? 'url("assets/scenes/reach-yard-v2.webp"),' : '';
+    const image=optionalYard+(svgScenes[art]
+      ? `url("assets/scenes/${art}.svg"),url("assets/scenes/${svgScenes[art]}.webp")`
+      : `url("assets/scenes/${art}.webp")`);
     stage.style.setProperty('--tf-scene-image',image);
     const speaker=scene.speaker||'Narrator';
     const mode = speaker==='Narrator'?'narration':MAJOR.has(speaker)?'major':'minor';
