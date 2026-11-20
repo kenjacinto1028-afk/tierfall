@@ -34,6 +34,14 @@
 .recap-subheading{font-size:.84rem;margin:18px 0 5px;color:#ead3a6}.recap-summary{font-size:.81rem;color:#dce0e3;line-height:1.7}.recap-beat{border-left:2px solid #8b7650;padding:2px 0 4px 10px;margin:12px 0}.recap-place{font-size:.68rem;color:#b7c4ce}.recap-beat p{font-size:.81rem;margin:4px 0 0;color:#efebdf}.recap-overlay{position:fixed;inset:0;z-index:60;background:rgba(4,7,11,.84);display:flex;justify-content:center;align-items:center;padding:22px}.recap-modal-card{width:min(490px,95vw);max-height:90vh;overflow:auto;border:1px solid #766b53;background:#19212d;border-radius:14px;padding:28px;box-shadow:0 25px 80px #000b}.recap-modal-card h2{font-size:1.6rem;margin:8px 0 12px}.recap-modal-decision{font-size:.85rem;border-left:2px solid #c3a66e;padding-left:10px;color:#dce2e5}.recap-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.recap-actions button{flex:1;min-width:140px}.modal-open{overflow:hidden}
 
 .speaker-portrait{width:84px;height:100px;overflow:hidden;background:linear-gradient(140deg,#354454,#131f2b)}.speaker-image{height:100%;width:100%;display:block;object-fit:cover;object-position:center 24%}.person-picture{width:56px;height:72px;object-fit:cover;object-position:center 25%;display:block}.person-details{flex:1;min-width:0}.person-appearance{color:#b6c0ca!important;font-size:.69rem!important}.person-rename-button{padding:5px 0;text-decoration:underline;text-underline-offset:3px;font-size:.74rem}.person-name-input{width:100%;background:#111c27;color:#f2f0e7;border:1px solid #83909a;border-radius:5px;padding:7px;font-size:.83rem;margin-top:7px}.person-details>.small-button{font-size:.73rem;margin-top:7px;padding:5px 9px}.edit-player-name{padding:2px 0 8px;font-size:.73rem}.person-entry{align-items:flex-start;padding-bottom:12px;border-bottom:1px solid #2d3642}
+
+/* Opening book cover: self-contained fallback for offline single-file copies. */
+.setup-page .setup-hero{padding:0;min-height:680px;background:radial-gradient(ellipse at 65% 38%,#34515d 0%,#13222d 52%,#0a111b 100%);overflow:hidden}
+.setup-page .setup-hero::before{display:none}
+.setup-page .cover-fallback-title{position:absolute;top:13%;left:0;right:0;text-align:center;letter-spacing:.18em;font-family:Georgia,serif;font-size:clamp(2.3rem,5vw,5rem);color:#e6d4a9;text-shadow:0 5px 25px #09121a}
+.setup-page .opening-cover{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2}
+@media(max-width:760px){.setup-page .setup-hero{flex:none;height:min(54vh,540px);min-height:270px}.setup-page .opening-cover{object-position:center 20%}.setup-page .cover-fallback-title{font-size:clamp(2.2rem,9vw,3.8rem)}}
+@media(max-width:420px){.setup-page .setup-hero{height:44vh;min-height:230px;max-height:370px}}
 </style>
 </head>
 <body>
@@ -50,10 +58,8 @@
     <section id="help-panel" class="help-panel hidden" aria-label="How to play"><strong>How to play</strong><p>Read each scene and choose what you want to say or do. Press <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, or <kbd>4</kbd> to pick a choice. The journal remembers decisions. Your game saves after every choice on this device. Use Export to keep a backup.</p></section>
     <main id="setup" class="setup-page hidden">
       <div class="setup-hero">
-        <span class="eyebrow">THE HALCYON REACH</span>
-        <h1>YOUR STORY<br/><em>BEGINS BELOW.</em></h1>
-        <p>Five ranks decide where people live, work, and belong. You were born at the bottom. What happens next depends on you.</p>
-        <div class="planet" aria-hidden="true"></div>
+        <span class="cover-fallback-title" aria-hidden="true">TIERFALL</span>
+        <img class="opening-cover" src="assets/tierfall-start-cover.webp" alt="Tierfall cover: a worker walks through the Halcyon Reach industrial district at dusk." loading="eager" decoding="async" fetchpriority="high" onerror="this.remove()" />
       </div>
       <section class="create-card" aria-labelledby="create-title">
         <p class="eyebrow">NEW STORY</p><h2 id="create-title">Who are you?</h2>
