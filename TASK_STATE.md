@@ -14,9 +14,9 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 
 ## Object focus cards + portrait clarity — 2026-11-21
 - [x] Reviewed main, GITHUB_SYNC.md, previous checkpoints, current game and portrait manifest. Confirmed approved neutral portraits are only 240×300 WebP; originals remain protected.
-- [ ] Create spoiler-safe, scalable object-focus illustrations for actual narrated scenes.
-- [ ] Add contextual scene-object cards and descriptions to the portrait reader, respecting page access and approved face cards.
-- [ ] Improve portrait rendering and perceived sharpness without replacing approved image identities or changing save schema.
+- [x] Created 7 spoiler-safe SVG object-focus illustrations at `game/assets/focus/*.svg` (route chart, rank band, seal, ledger, notice, scanner, bell); verified upload.
+- [x] Added scene/beat-aware artifact cards and descriptions, with spoiler-safe reveal timing, narrator-only wide view when no object, and responsive layout (`game/tierfall-chapter1-expanded-edition.html`).
+- [x] Added 2× Canvas high-quality resampling with mild edge enhancement, in-memory cache and native-image fallback; original approved portraits remain unchanged.
 - [ ] Add regression tests and run model/UI checks.
 - [ ] Sync and verify all new code, assets, tests, and status notes on GitHub main.
 - [ ] Browser screenshot QA (desktop and phone) when actual connected browser access is available.
