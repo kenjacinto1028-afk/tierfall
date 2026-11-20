@@ -57,3 +57,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Added \`tests/cinematic-reference.test.mjs\`. GitHub source readback, JS parsing, artwork existence, scene-map and presentation-mode checks passed.
 - [ ] Automated browser visual QA on the actual hosted GitHub Pages URL and portrait-in-scene composition remains pending; the test browser could not access the deployed URL in this session.
 - [ ] Further bespoke painterly character/environment refinement can follow player feedback. No release or GitHub Pages configuration was changed.
+
+## Scene art and character composition refinement — 2026-11-21
+- [x] Added a dedicated spoiler-safe illustrated service-market scene at \`game/assets/scenes/service-market.svg\`; the scene uses the pre-existing living-ring illustration as a fallback.
+- [x] Refined character staging in illustrated scenes. Only approved faces belonging to characters actually present in the scene are used; approved portrait files and game saves are unchanged.
+- [x] Limited background silhouettes to populated scenes, with reduced density in quiet spaces and no silhouettes in empty nighttime or narrator-only scenes.
+- [x] Kept desktop 43/57 cinematic layout, tall scene artwork, readable story panel, mobile full-width reading and reduced-motion controls.
+- [x] Added optional support for \`game/assets/scenes/reach-yard-v2.webp\` with automatic fallback to the original work-sector illustration. **The optional WebP is not yet on GitHub**; a user-downloadable optimized artwork copy was created locally.
+- [x] Added \`tests/scene-composition-v2.test.mjs\`; verified from GitHub that both embedded JS scripts parse, the original story engine is byte-for-byte unchanged, and 12 origin/upbringing starting transitions still work.
+- [ ] Upload the optional high-fidelity WebP asset to the public GitHub repository using a binary-capable upload route; the connected GitHub text-file tools were not suitable for transferring this generated binary directly.
+- [ ] Visually verify actual deployed GitHub Pages desktop and Android rendering, as the connected browser did not expose an active browser context this session.
+
