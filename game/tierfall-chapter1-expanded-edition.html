@@ -469,6 +469,34 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
  #game .tf-beat-dot,#game .tf-cast-card{transition:none!important}
 }
 
+
+/* Object / evidence cards inside the portrait-led reader. Vector drawings scale sharply. */
+#game .tf-scene-focus{margin-top:0;min-width:0}
+#game .tf-scene-focus[hidden]{display:none!important}
+#game .tf-focus-card{border:1px solid #a88b58;border-radius:12px;background:#151c24;overflow:hidden;box-shadow:0 8px 22px #0007}
+#game .tf-focus-picture{position:relative;display:block;width:100%;height:clamp(182px,22vw,244px);overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#293b49 0%,#121c26 75%);border-bottom:1px solid #273644}
+#game .tf-focus-picture img{height:100%;width:100%;object-fit:contain;image-rendering:auto}
+#game .tf-focus-details{display:block;padding:12px 13px 14px}
+#game .tf-focus-name{display:block;color:#f0eadb;font-size:.83rem;line-height:1.3;font-weight:790}
+#game .tf-focus-kind{display:block;font-size:.61rem;letter-spacing:.12em;text-transform:uppercase;color:#d7ab60;margin-top:5px}
+#game .tf-focus-place{display:block;font-size:.7rem;color:#879aaa;line-height:1.4;margin-top:4px}
+#game .tf-focus-description{padding:11px 2px 0;margin-top:12px;border-top:1px solid #56616a;color:#95a7b7;font-size:.72rem;line-height:1.57}
+#game .tf-portrait-rail.tf-focus-with-cast .tf-scene-focus{margin-top:18px}
+#game .tf-portrait-rail.tf-focus-with-cast .tf-focus-picture{height:140px}
+#game .tf-portrait-rail.tf-focus-with-cast .tf-focus-description{font-size:.68rem}
+#game .tf-cast-portrait img{max-width:100%;max-height:100%;object-fit:contain;image-rendering:auto;transform:translateZ(0);backface-visibility:hidden}
+#game .tf-cast-portrait{isolation:isolate}
+#game .tf-cast-portrait img[data-tf-hd="1"]{filter:contrast(1.04) saturate(1.035)}
+@media(max-width:650px){
+ #game .tf-scene-focus:not([hidden]){width:100%;max-width:400px}
+ #game .tf-focus-card{display:grid;grid-template-columns:minmax(100px,37%) 1fr;align-items:stretch}
+ #game .tf-focus-picture{height:175px;border-bottom:0;border-right:1px solid #2d4048}
+ #game .tf-focus-details{display:flex;flex-direction:column;justify-content:center;padding:14px 13px}
+ #game .tf-focus-name{font-size:.85rem}
+ #game .tf-focus-description{padding-top:9px;margin-top:8px}
+ #game .tf-portrait-rail.tf-focus-with-cast .tf-focus-picture{height:160px}
+}
+
 </style>
 </head>
 <body>
@@ -1780,6 +1808,7 @@ if (typeof document !== 'undefined') {
     // v3 reader replaces background staging with contextual portrait cards.
     // Avoid resolving offscreen scene art or duplicate portrait images.
     root.dataset.sceneMood=(ART[scene.id]||['living-ring','calm'])[1];
+    root.dataset.sceneId=scene.id;
     const readerSpeaker=scene.speaker||'Narrator';
     root.dataset.presentation=readerSpeaker==='Narrator'?'narration':MAJOR.has(readerSpeaker)?'major':'minor';
     ensureMapDisclosure();
@@ -2012,6 +2041,116 @@ if (typeof document !== 'undefined') {
     const speaker=scene.speaker;
     return speaker&&speaker!=='Narrator'&&MAJOR.has(speaker)?[speaker]:[];
   }
+
+  // Player-safe objects already present in the text. An image is never a hidden clue.
+  // beatMin controls when the focus first appears; narration without a physical object stays full width.
+  const sceneFocusArt=Object.freeze({
+    'p-reach':[{beatMin:0,art:'reach-chart',name:'Reach Route Chart',kind:'Reference',place:'Known interstation routes',description:'A simple chart of the routes connecting distant stations and moons.'}],
+    'p-ranks':[{beatMin:0,art:'rank-band',name:'Rank Identifier',kind:'Civic record',place:'Personal wrist designation',description:'A permanent rank marking carried by every citizen.'}],
+    'p-powers':[{beatMin:0,art:'concord-seal',name:'Concord Emblem',kind:'Authority',place:'System administration',description:'The symbol of the government whose rules shape daily life.'}],
+    'p-thule':[{beatMin:0,art:'rank-band',name:'Rank V Mark',kind:'Personal identifier',place:'Thule · Workers’ Ring',description:'The worker designation on your wrist, familiar from childhood.'}],
+    'c1-wake':[
+      {beatMin:0,art:'station-bell',name:'Station Bell',kind:'Shift signal',place:'Thule · Living Ring',description:'The signal that marks the beginning of another workday.'},
+      {beatMin:1,art:'rank-band',name:'Rank V Mark',kind:'Personal identifier',place:'Thule · Living Ring',description:'The wrist marking that determines your assigned status.'}
+    ],
+    'c1-duty':[{beatMin:1,art:'shift-ledger',name:'Shift Ledger',kind:'Work record',place:'Thule · Work Sector',description:'A routine workplace record used to track a shift.'}],
+    'c1-notice':[{beatMin:0,art:'official-notice',name:'Public Notice',kind:'Official posting',place:'Thule · Records Hall',description:'A statement posted for workers to read at the public records hall.'}],
+    'c1-door':[{beatMin:0,art:'checkpoint-reader',name:'Checkpoint Scanner',kind:'Security equipment',place:'Thule · Checkpoint Nine',description:'A security reader used to check workers passing through the gate.'}],
+    'c1-dusk':[{beatMin:0,art:'station-bell',name:'Final Bell',kind:'Shift signal',place:'Thule · Sleeping Ring',description:'The familiar signal marking the close of the day.'}]
+  });
+  function focusForBeat(scene,beat){
+    const objects=sceneFocusArt[scene?.id]||[];
+    let selection=null;
+    for(const item of objects)if(beat>=item.beatMin)selection=item;
+    return selection;
+  }
+  function updateFocusCard(scene,beat){
+    const rail=$('#tf-portrait-rail'),list=$('#tf-portrait-list'),panel=$('#narrative');
+    if(!rail||!list||!panel||!scene)return;
+    let focus=rail.querySelector('.tf-scene-focus');
+    if(!focus){focus=readerNode('section','tf-scene-focus');focus.setAttribute('aria-label','Scene object');rail.appendChild(focus);}
+    const item=focusForBeat(scene,beat);
+    // Avoid rebuilding the same object on every page; keep the image loaded once.
+    if(!item){focus.replaceChildren();focus.hidden=true;focus.dataset.focusArt='';}
+    else{
+      focus.hidden=false;
+      if(focus.dataset.focusArt!==item.art){
+        focus.replaceChildren();
+        const card=readerNode('div','tf-focus-card');
+        const picture=readerNode('span','tf-focus-picture');
+        const art=readerNode('img');art.alt='Illustration of '+item.name;art.loading='eager';art.decoding='async';
+        art.src='assets/focus/'+item.art+'.svg';
+        art.addEventListener('error',()=>{art.remove();picture.appendChild(readerNode('span','tf-cast-missing','◇'));},{once:true});
+        picture.appendChild(art);
+        const caption=readerNode('span','tf-focus-details');
+        caption.append(
+          readerNode('strong','tf-focus-name',item.name),
+          readerNode('span','tf-focus-kind',item.kind),
+          readerNode('span','tf-focus-place',item.place)
+        );
+        card.append(picture,caption);
+        focus.append(card,readerNode('p','tf-focus-description',item.description));
+        focus.dataset.focusArt=item.art;
+      }
+    }
+    const cast=portraitCharacters.length>0;
+    const any=cast||Boolean(item);
+    rail.hidden=!any;
+    panel.classList.toggle('tf-reader-solo',!any);
+    rail.classList.toggle('tf-focus-with-cast',cast&&Boolean(item));
+    const heading=rail.querySelector('.tf-portrait-label');
+    const textLabel=heading?.querySelector('span:first-child'),indicator=heading?.querySelector('.tf-present-indicator');
+    if(textLabel)textLabel.textContent=cast?'Present in scene':'Scene focus';
+    if(indicator)indicator.textContent=cast?'• Active':item?'• Artifact':'';
+  }
+  // Original 240x300 approved paintings remain unmodified. Render an opt-in
+  // 2x high-quality resample and light edge enhancement only after source loads.
+  // This cannot invent detail that is absent from the original portrait.
+  const clarityCache=new Map();
+  function improvePortraitDisplay(image){
+    image.addEventListener('load',()=>{
+      if(image.dataset.tfHd||!image.naturalWidth||!image.naturalHeight)return;
+      const source=image.currentSrc||image.src;
+      if(source.startsWith('data:'))return;
+      if(clarityCache.has(source)){
+        image.dataset.tfHd='1';image.src=clarityCache.get(source);return;
+      }
+      // Limit work to the small native portrait library, and preserve the file on errors.
+      if(image.naturalWidth>480||image.naturalHeight>600)return;
+      try{
+        const factor=2,w=Math.round(image.naturalWidth*factor),h=Math.round(image.naturalHeight*factor);
+        const canvas=document.createElement('canvas');
+        canvas.width=w;canvas.height=h;
+        const ctx=canvas.getContext('2d',{willReadFrequently:true});
+        if(!ctx)return;
+        ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+        ctx.drawImage(image,0,0,w,h);
+        const pixels=ctx.getImageData(0,0,w,h);
+        const data=pixels.data;
+        const original=new Uint8ClampedArray(data);
+        const stride=w*4,sharpness=.16;
+        for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){
+          const index=(y*w+x)*4;
+          if(original[index+3]===0)continue;
+          for(let channel=0;channel<3;channel++){
+            const i=index+channel,center=original[i];
+            const neighbors=original[i-4]+original[i+4]+original[i-stride]+original[i+stride];
+            data[i]=Math.max(0,Math.min(255,center*(1+4*sharpness)-sharpness*neighbors));
+          }
+        }
+        ctx.putImageData(pixels,0,0);
+        const upscaled=canvas.toDataURL('image/webp',.96);
+        if(!upscaled.startsWith('data:image/'))return;
+        clarityCache.set(source,upscaled);
+        image.dataset.tfHd='1';
+        image.src=upscaled;
+      }catch{
+        image.dataset.tfHd='unsupported';
+        // Keep original approved portrait if Canvas is unavailable or blocked.
+      }
+    });
+  }
+
   function paintPortraitCards(game,scene){
     const list=$('#tf-portrait-list'),rail=$('#tf-portrait-rail'),panel=$('#narrative');
     if(!list||!rail||!panel)return;
@@ -2027,6 +2166,7 @@ if (typeof document !== 'undefined') {
       const frame=readerNode('span','tf-cast-portrait');
       const img=readerNode('img');img.alt='Portrait of '+name;img.decoding='async';img.loading='eager';
       const fallback=()=>{img.remove();frame.appendChild(readerNode('span','tf-cast-missing','◇'));};
+      improvePortraitDisplay(img);
       if(Tierfall.applyPortrait(img,game,canonical,fallback))frame.appendChild(img);
       const details=readerNode('span','tf-cast-details');
       const title=readerNode('strong','tf-cast-name',name);
@@ -2083,6 +2223,7 @@ if (typeof document !== 'undefined') {
       card.classList.toggle('is-current',selected);
       card.setAttribute('aria-pressed',String(selected));
     });
+    updateFocusCard(Tierfall.scenes[$('#game')?.dataset.sceneId],portraitCurrentPage);
     if(scroll){
       const content=$('#game .story-content');
       if(content){
