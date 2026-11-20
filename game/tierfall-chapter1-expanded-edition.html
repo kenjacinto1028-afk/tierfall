@@ -1777,6 +1777,18 @@ if (typeof document !== 'undefined') {
   function renderPresentation(game,scene){
     if(!scene||!game)return;
     const root=$('#game'), stage=$('#game .scene-art');if(!root||!stage)return;
+    // v3 reader replaces background staging with contextual portrait cards.
+    // Avoid resolving offscreen scene art or duplicate portrait images.
+    root.dataset.sceneMood=(ART[scene.id]||['living-ring','calm'])[1];
+    const readerSpeaker=scene.speaker||'Narrator';
+    root.dataset.presentation=readerSpeaker==='Narrator'?'narration':MAJOR.has(readerSpeaker)?'major':'minor';
+    ensureMapDisclosure();
+    const readerMap=$('#tf-map-disclosure');
+    if(readerMap){readerMap.hidden=scene.id!=='p-reach';if(currentScene!==scene.id)readerMap.open=false;}
+    currentScene=scene.id;
+    syncPlaying();
+    portraitReaderOnScene(game,scene);
+    return;
     const info=ART[scene.id]||['living-ring','calm',scene.location||'Thule'];
     let [art,mood,caption]=info;
     // Opening work-sector artwork follows the protagonist's chosen occupation when possible.
@@ -1975,6 +1987,13 @@ if (typeof document !== 'undefined') {
     pager.append(previous,dots,count,next);content.querySelector('#save-status')?.before(pager);
     previous.addEventListener('click',()=>showPortraitPage(portraitCurrentPage-1,true));
     next.addEventListener('click',()=>showPortraitPage(portraitCurrentPage+1,true));
+    // Original number shortcuts are allowed only when the decision page is shown.
+    document.addEventListener('keydown',event=>{
+      if(!document.body.classList.contains('tf-playing')||portraitCurrentPage>=portraitPageCount-1)return;
+      if(!/^[1-5]$/.test(event.key)||event.ctrlKey||event.altKey||event.metaKey)return;
+      if(/^(INPUT|SELECT|TEXTAREA)$/.test(event.target?.tagName||''))return;
+      event.preventDefault();event.stopImmediatePropagation();
+    },true);
     document.addEventListener('keydown',event=>{
       if(!document.body.classList.contains('tf-playing')||event.ctrlKey||event.metaKey||event.altKey||event.shiftKey)return;
       if(!$('#recap-modal')?.classList.contains('hidden'))return;
