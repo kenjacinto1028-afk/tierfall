@@ -47,3 +47,13 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Tested mobile (390 px), simulated desktop-site phone viewport (980 px touch), tablet (1024 px) and desktop (1440 px) using Chromium: no horizontal overflow, full-width text on compact screens, functional menu/effects/save, narrator and major portrait presentation.
 - [x] Verified updated HTML and `tests/mobile-reader.test.mjs` on GitHub `main`.
 - [ ] Confirm visual appearance on an actual Android/Brave browser and clear cached content if necessary; automated local fixtures cannot reproduce every browser setting.
+
+## Cinematic reader visual reference — 2026-11-20
+- [x] Revised desktop Chapter One/Prologue game frame to match the requested concept: wide illustrated left scene, larger dark reading panel, brass edge detailing, top story navigation, bottom Previous/Next reading navigation, clear speaker presentation and uncluttered choices.
+- [x] Preserved narrator/major/minor presentation modes, existing game state, portrait manifest, player choices and local saves.
+- [x] Added scene-aware color grading, background positioning, anonymous ambient silhouettes, and group composition using **existing approved portraits** only where characters actually appear; no approved portrait files were replaced.
+- [x] Added **four additional spoiler-safe scene illustrations** at \`game/assets/scenes/{medical-ward,garden-deck,records-hall,checkpoint}.svg\`, wired to appropriate chapters and origin-specific work scenes. Existing WebP illustrations remain as fallback.
+- [x] Narrow/portrait screens retain stacked illustration and full-width reading text with a fixed page-navigation bar. New controls use the original map/people/journal/settings/save actions.
+- [x] Added \`tests/cinematic-reference.test.mjs\`. GitHub source readback, JS parsing, artwork existence, scene-map and presentation-mode checks passed.
+- [ ] Automated browser visual QA on the actual hosted GitHub Pages URL and portrait-in-scene composition remains pending; the test browser could not access the deployed URL in this session.
+- [ ] Further bespoke painterly character/environment refinement can follow player feedback. No release or GitHub Pages configuration was changed.
