@@ -112,3 +112,13 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Prepare confidential full-series plot, hidden character arcs and dense unreleased prose in a **private** storage location; public GitHub must not receive this material.
 - [ ] Measure actual route reading time and run continuity/saving regression tests when future chapters are integrated.
 - [x] No game code, character portraits, Chapter 1 scenes, player saves or release settings changed by this documentation-only update.
+
+## Phase 1 — Narrative consistency baseline (2026-11-21)
+- [x] Audited the current Prologue/Chapter 1, approved world rules, 27-character roster and 12 starting background combinations.
+- [x] Indexed 16 current scene nodes and 39 existing options (including four Prologue navigation buttons) and documented continuity/save constraints in a **private** ChatGPT reference.
+- [x] Identified 10 source/integration follow-ups. No story details or future outcomes were published.
+- [x] Saved spoiler-free report at `docs/player_safe/PHASE1_CONTINUITY_STATUS.md` and verified GitHub readback.
+- [x] Verified the detailed continuity reference is in a personal ChatGPT Page with no collaborators at the time of checking.
+- [ ] Next: private three-act outlining, with all future beats, callbacks and character secrets kept out of this public GitHub repository.
+- [ ] Before later integration, resolve or safely defer character-creation state compatibility, end-of-Chapter-1 save continuation and approved art metadata inconsistencies.
+- [x] No game source, existing scenes, portraits, saves or release configuration modified by Phase 1.
