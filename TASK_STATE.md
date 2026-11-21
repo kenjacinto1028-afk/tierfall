@@ -20,3 +20,10 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Added `tests/object-focus-and-portrait-clarity.test.mjs`, checked 7 SVGs, beat gating, Canvas 2× mock, source portrait integrity, JS syntax and all 12 story background transitions; all passed.
 - [x] Synced code, seven focus SVG assets, tests and PROGRESS.md to GitHub `main`; verified remote content hashes, two embedded scripts and byte-identical story engine. No portrait source files replaced.
 - [ ] Browser screenshot QA (desktop and phone) when actual connected browser access is available.
+
+## Portrait matte and premium cards — 2026-11-21
+- [x] Confirmed GitHub main read/write access, read GITHUB_SYNC.md, latest game code and previous portrait patch; confirmed approved 240×300 portrait originals must remain unchanged.
+- [ ] Replace the flat portrait card styling with a more dimensional dark, brass-trimmed frame.
+- [ ] Replace naive runtime sharpener with a safe background-aware portrait cutout/upscale and fallback.
+- [ ] Add targeted tests, verify the narrative/save engine and mobile behavior.
+- [ ] Verify remote GitHub commits and update PROGRESS.md plus checkpoint; report live-browser limitations.
