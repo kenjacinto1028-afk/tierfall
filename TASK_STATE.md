@@ -25,5 +25,5 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Confirmed GitHub main read/write access, read GITHUB_SYNC.md, latest game code and previous portrait patch; confirmed approved 240×300 portrait originals must remain unchanged.
 - [x] Added restrained charcoal/slate/brass portrait frame, subtle illustrated texture, depth and mobile polish in `game/tierfall-chapter1-expanded-edition.html` (commit a4b732a).
 - [x] Implemented light-matte detection, edge-connected background cleanup, 2× high-quality lossless in-browser rendering, and original-image fallback in `game/tierfall-chapter1-expanded-edition.html` (commit 3687fec).
-- [ ] Add targeted tests, verify the narrative/save engine and mobile behavior.
+- [x] Expanded `tests/object-focus-and-portrait-clarity.test.mjs` to cover safe matte removal, original image integrity, 2× PNG output, cache and all 12 starting story variants; passed against current remote source (commit 1593f16). CSS includes mobile and reduced-motion adjustments.
 - [ ] Verify remote GitHub commits and update PROGRESS.md plus checkpoint; report live-browser limitations.
