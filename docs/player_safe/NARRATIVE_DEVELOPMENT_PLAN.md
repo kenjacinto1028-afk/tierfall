@@ -78,3 +78,11 @@ Only report scene/chapter counts, drafting and editing status, route tests, cont
 The shared repository was confirmed **public on 21 November 2026**. This file is safe to publish. Detailed unreleased outlines, hidden character histories, confidential drafts and spoiler-bearing scripts **must not** be committed there while public.
 
 **This is planning only:** No game code, approved portraits, existing scenes or saves have been changed.
+
+## Deferred art identity repair (approved backlog, not part of Phase 2)
+
+- Treat `docs/player_safe/Tierfall_Character_Sheet.md` and the user's approved original portrait references as the appearance authority; portrait manifest option letters are not reliable approvals.
+- Audit **all 27 characters' live neutral portraits and every HD/emotion variation** for likeness, age, facial marks, hairstyle, costume and identity consistency before reworking artwork.
+- Prior review found option-letter mismatches for **Sera Venn, Maren Oth, Oren Vask, Ilyra Sen and Ysolde Kaine** between the approved character sheet and current portrait manifest. Verify visually against the actual approved originals rather than inferring identity from a letter.
+- Produce side-by-side comparison samples and native-resolution consistent expression sheets; require explicit player approval **before replacing any live portraits**.
+- **Status: planned for a separate future art phase. No portrait file, image manifest, or game scene changed by this planning update.**
