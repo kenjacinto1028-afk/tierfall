@@ -230,3 +230,15 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] **Final acceptance:** One or more real human-timed, full five-chapter playthroughs and editorial pacing review. Automated page/word counts are not real playtime.
 - [ ] Revised 18+ chapter duration must be measured; old 6–8h total and 1.5–2h Act I assumptions are superseded. Act II/III private drafts are paused pending the Act I player review and later numbering reconciliation.
 - [x] No public game source modifications, no live portrait replacements, no release or Pages activation.
+
+## Act II eight-chapter private working build (2026-11-21)
+- [x] Started **Act II Chapters 6–13** from the approved five-chapter Act I. Reconciled **five existing protected manuscripts** and wrote **three new connecting chapters**, with correct chapter-specific state and chronology.
+- [x] Private playable Acts I–II reader contains **112 Act II narrative sections**, **24 main decision groups** plus a genuinely optional personal conversation. All original Act I Ch1–5 history/flags are preserved.
+- [x] Protected writer-facing narration and consent overreach were identified and line-edited before QA reruns. Cross-chapter lore/revelation boundaries and character identities checked.
+- [x] Automated private browser checks: **48/48 full routes** across 12 backgrounds × four approved ages, **8/8 UI/import/export/mobile/consent checks**, **75/75 individual choice options**, and **28/28 private structural/lore checks**. All after final source corrections.
+- [x] Converted five- and three-chapter private saves and original Chapter 1 exports continue; missing legacy age requires explicit 27–30 choice. Ch1 browser source tests use a controlled fixture; live online download remains unverified.
+- [x] Private library upload of playable HTML, ZIP, eight manuscripts and supporting source/QA complete; **12/12 key files independently SHA-256 verified after re-materialization**. No spoiler materials sent to PUBLIC GitHub.
+- [x] Published/read back safe `docs/player_safe/ACT2_EIGHT_CHAPTER_WORKING_STATUS.md` (commit `9444093`).
+- [ ] **Act II pacing is not yet accepted**: 48 route samples contain ~29,485 visible Act II words (range 29,340–29,609), about 134–164 minutes raw reading at 180–220 wpm. Approved minimum **3.5 hours** is not achieved/verified. Expand *route-visible* story and measure real human-paced routes.
+- [ ] Production acceptance requires another substantive editorial expansion, actual human-duration/character-flow tests and a live browser fetch of published Chapter 1 source. Act III remains paused.
+- [x] Public game, published Prologue/Chapter 1 source, approved portraits, releases and GitHub Pages settings unchanged.
