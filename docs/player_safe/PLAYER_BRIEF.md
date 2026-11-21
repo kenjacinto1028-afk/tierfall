@@ -46,6 +46,10 @@ The latest standalone HTML includes short reactions immediately after decisions,
 
 ## Character age clarification (21 November 2026)
 
-- **Protagonist's starting age: 27–30**, across every starting occupation and upbringing. Existing save files currently do not store age, so age-specific dialogue must remain deferred until a compatible age-selection update is implemented.
+- **Protagonist's starting age: 27–30**, across every starting occupation and upbringing. The released Chapter 1 now offers a 27–30 age selector for new games and saves the selected age. Older saves without an age remain valid and unspecified; the next chapter must ask for an age before using age-specific dialogue.
 - **Sera Venn remains age 27** and is the protagonist's established childhood friend; her approved visual identity and age are unchanged.
 - A separate future portrait task will reconcile approved character-sheet appearances against game portrait files. No automatic art replacement is authorized.
+
+## Act I writing progress (21 November 2026)
+
+Chapter 1 has additional approved-scene dialogue and a starting-age selector. Chapters 2 and 3 have expanded private manuscripts, but the full Act I is **not yet playable or playtime-certified**. See [ACT1_WRITING_AND_QA_STATUS.md](ACT1_WRITING_AND_QA_STATUS.md) for safe progress, testing counts, and remaining work.
