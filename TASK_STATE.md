@@ -106,3 +106,16 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] **Act I integration gate:** backwards-compatible Chapter 1 end-to-Chapter 2 continuation, 12 start backgrounds, major choice consequence tests, reveal-gated recap and lore consistency before Act II resumes.
 - [ ] Later: reconcile final Act I into Act II, complete/test Act II (>=3.5h); reconcile final Act II into Act III, complete/test Act III; full-game target 6–8h.
 - [x] No game source, live portraits, saved games, GitHub Pages/release settings or spoiler-protected writing changed in this scheduling checkpoint.
+
+## Act I focused development — 2026-11-21 (player-safe)
+- [x] Reviewed current public repo, GITHUB_SYNC, latest checkpoints, protected outline, private Chapters 2–3 and established Chapter 1 scenes before writing.
+- [x] Expanded released Chapter 1 with 22 additional dialogue/narration paragraphs (~1,488 words), preserving all original choices, paths, effects and save states. Published/verified commit `fcee4a6`; 480 simulated routes matched existing outcomes.
+- [x] Implemented selectable 27/28/29/30 protagonist starting age in new-game UI and save payload with legacy saves retaining unspecified age. Published/verified commit `a283ff4`; tested 48 new backgrounds/ages, 480 legacy-save paths and five invalid inputs.
+- [x] Privately expanded Chapter 2 and Chapter 3 with 8 interludes each (~7,700 extra aggregate words); 9 existing core scene sections and 3 primary decisions each preserved; no future story content committed to public GitHub.
+- [x] Private static tests: 81/81 checks, 1,200 sampled conditional variants; 2,000 branch-aware volume estimates. Combined Act I estimated visible prose ~16,000 words (actual playtime NOT measured).
+- [x] Uploaded expanded Ch2/Ch3, private QA scripts/results, source additions, bridge review and updated private manuscript index to personal ChatGPT Library. Independently re-materialized both manuscripts and checked SHA-256 byte identity.
+- [x] Published/verified spoiler-free `docs/player_safe/ACT1_WRITING_AND_QA_STATUS.md` (commit `5abbcc7`), `docs/player_safe/PLAYER_BRIEF.md` (commit `0d9463f`), `PROGRESS.md` (commit `72df4d3`).
+- [ ] Next: final line edit, safely connect completed Chapter 1 saves to private Chapters 2–3 without exposing unreleased plot on PUBLIC GitHub; retain old save history/flags, allow legacy age selection, and test real routes.
+- [ ] Measure human/browser 90–120-minute Act I complete routes and perform full lore/recap reveal and character identity checks before declaring Act I complete.
+- [ ] After Act I certification, connect and resume Act II; Act III follows. Preserve later drafts unchanged until then.
+- [x] No approved live portrait swap, release publication, Pages setting change, or future plot upload occurred.
