@@ -280,3 +280,12 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Verified all five chapter sections in a single complete **owner-private ChatGPT Page**, with an in-view Markdown download action for Claude review.
 - [x] Kept complete Act I manuscript off public GitHub, preserving future-story surprises. No game, portrait, UI, release or Pages changes.
 - [ ] External Claude editorial review and human-timed full Act I acceptance remain pending.
+
+## Private Act II and legacy Act III review export (2026-11-21)
+- [x] Verified the latest confidential Act II Ch6–13 working manuscripts and the three original legacy Act III drafts against private Library/local checkpoints. PUBLIC repository rules remain in effect.
+- [x] Created an external-review-ready, complete combined Act II manuscript (8 source chapters, all conditional alternatives retained verbatim).
+- [x] Created an explicitly **incomplete** Act III legacy manuscript (three older chapters, with old chronology/IDs; new five-chapter Act III has not yet been written/aligned). Prepared combined Acts II+III review file, reviewer instructions, and a canonical private reference package.
+- [x] Validated 11 source chapters against combined review copies, all 26 ZIP entries for byte integrity, and six primary artifacts by independent personal ChatGPT Library SHA-256 readback.
+- [x] Published only spoiler-safe `docs/player_safe/ACT2_ACT3_PRIVATE_REVIEW_EXPORT_STATUS.md` (commit `8fde89e`); no story or confidential source uploaded to PUBLIC GitHub.
+- [ ] Receive independent narrative/lore review, correct identified errors in private; Act II must still pass measured >=3.5-hour player routes before acceptance; Act III needs at least five new-structure chapters and a separate integration pass.
+- [x] No published game, portrait, release or Pages changes.
