@@ -2156,47 +2156,104 @@ if (typeof document !== 'undefined') {
   // Original 240x300 approved paintings remain unmodified. Render an opt-in
   // 2x high-quality resample and light edge enhancement only after source loads.
   // This cannot invent detail that is absent from the original portrait.
+  // Portraits remain the exact approved files. Transform only in-memory display copies.
+  // Remove connected pale studio backgrounds; never erase isolated light-colored skin/clothes.
   const clarityCache=new Map();
+  function clearPortraitMatte(pixels,width,height){
+    const d=pixels.data;
+    if(width<12||height<12)return false;
+    const at=(x,y)=>(y*width+x)*4;
+    const samples=[at(4,4),at(width-5,4)];
+    if(samples.some(i=>d[i+3]<220))return false;
+    const matte=[0,1,2].map(c=>Math.round((d[samples[0]+c]+d[samples[1]+c])/2));
+    const spread=[0,1,2].reduce((sum,c)=>sum+Math.abs(d[samples[0]+c]-d[samples[1]+c]),0);
+    if(matte[0]<183||matte[1]<174||matte[2]<160||spread>58)return false;
+    const total=width*height,seen=new Uint8Array(total),region=new Uint8Array(total);
+    const q=new Uint32Array(total);let front=0,back=0;
+    const distance=p=>Math.abs(d[p]-matte[0])+Math.abs(d[p+1]-matte[1])+Math.abs(d[p+2]-matte[2]);
+    function add(i){
+      if(i<0||i>=total||seen[i])return;
+      seen[i]=1;const p=i*4;
+      if(d[p+3]<20||distance(p)>112)return;
+      if(d[p]<150||d[p+1]<150||d[p+2]<140)return;
+      region[i]=1;q[back++]=i;
+    }
+    for(let x=0;x<width;x++){add(x);add((height-1)*width+x);}
+    for(let y=1;y<height-1;y++){add(y*width);add(y*width+width-1);}
+    while(front<back){
+      const i=q[front++],x=i%width,y=(i-x)/width;
+      if(x>0)add(i-1);
+      if(x<width-1)add(i+1);
+      if(y>0)add(i-width);
+      if(y<height-1)add(i+width);
+    }
+    // A small pale corner or almost entirely pale picture is not safe to cut out.
+    if(back<total*.04||back>total*.82)return false;
+    for(let i=0;i<total;i++){
+      if(!region[i])continue;
+      const p=i*4,dist=distance(p);
+      const alpha=Math.max(0,Math.min(1,(dist-47)/65));
+      const originalAlpha=d[p+3];
+      d[p+3]=Math.round(originalAlpha*alpha);
+      if(alpha>.16&&alpha<.98){
+        // Unmix the pale backdrop from antialiased portrait contours.
+        for(let c=0;c<3;c++)
+          d[p+c]=Math.max(0,Math.min(255,Math.round((d[p+c]-matte[c]*(1-alpha))/alpha)));
+      }else if(alpha<=.16){d[p]=0;d[p+1]=0;d[p+2]=0;}
+    }
+    return true;
+  }
   function improvePortraitDisplay(image){
     image.addEventListener('load',()=>{
       if(image.dataset.tfHd||!image.naturalWidth||!image.naturalHeight)return;
       const source=image.currentSrc||image.src;
-      if(source.startsWith('data:'))return;
-      if(clarityCache.has(source)){
-        image.dataset.tfHd='1';image.src=clarityCache.get(source);return;
+      if(!source||source.startsWith('data:'))return;
+      const cached=clarityCache.get(source);
+      if(cached){
+        image.dataset.tfHd='1';
+        image.dataset.tfCutout=cached.cutout?'1':'0';
+        image.src=cached.src;
+        return;
       }
-      // Limit work to the small native portrait library, and preserve the file on errors.
+      // Run only on small approved portrait source images.
       if(image.naturalWidth>480||image.naturalHeight>600)return;
       try{
-        const factor=2,w=Math.round(image.naturalWidth*factor),h=Math.round(image.naturalHeight*factor);
-        const canvas=document.createElement('canvas');
-        canvas.width=w;canvas.height=h;
-        const ctx=canvas.getContext('2d',{willReadFrequently:true});
-        if(!ctx)return;
+        const iw=image.naturalWidth,ih=image.naturalHeight,w=iw*2,h=ih*2;
+        const input=document.createElement('canvas');input.width=iw;input.height=ih;
+        const ictx=input.getContext('2d',{willReadFrequently:true});
+        if(!ictx)return;
+        ictx.drawImage(image,0,0,iw,ih);
+        const native=ictx.getImageData(0,0,iw,ih);
+        const cutout=clearPortraitMatte(native,iw,ih);
+        if(cutout)ictx.putImageData(native,0,0);
+        const output=document.createElement('canvas');output.width=w;output.height=h;
+        const ctx=output.getContext('2d',{willReadFrequently:true});if(!ctx)return;
         ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
-        ctx.drawImage(image,0,0,w,h);
+        ctx.drawImage(input,0,0,w,h);
         const pixels=ctx.getImageData(0,0,w,h);
-        const data=pixels.data;
-        const original=new Uint8ClampedArray(data);
-        const stride=w*4,sharpness=.16;
+        const data=pixels.data,original=new Uint8ClampedArray(data),stride=w*4;
+        const sharpness=.13;
         for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){
-          const index=(y*w+x)*4;
-          if(original[index+3]===0)continue;
-          for(let channel=0;channel<3;channel++){
-            const i=index+channel,center=original[i];
-            const neighbors=original[i-4]+original[i+4]+original[i-stride]+original[i+stride];
-            data[i]=Math.max(0,Math.min(255,center*(1+4*sharpness)-sharpness*neighbors));
+          const i=(y*w+x)*4;
+          if(original[i+3]<224||original[i-1]<224||original[i+7]<224||
+             original[i-stride+3]<224||original[i+stride+3]<224)continue;
+          for(let c=0;c<3;c++){
+            const k=i+c,center=original[k];
+            const others=original[k-4]+original[k+4]+original[k-stride]+original[k+stride];
+            data[k]=Math.max(0,Math.min(255,center*(1+4*sharpness)-sharpness*others));
           }
         }
         ctx.putImageData(pixels,0,0);
-        const upscaled=canvas.toDataURL('image/webp',.96);
-        if(!upscaled.startsWith('data:image/'))return;
-        clarityCache.set(source,upscaled);
+        const rendered=output.toDataURL('image/png');
+        if(!rendered.startsWith('data:image/png'))return;
+        if(clarityCache.size>=16)clarityCache.delete(clarityCache.keys().next().value);
+        clarityCache.set(source,{src:rendered,cutout});
         image.dataset.tfHd='1';
-        image.src=upscaled;
+        image.dataset.tfCutout=cutout?'1':'0';
+        image.src=rendered;
       }catch{
+        // Keep original approved artwork visible if Canvas is blocked or unsupported.
         image.dataset.tfHd='unsupported';
-        // Keep original approved portrait if Canvas is unavailable or blocked.
       }
     });
   }
