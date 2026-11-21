@@ -191,3 +191,8 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Run playable end-to-end branch/character/save and measured 90–120-minute Act I tests. Static checks alone do not establish completion.
 - [ ] Acts II/III remain preserved but frozen until Act I passes acceptance. Public GitHub must not receive unpublished story manuscripts or secrets.
 - [x] Approved live portrait assets, GitHub Pages configuration and release settings unchanged.
+
+## Act I regression-test follow-up — 2026-11-21
+- [x] Added reusable public `tests/act1-age-choice-compat.test.mjs` regression coverage for approved age 27–30, valid legacy saves, current scene graph and random Chapter 1 decision paths (commit `690a16e`). Live-source behavior was verified separately in 480 isolated script runs; full Node test execution on a checked-out source remains an additional verification step.
+- [x] Created/verified personal private Act I checkpoint with no direct/inherited collaborators. Confidential manuscripts and QA are indexed there, not published on PUBLIC GitHub.
+- [ ] Full private Chapter 2–3 playable integration, actual human/browser timed routes and editorial review remain required before marking Act I complete.
