@@ -247,7 +247,7 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Eight owner clarifications approved. Act I revision order documented at `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md`; no unreleased plot content published.
 - [x] Removed saving, loading, import/export, resume modal, saved-game UI and automatic progress persistence from `game/tierfall-chapter1-expanded-edition.html`. On reload the story starts fresh, and any prior Chapter One local save is cleared. Current-session journal and choices remain.
 - [x] Fixed three small public Chapter One prose/choice continuity issues; story decisions, scene graph and portrait source files unchanged.
-- [x] Compiled both embedded JavaScript scripts and simulated 48 age/background first-choice playthroughs to Chapter One completion before each story-code commit. Remote source SHA verified.
+- [x] Compiled both embedded JavaScript scripts; 48 initial routes passed for each story-code commit, then 960 varied choice routes passed against the final GitHub source. Remote SHA verified.
 - [x] Updated six existing automated test source files to no-save expectations; completed content readback on GitHub main.
 - [ ] Run the complete Node test suite and real browser/phone QA. Code compilation and route simulation are not substitutes for these tests.
 - [ ] Revise protected Act I Chapters 2–5 privately for temporal continuity, character consistency, consequence propagation, origin variation and dramatized chapter endings. **No unreleased manuscripts may be committed while the repo is public.**
