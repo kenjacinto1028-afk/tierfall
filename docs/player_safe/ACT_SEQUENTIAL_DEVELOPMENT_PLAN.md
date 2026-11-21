@@ -9,7 +9,9 @@
 - Preserve existing Chapters 1–3 and their choices. Add substantial connected Chapters 4–5 to Act I; **do not publish protected new writing in this PUBLIC repository**.
 - Existing early Act II and Act III manuscript drafts are retained as private source material to renumber/reconcile after Act I acceptance. Do not conflate old working chapter numbers with the new approved numbering.
 - **Pacing is being rebaselined.** The previous 6–8 hour *whole-game* and 1.5–2 hour *Act I* budgets were based on eleven chapters and must **not** be presented as verified targets for the expanded 18+ chapter scope. Act II's minimum 3.5 hours remains a floor, subject to later measured paths. Assess total length after representative playtests rather than forcing short chapters.
-- Act I complete means: meaningful new chapters (not padding), original character/background/choice consistency, readable pacing, direct playable connection, old-save compatibility, lore-knowledge gates, and real timed route testing. Three-act narrative ending, spoilers, romances and reveal details remain confidential.
+- Act I complete means: meaningful new chapters (not padding), original character/background/choice consistency, readable pacing, direct playable connection, in-session play continuity (no saved-game compatibility work), lore-knowledge gates, and real timed route testing. Three-act narrative ending, spoilers, romances and reveal details remain confidential.
+
+**Current Act I pacing guidance (2026-11-21):** Aim for approximately 2–2.5 hours on representative routes, without padding; this remains unmeasured until full playthroughs. Persistent story saves, save import, and save export have been removed by owner decision.
 
 ## Current writing and testing priorities
 
@@ -19,14 +21,14 @@ Complete **Act I first**, then connect and complete **Act II**, then connect and
 
 | Stage | Chapters | Exit requirements |
 |---|---|---|
-| **ACT I — ACTIVE** | Prologue; Chapters 1–5 | Expand, edit and polish each chapter; strengthen ordinary life, relationships, dialogue, backgrounds and meaningful choices; preserve approved lore and existing Chapter 1 choices; implement/test a backward-compatible Chapter 1→2 transition; **measure actual route time and assess pacing** on representative complete routes |
+| **ACT I — ACTIVE** | Prologue; Chapters 1–5 | Expand, edit and polish each chapter; strengthen ordinary life, relationships, dialogue, backgrounds and meaningful choices; preserve approved lore and existing Chapter 1 choices; implement/test a direct in-session Chapter 1→2 transition; **measure actual route time and assess pacing** on representative complete routes |
 | **ACT II — ON HOLD** | Chapters 6–13 | First confirm every connection from the final Act I, then write/edit and test Act II branches and consequences; **measure at least 3.5 hours** on representative complete routes |
 | **ACT III — ON HOLD** | Chapters 14–18 | First confirm every connection from the final Act II, then polish, integrate and test the closing act and possible conclusions |
-| **FULL-GAME QA — LATER** | All three acts | Test complete player routes, 12 occupation/upbringing combinations, major decision variations, continuity, recap/glossary reveal gating, save import/export and an **updated measured full-game duration** |
+| **FULL-GAME QA — LATER** | All three acts | Test complete player routes, 12 occupation/upbringing combinations, major decision variations, continuity, recap/glossary reveal gating, fresh-load and in-session continuity and an **updated measured full-game duration** |
 
 ## Act I baseline
 
-- **Prologue and Chapter 1:** playable, but Chapter 1 remains shorter than its intended final reading length. Do not change established choices or invalidate saves.
+- **Prologue and Chapter 1:** playable, but Chapter 1 remains shorter than its intended final reading length. Do not change established choices. The game now starts fresh on every reload.
 - **Chapter 2:** expanded confidential draft with nine core scenes and three primary decision groups; not integrated into the game.
 - **Chapter 3:** expanded confidential draft with nine core scenes and three primary decision groups; not integrated into the game.
 - New Chapters 4–5 extend Act I beyond the original three-chapter estimate; remeasure actual route times before approving act duration. No act or chapter is declared production-ready from draft word counts alone.
@@ -35,7 +37,7 @@ Complete **Act I first**, then connect and complete **Act II**, then connect and
 
 ## Privacy and later integration
 
-This repo remains **PUBLIC**. Only spoiler-safe planning and progress information belongs here. Confidential Chapter 2/3 drafts, future revelations, hidden character arcs and endings stay in personal private ChatGPT storage. Publication/integration of unreleased chapters requires an approved privacy-safe route; no game code, portraits, Pages settings, releases or saves are changed by this scheduling update.
+This repo remains **PUBLIC**. Only spoiler-safe planning and progress information belongs here. Confidential Chapter 2/3 drafts, future revelations, hidden character arcs and endings stay in personal private ChatGPT storage. Publication/integration of unreleased chapters requires an approved privacy-safe route; this planning document does not publish any unreleased narrative. The separately approved Chapter One no-save change has been implemented and verified.
 
 Portrait conformity with the approved character sheet remains a **separate future task**, not part of the current narrative sequence. Do not replace live portraits without explicit approval.
 
