@@ -497,6 +497,56 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
  #game .tf-portrait-rail.tf-focus-with-cast .tf-focus-picture{height:160px}
 }
 
+/* Portrait presentation v4 — approved faces over a restrained illustrated frame. */
+#game .tf-cast-card{
+ position:relative; background:linear-gradient(145deg,#1b2833,#111b24 70%,#0d161e);
+ border:1px solid #53606a;border-radius:13px;box-shadow:0 11px 30px #0008;
+ opacity:.65;overflow:hidden;transition:border-color .2s,opacity .2s,box-shadow .2s,transform .2s;
+}
+#game .tf-cast-card.is-current,#game .tf-cast-card[aria-pressed="true"]{
+ opacity:1;border-color:#cea568;box-shadow:0 0 0 1px #b38d5590,0 14px 30px #000a;
+}
+#game .tf-cast-card:hover,#game .tf-cast-card:focus-visible{opacity:1;border-color:#d6b477}
+#game .tf-cast-portrait{
+ position:relative;height:clamp(160px,19.5vw,235px);display:flex;justify-content:center;align-items:flex-end;
+ isolation:isolate;overflow:hidden;border-bottom:1px solid #6f6657;
+ background:
+  radial-gradient(ellipse at 50% 35%,#435763 0%,#2b3e4a 34%,#182933 61%,#101a23 100%);
+}
+#game .tf-cast-portrait::before{
+ content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
+ background:
+  repeating-linear-gradient(0deg,transparent 0 20px,#b1bed008 20px 21px),
+  linear-gradient(125deg,transparent 13%,#c1a4701c 13.5%,transparent 14%,transparent 82%,#c1a47022 82.5%,transparent 83%),
+  radial-gradient(ellipse at 49% 44%,#bea16b14,transparent 63%);
+}
+#game .tf-cast-portrait::after{
+ content:"";position:absolute;z-index:2;pointer-events:none;inset:0;
+ border:8px solid transparent;box-shadow:inset 0 0 0 1px #d5b78222,inset 0 -20px 33px #0b1219a8;
+ background:linear-gradient(180deg,#080e120f 0%,transparent 21%,transparent 66%,#0c141c63 100%);
+}
+#game .tf-cast-portrait img,#game .tf-cast-portrait img[data-tf-hd="1"]{
+ position:relative;z-index:1;display:block;width:106%;height:105%;max-width:none;max-height:none;
+ object-fit:contain;object-position:center bottom;image-rendering:auto;
+ transform:translateY(1%);backface-visibility:hidden;
+ filter:contrast(1.04) saturate(.98) drop-shadow(1px 8px 13px #050b11a6);
+}
+#game .tf-cast-portrait img[data-tf-cutout="1"]{
+ width:111%;height:108%;filter:contrast(1.05) saturate(1.03) drop-shadow(2px 6px 11px #020609b0);
+}
+#game .tf-cast-details{background:linear-gradient(180deg,#19232d,#111a23);padding:12px 13px 14px}
+#game .tf-cast-name{color:#f2e9d6;letter-spacing:.01em}
+#game .tf-cast-caption{color:#b2bdc4}
+#game .tf-cast-current-dot{background:#dfb66e;box-shadow:0 0 7px #d9a96660}
+@media(max-width:650px){
+ #game .tf-cast-portrait{height:148px}
+ #game .tf-cast-portrait img[data-tf-cutout="1"]{width:108%;height:108%}
+ #game .tf-cast-details{padding:8px 9px 10px}
+}
+@media(prefers-reduced-motion:reduce){
+ #game .tf-cast-card{transition:none!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
