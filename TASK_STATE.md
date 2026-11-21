@@ -205,3 +205,14 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Claude review, actual `node --test` suite and deployed desktop/mobile browser QA still needed.
 - [ ] Apply private Act I later-chapter repairs separately; never upload unreleased writing to PUBLIC GitHub.
 - [x] No portrait replacement, save features reinstated, Pages/release changes or spoiler-protected uploads.
+
+## Act I protected Chapters 2–5 editorial revision — 2026-11-21 (player-safe)
+- [x] Verified public GitHub main/sync rules/checkpoint status and privately reopened exact approved Chapter 2–5 manuscript sources, independent audit and narrative authority.
+- [x] Completed 148 targeted private editorial revisions across Chapters 2–5 while preserving all 79 preexisting private scene IDs and approved released Chapter 1 text/art.
+- [x] Added one substantive occupation/work-consequence decision; 13 private choice groups now expose 40 options, all route-tested.
+- [x] Assembled private no-save Act I browser preview plus four complete revised manuscripts, combined Claude review packet and ZIP. Source files and QA delivered exclusively via private working files/personal Library.
+- [x] Ran 2,000 deterministic complete private route simulations and 48 Chromium end-to-end private chapter paths; 40/40 decision options hit, 266 conditional branches observed, 3,792 browser scene advances, zero page errors; mobile 390px visual smoke test passed.
+- [x] Verified three private Library uploads by re-download SHA-256 (playable HTML, combined manuscript, ZIP), maintained private revision source, code and QA scripts there for crash recovery.
+- [x] Published only safe progress in `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md` (commit `934b057`) and `PROGRESS.md` (commit `a7463fc`). Unreleased material not committed because repository is PUBLIC.
+- [ ] Pending: independent Claude/human editorial acceptance, human-paced actual reading timing, and live first-Chapter source loading/whole Act I interaction from a player browser; no full production certification.
+- [x] No changes to public plot spoilers, original portraits, saves, GitHub Pages or releases.
