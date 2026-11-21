@@ -144,3 +144,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Implement a compatible completed-Chapter-1 continuation, approved protagonist age 27–30 selection, and tested manuscript/game integration only after writing review.
 - [ ] Separate deferred portrait identity/HD-emotion sheet correction must follow approved character sheet and explicit live-asset replacement approval.
 - [x] Prologue/Chapter 1 game source, live portraits, saves, releases and GitHub Pages settings untouched by this narrative draft.
+
+## Phase 3 — expanded Act II and lore/cohesion QA (2026-11-21)
+- [x] Expanded 5 private Act II chapter manuscripts with **14 additional narrative interludes**, +9,812 aggregate words. Chapters 2–11 now contain **39,769 aggregate words**, including mutually exclusive alternatives and writer notes, not single-route reading length.
+- [x] Kept 82 original scene sections, 30 primary future decision groups, 12 starting backgrounds and established character/lore constraints.
+- [x] Revised private chapter chronology and earlier-choice guard placement. Added more world/rank/faction texture and route-dependent dialogue without altering any shipped Chapter 1 scene.
+- [x] Passed **19/19 Phase 2 outline**, **35/35 Phase 3 structure**, and **44/44 new lore/cohesion static checks**. These are draft checks, not playable route tests.
+- [x] Privately stored and byte-size-verified revised manuscripts, continuity references, editorial review and QA scripts in personal ChatGPT Library.
+- [x] Published and verified player-safe status `docs/player_safe/PHASE3_EXPANSION_QA_STATUS.md` (commit `de380bd`). Future plot content intentionally omitted from public GitHub.
+- [ ] Continue substantive story/character expansion and dialogue revision; **the measured 6–8h story and >=3.5h Act II are not yet achieved or verified**.
+- [ ] Perform actual route/reading QA and save-compatible Chapter 2+ game integration only after manuscript improvements.
+- [x] Live game code, existing Prologue/Chapter 1 scenes, portraits, saves, releases and GitHub Pages settings remain untouched.
