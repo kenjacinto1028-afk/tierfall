@@ -27,3 +27,11 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Implemented light-matte detection, edge-connected background cleanup, 2× high-quality lossless in-browser rendering, and original-image fallback in `game/tierfall-chapter1-expanded-edition.html` (commit 3687fec).
 - [x] Expanded `tests/object-focus-and-portrait-clarity.test.mjs` to cover safe matte removal, original image integrity, 2× PNG output, cache and all 12 starting story variants; passed against current remote source (commit 1593f16). CSS includes mobile and reduced-motion adjustments.
 - [x] Verified remote GitHub `main` readback: both inline scripts parse, story engine byte-identical, approved Sera/Jalen source hashes untouched, regression test PASS, and PROGRESS.md updated. Deployed screenshot QA remains pending.
+
+## Batch 02 emotion-sheet review (11–20) — 2026-11-21
+- [x] Inspected public GitHub repository, GITHUB_SYNC.md, existing portrait_manifest.json, player-safe approved designs, and local continuation checkpoint.
+- [x] Confirmed ten characters by manifest order: Ilyra Sen through Peli Serran. Reviewed exact neutral portrait references and ages/ranks before creating artwork.
+- [x] Generated one combined six-expression concept image; separate native-resolution character generations did not preserve requested cast. Cropped into ten 4× resampled WebP review sheets and packaged a ZIP; *do not call these native-HD redraws*.
+- [x] Synced ten individual image files under art/review/emotion-sheets-batch-02/, with gallery README. Verified Git blobs match original local bytes exactly, committing small checkpoints.
+- [x] PROGRESS.md updated; live portraits, game code, and save data untouched. No story spoilers or releases published.
+- [ ] Individually generated native-HD emotion sheets remain pending for character likeness fidelity. Keep current game portraits until explicit art-swap approval.
