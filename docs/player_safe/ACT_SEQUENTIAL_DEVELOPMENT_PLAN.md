@@ -2,6 +2,17 @@
 
 **Approved November 21, 2026 · Player-safe; no future plot details**
 
+## Expanded minimum chapter plan — approved November 21, 2026
+
+**Updated approved structure:** **Act I = Prologue + at least 5 chapters**, **Act II = at least 8 chapters**, **Act III = at least 5 chapters**. This means a **minimum of 18 numbered chapters plus the Prologue**, not an upper limit. Act I remains the only active writing/development priority.
+
+- Preserve existing Chapters 1–3 and their choices. Add substantial connected Chapters 4–5 to Act I; **do not publish protected new writing in this PUBLIC repository**.
+- Existing early Act II and Act III manuscript drafts are retained as private source material to renumber/reconcile after Act I acceptance. Do not conflate old working chapter numbers with the new approved numbering.
+- **Pacing is being rebaselined.** The previous 6–8 hour *whole-game* and 1.5–2 hour *Act I* budgets were based on eleven chapters and must **not** be presented as verified targets for the expanded 18+ chapter scope. Act II's minimum 3.5 hours remains a floor, subject to later measured paths. Assess total length after representative playtests rather than forcing short chapters.
+- Act I complete means: meaningful new chapters (not padding), original character/background/choice consistency, readable pacing, direct playable connection, old-save compatibility, lore-knowledge gates, and real timed route testing. Three-act narrative ending, spoilers, romances and reveal details remain confidential.
+
+## Prior sequencing baseline (superseded chapter counts and durations)
+
 ## New priority
 
 Complete **Act I first**, then connect and complete **Act II**, then connect and complete **Act III**. The existing drafts for later acts are retained, but additional development there is **paused** until the preceding act passes its writing, continuity and testing gates.
