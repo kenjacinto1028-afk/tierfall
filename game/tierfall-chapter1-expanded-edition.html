@@ -1189,7 +1189,7 @@ var Tierfall;
         'c1-cross': {
             id: 'c1-cross', title: 'The One Who Stayed', location: 'Thule · Narrow Service Lane', speaker: 'Narrator',
             text: [
-                'A few streets from the records hall, the woman calls to you from a service doorway. She introduces herself as Ada, a worker at the food counter near the docks. She says she noticed you hesitate when the guard turned toward her.',
+                'A few streets from the records hall, the woman calls to you from a service doorway. She introduces herself as Ada, a worker at the food counter near the docks. She recognizes you from the records hall, where the guard turned toward her.',
                 '“I walked my husband to Bay Six,” she tells you. “He had his lunch tin. He joined the line, and they told us the ship would be back in five days.” She says the last part carefully, as if repeating a promise might make it true.',
                 'Ada shows you a passenger tag with a printed name and number. One corner has been torn away, and her hand trembles as she holds it out. “They can erase a notice. They can’t tell me I wasn’t there.”',
                 'Two officers turn into the lane behind you. Ada closes her fist around the tag, tearing its damaged edge a little further, and looks toward the nearest door.',
@@ -1292,7 +1292,7 @@ var Tierfall;
                 { when: [{ key: 'toldGuard', equals: false }], text: ['You gave the guard little to work with. The silence may protect you tonight, but it will not stop him from asking other people.'] }
             ],
             choices: [
-                { id: 'secure', label: 'Hide the evidence in a place only you know.', hint: 'Protect what you can prove.', next: 'c1-dusk', effects: [{ key: 'evidenceSecured', set: true }, { key: 'caution', add: 1 }], journal: 'You secured the evidence you have, or wrote down a clear memory to preserve it.' },
+                { id: 'secure', label: 'Secure a copy or write down what you remember.', hint: 'Protect the information you still have.', next: 'c1-dusk', effects: [{ key: 'evidenceSecured', set: true }, { key: 'caution', add: 1 }], journal: 'You secured the evidence you have, or wrote down a clear memory to preserve it.' },
                 { id: 'people', label: 'Check whether the witnesses are safe.', hint: 'Put people before paper.', next: 'c1-dusk', effects: [{ key: 'witnessProtected', set: true }, { key: 'evidenceSecured', set: false }, { key: 'workerTrust', add: 1 }], journal: 'You spent the evening checking on the people whose words might put them at risk.' },
                 { id: 'message', label: 'Write a careful message about what happened.', hint: 'Create a record that may outlast you.', next: 'c1-dusk', effects: [{ key: 'messageWritten', set: true }, { key: 'officialAttention', add: 1 }], journal: 'You made a private written account of the day and stored a copy.' }
             ]
@@ -1301,7 +1301,7 @@ var Tierfall;
             id: 'c1-dusk', title: 'A Promise for Tomorrow', location: 'Thule · Sleeping Ring', speaker: 'Narrator',
             text: [
                 'The final bell sounds, and the living ring grows quiet. Your room is warm enough to sleep, but you sit awake, listening to the familiar hum of air moving through the walls.',
-                'By morning, the station had one version of what happened to Transit 17. By night, the Concord had given everyone a different one. The people you met today will have to live with the difference, and some of them have already paid for speaking up.',
+                'This morning, the station’s records show one version of what happened to Transit 17. Tonight, the Concord’s notice tells everyone a different one. The people you met today will have to live with the difference, and some of them have already paid for speaking up.',
                 'A gentle knock comes from the door. When you open it, the corridor is empty except for an envelope lying on the floor. It has no name, no official stamp, and no sign of who left it.',
                 'Inside is a small card bearing four words: “Ask who wrote it.” You read them again, trying to decide whether the message is meant to help you or warn you away.',
                 "The air unit clicks once, rattles, and finds its rhythm again. Somewhere down the corridor a child complains that the lights have dimmed too early. A tired adult promises that tomorrow will be better, then laughs softly at how often they have made that promise. The ordinary sounds continue around your room. Whatever you choose to do next, Thule will still need its water, its repairs, and the people who keep one another fed.",
