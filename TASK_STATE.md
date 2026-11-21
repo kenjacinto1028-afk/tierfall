@@ -132,3 +132,14 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Next: finish line editing, create protected playable bridge from Chapter 1 completed saves to Chapters 2–3, and test end-to-end backgrounds/major choices/legacy age selection.
 - [ ] Obtain actual measured Act I playtime within 1.5–2 hours. Keep Acts II and III private/frozen until Act I passes; never commit unreleased story scripts while GitHub is PUBLIC.
 - [x] No live approved portraits, releases, or Pages settings changed.
+
+## Act I third private writing expansion — 2026-11-21 (player-safe)
+- [x] Reviewed current repository/GITHUB_SYNC/checkpoints and latest two confidential Chapter 2–3 Library manuscripts; verified source SHA-256 against local copies before edits.
+- [x] Chapter 2: six substantial new private interludes with individual character dialogue and conditionally relevant choice/background reactions, **+3,193 aggregate source words**. Source preserved; uploaded private.
+- [x] Chapter 3: six substantial new private interludes with distinctive dialogue and an earned Act I ending, **+3,146 aggregate source words**. All existing major decisions and reveal timing preserved; uploaded private.
+- [x] Fixed older QA script's parsing to distinguish new interludes; passed 85/85 prior checks and 72/72 additional checks, including 34,992 exhaustive static background/decision/legacy-flag configurations. Completed 2,000 sampled route-volume estimates.
+- [x] Individually materialized both updated private manuscripts from ChatGPT Library and compared SHA-256 against local drafts. Uploaded private editorial review/QA reports/scripts and updated protected manuscript index.
+- [x] Published and remotely verified only spoiler-safe `docs/player_safe/ACT1_DIALOGUE_EXPANSION_ROUND3_STATUS.md` (commit `219b612`) and `PROGRESS.md` (commit `7372c6a`).
+- [ ] Next: final narrative line edit and save-compatible *private* Act I interactive reader for Chapters 2–3; keep historical Chapter 1 state and age-unknown imported saves intact; test real branches and measure actual 90–120min Act I duration.
+- [ ] Act II/III remain held. Do not publish protected scripts or change approved portraits, releases or Pages settings.
+- [x] Released Chapter 1 source and portraits not changed during this expansion pass.
