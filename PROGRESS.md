@@ -253,3 +253,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Revise protected Act I Chapters 2–5 privately for temporal continuity, character consistency, consequence propagation, origin variation and dramatized chapter endings. **No unreleased manuscripts may be committed while the repo is public.**
 - [ ] Complete full Act I branch and lore QA and human-timed representative routes (approximately 2–2.5 hours preferred, not yet measured).
 - [x] No live portrait replacement, protected story upload, GitHub Pages activation or release publication.
+
+## Chapter One second-pass revision and external review packet — 2026-11-21 (player-safe)
+- [x] Rechecked current public main, sync rules, project checkpoints, approved decisions and released Chapter One source.
+- [x] Revised 21 released-scene/reaction/conditional-prose details, strengthening work/day chronology, established character occupation, recognizable recurring officer, choice-evidence provenance, background echoes and witness consent. **No scene IDs, choices, effects, journal definitions or approved portraits changed.**
+- [x] Game source verified on `main`: `game/tierfall-chapter1-expanded-edition.html` (commits `bf043972`, `de7dc849`; final blob `9298f989389b25ca6d2b28c72636ef0fffd28a4d`).
+- [x] Exported and remotely verified **all 16 published Prologue/Chapter One scenes**, 39 choice definitions, 35 Chapter One immediate reactions, and variant conditions as a readable manuscript: `docs/player_safe/CHAPTER1_CLAUDE_REVIEW_PACKET.md` (commit `dfd4788`).
+- [x] Source-level QA: 2/2 embedded scripts compile, 960/960 varied complete Chapter One routes, 35/35 Chapter One choices exercised, 4/4 distinct origin callbacks, identical published choice/effect/journal graph compared with previous release. Review packet source SHA matches remote game file.
+- [x] New regression source: `tests/chapter1-editorial-qa.test.mjs` (commit `827f3eb`). Player brief corrected to no-save and current chapter guidance.
+- [ ] External human/Claude narrative review and deployed browser/mobile QA still pending. Connected code-level checks do **not** certify live browser behavior or full Act I continuity.
+- [ ] Private Chapters 2–5 still need audit repairs and follow-through on approved commitments. Preserve secrets; do not upload private scripts to public GitHub.
+- [x] No live portraits replaced, no releases published, no GitHub Pages settings changed.
