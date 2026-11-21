@@ -11,7 +11,7 @@
 - **Pacing is being rebaselined.** The previous 6–8 hour *whole-game* and 1.5–2 hour *Act I* budgets were based on eleven chapters and must **not** be presented as verified targets for the expanded 18+ chapter scope. Act II's minimum 3.5 hours remains a floor, subject to later measured paths. Assess total length after representative playtests rather than forcing short chapters.
 - Act I complete means: meaningful new chapters (not padding), original character/background/choice consistency, readable pacing, direct playable connection, old-save compatibility, lore-knowledge gates, and real timed route testing. Three-act narrative ending, spoilers, romances and reveal details remain confidential.
 
-## Prior sequencing baseline (superseded chapter counts and durations)
+## Current writing and testing priorities
 
 ## New priority
 
@@ -19,17 +19,17 @@ Complete **Act I first**, then connect and complete **Act II**, then connect and
 
 | Stage | Chapters | Exit requirements |
 |---|---|---|
-| **ACT I — ACTIVE** | Prologue; Chapters 1–3 | Expand, edit and polish each chapter; strengthen ordinary life, relationships, dialogue, backgrounds and meaningful choices; preserve approved lore and existing Chapter 1 choices; implement/test a backward-compatible Chapter 1→2 transition; **measure 1.5–2 hours** on representative complete routes |
-| **ACT II — ON HOLD** | Chapters 4–8 | First confirm every connection from the final Act I, then write/edit and test Act II branches and consequences; **measure at least 3.5 hours** on representative complete routes |
-| **ACT III — ON HOLD** | Chapters 9–11 | First confirm every connection from the final Act II, then polish, integrate and test the closing act and possible conclusions |
-| **FULL-GAME QA — LATER** | All three acts | Test complete player routes, 12 occupation/upbringing combinations, major decision variations, continuity, recap/glossary reveal gating, save import/export and **6–8 hours total** |
+| **ACT I — ACTIVE** | Prologue; Chapters 1–5 | Expand, edit and polish each chapter; strengthen ordinary life, relationships, dialogue, backgrounds and meaningful choices; preserve approved lore and existing Chapter 1 choices; implement/test a backward-compatible Chapter 1→2 transition; **measure actual route time and assess pacing** on representative complete routes |
+| **ACT II — ON HOLD** | Chapters 6–13 | First confirm every connection from the final Act I, then write/edit and test Act II branches and consequences; **measure at least 3.5 hours** on representative complete routes |
+| **ACT III — ON HOLD** | Chapters 14–18 | First confirm every connection from the final Act II, then polish, integrate and test the closing act and possible conclusions |
+| **FULL-GAME QA — LATER** | All three acts | Test complete player routes, 12 occupation/upbringing combinations, major decision variations, continuity, recap/glossary reveal gating, save import/export and an **updated measured full-game duration** |
 
 ## Act I baseline
 
 - **Prologue and Chapter 1:** playable, but Chapter 1 remains shorter than its intended final reading length. Do not change established choices or invalidate saves.
-- **Chapter 2:** confidential first-pass draft with nine core scenes and three primary decision groups; not integrated into the game.
-- **Chapter 3:** confidential first-pass draft with nine core scenes and three primary decision groups; not integrated into the game.
-- Target working pacing: Chapter 1 ~30 minutes, Chapter 2 ~32 minutes, Chapter 3 ~38 minutes, subject to measured route times. No act or chapter is declared production-ready from draft word counts alone.
+- **Chapter 2:** expanded confidential draft with nine core scenes and three primary decision groups; not integrated into the game.
+- **Chapter 3:** expanded confidential draft with nine core scenes and three primary decision groups; not integrated into the game.
+- New Chapters 4–5 extend Act I beyond the original three-chapter estimate; remeasure actual route times before approving act duration. No act or chapter is declared production-ready from draft word counts alone.
 - Focus next on Act I dialogue variety, character development, meaningful choice reactions, protagonist background differences, timeline consistency and a properly earned major turning point. Existing later-act manuscripts are reference material, not active writing tasks.
 - Preserve approved protagonist age **27–30**, Sera Venn at **27**, the five rank/faction distinctions, and two established protagonist marks.
 
