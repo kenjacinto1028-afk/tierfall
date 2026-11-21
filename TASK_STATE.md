@@ -143,3 +143,16 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Next: final narrative line edit and save-compatible *private* Act I interactive reader for Chapters 2–3; keep historical Chapter 1 state and age-unknown imported saves intact; test real branches and measure actual 90–120min Act I duration.
 - [ ] Act II/III remain held. Do not publish protected scripts or change approved portraits, releases or Pages settings.
 - [x] Released Chapter 1 source and portraits not changed during this expansion pass.
+
+## Act I — private playable candidate (2026-11-21; spoiler-safe)
+- [x] Rechecked canonical GitHub sync/privacy state, public Chapter 1, personal private Chapters 2–3 and continuity outlines.
+- [x] Assembled private browser playable Prologue/Chapters 1–3 with direct chapter handoffs and the 35 original Chapter 1 immediate-choice reactions.
+- [x] Preserved 16 original public story nodes, all saved Chapter 1 decisions, 46 connected private Chapter 2–3 reading sections, six major private decision groups and export/import support.
+- [x] Verified valid old completed/in-progress Chapter 1 JSON saves retain history/flags/journal/aliases, with missing age explicitly selected before Chapter 2; private saves use a separate browser key.
+- [x] Browser: 48/48 full private Act I simulated paths, 6/6 UI tests, 11 original Ch1 choice-reaction replay checks; 27,000 independent conditional prose checks; no author-only notes or prematurely visible major revelation detected.
+- [x] Branch reading volume measured in browser by word count (not actual human time): Chapter 2–3 = 16,218–16,510 words; full Act I approx. 21,171 route-visible words.
+- [x] Privately uploaded and independently SHA-256 verified the playable HTML, ZIP, protected editorial report and supporting compiler/test files in personal ChatGPT Library.
+- [x] Published only spoiler-safe `docs/player_safe/ACT1_PRIVATE_PLAYABLE_STATUS.md` (commit `0b09f7b`) and `PROGRESS.md` (commit `244134c`), verified readback.
+- [ ] Final Act I production gate: test fresh-game original public source loading in normal networked browser, have player/human measure one real 90–120-minute route and review dialogue quality. Browser route tests use canonical-shape original-source fixture, not direct live internet.
+- [ ] Do not publish private Act I chapters or their build to PUBLIC GitHub; wait for privacy-safe release approval. Acts II/III remain paused.
+- [x] No live portrait replacements, public game code modifications, release actions or Pages changes.
