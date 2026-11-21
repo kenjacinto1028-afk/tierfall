@@ -242,3 +242,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] **Act II pacing is not yet accepted**: 48 route samples contain ~29,485 visible Act II words (range 29,340–29,609), about 134–164 minutes raw reading at 180–220 wpm. Approved minimum **3.5 hours** is not achieved/verified. Expand *route-visible* story and measure real human-paced routes.
 - [ ] Production acceptance requires another substantive editorial expansion, actual human-duration/character-flow tests and a live browser fetch of published Chapter 1 source. Act III remains paused.
 - [x] Public game, published Prologue/Chapter 1 source, approved portraits, releases and GitHub Pages settings unchanged.
+
+## Act I audit decisions — 2026-11-21 (player-safe; CURRENT)
+- [x] Eight owner clarifications approved. Act I revision order documented at `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md`; no unreleased plot content published.
+- [x] Removed saving, loading, import/export, resume modal, saved-game UI and automatic progress persistence from `game/tierfall-chapter1-expanded-edition.html`. On reload the story starts fresh, and any prior Chapter One local save is cleared. Current-session journal and choices remain.
+- [x] Fixed three small public Chapter One prose/choice continuity issues; story decisions, scene graph and portrait source files unchanged.
+- [x] Compiled both embedded JavaScript scripts and simulated 48 age/background first-choice playthroughs to Chapter One completion before each story-code commit. Remote source SHA verified.
+- [x] Updated six existing automated test source files to no-save expectations; completed content readback on GitHub main.
+- [ ] Run the complete Node test suite and real browser/phone QA. Code compilation and route simulation are not substitutes for these tests.
+- [ ] Revise protected Act I Chapters 2–5 privately for temporal continuity, character consistency, consequence propagation, origin variation and dramatized chapter endings. **No unreleased manuscripts may be committed while the repo is public.**
+- [ ] Complete full Act I branch and lore QA and human-timed representative routes (approximately 2–2.5 hours preferred, not yet measured).
+- [x] No live portrait replacement, protected story upload, GitHub Pages activation or release publication.
