@@ -54,3 +54,13 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Next: private three-act narrative outlining; no unreleased scripts or spoilers may go into this public repository.
 - [ ] Future integration needs compatibility checks for character-creation fields and existing Chapter 1 completed saves.
 - [x] No existing game story/code, portrait asset, save data, GitHub Pages setting or release changed.
+
+## Phase 2 — private whole-story outline (2026-11-21; player-safe)
+- [x] Rechecked canonical GitHub main, public repo restrictions, approved characters/world and private Phase 1 continuity Bible.
+- [x] Locked protagonist starting age **27–30** in four player-safe reference documents and preserved childhood friend Sera Venn at **27**.
+- [x] Logged separate future portrait/HD-emotion audit against 27 approved original designs; do not change installed portraits until approved.
+- [x] Prepared protected 11-chapter/three-act storyline, 27 character-development arcs, branch/choice continuity matrix and clue/payoff index. Approximate pacing: 100/230/90 minutes; Act II at least 3.5 hours.
+- [x] All 19 Phase 2 static planning checks passed (not gameplay testing). Private material stored as five verified files in personal ChatGPT Library, indexed by a private ChatGPT Page; sharing checked with no collaborators.
+- [x] Published public-safe Phase 2 status `docs/player_safe/PHASE2_OUTLINE_STATUS.md` (commit `9c41dea`) and `PROGRESS.md` (commit `5301a69`), avoiding all confidential plot content.
+- [ ] Future: write and edit long-form scene drafts, integrate save-compatible Chapter 2 continuation, measure narrative duration and test all branching routes.
+- [x] No existing game, unreleased story, portrait, save, release or Pages settings changed.
