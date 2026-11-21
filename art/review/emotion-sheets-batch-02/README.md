@@ -1,9 +1,20 @@
-# TierFall — Emotion-sheet reference previews (characters 11–20)
+# TierFall — Six-expression portrait review set (11–20)
 
-**Review only. Do not replace live approved portraits.**
+**Review only; not used by the live game.** These ten player-safe sheets preserve the public-facing character appearance and cover neutral, determined, skeptical, warm smile, angry, and worried expressions.
 
-This batch contains ten character-specific, six-expression reference sheets. The source was one 1536×1024 composite image, cropped per character and exported at approximately 1200×2032 pixels with careful resampling. They are HD-sized exports, **not independently generated native-resolution HD redraws**. Keep the currently approved neutral faces and in-game character artwork unchanged until further approval.
+The images are approximately 1,212 × 2,032 pixels after careful 4× resampling from a combined 1,536 × 1,024 concept sheet. **These are upscaled HD-sized previews, not ten individually redrawn native-HD images.** Faces are limited by the original composite resolution. Keep the approved neutral game portraits unchanged until an explicit art-swap approval.
 
-Covered characters: Ilyra Sen, Ysolde Kaine, Toma Baret, Varo Quill, Dr. Cael Vey, Captain Rovan Hest, Lady Coris Vale, Matria Celen, Ina Lores, Peli Serran.
+| Character | Review sheet |
+|---|---|
+| Ilyra Sen | <img src="11-ilyra-sen-emotion-sheet.webp" width="175" alt="Ilyra Sen, six emotion variations"> |
+| Ysolde Kaine | <img src="12-ysolde-kaine-emotion-sheet.webp" width="175" alt="Ysolde Kaine, six emotion variations"> |
+| Toma Baret | <img src="13-toma-baret-emotion-sheet.webp" width="175" alt="Toma Baret, six emotion variations"> |
+| Varo Quill | <img src="14-varo-quill-emotion-sheet.webp" width="175" alt="Varo Quill, six emotion variations"> |
+| Dr. Cael Vey | <img src="15-dr-cael-vey-emotion-sheet.webp" width="175" alt="Dr. Cael Vey, six emotion variations"> |
+| Captain Rovan Hest | <img src="16-captain-rovan-hest-emotion-sheet.webp" width="175" alt="Captain Rovan Hest, six emotion variations"> |
+| Lady Coris Vale | <img src="17-lady-coris-vale-emotion-sheet.webp" width="175" alt="Lady Coris Vale, six emotion variations"> |
+| Matria Celen | <img src="18-matria-celen-emotion-sheet.webp" width="175" alt="Matria Celen, six emotion variations"> |
+| Ina Lores | <img src="19-ina-lores-emotion-sheet.webp" width="175" alt="Ina Lores, six emotion variations"> |
+| Peli Serran | <img src="20-peli-serran-emotion-sheet.webp" width="175" alt="Peli Serran, six emotion variations"> |
 
-All information and appearance references are public-facing. No story outcomes or hidden costumes are included.
+No unreleased story detail, narrative reveal, or secret costume is included. To view original-quality previews, open the linked WebP files from this folder.
