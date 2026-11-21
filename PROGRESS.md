@@ -178,3 +178,16 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] **CURRENT ACTIVE TASK:** polish/expand Act I Chapters 1–3, implement backward-compatible Chapter 1→2 continuation, test all 12 background combinations and major Chapter 1 choice histories, and measure 90–120 minutes per representative Act I route.
 - [ ] Only after Act I passes, audit its link into Act II and resume Act II drafting; repeat for Act III.
 - [x] Current game, existing Chapter 1 text, portrait assets, saves, GitHub Pages and releases unchanged by this sequence decision.
+
+## Act I — focused manuscript and released-opening improvement (2026-11-21)
+- [x] **Chapter 1 polished** with 22 additional released-scene narrative/dialogue paragraphs (~1,488 words) across eleven existing decision scenes; all original event IDs, choices, effects and save outcomes preserved. Published game commit `fcee4a6`.
+- [x] **Starting age 27–30** implemented for new games with persistent selected age and old-save import compatibility. Passed 48 age/background checks, 480 legacy-save/choice route checks and 5 invalid-age tests; game commit `a283ff4`.
+- [x] **Private Chapters 2 and 3** each expanded by 8 substantial interludes (16 total; ~7,700 aggregate words added). Their original nine core scenes and three significant choices each are intact.
+- [x] Private Act I static QA: **81/81 checks passed** with **1,200 sampled condition combinations**; 2,000 static branch-aware reading-volume samples analyzed. This is NOT actual playable route or reading-time certification.
+- [x] Combined estimated route-visible Act I text ~16,000 words (not all alternatives); real human/browser playtime is still required to verify 90–120 minutes.
+- [x] Verified private new manuscript bytes against re-downloaded ChatGPT Library uploads with SHA-256; updated private manuscript index and protected continuity/bridge review.
+- [x] Published and verified spoiler-safe progress at `docs/player_safe/ACT1_WRITING_AND_QA_STATUS.md` (commit `5abbcc7`); player brief revised for the shipped age selector (commit `0d9463f`).
+- [ ] **Active:** Final Act I line editing and privacy-safe playable integration of Chapters 2–3, including a backward-compatible continuation for completed Chapter 1 exports and legacy age-unspecified saves.
+- [ ] Run playable end-to-end branch/character/save and measured 90–120-minute Act I tests. Static checks alone do not establish completion.
+- [ ] Acts II/III remain preserved but frozen until Act I passes acceptance. Public GitHub must not receive unpublished story manuscripts or secrets.
+- [x] Approved live portrait assets, GitHub Pages configuration and release settings unchanged.
