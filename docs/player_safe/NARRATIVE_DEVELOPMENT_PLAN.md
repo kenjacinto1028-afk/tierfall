@@ -86,3 +86,9 @@ The shared repository was confirmed **public on 21 November 2026**. This file is
 - Prior review found option-letter mismatches for **Sera Venn, Maren Oth, Oren Vask, Ilyra Sen and Ysolde Kaine** between the approved character sheet and current portrait manifest. Verify visually against the actual approved originals rather than inferring identity from a letter.
 - Produce side-by-side comparison samples and native-resolution consistent expression sheets; require explicit player approval **before replacing any live portraits**.
 - **Status: planned for a separate future art phase. No portrait file, image manifest, or game scene changed by this planning update.**
+
+## Approved sequential writing workflow (21 November 2026)
+
+**Act I first, then connect/complete Act II, then connect/complete Act III.** Later-act private drafts are preserved but put on hold until the preceding act's writing, lore, continuity, compatible save transition and representative playtime tests pass. Do not mark an act completed because a first-pass draft or static checks exist.
+
+See [ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md](ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md) for player-safe acceptance gates. This sequencing does not authorize posting unreleased story material to the public repository.
