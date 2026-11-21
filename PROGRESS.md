@@ -102,3 +102,13 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Verified that all ten uploaded blob SHAs match local bytes. No live game portraits, saved-game data, or story engine files changed; repository remains public and no release was published.
 - [ ] **Quality limitation:** Source artwork came from a single 1,536 × 1,024 collage. These are carefully upscaled HD-sized *draft previews*, not ten independently generated native-HD paintings. Native-resolution likeness-preserving redraws remain outstanding.
 - [ ] New emotion sheets are **not activated in the game**. Approval/likeness review is needed before any live portrait replacement.
+
+## Approved long-form narrative direction — 2026-11-21
+- [x] Locked three-act framework, flexible approximately 8–12 chapters, and 6–8 hours per playthrough.
+- [x] Assigned Act I 1.5–2 hours, Act II **at least 3.5 hours** (target 3.5–4), and Act III 1–2 hours.
+- [x] Approved balanced meaningful branches and three major turning-point functions without publicizing any future events.
+- [x] Created public-safe narrative architecture at `docs/player_safe/NARRATIVE_DEVELOPMENT_PLAN.md`; updated `docs/player_safe/PLAYER_BRIEF.md`.
+- [x] Defined protected workflow for full-series beats, character arcs, timeline/canon ledger, long-form scene drafts, choice dependencies and playtest checks.
+- [ ] Prepare confidential full-series plot, hidden character arcs and dense unreleased prose in a **private** storage location; public GitHub must not receive this material.
+- [ ] Measure actual route reading time and run continuity/saving regression tests when future chapters are integrated.
+- [x] No game code, character portraits, Chapter 1 scenes, player saves or release settings changed by this documentation-only update.
