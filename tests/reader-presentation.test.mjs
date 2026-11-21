@@ -22,6 +22,6 @@ for(const art of ['reach-routes','civic-concourse','living-ring','work-sector'])
 }
 const allSubtitles=html.match(/<script>([\s\S]*?)<\/script>/g)?.[0]||'';
 assert.ok(allSubtitles.includes('Tierfall.skipPrologue'),'Original skip prologue remains');
-assert.ok(allSubtitles.includes('function exportSave()'),'Save export remains');
-assert.ok(allSubtitles.includes('function importSave(file)'),'Save import remains');
-console.log('PASS: 16 scene-art mappings, 3 portrait modes, 4 WebP scene assets, responsive sidebar/effects hooks, preserved core save functions');
+assert.ok(!allSubtitles.includes('function exportSave()'),'Save export removed');
+assert.ok(!allSubtitles.includes('function importSave(file)'),'Save import removed');
+console.log('PASS: 16 scene-art mappings, 3 portrait modes, 4 WebP scene assets, responsive sidebar/effects hooks, no game save functions');
