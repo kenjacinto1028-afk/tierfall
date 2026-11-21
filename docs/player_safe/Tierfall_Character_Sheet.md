@@ -68,7 +68,7 @@ The player begins as **Rank V · Leadborn** and chooses one of four starting occ
 - **Farmer** — grows food in controlled colony environments
 - **Cargo Runner** — moves freight and supplies through transport hubs
 
-Upbringing is chosen separately: **Family Household**, **Communal Upbringing**, or **Estranged Household**. The protagonist's age is customizable within the agreed **24–32** range.
+Upbringing is chosen separately: **Family Household**, **Communal Upbringing**, or **Estranged Household**. The protagonist's age is customizable within the agreed **27–30** range.
 
 ## Art workflow and boundaries
 
