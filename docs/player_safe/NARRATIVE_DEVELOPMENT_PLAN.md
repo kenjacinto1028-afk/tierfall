@@ -2,24 +2,26 @@
 
 **Player-safe planning document · 21 November 2026 · No unreleased plot details**
 
+## Revised scope — 21 November 2026 (supersedes earlier chapter/duration allocations)
+
+- **Act I: Prologue + at least 5 chapters**, now working Chapters 1–5.
+- **Act II: at least 8 chapters**, next working Chapters 6–13.
+- **Act III: at least 5 chapters**, next working Chapters 14–18.
+- **Minimum: 18 numbered chapters plus the Prologue.** Existing Act II/III manuscript material is retained privately for future renumbering and reconnection; those acts remain paused until Act I acceptance.
+- The earlier 11-chapter, 6–8-hour whole-game estimate and 1.5–2-hour Act I estimate are **superseded planning assumptions**, not verified duration limits. Rebaseline timing from representative complete playthroughs of the expanded story; retain Act II's 3.5-hour minimum as a floor.
+- No unapproved portrait swaps, spoilers or unpublished scripts may be committed to the PUBLIC repository. Continue following the sequential-act gates.
+
 ## Status and boundaries
 
 - Prologue and Chapter 1 are established playable material. Protect their existing story events, choices and saved-game compatibility.
-- The game targets **three acts, flexible chapters (approximately 8–12), and 6–8 hours per playthrough**.
+- The game targets **three acts and at least 18 numbered chapters (5 + 8 + 5); the final playthrough duration will be remeasured**.
 - Branching is **balanced**: important choices change relationships, dialogue, scene access and future context; major chapters may reconverge.
 - Three major turning-point functions are approved: an Act I recontextualization, an Act II increase in personal stakes, and an Act III revelation/payoff. These describe narrative functions, **not** future events.
 - **Act II must last at least 3.5 hours** and carry the most character and story development.
 
-## Pacing budget
+## Duration policy for expanded scope
 
-| Act | Typical time | Narrative responsibility |
-| --- | --- | --- |
-| Act I (including existing opening) | 1.5–2 hours | Establish the cast, setting, agency and early tension |
-| **Act II** | **3.5–4 hours** | Deep relationships, conflicts, decisions and callbacks |
-| Act III | 1–2 hours | Earned payoffs and satisfying conclusions |
-| **Total** | **6–8 hours** | Validate through actual playtime measurements |
-
-The existing opening counts toward Act I; if its real duration is short, the remaining Act I writing must compensate. Chapter boundaries can shift. A nonbinding working allocation is Chapters 1–3 for Act I, 4–8 for Act II and 9–11 for Act III, with the Prologue before Chapter 1. These numbers reveal no plot events.
+The original 11-chapter pacing table is retired. Assess each new chapter and complete act by path-visible text, choices, and real playtime rather than enforcing a word or chapter quota. Preserve Act II's minimum 3.5 hours; record full-game duration after measured trials of the 18+ chapter design.
 
 ## Required protected outline fields
 
