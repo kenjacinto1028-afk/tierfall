@@ -23,7 +23,7 @@ assert.match(html,/dataset\.sceneCast=cast\.length===2/,'Cast size must be refle
 assert.match(html,/dataset\.sceneCrowd=busy\.has\(scene\.id\)/,'Only busy public scenes should receive crowds');
 for(const state of ['none','sparse','busy'])
   assert.ok(html.includes('data-scene-crowd="'+state+'"'),'Missing crowd style '+state);
-for(const hook of ['referenceOnScene(game,scene)','referenceSetup()','function importSave(file)','function exportSave()','window.TierfallSceneUI.onRender(game,scene)'])
+for(const hook of ['referenceOnScene(game,scene)','referenceSetup()','function setupControls()','function boot()','window.TierfallSceneUI.onRender(game,scene)'])
   assert.ok(html.includes(hook),'Lost control or compatibility hook '+hook);
 assert.match(html,/@media\(max-width:1150px\),\(pointer:coarse\) and \(orientation:portrait\)/,'Mobile full-width reading must be preserved');
 assert.match(html,/prefers-reduced-motion:reduce/,'Reduced-motion accessible setting must remain');
