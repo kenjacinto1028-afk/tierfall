@@ -155,3 +155,16 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Continue substantive story/character expansion and dialogue revision; **the measured 6–8h story and >=3.5h Act II are not yet achieved or verified**.
 - [ ] Perform actual route/reading QA and save-compatible Chapter 2+ game integration only after manuscript improvements.
 - [x] Live game code, existing Prologue/Chapter 1 scenes, portraits, saves, releases and GitHub Pages settings remain untouched.
+
+## Phase 3 — second dialogue expansion and cohesion checks (2026-11-21)
+- [x] Expanded **21 additional narrative passages** in private Chapters 4–11: **11 in Act II** and **10 in Act III**, focusing on character voice, ordinary-life moments, player-choice boundaries, and later-act emotional consequences.
+- [x] Added ~10,200 aggregate manuscript words. Total confidential Chapters 2–11 manuscript set is ~50,000 words (all branches and notes included); Act II ~28,700 aggregate words. **Neither is a measured single-route length.**
+- [x] Preserved 82 core scene sections, 30 primary decisions, all 12 background combinations, and established Chapter 1 canon.
+- [x] Fixed issues found during drafting: three duplicate subscene identifiers, relationship-boundary defaults, choice-dependent venue descriptions, and timeline metadata conflicts with newer private Library versions.
+- [x] Static checks PASS: **19/19 outline**, **35/35 structural**, **44/44 lore/cohesion**, and **82/82 second-pass**. These are manuscript checks, not playable simulations or full route-by-route reviews.
+- [x] Overwrote 8 protected manuscripts and added private QA/source files in personal ChatGPT Library; **verified all 8 manuscript uploads byte-for-byte using independent SHA-256 readback**.
+- [x] Published/verified spoiler-safe update at `docs/player_safe/PHASE3_DIALOGUE_EXPANSION_STATUS.md` (commit `67b2449`).
+- [ ] Additional prose/editing as needed to achieve the agreed 6–8h playthrough / Act II >=3.5h **when measured on actual playable routes**.
+- [ ] Integrate Chapters 2–11 into the game with backward-compatible saves, then test all backgrounds and meaningful player branches.
+- [ ] Deferred 27-character portrait/HD-expression conformity check against approved character sheet. No live portrait changes without explicit approval.
+- [x] No current playable code, existing Prologue/Chapter 1 narrative, portrait assets, save format, releases, or GitHub Pages configuration changed in this draft expansion.
