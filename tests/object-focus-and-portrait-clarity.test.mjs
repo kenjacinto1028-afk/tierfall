@@ -10,7 +10,7 @@ const ui=scripts[1];
 assert.ok(ui.includes('function updateFocusCard(scene,beat)'),'Object focus changes with reading beat');
 assert.ok(ui.includes('function improvePortraitDisplay(image)'),'Portrait rendering enhancement is installed');
 assert.ok(ui.includes("Tierfall.applyPortrait(img,game,canonical,fallback)"),'Approved portrait loader remains');
-assert.ok(ui.includes("canvas.toDataURL('image/webp',.96)"),'Higher quality render cache remains');
+assert.ok(ui.includes("output.toDataURL('image/png')"),'Higher quality render cache remains');
 assert.ok(ui.includes("image.dataset.tfHd='1'"),'Enhanced image must not reprocess indefinitely');
 assert.ok(ui.includes('if(image.naturalWidth>480||image.naturalHeight>600)return'),'Large original portraits must not be resampled');
 assert.ok(ui.includes("updateFocusCard(Tierfall.scenes[$('#game')?.dataset.sceneId],portraitCurrentPage)"),'Focus follows visible page');
@@ -60,37 +60,70 @@ for(const upbringing of Object.keys(engine.upbringings)){
  variants++;
 }
 assert.equal(variants,12);
-// Exercise the real resampler logic with a Canvas substitute. No artwork files are altered.
+// Safety: remove only edge-connected pale mattes, leaving faces and dark artworks intact.
 const sharpStart=ui.indexOf('  const clarityCache=new Map();');
 const sharpEnd=ui.indexOf('  function paintPortraitCards(',sharpStart);
 assert.ok(sharpStart>=0&&sharpEnd>sharpStart,'Clarity helper cannot be isolated');
-const mockCanvas={
- width:0,height:0,
- getContext(){return{
-  drawImage(){},
-  getImageData(){return{data:new Uint8ClampedArray(mockCanvas.width*mockCanvas.height*4)};},
-  putImageData(){}
- }},
- toDataURL(){return 'data:image/webp;base64,c2hhcnA=';}
-};
-const fakeDocument={createElement(tag){assert.equal(tag,'canvas');return mockCanvas;}};
-const sharpContext={document:fakeDocument,Uint8ClampedArray};
-const sharpen=vm.runInNewContext(ui.slice(sharpStart,sharpEnd)+'\nimprovePortraitDisplay;',sharpContext);
+const sharpCode=ui.slice(sharpStart,sharpEnd);
+const matte=vm.runInNewContext(sharpCode+'\nclearPortraitMatte;');
+const W=120,H=150;
+function portraitPixels(background=[232,224,215]){
+ const d=new Uint8ClampedArray(W*H*4);
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+   const i=(y*W+x)*4;
+   const inside=x>=40&&x<80&&y>=26&&y<145;
+   const color=inside?(x<60?[33,46,57]:[207,132,84]):background;
+   for(let c=0;c<3;c++)d[i+c]=color[c];
+   d[i+3]=255;
+ }
+ return {data:d};
+}
+const pale=portraitPixels();
+assert.equal(matte(pale,W,H),true,'Pale uniform artwork should allow safe background removal');
+assert.equal(pale.data[3],0,'Top-left bright backdrop must become transparent');
+assert.equal(pale.data[((45*W+50)*4)+3],255,'Dark portrait area must be preserved');
+assert.equal(pale.data[((45*W+65)*4)+3],255,'Face colors must be preserved');
+const dark=portraitPixels([17,30,45]);
+assert.equal(matte(dark,W,H),false,'Dark source artworks must never be cut out');
+assert.equal(dark.data[3],255,'Dark backgrounds remain opaque');
+const unsafe=portraitPixels();
+unsafe.data[(4*W+W-5)*4]=65;
+assert.equal(matte(unsafe,W,H),false,'Mismatched corner colors must disable matte cleanup');
+
+// Verify the real 2x renderer with a Canvas substitute. Do not touch source art.
+const canvasCreated=[];
+const fakeDocument={createElement(tag){
+ assert.equal(tag,'canvas');
+ const canvas={
+   width:0,height:0,
+   getContext(){return{
+     drawImage(){},
+     getImageData(){return {data:new Uint8ClampedArray(canvas.width*canvas.height*4)};},
+     putImageData(){}
+   };},
+   toDataURL(type){assert.equal(type,'image/png');return 'data:image/png;base64,c2hhcnA=';}
+ };
+ canvasCreated.push(canvas);return canvas;
+}};
+const sharpen=vm.runInNewContext(sharpCode+'\nimprovePortraitDisplay;',{document:fakeDocument});
 const image={
  naturalWidth:240,naturalHeight:300,
  currentSrc:'https://example.test/assets/portraits/01-sera-venn/neutral.webp',
  src:'https://example.test/assets/portraits/01-sera-venn/neutral.webp',
- dataset:{},
- addEventListener(event,handler){if(event==='load')this.onload=handler;}
+ dataset:{},addEventListener(event,handler){if(event==='load')this.onload=handler;}
 };
-sharpen(image);
-assert.equal(typeof image.onload,'function');
-image.onload();
-assert.equal(mockCanvas.width,480);
-assert.equal(mockCanvas.height,600);
+sharpen(image);assert.equal(typeof image.onload,'function');image.onload();
+assert.equal(canvasCreated.length,2,'Both native and upscale canvases are used');
+assert.equal(canvasCreated[0].width,240);
+assert.equal(canvasCreated[0].height,300);
+assert.equal(canvasCreated[1].width,480);
+assert.equal(canvasCreated[1].height,600);
 assert.equal(image.dataset.tfHd,'1');
-assert.ok(image.src.startsWith('data:image/webp;base64,'));
-image.onload();
-assert.equal(image.dataset.tfHd,'1','Enhanced image must not reprocess itself');
+assert.ok(image.src.startsWith('data:image/png;base64,'));
+image.onload();assert.equal(canvasCreated.length,2,'Upscaled image must not reprocess itself');
+const cachedImage={naturalWidth:240,naturalHeight:300,currentSrc:image.currentSrc,
+ src:image.currentSrc,dataset:{},addEventListener(event,handler){if(event==='load')this.onload=handler;}};
+sharpen(cachedImage);cachedImage.onload();
+assert.equal(canvasCreated.length,2,'Identical portrait source should use a cache');
 
-console.log('PASS: 7 vector object cards, safe beat reveals, approved portrait integrity, clarity fallback, 12 story variants');
+console.log('PASS: 7 vector objects, edge-safe matte, transparent cutout, cached 2x PNG, 12 story variants');
