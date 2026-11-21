@@ -274,3 +274,9 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Created four confidential revised manuscripts, combined independent-review packet, playable preview, source JSON, QA report and private ZIP; stored privately, **NOT** in the PUBLIC GitHub repository.
 - [ ] External narrative/continuity review, live public-Chapter-One source fetching on representative browsers, real timed whole-Act-I reading, and acceptance of target pacing remain outstanding. Estimated word-based duration is not human-time certification.
 - [x] No public unreleased scripts or story secrets, portrait swaps, new releases, Pages changes or save/load features.
+
+## Act I combined external-review manuscript — 2026-11-21 (player-safe)
+- [x] Combined the exact released Prologue/Chapter 1 review transcript with the latest approved protected revised Chapters 2–5, including conditional branches, choices, effects and reactions.
+- [x] Verified all five chapter sections in a single complete **owner-private ChatGPT Page**, with an in-view Markdown download action for Claude review.
+- [x] Kept complete Act I manuscript off public GitHub, preserving future-story surprises. No game, portrait, UI, release or Pages changes.
+- [ ] External Claude editorial review and human-timed full Act I acceptance remain pending.
