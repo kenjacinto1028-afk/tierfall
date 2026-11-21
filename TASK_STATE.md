@@ -44,3 +44,13 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Confidential act-by-act plot beats, character-secret arc cards, clue/payoff ledger and unpublished long-form drafts: create only in **private** storage, not the public repository.
 - [ ] Later validate continuity and route length against the actual integrated narrative.
 - [x] No game, portraits, saves, releases or Pages settings changed in this planning phase.
+
+## Phase 1 — Narrative consistency audit (2026-11-21; player-safe)
+- [x] Read current sync instructions, checkpoint, approved world/character references, Prologue/Chapter 1 source and portrait manifest.
+- [x] Audited 27-character baseline, 12 starting combinations, 16 current scene nodes, choice/flag/save structure and established timeline constraints.
+- [x] Stored full internal continuity/choice reference in a **private personal ChatGPT Page** named `TierFall — Private Canon & Continuity Bible (Phase 1)`; verified no direct or inherited collaborators.
+- [x] Logged 10 follow-up items in private working material. No future plots, character secrets or endings disclosed.
+- [x] Published `docs/player_safe/PHASE1_CONTINUITY_STATUS.md` and updated `PROGRESS.md`; readback verified.
+- [ ] Next: private three-act narrative outlining; no unreleased scripts or spoilers may go into this public repository.
+- [ ] Future integration needs compatibility checks for character-creation fields and existing Chapter 1 completed saves.
+- [x] No existing game story/code, portrait asset, save data, GitHub Pages setting or release changed.
