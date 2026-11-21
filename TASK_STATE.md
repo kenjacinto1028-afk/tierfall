@@ -84,3 +84,14 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Published spoiler-safe Phase 3 expansion/QA status `docs/player_safe/PHASE3_EXPANSION_QA_STATUS.md` (commit `de380bd`) and updated `PROGRESS.md` (commit `1c967e2`). Both remotely verified.
 - [ ] Next: continue long-form scene expansion and prose editing until Act II reaches >=3.5h and the full game 6–8h on measured paths; then implement/test game transitions and save compatibility.
 - [x] No live portraits, game code, shipped Chapter 1 narrative, releases, or Pages settings changed.
+
+## Phase 3 — second dialogue and later-chapter expansion (2026-11-21; spoiler-safe)
+- [x] Read current public GitHub sync policy, status, latest published game state and private working continuity/manuscript checkpoints before editing.
+- [x] Expanded 8 confidential chapter manuscripts (Chapters 4–11) with **21 character-led story passages**: **11 Act II**, **10 Act III**, about **10,200 added aggregate words** including conditional alternatives and author notes.
+- [x] Preserved existing 82 core scenes, 30 primary future decisions, 12 starting combinations and established canon; fixed three duplicate new scene IDs, relationship-boundary and choice-dependent venue issues.
+- [x] Reconciled newer private Library chronology updates rather than replacing them with older local work.
+- [x] Private static QA PASS: **19/19 Phase 2**, **35/35 manuscript**, **44/44 lore/cohesion**, **82/82 second-pass**. Complete playable player routes and timed reading remain pending.
+- [x] Uploaded 8 updated manuscripts plus private QA/index/source files to personal ChatGPT Library and verified all eight uploaded manuscript SHA-256 hashes against local revisions. Updated personal private checkpoint Page with no collaborators when checked.
+- [x] Published only player-safe `docs/player_safe/PHASE3_DIALOGUE_EXPANSION_STATUS.md` (commit `67b2449`) and `PROGRESS.md` (commit `81a1d37`).
+- [ ] Future: additional targeted prose/editing, then implement a backward-compatible Chapter 2+ continuation and run **complete route-by-route reading/playtime tests** to measure 6–8h total and Act II >=3.5h; current aggregate words cannot establish those durations.
+- [x] No spoiler-protected story uploads to PUBLIC GitHub, live portrait replacement, game code alteration, save changes, release or Pages activation.
