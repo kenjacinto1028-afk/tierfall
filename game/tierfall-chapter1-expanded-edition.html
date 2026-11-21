@@ -573,6 +573,7 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
         <p class="muted">Your job and past change the way you experience the story. No choice is the wrong one.</p>
         <div class="name-fields"><div><label for="player-first">First name</label><input id="player-first" maxlength="26" autocomplete="given-name" value="Kesh" /></div><div><label for="player-second">Second name / surname</label><input id="player-second" maxlength="26" autocomplete="family-name" value="Varro" /></div></div><label for="player-nickname">Nickname (optional)</label><input id="player-nickname" maxlength="26" autocomplete="off" placeholder="What close friends call you" /><p class="muted name-tip">Friends may use your nickname. Officials use your full name.</p>
         <label for="pronouns">Pronouns</label><select id="pronouns"><option value="they">They / them</option><option value="she">She / her</option><option value="he">He / him</option></select>
+        <label for="player-age">Starting age</label><select id="player-age" aria-label="Starting age"><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select>
         <label for="origin">Your job</label><select id="origin"><option value="ward">Ward Attendant — care for patients</option><option value="reclamation">Reclamation Worker — recover machines</option><option value="farmer">Farmer — grow food for the station</option><option value="cargo">Cargo Runner — move goods and cargo</option></select>
         <label for="upbringing">Your upbringing</label><select id="upbringing"><option value="family">Family Household — raised with relatives</option><option value="communal">Communal Upbringing — raised by a community</option><option value="estranged">Estranged Household — distant family ties</option></select>
         <label class="option-line"><input id="skip-prologue" type="checkbox" /> Skip world prologue (recommended for replaying)</label>
@@ -659,9 +660,10 @@ var Tierfall;
         const firstName = safeNamePart(identity.firstName ?? previous[0]) || 'Kesh';
         const secondName = safeNamePart(identity.secondName ?? previous.slice(1).join(' '));
         const nickname = safeNamePart(identity.nickname ?? '');
+        const age = [27, 28, 29, 30].includes(Number(identity.age)) ? Number(identity.age) : 27;
         return {
             version: 1, name: [firstName, secondName].filter(Boolean).join(' '), firstName, secondName, nickname,
-            pronouns, origin, upbringing,
+            pronouns, origin, upbringing, age,
             sceneId: 'p-reach', flags: { evidence: 'none', witnessProtected: false, friendTrust: 0,
                 workerTrust: 0, officialAttention: 0, homeCommitment: 'none', route: 'none', promise: 'none',
                 caution: 0, clueType: origin }, history: [], journal: [],
@@ -772,7 +774,10 @@ var Tierfall;
             !Array.isArray(v.journal) || v.journal.length > 500 || !v.journal.every(x => !!x && typeof x.title === 'string' && typeof x.text === 'string') ||
             typeof v.finished !== 'boolean' || typeof v.startedAt !== 'string')
             throw new Error('Invalid save content');
+        if (v.age !== undefined && v.age !== null && ![27, 28, 29, 30].includes(Number(v.age)))
+            throw new Error('Invalid character age');
         const g = v;
+        if (g.age !== undefined && g.age !== null) g.age = Number(g.age);
         g.name = safeName(g.name, 54);
         const names = getNames(g);
         g.firstName = names.first; g.secondName = names.second; g.nickname = names.nickname;
@@ -1442,7 +1447,8 @@ var Tierfall;
             const origin = $('#origin').value;
             const home = $('#upbringing').value;
             const pronouns = $('#pronouns').value;
-            game = Tierfall.newGame(n, pronouns, origin, home, { firstName, secondName, nickname });
+            const age = Number($('#player-age').value);
+            game = Tierfall.newGame(n, pronouns, origin, home, { firstName, secondName, nickname, age });
             if ($('#skip-prologue').checked) game = Tierfall.skipPrologue(game);
             storagePut();
             render();
