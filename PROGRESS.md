@@ -207,3 +207,15 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] **ACTIVE NEXT:** Final Act I line-edit and secure playable Chapter 1→2→3 continuation that preserves completed/legacy saves, then real full-route and timed 90–120-minute tests.
 - [ ] Acts II and III continue on hold until Act I passes; approved portrait consistency work remains separately deferred.
 - [x] Live game, Prologue/Chapter 1, portrait files, releases and Pages configuration unchanged by this round.
+
+## Act I private playable candidate and browser QA (2026-11-21)
+- [x] Built confidential playable Act I Prologue/Chapters 1–3 with original published Chapter 1 choice graph (16 scene nodes, 39 buttons, 35 reactions) and private Chapters 2–3 (46 reading sections, 6 primary decisions).
+- [x] Original Chapter 1 save migration: import both completed/incomplete saved JSON, preserve history/flags/journal/aliases; ask for starting age 27–30 if omitted; use separate private browser save key and compatible Chapter 1 snapshot export.
+- [x] Passed **48/48 browser end-to-end routes** (12 backgrounds × 4 ages), **6/6 browser UI smoke categories**, 11 published Chapter 1 decision/reaction replay checks, and 27,000 conditional narrator/knowledge tests.
+- [x] Verified pinned original public HTML against current GitHub: 16 scenes, 39 buttons and 35 immediate reactions. Browser routing used an equivalent published-source fixture; a real fresh-game network check remains pending.
+- [x] Estimated ~21,171 words visible on a representative Act I route incl. opening; 16,218–16,510 of those words arise from private Chapters 2–3. **Real measured 1.5–2h human playtime and subjective pacing review remain pending**.
+- [x] Saved private playable HTML/ZIP, detailed editorial review, source and QA in owner's private ChatGPT Library. Independently re-materialized HTML and ZIP; SHA-256 matched. No protected story uploaded to public GitHub.
+- [x] Published/verified spoiler-safe `docs/player_safe/ACT1_PRIVATE_PLAYABLE_STATUS.md` (commit `0b09f7b`).
+- [ ] Production acceptance: manual fresh-game public source loading, complete human-timed Act I playthrough, final pacing/dialogue sign-off. **Do not declare production-ready before these pass**.
+- [ ] Act II/III writing resumes only after Act I acceptance; future chapter bridge work remains private.
+- [x] No existing published game code, live portraits, GitHub Pages configuration, or release changed by this private build task.
