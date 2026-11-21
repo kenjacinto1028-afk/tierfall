@@ -94,3 +94,11 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Expanded `tests/object-focus-and-portrait-clarity.test.mjs` to cover pale/dark matte handling, preservation of the face region, lossless two-canvas resampling, caching and 12 starting story variants; verified PASS against the current GitHub source.
 - [x] Verified unchanged live approved Sera/Jalen portrait hashes and byte-identical story engine. Existing narration object cards, map, reading beats, choices and mobile UI remain in place.
 - [ ] Desktop/mobile screenshot verification of the *deployed* GitHub Pages game remains pending; source-level tests are not a substitute for visual QA. Original portrait resolution is only 240×300, so this improves presentation, not native facial detail.
+
+## Emotion sheet review — characters 11–20 (2026-11-21)
+- [x] Confirmed IDs 11–20 and approved neutral identity references using the current player-safe portrait manifest and art-design documents.
+- [x] Prepared a ten-character concept overview and isolated one six-expression sheet per character in a separate **review-only** art collection. Exported WebP files are approximately 1,212 × 2,032 px.
+- [x] Uploaded ten binary sheets to `art/review/emotion-sheets-batch-02/` using verified Git blob hashes, with a preview gallery README. GitHub history contains small artwork checkpoints.
+- [x] Verified that all ten uploaded blob SHAs match local bytes. No live game portraits, saved-game data, or story engine files changed; repository remains public and no release was published.
+- [ ] **Quality limitation:** Source artwork came from a single 1,536 × 1,024 collage. These are carefully upscaled HD-sized *draft previews*, not ten independently generated native-HD paintings. Native-resolution likeness-preserving redraws remain outstanding.
+- [ ] New emotion sheets are **not activated in the game**. Approval/likeness review is needed before any live portrait replacement.
