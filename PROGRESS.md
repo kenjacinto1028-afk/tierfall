@@ -196,3 +196,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Added reusable public `tests/act1-age-choice-compat.test.mjs` regression coverage for approved age 27–30, valid legacy saves, current scene graph and random Chapter 1 decision paths (commit `690a16e`). Live-source behavior was verified separately in 480 isolated script runs; full Node test execution on a checked-out source remains an additional verification step.
 - [x] Created/verified personal private Act I checkpoint with no direct/inherited collaborators. Confidential manuscripts and QA are indexed there, not published on PUBLIC GitHub.
 - [ ] Full private Chapter 2–3 playable integration, actual human/browser timed routes and editorial review remain required before marking Act I complete.
+
+## Act I third expansion checkpoint (2026-11-21)
+- [x] Act I remains the only active story focus. **Expanded private Chapters 2 and 3 by six substantial interludes each** (12 total, approximately **6,339 additional aggregate words**). Both retain nine original core scenes and three primary choices; earlier scene text and decision definitions byte-identical after new interludes are removed.
+- [x] Extended natural dialogue, character-specific voices, work/home details, legal/privacy boundaries and choices that respect already-known information. Preserved Act I's existing major turning-point timing; no new future revelations.
+- [x] Quality: **85/85 updated prior-manuscript checks**, **72/72 new static checks**, **34,992 exhaustive background/decision/legacy-flag configurations**, plus **2,000 sampled path-aware volume estimates**; all passed as **static**, not playable, tests.
+- [x] Average estimated Act I route-visible reading load ~20,985 words including existing Prologue/Chapter 1; raw reading at 180–220 words/min suggests ~95–117min. **Actual interactive/playtime certification remains outstanding**.
+- [x] Both private Ch2/Ch3 manuscripts independently read back from personal ChatGPT Library and verified with SHA-256; saved private cohesion review, QA scripts/results and updated private manuscript index.
+- [x] Published safe report `docs/player_safe/ACT1_DIALOGUE_EXPANSION_ROUND3_STATUS.md` (commit `219b612`), with no protected plot material.
+- [ ] **ACTIVE NEXT:** Final Act I line-edit and secure playable Chapter 1→2→3 continuation that preserves completed/legacy saves, then real full-route and timed 90–120-minute tests.
+- [ ] Acts II and III continue on hold until Act I passes; approved portrait consistency work remains separately deferred.
+- [x] Live game, Prologue/Chapter 1, portrait files, releases and Pages configuration unchanged by this round.
