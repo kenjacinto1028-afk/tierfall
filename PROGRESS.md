@@ -168,3 +168,13 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Integrate Chapters 2–11 into the game with backward-compatible saves, then test all backgrounds and meaningful player branches.
 - [ ] Deferred 27-character portrait/HD-expression conformity check against approved character sheet. No live portrait changes without explicit approval.
 - [x] No current playable code, existing Prologue/Chapter 1 narrative, portrait assets, save format, releases, or GitHub Pages configuration changed in this draft expansion.
+
+## Approved change: act-by-act narrative priority (2026-11-21)
+- [x] Changed the writing sequence to **Act I → connect/finish Act II → connect/finish Act III → whole-game QA**.
+- [x] Paused further expansion of confidential Acts II/III drafts until Act I reaches approved writing, transition, continuity and **measured 1.5–2h** completion gates.
+- [x] Audited private Chapters 2 and 3 against their Library versions; each has **9 core scenes and 3 main decisions**, and neither has been integrated into the playable game. The Prologue and Chapter 1 remain playable but need final pacing polish.
+- [x] Saved a private Act I editorial gap/acceptance checklist in personal ChatGPT Library; no unreleased plot details included in public reports.
+- [x] Published/verified `docs/player_safe/ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md` and updated `docs/player_safe/NARRATIVE_DEVELOPMENT_PLAN.md`.
+- [ ] **CURRENT ACTIVE TASK:** polish/expand Act I Chapters 1–3, implement backward-compatible Chapter 1→2 continuation, test all 12 background combinations and major Chapter 1 choice histories, and measure 90–120 minutes per representative Act I route.
+- [ ] Only after Act I passes, audit its link into Act II and resume Act II drafting; repeat for Act III.
+- [x] Current game, existing Chapter 1 text, portrait assets, saves, GitHub Pages and releases unchanged by this sequence decision.
