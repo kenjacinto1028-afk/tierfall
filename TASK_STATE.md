@@ -194,3 +194,14 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Edit confidential Act I Chapters 2–5 based on approved private audit repairs; keep drafts private, never publish unreleased scripts to the PUBLIC repository.
 - [ ] Full Act I conditional-route, chronology, cast/voice and real reading-time acceptance pass (target ~2–2.5 hours).
 - [x] No portrait swaps, GitHub Pages configuration, public release or private narrative uploads.
+
+## Chapter One second-pass editorial review — 2026-11-21 (player-safe)
+- [x] Checked public GitHub main, `GITHUB_SYNC.md`, `TASK_STATE.md`, `PROGRESS.md`, approved decisions and released narrative/canon references.
+- [x] Revised live Chapter One for chronology, occupation/role continuity, officer characterization, origin-specific callbacks, evidence provenance and in-world consent. Source commits `bf043972`, `de7dc849`.
+- [x] Verified current remote game file SHA `9298f989389b25ca6d2b28c72636ef0fffd28a4d`.
+- [x] Wrote and verified readable all-branches released Chapter One review manuscript: `docs/player_safe/CHAPTER1_CLAUDE_REVIEW_PACKET.md` (commit `dfd4788`). Future chapter secrets excluded.
+- [x] Added `tests/chapter1-editorial-qa.test.mjs` (commit `827f3eb`); updated player-safe `PLAYER_BRIEF.md` (commit `8780b4e`).
+- [x] Final JS and route QA: two scripts parse, 960 complete branch samples, all 35 Chapter One decision options exercised, 4 origin callbacks, same old choice flags and journals.
+- [ ] Claude review, actual `node --test` suite and deployed desktop/mobile browser QA still needed.
+- [ ] Apply private Act I later-chapter repairs separately; never upload unreleased writing to PUBLIC GitHub.
+- [x] No portrait replacement, save features reinstated, Pages/release changes or spoiler-protected uploads.
