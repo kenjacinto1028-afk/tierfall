@@ -223,3 +223,13 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Verified all chapters present in private personal ChatGPT Page, with downloadable Markdown viewer. Page link retained in the owner's private task checkpoint.
 - [x] Logged safe status in `PROGRESS.md` (commit `e92bbc0`). No private story text sent to public GitHub.
 - [ ] Claude review / human narrative acceptance still pending.
+
+## Act II / legacy Act III external review export (2026-11-21; spoiler-safe)
+- [x] Confirmed current repository privacy rules, latest checkpoints, and the eight current private Act II manuscripts plus three latest older Act III sources.
+- [x] Prepared combined full Act II Chapters 6–13 source manuscript with all alternate condition paragraphs and three main choice groups per chapter retained verbatim.
+- [x] Prepared separate incomplete legacy Act III source manuscript from three earlier drafts. Historical chapter numbers, chronology and flags clearly labeled obsolete; the new five-chapter Act III has not yet been produced.
+- [x] Assembled a combined review Markdown, confidential Claude/AI review instructions, optional reference documents and original source snapshots; ZIP includes 26 files with successful byte integrity tests.
+- [x] Six private review deliverables uploaded to personal ChatGPT Library and independently re-materialized; all 6 SHA-256 digests match local originals.
+- [x] Published only spoiler-safe `docs/player_safe/ACT2_ACT3_PRIVATE_REVIEW_EXPORT_STATUS.md` (commit `8fde89e`) and updated `PROGRESS.md` (commit `d2dfcb7`), with verified readback.
+- [ ] External AI or human manuscript review is still pending; Act II requires further meaningful expansion/human measured 3.5h; Act III requires at least five new-structure chapters and proper post-Act-II integration.
+- [x] No protected manuscript upload to PUBLIC GitHub, live portraits, game code, release or Pages changes.
