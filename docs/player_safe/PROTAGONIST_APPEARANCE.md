@@ -2,7 +2,7 @@
 
 **Player-safe character identity, shared by all starting backgrounds.**
 
-The protagonist always has **exactly two distinctive personal features**, regardless of pronouns, starting occupation, upbringing, or age within the agreed 24–32 range:
+The protagonist always has **exactly two distinctive personal features**, regardless of pronouns, starting occupation, upbringing, or age within the agreed 27–30 range:
 
 1. **Left eyebrow:** A thin diagonal scar interrupting the eyebrow hair.
 2. **Right jaw:** A small, pale crescent-shaped healed steam burn immediately beneath the jawline.
