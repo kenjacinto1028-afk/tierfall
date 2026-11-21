@@ -187,7 +187,7 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Recorded spoiler-free revision plan in `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md` (commit `f3b12e4`).
 - [x] Removed save/load/import/export UI and persistent story progress from `game/tierfall-chapter1-expanded-edition.html` (commit `50c2ae7`).
 - [x] Corrected three released Chapter One continuity/wording issues (commit `6e2736b`).
-- [x] Compiled story and presentation scripts and exercised 48 complete age/background opening runs in the connected JavaScript environment; readback SHA verified for both story commits.
+- [x] Compiled both scripts, tested 48 routes per story-code commit, then ran 960 varied choice routes on final main. Remote source readback verified.
 - [x] Updated existing compatibility/reader tests to no-save design (six separate file commits); remote file content read back for all six.
 - [x] Updated `docs/player_safe/ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md` and `PROGRESS.md` to match the approved direction.
 - [ ] Run local Node test suite and deployed browser/phone interaction QA; current route checks were code-level.
