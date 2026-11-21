@@ -216,3 +216,10 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Published only safe progress in `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md` (commit `934b057`) and `PROGRESS.md` (commit `a7463fc`). Unreleased material not committed because repository is PUBLIC.
 - [ ] Pending: independent Claude/human editorial acceptance, human-paced actual reading timing, and live first-Chapter source loading/whole Act I interaction from a player browser; no full production certification.
 - [x] No changes to public plot spoilers, original portraits, saves, GitHub Pages or releases.
+
+## Combined private Act I review manuscript — 2026-11-21 (player-safe)
+- [x] Reopened latest published Chapter One review packet and protected revised Chapters 2–5 from private Library.
+- [x] Assembled complete Prologue + Chapters 1–5 into one private review manuscript with all conditional passages, choice options and reactions, no rewriting.
+- [x] Verified all chapters present in private personal ChatGPT Page, with downloadable Markdown viewer. Page link retained in the owner's private task checkpoint.
+- [x] Logged safe status in `PROGRESS.md` (commit `e92bbc0`). No private story text sent to public GitHub.
+- [ ] Claude review / human narrative acceptance still pending.
