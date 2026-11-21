@@ -119,3 +119,16 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Measure human/browser 90–120-minute Act I complete routes and perform full lore/recap reveal and character identity checks before declaring Act I complete.
 - [ ] After Act I certification, connect and resume Act II; Act III follows. Preserve later drafts unchanged until then.
 - [x] No approved live portrait swap, release publication, Pages setting change, or future plot upload occurred.
+
+## Act I — playable opening polish and protected Chapters 2–3 expansion (2026-11-21; player-safe)
+- [x] Checked current canonical GitHub, GITHUB_SYNC, existing checkpoints, private Act I manuscripts and approved 3-act outline before work.
+- [x] Released Chapter 1: added 22 already-released-scene text paragraphs (~1,488 words) in 11 decision scenes. Existing 16 scenes, four Prologue advances, 35 major choices, flags and saved outcomes unchanged; 480 script-driven regression paths matched. GitHub code commit `fcee4a6`.
+- [x] Implemented 27–30 starting-age selector (48 age/background configurations), new-game save persistence and legacy age-unspecified import with 480 old-save/choice checks and five rejection tests. GitHub code commit `a283ff4`.
+- [x] Privately expanded Chapter 2 and Chapter 3 by 8 substantial interludes each (~7,700 aggregate draft words). Original nine core scenes and three main decisions per chapter preserved.
+- [x] Private static narrative QA 81/81, with 1,200 sampled conditional states; 2,000 conditional reading-volume estimates. Combined Act I route-visible text estimated ~16,000 words; actual **90–120 minute playtime not certified**.
+- [x] Saved and independently SHA-256 verified the two revised manuscripts in personal private ChatGPT Library, with protected continuity and bridge review, QA results, source additions and updated index.
+- [x] Published spoiler-safe `docs/player_safe/ACT1_WRITING_AND_QA_STATUS.md` (commit `5abbcc7`), updated player brief (commit `0d9463f`), and reusable source regression test `tests/act1-age-choice-compat.test.mjs` (commit `690a16e`). Node test runner execution remains a separate check; script-driven game tests already completed.
+- [x] Created private Act I handoff checkpoint Page with no direct or inherited collaborators; `PROGRESS.md` updated (commit `70b08b4`).
+- [ ] Next: finish line editing, create protected playable bridge from Chapter 1 completed saves to Chapters 2–3, and test end-to-end backgrounds/major choices/legacy age selection.
+- [ ] Obtain actual measured Act I playtime within 1.5–2 hours. Keep Acts II and III private/frozen until Act I passes; never commit unreleased story scripts while GitHub is PUBLIC.
+- [x] No live approved portraits, releases, or Pages settings changed.
