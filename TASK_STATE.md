@@ -181,3 +181,16 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] **Next active Act II task:** Expand route-visible character and social life stories, enrich choice consequences, perform human-paced 3.5h minimum reading/playtest, and test live pinned public Chapter 1 source loading. Current reading-volume estimate alone does not meet/verify target.
 - [ ] Leave Act III on hold; preserve spoiler protection until repo confirmed private or another approved private route.
 - [x] No live portrait replacement, public game code/story change, release publication or Pages activation.
+
+## Act I audit follow-up — approved implementation / outstanding work (2026-11-21, player-safe)
+- [x] Reviewed current GitHub main, `GITHUB_SYNC.md`, `PROGRESS.md`, private audit findings and owner answers; public repo confirmed.
+- [x] Recorded spoiler-free revision plan in `docs/player_safe/ACT1_AUDIT_REVISION_PLAN.md` (commit `f3b12e4`).
+- [x] Removed save/load/import/export UI and persistent story progress from `game/tierfall-chapter1-expanded-edition.html` (commit `50c2ae7`).
+- [x] Corrected three released Chapter One continuity/wording issues (commit `6e2736b`).
+- [x] Compiled story and presentation scripts and exercised 48 complete age/background opening runs in the connected JavaScript environment; readback SHA verified for both story commits.
+- [x] Updated existing compatibility/reader tests to no-save design (six separate file commits); remote file content read back for all six.
+- [x] Updated `docs/player_safe/ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md` and `PROGRESS.md` to match the approved direction.
+- [ ] Run local Node test suite and deployed browser/phone interaction QA; current route checks were code-level.
+- [ ] Edit confidential Act I Chapters 2–5 based on approved private audit repairs; keep drafts private, never publish unreleased scripts to the PUBLIC repository.
+- [ ] Full Act I conditional-route, chronology, cast/voice and real reading-time acceptance pass (target ~2–2.5 hours).
+- [x] No portrait swaps, GitHub Pages configuration, public release or private narrative uploads.
