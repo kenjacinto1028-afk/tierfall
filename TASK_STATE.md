@@ -156,3 +156,15 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Final Act I production gate: test fresh-game original public source loading in normal networked browser, have player/human measure one real 90–120-minute route and review dialogue quality. Browser route tests use canonical-shape original-source fixture, not direct live internet.
 - [ ] Do not publish private Act I chapters or their build to PUBLIC GitHub; wait for privacy-safe release approval. Acts II/III remain paused.
 - [x] No live portrait replacements, public game code modifications, release actions or Pages changes.
+
+## Act I minimum-five chapter expansion (2026-11-21; spoiler-safe)
+- [x] Read canonical public GitHub sync/privacy policy, existing checkpoints, released Chapter 1, current private Act I builds/manuscripts and approved world/cast constraints.
+- [x] Updated public chapter scope to **Act I >=5, Act II >=8, Act III >=5** (minimum 18 + Prologue). Old 11-chapter/time allocation superseded. Public plan commits `127424e`, `f5db4af`, `c9e04f5`.
+- [x] Authored two substantial **private new Act I chapters**, ~10,500 aggregate manuscript words, 33 additional connected sections, six new decision groups / 18 options, preserving all earlier approved story choices and confidentiality.
+- [x] Compiled five-chapter **private playable reader**, retained original published Chapter 1 source requirement, original Ch2/3 decision semantics, and supported automatic continuation from old completed three-chapter private saves. No future plot uploaded to PUBLIC GitHub.
+- [x] Tested **48/48** full Chapter 2–5 browser routes across all 12 background combinations and four ages; **6/6** mobile/export/back-forward/import scenarios; **26/26** static lore/structure checks; **68,000 independent conditional dialogue comparisons**.
+- [x] Uploaded 17 protected manuscripts/code/build/QA files to personal ChatGPT Library, independently read back and matched SHA-256 on both new chapters, private HTML, ZIP and private chapter-map. Created private personal handoff Page (no direct/inherited collaborators).
+- [x] Published and verified spoiler-free `docs/player_safe/ACT1_FIVE_CHAPTER_EXPANSION_STATUS.md` (commit `c82e4c4`) and updated public PROGRESS (commit `8936bfb`).
+- [ ] Remaining gate: real human-timed full Act I reading and subjective dialogue/pacing review; fresh official-source network fetch in a real player browser. Do not call these complete based on automated tests.
+- [ ] Once Act I is accepted, privately reconcile older Act II/III manuscripts into the approved 8+ and 5+ chapter minimums. These acts remain held.
+- [x] No public game code, published Prologue/Chapter 1 scenes, live portraits, releases or Pages changes.
