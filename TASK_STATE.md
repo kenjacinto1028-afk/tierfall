@@ -24,6 +24,6 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 ## Portrait matte and premium cards — 2026-11-21
 - [x] Confirmed GitHub main read/write access, read GITHUB_SYNC.md, latest game code and previous portrait patch; confirmed approved 240×300 portrait originals must remain unchanged.
 - [x] Added restrained charcoal/slate/brass portrait frame, subtle illustrated texture, depth and mobile polish in `game/tierfall-chapter1-expanded-edition.html` (commit a4b732a).
-- [ ] Replace naive runtime sharpener with a safe background-aware portrait cutout/upscale and fallback.
+- [x] Implemented light-matte detection, edge-connected background cleanup, 2× high-quality lossless in-browser rendering, and original-image fallback in `game/tierfall-chapter1-expanded-edition.html` (commit 3687fec).
 - [ ] Add targeted tests, verify the narrative/save engine and mobile behavior.
 - [ ] Verify remote GitHub commits and update PROGRESS.md plus checkpoint; report live-browser limitations.
