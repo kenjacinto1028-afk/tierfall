@@ -264,3 +264,13 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] External human/Claude narrative review and deployed browser/mobile QA still pending. Connected code-level checks do **not** certify live browser behavior or full Act I continuity.
 - [ ] Private Chapters 2–5 still need audit repairs and follow-through on approved commitments. Preserve secrets; do not upload private scripts to public GitHub.
 - [x] No live portraits replaced, no releases published, no GitHub Pages settings changed.
+
+## Act I five-chapter private editorial pass — 2026-11-21 (player-safe)
+- [x] Continued previously approved Act I revisions after the published Chapter One update; checked the exact protected manuscript sources against the private audit, prior story plan and canon references.
+- [x] Revised unpublished **Chapters 2–5 privately** with 148 checked targeted prose, conditional-branch and choice-reaction adjustments. Kept future mysteries unreleased.
+- [x] Preserved 79 private scene nodes and prepared 13 private decision groups with 40 total options; improved work/character continuity, state provenance, consent and Act I callbacks without replacing live art.
+- [x] Built private no-save five-chapter reader pinned to the latest approved public Chapter One source. In-browser gameplay and journal remain in memory; reload starts fresh.
+- [x] Source simulation **2,000/2,000 routes**, all **40/40** private choice options, and 266 observed conditional variants. Chromium exercised **48/48** private-chapter browser routes with 3,792 scene advances and no page errors; a 390px mobile layout smoke test passed. Readback and checksum verified private deliverables in personal Library.
+- [x] Created four confidential revised manuscripts, combined independent-review packet, playable preview, source JSON, QA report and private ZIP; stored privately, **NOT** in the PUBLIC GitHub repository.
+- [ ] External narrative/continuity review, live public-Chapter-One source fetching on representative browsers, real timed whole-Act-I reading, and acceptance of target pacing remain outstanding. Estimated word-based duration is not human-time certification.
+- [x] No public unreleased scripts or story secrets, portrait swaps, new releases, Pages changes or save/load features.
