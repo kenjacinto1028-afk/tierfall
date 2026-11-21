@@ -219,3 +219,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Production acceptance: manual fresh-game public source loading, complete human-timed Act I playthrough, final pacing/dialogue sign-off. **Do not declare production-ready before these pass**.
 - [ ] Act II/III writing resumes only after Act I acceptance; future chapter bridge work remains private.
 - [x] No existing published game code, live portraits, GitHub Pages configuration, or release changed by this private build task.
+
+## Act I five-chapter playable expansion (2026-11-21)
+- [x] Approved **minimum five Act I chapters plus Prologue, eight Act II chapters and five Act III chapters** = at least 18 numbered chapters total. Updated public narrative framework and sequential development plan (commits `f5db4af`, `c9e04f5`).
+- [x] Drafted **two confidential new Act I chapters** with ~10,500 aggregate source words, 33 connected new story sections, six meaningful choices and 18 options. All future plot content remains in private ChatGPT Library.
+- [x] Extended private playable Act I reader from three to **five chapters**. Preserved original published Chapter 1 scene graph, all Chapters 2–3 choices, original save history/flags and supported legacy three-chapter private save continuation.
+- [x] Automated browser validation: **48/48 complete Chapter 2–5 routes** across 12 starting backgrounds × four approved ages, **6/6 UI/mobile/export/legacy-save checks**, **26/26 narrative structure and lore checks**, **68,000/68,000 independent conditional-logic comparisons**.
+- [x] Validated new private chapter manuscripts, compiled build and ZIP via personal ChatGPT Library upload, independent readback and SHA-256. Private handoff Page scope checked personal, no collaborators at verification.
+- [x] Published/verified only spoiler-free `docs/player_safe/ACT1_FIVE_CHAPTER_EXPANSION_STATUS.md` (commit `c82e4c4`). Public GitHub remains spoiler-safe.
+- [ ] **Final acceptance:** One or more real human-timed, full five-chapter playthroughs and editorial pacing review. Automated page/word counts are not real playtime.
+- [ ] Revised 18+ chapter duration must be measured; old 6–8h total and 1.5–2h Act I assumptions are superseded. Act II/III private drafts are paused pending the Act I player review and later numbering reconciliation.
+- [x] No public game source modifications, no live portrait replacements, no release or Pages activation.
