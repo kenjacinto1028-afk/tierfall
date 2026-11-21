@@ -35,3 +35,12 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Synced ten individual image files under art/review/emotion-sheets-batch-02/, with gallery README. Verified Git blobs match original local bytes exactly, committing small checkpoints.
 - [x] PROGRESS.md updated; live portraits, game code, and save data untouched. No story spoilers or releases published.
 - [ ] Individually generated native-HD emotion sheets remain pending for character likeness fidelity. Keep current game portraits until explicit art-swap approval.
+
+## Narrative architecture approval — 2026-11-21 (player-safe)
+- [x] Reviewed repository sync policy, playable Chapter 1 state model and approved player-safe world/character canon.
+- [x] Recorded three acts, flexible chapter count, 6–8 hours total and a minimum 3.5-hour Act II.
+- [x] Approved balanced meaningful choices and three structural turning-point functions (no event details disclosed).
+- [x] Added `docs/player_safe/NARRATIVE_DEVELOPMENT_PLAN.md`, updated `docs/player_safe/PLAYER_BRIEF.md` and `PROGRESS.md`.
+- [ ] Confidential act-by-act plot beats, character-secret arc cards, clue/payoff ledger and unpublished long-form drafts: create only in **private** storage, not the public repository.
+- [ ] Later validate continuity and route length against the actual integrated narrative.
+- [x] No game, portraits, saves, releases or Pages settings changed in this planning phase.
