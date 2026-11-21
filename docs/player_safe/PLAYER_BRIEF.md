@@ -3,7 +3,7 @@
 **Safe to read. No plot twists, secret character motives, hidden branches, or ending requirements are included here.**
 
 ## The game you approved
-Tierfall is a choice-driven science-fiction RPG told through a visual-novel-style browser interface. A playthrough targets **5–10 hours** across **three acts**. Writing uses clear, natural English for non-native English readers. The game focuses on relationships, difficult decisions, and meaningful consequences rather than detailed management or grid combat.
+Tierfall is a choice-driven science-fiction RPG told through a visual-novel-style browser interface. A playthrough targets **6–8 hours** across **three acts**. Writing uses clear, natural English for non-native English readers. The game focuses on relationships, difficult decisions, and meaningful consequences rather than detailed management or grid combat.
 
 - **Starting job:** choose Ward Attendant, Reclamation Worker, Farmer, or Cargo Runner; random selection is also possible.
 - **Upbringing:** choose Family Household, Communal Upbringing, or Estranged Household.
@@ -34,3 +34,12 @@ A short non-mechanical setting introduction, a schematic map, a revisit-able Wor
 
 ## Latest Chapter One experience update (player-safe)
 The latest standalone HTML includes short reactions immediately after decisions, a Skip Prologue choice, a searchable glossary, a recap based on your own past choices, and illustrated character portraits that respond to the current scene. You can edit your name and the displayed names of characters you have met. Old save exports remain compatible. Future story details remain hidden.
+## Approved long-form narrative direction (21 November 2026)
+
+- **Three acts, approximately 8–12 flexible chapters; target 6–8 hours per complete route.**
+- **Act I: 1.5–2 hours; Act II: 3.5–4 hours; Act III: 1–2 hours.** Act II must carry at least 3.5 hours of substantial story and character development.
+- **Balanced meaningful branching:** important choices affect relationships, scenes, dialogue, and later context; shared major chapters may reconverge.
+- **Major turning-point functions approved:** Act I recontextualization, Act II personal stakes, Act III earned revelation/payoff. Specific surprises, timing and endings are not disclosed.
+- **Writing priorities:** plan full-series beats and multi-character arcs, enforce world/timeline/character consistency, then draft longer coherent scenes and validate their branches.
+- The full **player-safe narrative development framework** is in [NARRATIVE_DEVELOPMENT_PLAN.md](NARRATIVE_DEVELOPMENT_PLAN.md). Keep actual unreleased story drafts in private storage, not the public repository.
+- This direction makes no changes to the existing Prologue, Chapter 1, portraits, or saves.
