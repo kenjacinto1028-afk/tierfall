@@ -13,7 +13,7 @@ for(const hook of [
  'tf-reference-settings', 'tf-reference-progress', 'tf-reference-phase',
  'tf-reference-dots', 'data-scene-mood', 'prefers-reduced-motion',
  'portraitFor(game,name)', 'window.TierfallSceneUI.onRender(game,scene)',
- 'function exportSave()', 'function importSave(file)'
+ 'function boot()', 'function setupControls()'
 ])assert.ok(html.includes(hook),'Missing reader hook: '+hook);
 for(const mode of ['narration','major','minor'])assert.ok(html.includes("'"+mode+"'"));
 const sceneIds=[
@@ -30,9 +30,9 @@ for(const name of ['medical-ward','garden-deck','records-hall','checkpoint']){
  assert.ok(svg.includes('viewBox="0 0 1000 1400"'),name+' viewport changed');
  assert.ok(html.includes("'"+name+"'"),name+' not connected to reader');
 }
-for(const id of ['font-up','font-down','save-button','tf-menu-toggle','export-button','import-button']){
+for(const id of ['font-up','font-down','tf-menu-toggle','new-game']){
  assert.ok(html.includes('id="'+id+'"'),'Existing control removed: '+id);
 }
 assert.match(html,/body\.tf-playing #game \.story-panel\{[^}]*grid-template-columns:/);
 assert.match(html,/@media\(max-width:1150px\),\(pointer:coarse\) and \(orientation:portrait\)/);
-console.log('PASS: 16 scenes, 4 new SVG backgrounds, saved-game controls, speaker modes, cinematic frame, mobile reading');
+console.log('PASS: 16 scenes, 4 new SVG backgrounds, no-save reader controls, speaker modes, cinematic frame, mobile reading');
