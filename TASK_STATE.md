@@ -74,3 +74,13 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Next Phase 3 work: substantial editorial/prose expansion with **Act II at least 3.5h measured** and whole-game **6–8h measured**; deepen route-specific character interactions, romance consent routes and epilogue quality.
 - [ ] After script approval: compatible Chapter 1 completion-to-Chapter 2 transition, chosen-age UI and route/save testing; no current game changes.
 - [x] Confidential plots/twists/character arcs/endings kept OUT of the PUBLIC repository. No live portraits or releases changed.
+
+## Phase 3 — Act II expansion and lore QA (2026-11-21; player-safe)
+- [x] Rechecked current canonical GitHub rules, repository state and local private story checkpoints; resumed previous unfinished Phase 3 expansion work without altering live game files.
+- [x] Expanded Chapters 4–8 by +9,812 aggregate draft words through 14 additional interludes; ten future chapters total 39,769 aggregate words including alternatives and notes.
+- [x] Reconciled private chronology, historical/choice callbacks, character/faction/rank restrictions and forward-only state dependencies. No secrets or future events published.
+- [x] Passed 19/19 Phase 2, 35/35 Phase 3 structural and 44/44 new lore/cohesion static checks; actual playable route tests and reading-time tests remain pending.
+- [x] Uploaded and byte-size-verified 5 revised confidential manuscripts and 9 private continuity/QA/index/metrics files in personal ChatGPT Library; private Phase 3 checkpoint Page updated.
+- [x] Published spoiler-safe Phase 3 expansion/QA status `docs/player_safe/PHASE3_EXPANSION_QA_STATUS.md` (commit `de380bd`) and updated `PROGRESS.md` (commit `1c967e2`). Both remotely verified.
+- [ ] Next: continue long-form scene expansion and prose editing until Act II reaches >=3.5h and the full game 6–8h on measured paths; then implement/test game transitions and save compatibility.
+- [x] No live portraits, game code, shipped Chapter 1 narrative, releases, or Pages settings changed.
