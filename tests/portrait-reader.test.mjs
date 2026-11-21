@@ -14,7 +14,7 @@ for(const marker of [
  'tf-reader-solo','tf-page-off',
  'body.tf-playing #game .scene-art{display:none!important}',
  'Tierfall.applyPortrait(img,game,canonical,fallback)',
- 'function importSave(file)', 'function exportSave()'
+ 'function setupControls()', 'function boot()'
 ])assert.ok(html.includes(marker),'Missing portrait UI marker '+marker);
 assert.ok(html.includes('event.stopImmediatePropagation()'),'Keyboard choices must be blocked until final page');
 assert.ok(html.includes('data-tf-tab'),'Existing side-panel navigation must remain');
