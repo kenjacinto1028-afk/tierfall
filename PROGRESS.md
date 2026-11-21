@@ -133,3 +133,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Published only player-safe summary: `docs/player_safe/PHASE2_OUTLINE_STATUS.md` (commit `9c41dea`), with no future plot, hidden character arc, twist or ending specifics.
 - [ ] Next phase: complete long-form chapter writing, editorial continuity review and later save-compatible game integration with actual playtime and path testing.
 - [x] Existing Prologue/Chapter 1 game code, published story, portraits, saved-game structure and Pages/release settings untouched.
+
+## Phase 3 — spoiler-safe first-pass manuscript checkpoint (2026-11-21)
+- [x] Drafted 10 future chapter manuscripts (Chapters 2–11) in private ChatGPT storage; no future plot details published.
+- [x] First pass contains 82 scene sections and 30 substantial decision groups across the future chapters.
+- [x] Static narrative review: 35/35 checks passed, including key existing-world, starting-background and choice-continuity safeguards. These are NOT gameplay tests.
+- [x] Saved 10 private manuscripts and five internal protocol/editing/QA files in personal ChatGPT Library; verified filenames and byte counts. Owner-only private index Page was checked with no direct/inherited collaborators.
+- [x] Published safe status at `docs/player_safe/PHASE3_DRAFT_STATUS.md` (commit `75d9fd8`).
+- [ ] **Important:** manuscripts are first-pass and materially shorter than the approved 6–8h playthrough; expand Act II to at least 3.5h **as measured**, then conduct developmental editing and detailed consequence QA.
+- [ ] Implement a compatible completed-Chapter-1 continuation, approved protagonist age 27–30 selection, and tested manuscript/game integration only after writing review.
+- [ ] Separate deferred portrait identity/HD-emotion sheet correction must follow approved character sheet and explicit live-asset replacement approval.
+- [x] Prologue/Chapter 1 game source, live portraits, saves, releases and GitHub Pages settings untouched by this narrative draft.
