@@ -95,3 +95,14 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [x] Published only player-safe `docs/player_safe/PHASE3_DIALOGUE_EXPANSION_STATUS.md` (commit `67b2449`) and `PROGRESS.md` (commit `81a1d37`).
 - [ ] Future: additional targeted prose/editing, then implement a backward-compatible Chapter 2+ continuation and run **complete route-by-route reading/playtime tests** to measure 6–8h total and Act II >=3.5h; current aggregate words cannot establish those durations.
 - [x] No spoiler-protected story uploads to PUBLIC GitHub, live portrait replacement, game code alteration, save changes, release or Pages activation.
+
+## Act-by-act narrative priority — 2026-11-21 (player-safe)
+- [x] Reviewed canonical repository rules, latest TASK_STATE and PROGRESS, published Chapter 1, existing private Act I drafts and phase architecture.
+- [x] Confirmed both private Chapter 2/3 drafts match latest personal Library bytes; each has nine core sections and three primary decisions.
+- [x] Approved new priority: **complete and test Act I first; then bridge and complete Act II; then bridge and complete Act III; then full-game QA.** Later-act manuscripts preserved and frozen for now.
+- [x] Created private Act I editorial/continuity checklist in personal ChatGPT Library; no protected story pushed to public GitHub.
+- [x] Created/verified public-safe `docs/player_safe/ACT_SEQUENTIAL_DEVELOPMENT_PLAN.md` (commit `9f0cc2c`), amended narrative framework (commit `8ebd730`), and PROGRESS (commit `3e6ed90`).
+- [ ] **Active: Act I writing/pacing/continuity:** polish playable Prologue/Chapter 1 without disrupting save history; expand private Chapters 2/3; measure 1.5–2h on complete Act I player routes.
+- [ ] **Act I integration gate:** backwards-compatible Chapter 1 end-to-Chapter 2 continuation, 12 start backgrounds, major choice consequence tests, reveal-gated recap and lore consistency before Act II resumes.
+- [ ] Later: reconcile final Act I into Act II, complete/test Act II (>=3.5h); reconcile final Act II into Act III, complete/test Act III; full-game target 6–8h.
+- [x] No game source, live portraits, saved games, GitHub Pages/release settings or spoiler-protected writing changed in this scheduling checkpoint.
