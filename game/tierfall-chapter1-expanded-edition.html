@@ -559,10 +559,9 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
         <button id="help-button" class="small-button" title="Help" aria-label="Help">?</button>
         <button id="tf-effects-toggle" class="small-button" type="button" aria-pressed="true" title="Toggle visual effects">Effects: On</button>
         <button id="tf-menu-toggle" class="small-button" type="button" aria-controls="tf-sidebar" aria-expanded="false">☰ Menu</button>
-        <button id="save-button" class="small-button hide-on-mobile" title="Save progress">Save</button>
       </div>
     </header>
-    <section id="help-panel" class="help-panel hidden" aria-label="How to play"><strong>How to play</strong><p>Read each scene and choose what you want to say or do. Press <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, or <kbd>4</kbd> to pick a choice. The journal remembers decisions. Your game saves after every choice on this device. Use Export to keep a backup.</p></section>
+    <section id="help-panel" class="help-panel hidden" aria-label="How to play"><strong>How to play</strong><p>Read each scene and choose what you want to say or do. Press <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, or <kbd>4</kbd> to pick a choice. The journal remembers decisions. Progress lasts only while this page stays open; reloading starts a new story.</p></section>
     <main id="setup" class="setup-page hidden">
       <div class="setup-hero">
         <span class="cover-fallback-title" aria-hidden="true">TIERFALL</span>
@@ -578,7 +577,6 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
         <label for="upbringing">Your upbringing</label><select id="upbringing"><option value="family">Family Household — raised with relatives</option><option value="communal">Communal Upbringing — raised by a community</option><option value="estranged">Estranged Household — distant family ties</option></select>
         <label class="option-line"><input id="skip-prologue" type="checkbox" /> Skip world prologue (recommended for replaying)</label>
         <div class="setup-buttons"><button id="random-start" class="secondary-button">Random background</button><button id="start" class="primary-button">Enter the Reach <span>→</span></button></div>
-        <button id="setup-import" class="text-button" type="button">Have a previous save? Import it</button>
         <p class="muted footnote">Estimated campaign: 5–10 hours when complete. This early playable preview contains Chapter One only.</p>
       </section>
     </main>
@@ -613,7 +611,6 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
           <button id="skip-prologue-game" class="text-button prologue-skip hidden" type="button">Skip prologue and begin Chapter 1</button>
           <div class="choice-heading"><span>YOUR DECISION</span><span class="choice-subtitle">Choose what matters to you.</span></div>
           <div id="choices" class="choices" role="group" aria-label="Story choices"></div>
-          <p id="save-status" class="saved-text" role="status">Saved on this device</p>
         </div>
       </section>
       <aside class="sidebar" id="tf-sidebar" aria-label="Player and journal"><button id="tf-sidebar-close" class="tf-sidebar-close" type="button" aria-label="Close side menu">← Close menu</button>
@@ -621,7 +618,7 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
         <div class="side-section"><div class="stat-row"><span>Public attention</span><strong id="cover"></strong></div><div class="stat-row"><span id="progress-count">Chapter 1</span><span>Act I</span></div><div class="progress-track"><div id="progress-bar" class="progress-inner"></div></div></div>
         <div id="aside-tabs" class="aside-tabs" role="tablist" aria-label="Story records"><button class="aside-tab selected" aria-selected="true" data-tab="journal">Journal</button><button class="aside-tab" aria-selected="false" data-tab="people">People</button><button class="aside-tab" aria-selected="false" data-tab="world">World</button><button class="aside-tab" aria-selected="false" data-tab="glossary">Glossary</button><button class="aside-tab" aria-selected="false" data-tab="recap">Recap</button></div>
         <div id="aside-content" class="aside-content" aria-live="polite"></div>
-        <div class="sidebar-tools"><button id="export-button" class="secondary-button">Export save</button><button id="import-button" class="secondary-button">Import save</button><input id="import-file" type="file" accept=".json,application/json" hidden /><button id="new-game" class="text-button">Start a new story</button></div>
+        <div class="sidebar-tools"><button id="new-game" class="text-button">Start a new story</button></div>
       </aside>
       <button id="tf-panel-backdrop" class="tf-panel-backdrop" type="button" tabindex="-1" aria-label="Close side menu"></button>
       <nav class="tf-side-rail" aria-label="Story menu">
@@ -631,14 +628,6 @@ body.tf-playing #game .prologue-skip{margin-top:24px}
         <button type="button" data-tf-tab="glossary" aria-label="Glossary" title="Glossary">⌕</button>
         <button type="button" data-tf-tab="recap" aria-label="Recap" title="Recap">◷</button>
       </nav>
-    </div>
-    <div id="recap-modal" class="recap-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="recap-modal-title">
-      <section class="recap-modal-card">
-        <span class="eyebrow">WELCOME BACK</span>
-        <h2 id="recap-modal-title">Your story so far</h2>
-        <div id="recap-modal-body"></div>
-        <div class="recap-actions"><button id="recap-review" class="secondary-button">Read full recap</button><button id="recap-continue" class="primary-button">Continue the story →</button></div>
-      </section>
     </div>
     <footer class="footer"><span>TIERFALL • FIRST PLAYABLE CHAPTER</span><span>Story-first RPG • Your choices are remembered</span></footer>
   </div>
@@ -654,7 +643,6 @@ var Tierfall;
     Tierfall.upbringings = {
         family: 'Family Household', communal: 'Communal Upbringing', estranged: 'Estranged Household'
     };
-    Tierfall.SAVE_KEY = 'tierfall.chapter1.v1';
     function newGame(name, pronouns, origin, upbringing, identity = {}) {
         const previous = safeName(name, 54).split(/\s+/);
         const firstName = safeNamePart(identity.firstName ?? previous[0]) || 'Kesh';
@@ -757,51 +745,6 @@ var Tierfall;
         return blocks.map(x => tokens(x, state));
     }
     Tierfall.sceneParagraphs = sceneParagraphs;
-    function saveState(state, storage) {
-        storage.setItem(Tierfall.SAVE_KEY, JSON.stringify(state));
-    }
-    Tierfall.saveState = saveState;
-    function validateState(value) {
-        if (!value || typeof value !== 'object')
-            throw new Error('Invalid save data');
-        const v = value;
-        if (v.version !== 1 || typeof v.sceneId !== 'string' || !Tierfall.scenes[v.sceneId])
-            throw new Error('Unsupported or broken save');
-        if (typeof v.name !== 'string' || !['they', 'he', 'she'].includes(String(v.pronouns)) ||
-            !Object.keys(Tierfall.origins).includes(String(v.origin)) || !Object.keys(Tierfall.upbringings).includes(String(v.upbringing)) ||
-            !v.flags || typeof v.flags !== 'object' || Array.isArray(v.flags) ||
-            !Array.isArray(v.history) || !v.history.every(x => typeof x === 'string') ||
-            !Array.isArray(v.journal) || v.journal.length > 500 || !v.journal.every(x => !!x && typeof x.title === 'string' && typeof x.text === 'string') ||
-            typeof v.finished !== 'boolean' || typeof v.startedAt !== 'string')
-            throw new Error('Invalid save content');
-        if (v.age !== undefined && v.age !== null && ![27, 28, 29, 30].includes(Number(v.age)))
-            throw new Error('Invalid character age');
-        const g = v;
-        if (g.age !== undefined && g.age !== null) g.age = Number(g.age);
-        g.name = safeName(g.name, 54);
-        const names = getNames(g);
-        g.firstName = names.first; g.secondName = names.second; g.nickname = names.nickname;
-        g.name = names.full;
-        const rawAliases = g.aliases && typeof g.aliases === 'object' && !Array.isArray(g.aliases) ? g.aliases : {};
-        g.aliases = {};
-        for (const canonical of ['Sera Venn','Jalen Orr']) {
-            const value = rawAliases[canonical];
-            if (typeof value === 'string' && value.length <= 100) {
-                const cleaned = value.replace(/[<>\u0000-\u001f]/g,'').trim().slice(0,38);
-                if (cleaned) g.aliases[canonical] = cleaned;
-            }
-        }
-        if (g.lastReactionKey && !Tierfall.reactions[g.lastReactionKey]) delete g.lastReactionKey;
-        return g;
-    }
-    Tierfall.validateState = validateState;
-    function loadState(storage) {
-        const raw = storage.getItem(Tierfall.SAVE_KEY);
-        if (!raw)
-            return null;
-        return validateState(JSON.parse(raw));
-    }
-    Tierfall.loadState = loadState;
     function sceneCount() { return Object.keys(Tierfall.scenes).length; }
     Tierfall.sceneCount = sceneCount;
 
@@ -1381,7 +1324,7 @@ var Tierfall;
             text: [
                 'Chapter One is complete. Some people will remember what you did today, while others will remember only what they think you did.',
                 'Your journal keeps track of your decisions, and your work and upbringing remain part of your character’s story. Those choices will matter as Tierfall continues.',
-                'The next chapter is still in development. You can save, export your progress, or start again with a different background.'
+                'The next chapter is still in development. You can start again with a different background.'
             ], choices: []
         }
     };
@@ -1411,17 +1354,6 @@ var Tierfall;
         $('#notice').classList.add('show');
         window.setTimeout(() => $('#notice').classList.remove('show'), 3200);
     }
-    function storagePut() {
-        if (!game)
-            return;
-        try {
-            Tierfall.saveState(game, localStorage);
-            $('#save-status').textContent = 'Saved on this device';
-        }
-        catch {
-            $('#save-status').textContent = 'Local saving unavailable · use Export';
-        }
-    }
     function buildSetup() {
         $('#setup').classList.remove('hidden');
         $('#game').classList.add('hidden');
@@ -1438,7 +1370,6 @@ var Tierfall;
             $('#upbringing').value = u[Math.floor(Math.random() * u.length)];
             announce('Random background selected. You can still change it.');
         };
-        $('#setup-import').onclick = () => $('#import-file').click();
         $('#start').onclick = () => {
             const firstName = $('#player-first').value.trim() || 'Kesh';
             const secondName = $('#player-second').value.trim();
@@ -1450,7 +1381,6 @@ var Tierfall;
             const age = Number($('#player-age').value);
             game = Tierfall.newGame(n, pronouns, origin, home, { firstName, secondName, nickname, age });
             if ($('#skip-prologue').checked) game = Tierfall.skipPrologue(game);
-            storagePut();
             render();
         };
     }
@@ -1462,12 +1392,11 @@ var Tierfall;
             return;
         try {
             game = Tierfall.step(game, choice.id);
-            storagePut();
             render();
             window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
         }
         catch {
-            announce('This choice could not be completed. Please reload your save.');
+            announce('This choice could not be completed. Please try again.');
         }
     }
     function getCoverText() {
@@ -1595,10 +1524,10 @@ var Tierfall;
                     input.value=Tierfall.characterName(game,p.name);
                     input.setAttribute('aria-label','New name for '+p.name);
                     const save=el('button','small-button','Save name'); save.type='button';
-                    const submit=()=>{ game=Tierfall.setCharacterName(game,p.name,input.value); storagePut(); render(); };
+                    const submit=()=>{ game=Tierfall.setCharacterName(game,p.name,input.value); render(); };
                     save.onclick=submit; input.onkeydown=e=>{if(e.key==='Enter')submit();};
                     const reset=el('button','text-button','Reset'); reset.type='button';
-                    reset.onclick=()=>{game=Tierfall.setCharacterName(game,p.name,'');storagePut();render();};
+                    reset.onclick=()=>{game=Tierfall.setCharacterName(game,p.name,'');render();};
                     texts.append(input,save,reset); input.focus();
                 };
                 texts.appendChild(edit);
@@ -1636,7 +1565,7 @@ var Tierfall;
         buttons.replaceChildren();
         if (game.finished) {
             const end = el('div', 'end-note');
-            end.append(el('strong', '', 'Your chapter is complete.'), el('p', '', 'Your choices are saved. The next chapter is in development. You can export your save or try another background.'));
+            end.append(el('strong', '', 'Your chapter is complete.'), el('p', '', 'The next chapter is in development. You can begin a fresh story with another background.'));
             buttons.appendChild(end);
         }
         else {
@@ -1658,57 +1587,10 @@ var Tierfall;
         renderAside();
         if (window.TierfallSceneUI) { try { window.TierfallSceneUI.onRender(game,scene); } catch (error) { console.warn('Reader UI unavailable',error); } }
     }
-    function closeReturnRecap(){
-        $('#recap-modal').classList.add('hidden');
-        document.body.classList.remove('modal-open');
-    }
-    function showReturnRecap(){
-        if (!game || game.history.length < 2 || game.finished) return;
-        const info=Tierfall.recapData(game);
-        const body=$('#recap-modal-body'); body.replaceChildren();
-        body.append(el('p','recap-summary',info.summary),el('p','muted small','Last scene: '+info.sceneTitle));
-        const recent=info.beats.slice(-2);
-        recent.forEach(beat=>body.appendChild(el('p','recap-modal-decision',beat.action)));
-        $('#recap-modal').classList.remove('hidden');
-        document.body.classList.add('modal-open');
-        $('#recap-continue').focus();
-    }
-    function exportSave() {
-        if (!game)
-            return announce('Start a game first.');
-        const blob = new Blob([JSON.stringify(game, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'tierfall-save.json';
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-        announce('Save exported. Keep the file somewhere safe.');
-    }
-    function importSave(file) {
-        if (!file)
-            return;
-        if (file.size > 1024 * 1024)
-            return announce('That save file is too large.');
-        file.text().then(content => {
-            const state = Tierfall.validateState(JSON.parse(content));
-            game = state;
-            storagePut();
-            render();
-            announce('Save imported.');
-            showReturnRecap();
-        }).catch(() => announce('The selected file is not a valid Tierfall save.'));
-    }
     function setupControls() {
         $('#skip-prologue-game').onclick = () => {
-            game = Tierfall.skipPrologue(game); storagePut(); render();
+            game = Tierfall.skipPrologue(game); render();
             window.scrollTo({top:0,behavior:'instant'});
-        };
-        $('#recap-continue').onclick = closeReturnRecap;
-        $('#recap-review').onclick = () => {
-            closeReturnRecap(); currentTab='recap'; renderAside(); $('#aside-content').scrollIntoView({behavior:'smooth',block:'nearest'});
         };
         $('#edit-player-name').onclick=()=>{
             if(!game)return;
@@ -1718,20 +1600,10 @@ var Tierfall;
             const nick=window.prompt('Nickname (optional)',old.nickname);if(nick===null)return;
             const name=Tierfall.newGame([first,second].filter(Boolean).join(' '),game.pronouns,game.origin,game.upbringing,{firstName:first,secondName:second,nickname:nick});
             game={...game,name:name.name,firstName:name.firstName,secondName:name.secondName,nickname:name.nickname};
-            storagePut();render();announce('Your name has been updated.');
-        };
-        $('#save-button').onclick = () => { if (!game) {
-            announce('Start a game first.');
-            return;
-        } storagePut(); announce('Progress saved.'); };
-        $('#export-button').onclick = exportSave;
-        $('#import-button').onclick = () => $('#import-file').click();
-        $('#import-file').onchange = e => {
-            importSave(e.target.files?.[0]);
-            e.target.value = '';
+            render();announce('Your name has been updated.');
         };
         $('#new-game').onclick = () => {
-            if (game && !confirm('Begin a new story? This will replace your current device save. Export it first if you want to keep it.'))
+            if (game && !confirm('Begin a new story? Your current progress will be lost.'))
                 return;
             game = null;
             buildSetup();
@@ -1744,7 +1616,6 @@ var Tierfall;
             renderAside();
         });
         document.addEventListener('keydown', ev => {
-            if (!$('#recap-modal').classList.contains('hidden')) { if (ev.key === 'Escape') closeReturnRecap(); return; }
             if (!game || ev.ctrlKey || ev.altKey || ev.metaKey || /INPUT|TEXTAREA|SELECT/.test(ev.target?.tagName || ''))
                 return;
             const number = Number(ev.key);
@@ -1759,15 +1630,10 @@ var Tierfall;
     }
     function boot() {
         setupControls();
-        try {
-            game = Tierfall.loadState(localStorage);
-        }
-        catch {
-            game = null;
-            announce('Could not read a saved game. You can import a save or start again.');
-        }
+        // Remove any historical Chapter One progress. No current playthrough is persisted.
+        try { window.localStorage.removeItem('tierfall.chapter1.v1'); } catch {}
+        game = null;
         render();
-        showReturnRecap();
     }
     Tierfall.boot = boot;
 })(Tierfall || (Tierfall = {}));
@@ -1780,7 +1646,7 @@ if (typeof document !== 'undefined') {
 
 </script>
 <script>
-/* Tierfall reader UI. Presentation-only: does not modify scene text, choices, or save schema. */
+/* Tierfall reader UI. Presentation-only: does not modify scene text or choices. */
 (function(){
   'use strict';
   const MAJOR = new Set([
@@ -1944,10 +1810,7 @@ if (typeof document !== 'undefined') {
     const effect=document.createElement('button');
     effect.id='tf-menu-effects';effect.type='button';effect.className='secondary-button tf-in-menu-control';
     effect.addEventListener('click',()=>setEffects(!effectsAllowed()));
-    const save=document.createElement('button');
-    save.id='tf-menu-save';save.type='button';save.className='secondary-button tf-in-menu-control';save.textContent='Save progress';
-    save.addEventListener('click',()=>$('#save-button')?.click());
-    tools.prepend(save);tools.prepend(effect);
+    tools.prepend(effect);
   }
 
   /* Reference frame: scene art and buttons use the game's existing state/actions. */
@@ -1971,12 +1834,10 @@ if (typeof document !== 'undefined') {
       const button=refButton(label,icon,'tf-reference-'+tab);button.dataset.referenceTab=tab;
       button.addEventListener('click',()=>document.querySelector('#game .tf-side-rail [data-tf-tab="'+tab+'"]')?.click());nav.appendChild(button);
     });
-    const save=refButton('Save','⇩','tf-reference-save');
-    save.addEventListener('click',()=>$('#save-button')?.click());nav.appendChild(save);
     const settingsButton=refButton('Settings','⚙','tf-reference-settings-button');settingsButton.setAttribute('aria-expanded','false');
     nav.appendChild(settingsButton);
     const settings=document.createElement('div');settings.className='tf-reference-settings';settings.id='tf-reference-settings';
-    [['Larger text','font-up'],['Smaller text','font-down'],['Visual effects','tf-effects-toggle'],['How to play','help-button'],['People','tf-reference-people'],['Records','tf-reference-glossary'],['Export save','export-button'],['Import save','import-button']].forEach(([label,id])=>{
+    [['Larger text','font-up'],['Smaller text','font-down'],['Visual effects','tf-effects-toggle'],['How to play','help-button'],['People','tf-reference-people'],['Records','tf-reference-glossary']].forEach(([label,id])=>{
       const b=document.createElement('button');b.type='button';b.textContent=label;
       b.addEventListener('click',()=>{$('#'+id)?.click();settings.classList.remove('open');settingsButton.setAttribute('aria-expanded','false');});settings.appendChild(b);
     });
@@ -2336,7 +2197,6 @@ if (typeof document !== 'undefined') {
     response?.classList.toggle('tf-page-off',portraitCurrentPage!==0);
     $('#game .choice-heading')?.classList.toggle('tf-page-off',!isFinal);
     $('#choices')?.classList.toggle('tf-page-off',!isFinal);
-    $('#save-status')?.classList.toggle('tf-page-off',!isFinal);
     const prev=$('#tf-beat-previous'),next=$('#tf-beat-next');
     if(prev)prev.disabled=portraitCurrentPage===0;
     if(next)next.hidden=isFinal;
