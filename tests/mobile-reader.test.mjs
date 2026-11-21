@@ -12,8 +12,8 @@ assert.match(html,/#game \.story-panel \{ display:flex; flex-direction:column;/,
 assert.match(html,/#game \.tf-side-rail \{ display:none; \}/,'Permanent icon rail is hidden on mobile');
 assert.match(html,/setupPanelShortcuts\(\)/,'Mobile drawer includes accessible controls');
 assert.match(html,/id='tf-menu-effects'/,'Effects available inside collapsed menu');
-assert.match(html,/id='tf-menu-save'/,'Save available inside collapsed menu');
+assert.doesNotMatch(html,/id='tf-menu-save'/,'No save control in collapsed menu');
 assert.match(html,/window\.TierfallSceneUI\.onRender\(game,scene\)/,'The 16 scene integrations remain wired');
-assert.match(html,/function importSave\(file\)/,'Import save remains available');
-assert.match(html,/function exportSave\(\)/,'Export save remains available');
-console.log('PASS mobile portrait reader, collapsible controls, preserved game and save paths');
+assert.doesNotMatch(html,/function importSave\(file\)/,'Import save removed');
+assert.doesNotMatch(html,/function exportSave\(\)/,'Export save removed');
+console.log('PASS mobile portrait reader, collapsible controls, preserved game and no-save controls');
