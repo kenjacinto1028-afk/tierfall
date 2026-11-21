@@ -86,3 +86,11 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [x] Added \`tests/object-focus-and-portrait-clarity.test.mjs\`; remote test checks all seven SVGs, beat appearance, portrait fallback, resampling behavior, and 12 background story transitions.
 - [ ] Genuine newly painted high-resolution character source art remains unavailable: resampling improves on-screen definition but cannot recreate detail absent from the small approved source files.
 - [ ] Confirm the live GitHub Pages appearance on desktop and phone; repository checks do not constitute a real-browser visual test.
+
+## Premium portrait presentation — 2026-11-21
+- [x] Reworked approved character portrait cards with charcoal/slate illustrated backdrops, restrained brass framing, depth, and mobile proportions; removed the plain flat-card appearance.
+- [x] Added safe runtime background removal for pale, near-uniform backdrops using edge-connected pixels only, preserving interior face/clothing colors. Dark or irregular images skip cutout automatically.
+- [x] In-game display uses 2× high-quality, lossless PNG rendering, mild edge enhancement, a capped image cache and original-image fallback. No approved portrait files were modified, and game story/save logic is unchanged.
+- [x] Expanded `tests/object-focus-and-portrait-clarity.test.mjs` to cover pale/dark matte handling, preservation of the face region, lossless two-canvas resampling, caching and 12 starting story variants; verified PASS against the current GitHub source.
+- [x] Verified unchanged live approved Sera/Jalen portrait hashes and byte-identical story engine. Existing narration object cards, map, reading beats, choices and mobile UI remain in place.
+- [ ] Desktop/mobile screenshot verification of the *deployed* GitHub Pages game remains pending; source-level tests are not a substitute for visual QA. Original portrait resolution is only 240×300, so this improves presentation, not native facial detail.
