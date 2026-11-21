@@ -953,8 +953,8 @@ var Tierfall;
         "c1-wake:help": "The worker grips your arm as you guide them toward the lift. “Thanks,” they say, still catching their breath. You arrive a little late, but you know they made it safely.",
         "c1-wake:quiet": "You stay with the shift crowd and pass the lift without stopping. Behind you, the worker calls for help again, but the work bell is already sounding.",
         "c1-wake:ask": "The guard turns toward you, surprised that a Leadborn would question the schedule. “Orders changed,” he says. He studies your face before waving you onward.",
-        "c1-duty:copy": "You save the changed entry before the terminal closes. The file is small enough to hide, but the system records that someone opened it.",
-        "c1-duty:protect": "You quietly move the worker’s name out of the report before anyone else sees it. The record is gone from your screen, but you remember every part that mattered.",
+        "c1-duty:copy": "You keep a copy of the changed entry before the terminal closes. Someone could still notice that you accessed it, so you put the file out of sight.",
+        "c1-duty:protect": "You turn the screen away from the open passage and let your coworker return to work without being named. The record closes before you can keep a copy, but you remember what you saw.",
         "c1-duty:ask": "“Transit 17?” the clerk repeats, suddenly careful with their words. They tell you the list is closed and look toward the door before you can ask anything else.",
         "c1-quiet:tell": "Sera stops joking. She lets you finish without interrupting, then lowers her voice. “All right,” she says. “Start from the beginning.”",
         "c1-quiet:half": "“A record that makes no sense?” Sera asks. She waits for more, but you give her nothing. “Fine. I’m here when you’re ready,” she says.",
@@ -962,7 +962,7 @@ var Tierfall;
         "c1-home:care": "You spend your break helping at home instead of chasing the missing record. Someone thanks you for staying. The question about the ship has to wait.",
         "c1-home:truth": "You tell someone close to you that the work records may have been altered. They listen, then ask you to lower your voice because the hallway door is open.",
         "c1-home:rest": "For a short while, you sit in silence and let your hands stop shaking. The rest helps, even though you still have no answer when you stand again.",
-        "c1-notice:copy": "You record the public notice before the screen refreshes. Now you have two versions of the same day, and they cannot both be true.",
+        "c1-notice:copy": "You record the public notice before the screen refreshes. At least the Concord’s exact words can no longer change in your memory, even if the hall displays something different tomorrow.",
         "c1-notice:woman": "You step between the woman and the guard long enough for her to reach a side passage. She looks back once, as if trying to remember your face.",
         "c1-notice:guard": "The guard points to an office that is already closed. “Leave a request,” he says, loud enough for the people nearby to hear. Several faces turn toward you.",
         "c1-cross:hide": "You guide Ada through a side door and wait until the footsteps pass. She catches her breath, then thanks you before slipping into the workers’ ring.",
@@ -978,8 +978,8 @@ var Tierfall;
         "c1-walk:focus": "Sera lets the words sit between you. “Facts matter,” she says at last. “Just remember they belong to people.”",
         "c1-door:plain": "You explain the broken record as plainly as you can. The guard writes something down and asks who else heard you speak about it.",
         "c1-door:deny": "You say you cannot prove the ship left. The guard waits for you to change your answer, then steps aside without saying whether he believes you.",
-        "c1-door:rights": "You ask why you are being stopped. The guard studies your wrist mark before answering. “Because I’m asking,” he says, then lets you pass.",
-        "c1-cost:secure": "You place your record somewhere no casual search will find it. Only after you finish do you realize how much of the day you spent protecting a few lines of information.",
+        "c1-door:rights": "You ask why you are being stopped. The officer studies your wrist mark before answering. “Because I’m asking,” he says, and makes a short note without looking up.",
+        "c1-cost:secure": "You make a careful account of what you know and hide it where a casual search will not find it. A few lines on a page may not be much protection, but they will still be there tomorrow.",
         "c1-cost:people": "You check on the people caught up in the missing transport. Not everyone answers, but one familiar voice tells you they are safe for tonight.",
         "c1-cost:message": "You write down the day’s events while you still remember them clearly. Before sending the message, you read it again and remove the names that could hurt someone.",
         "c1-dusk:search": "You set aside a fresh page and write one question at the top: Who changed the manifest? It is the first thing you plan to pursue tomorrow.",
@@ -1115,10 +1115,10 @@ var Tierfall;
         'c1-quiet': {
             id: 'c1-quiet', title: 'A Familiar Face', location: 'Thule · Service Walk', speaker: 'Sera Venn',
             text: [
-                'Sera Venn is waiting on the service walk with two cups of bitter tea. She sees your face, raises one eyebrow, and offers you a cup before you can think of an excuse to leave.',
+                'Sera Venn is waiting on the service walk with two cups of bitter tea and a canvas tool pouch over her shoulder. She has just finished a maintenance call in the living ring; a faint streak of sealant darkens one cuff. She sees your face, raises one eyebrow, and offers you a cup before you can invent an excuse to leave.',
                 '“You only walk that fast, {friendName}, when you’re hiding something,” she says. “Or when you owe me money.” She watches you take the tea. “Please tell me it’s the money. That problem I can solve.”',
                 'You grew up a few doors apart, sharing meals when supplies ran short and helping neighbors who could not manage alone. Sera still laughs about the time you tried to ride a cargo lift without holding the rail. People in the upper rings know your rank; she remembers the person you were before work took over your life.',
-                'Sera remembers when you came back from the clinic after the pressure-door accident, your eyebrow stitched and the burn beneath your jaw freshly dressed. She was your friend before either mark had healed.',
+                'Sera was beside you at the clinic after the pressure-door accident, arguing with an attendant who wanted her to wait outside. Later she walked you home, your eyebrow stitched and the burn beneath your jaw freshly dressed. She was your friend before either mark had healed.',
                 "Sera passes you the warmer of the two cups as though it is an accident. You remember her doing the same thing when you were children, claiming that she disliked hot tea and then stealing yours whenever it cooled. She does not ask you to thank her. The favor is too old to need a receipt.",
                 "Someone shouts her name from the far end of the service walk. She lifts a hand without turning, an economical greeting from a person who knows too many neighbors to stop for all of them. When she faces you again, her expression is lighter, but her attention has not wandered. You can tell her as much or as little as you choose; she has never been good at pretending she isn't worried.",
                 '“Everyone says the morning ship was canceled,” she adds, her smile fading. “But I heard a launch during the night. Maybe I’m wrong.” She waits beside you, leaving room for an answer instead of asking twice.'
@@ -1137,10 +1137,10 @@ var Tierfall;
             id: 'c1-home', title: 'The People Who Know You', location: 'Thule · Living Ring', speaker: 'Narrator',
             text: [
                 'The living ring smells of warm bread, machine oil, and clothes that never quite dry. Few visitors come this far down the station. The halls are crowded, the doors are thin, and the lights begin to dim long before people are ready for bed.',
-                'You have a short break before the next shift change, but you cannot stop thinking about the altered record. Someone was frightened enough to beg for silence, and a ship that may have carried workers away is being removed from the system.',
+                'Your early shift has ended, but you cannot stop thinking about the altered record. Someone was frightened enough to beg for silence, and a ship that may have carried workers away is being removed from the system.',
                 "A shared heater ticks inside the wall. From an open doorway comes the smell of a simple meal and somebody trying to teach a child a song they keep getting wrong. A neighbor laughs and corrects the last line; the child deliberately sings it wrong again. For a moment you are only someone coming home from work, tired and hungry, carrying a day that would have been easier if it had stayed ordinary.",
                 "An old message board beside the stairwell lists small requests for help: move a table, mend a latch, watch an elderly neighbor's door until a relative comes back from a shift. The list changes every day. The people who live here know that help is often exchanged before anyone can afford to call it a favor. You touch the railing and make yourself return to the present.",
-                'For a little while, the people at home need you more than the mystery does. You can help them, tell them what is troubling you, or keep your worry to yourself until you understand it better.'
+                'Your wrist terminal flashes tomorrow’s rota. You can ask to work a partial shift or arrange for someone to cover the remaining hours, but an uncovered absence can be charged to your household. For now, the people at home need you too. You can help them, tell them what is troubling you, or keep your worry to yourself until you understand it better.'
             ],
             byUpbringing: {
                 family: [
@@ -1193,9 +1193,9 @@ var Tierfall;
                 '“I walked my husband to Bay Six,” she tells you. “He had his lunch tin. He joined the line, and they told us the ship would be back in five days.” She says the last part carefully, as if repeating a promise might make it true.',
                 'Ada shows you a passenger tag with a printed name and number. One corner has been torn away, and her hand trembles as she holds it out. “They can erase a notice. They can’t tell me I wasn’t there.”',
                 'Two officers turn into the lane behind you. Ada closes her fist around the tag, tearing its damaged edge a little further, and looks toward the nearest door.',
-                "Ada holds the worn passenger tag against her palm, shielding the printed side from the passing officers. The torn edge has caught on her sleeve. You see how carefully she frees it, trying not to damage the only thing she has brought with her. She does not ask you to take it. She asks whether you understand why she could not stay beneath the notice board and keep arguing.",
+                "Ada keeps the worn passenger tag in her own hand. “I don’t want to lose this,” she says. “I just want somebody to remember what I saw.” She folds its damaged corner away from the officers’ view, careful not to cover the name printed beneath it. You can hear how hard she is working to keep her voice steady.",
                 "A door opens halfway along the lane and closes again when a resident sees the officers. Nobody gives a signal. People here have practiced deciding when a corridor is safe to use, and sometimes they make the decision in a heartbeat. Ada looks from you to the doorway. The choice in front of you matters because somebody else will have to live with it after you walk away.",
-                'You have only moments to decide whether to get her somewhere safe or secure the proof she is holding. Before you move, your wrist terminal flashes with a message from Sera: “Meet me at the closed food stall after the afternoon bell. Jalen can help us figure out what to do.”'
+                'You have only moments to help Ada, record the tag, or ask someone you trust to meet her. Before you move, your wrist terminal flashes with a message from Sera: “Meet me at the closed food stall after the afternoon bell. Jalen can help us figure out what to do.”'
             ],
             choices: [
                 { id: 'hide', label: 'Help Ada reach a safe door.', hint: 'Protect the witness; the tag may be lost.', next: 'c1-ally', effects: [{ key: 'witnessProtected', set: true }, { key: 'workerTrust', add: 2 }, { key: 'adaSafe', set: true }], journal: 'You helped Ada avoid questioning. She knows a passenger was on Transit 17.' },
@@ -1207,18 +1207,18 @@ var Tierfall;
         'c1-ally': {
             id: 'c1-ally', title: 'Two Ways to Help', location: 'Thule · Closed Food Stall', speaker: 'Jalen Orr',
             text: [
-                'The food stall is closed when you arrive, but Sera is waiting beside it with Jalen Orr. You know Jalen from the workers’ ring: he helps families challenge missing wages and find food when their rations are cut. You have helped at a few of his supply drives, though you have never joined a political group. “Thanks for coming, {first},” he says.',
+                'The food stall is closed when you arrive, but Sera is waiting beside it with Jalen Orr. You recognize Jalen from the workers’ ring: he helps families challenge missing wages and find food when their rations are cut. You have seen his supply drives bring neighbors together, though you have never joined a political group. “Thanks for coming, {first},” he says.',
                 '“I heard you were at the records hall,” Jalen says. “Families are asking me where their people went, and I don’t have an answer. You saw the notice, and you may know someone who saw the ship. Tell us what you can.” He sounds tired rather than demanding.',
                 'Sera folds her arms. “And if we gather everyone in one place, the guards will know exactly whom to question. We need facts before we ask people to take that risk.”',
                 '“I know,” Jalen replies. “But some of those families are waiting by the port right now. They deserve more than another day of silence.”',
                 "Jalen finds a loose fastener on the table and turns it between his fingers while Sera speaks. He looks more worn than the public notices ever suggest, and you wonder how many small problems people have carried to him today. When Sera finishes, he sets the fastener down rather than dismissing her concern. 'If we ask families to stand together,' he says, 'we have to tell them what the risk is before they arrive.'",
-                "Sera nods, though it does not settle the disagreement. 'And if we keep collecting questions in private, somebody will be waiting for an answer while the next shift goes missing from the board.' She catches herself, glances at you, and corrects the last part. 'I don't know what happened. That's exactly why I won't put people at risk pretending I do.' Neither of them offers you an easy way to be right.",
+                "Sera rubs a trace of sealant from her thumb. “When a cooling line fails, somebody tells me which valve is leaking. Nobody gets safer if I guess.” She looks at Jalen. “We can ask questions without handing the guards a list of people to frighten.” Jalen nods, but neither of them has an easy answer for the waiting families.",
                 'They turn toward you, not because you have any authority, but because you were close enough to see what happened. Sera wants to protect people who might be named, and Jalen wants to help families who cannot afford to wait. Both are asking for your judgment, and neither can promise that your answer will be safe.'
             ],
             byFlag: [
                 { when: [{ key: 'seraKnows', equals: true }], text: ['Sera glances at you but keeps quiet about the first record. She knows more than she is saying, and for now she is leaving that decision to you.'] },
                 { when: [{ key: 'seraKnows', equals: false }], text: ['Sera watches you for a moment, as though she can tell there is more to the story. She does not press you in front of Jalen.'] },
-                { when: [{ key: 'adaSafe', equals: true }], text: ['When you tell them Ada has reached a safer place, Jalen lets out a long breath. “Good. Then we can ask what she needs without putting her in front of a crowd.”'] },
+                { when: [{ key: 'adaSafe', equals: true }], text: ['When you explain how Ada got help leaving the lane, Jalen lets out a long breath. “Good. Then we can ask what she needs without putting her in front of a crowd.”'] },
                 { when: [{ key: 'adaSafe', equals: false }], text: ['When you explain that Ada had to leave on her own, Sera looks toward the nearest passage. “I’ll check on her when we’re done,” she says. Jalen nods, but his worried expression does not change.'] },
             ],
             choices: [
@@ -1231,10 +1231,10 @@ var Tierfall;
         'c1-walk': {
             id: 'c1-walk', title: 'A City Between Bells', location: 'Thule · Night Walk', speaker: 'Sera Venn',
             text: [
-                'After the evening shift, you walk with Sera past the smaller homes and storage rooms. The air pumps keep working behind the walls, steady enough that most people forget to hear them. If they stopped, every person on Thule would remember why they mattered.',
+                'By the evening bell, the shift lanes have begun to empty. You walk with Sera past the smaller homes and storage rooms. The air pumps keep working behind the walls, steady enough that most people forget to hear them. If they stopped, every person on Thule would remember why they mattered.',
                 'A little garden sits behind a wire gate, kept alive with borrowed water and lamps older than either of you. Someone has left a broken toy ship among the plants. You remember children arguing over who would get to fly it next.',
                 '“Remember when we thought the upper ring had a real sky?” Sera asks. “You said the rich were hiding the sun behind a window.” She smiles at the memory. “I told everyone you’d seen it. Nobody believed me, of course.”',
-                'Her smile fades as you reach the gate. “I used to think growing up meant finding out how the station worked. Now I keep finding things nobody wants explained.” She rests a hand on the cold rail before turning to you.',
+                'Her smile fades as you reach the gate. “I can tell you why a pump stalls,” she says. “It’s the people who write the orders I can’t work out.” She rests a hand on the cold rail before turning to you. “I keep thinking there must be a reason they’ll explain if we ask the right way.”',
                 "A small service robot struggles to carry a crate over a floor join. Sera steps aside to let it pass, then watches it roll backward and try again. 'That's me getting out of bed tomorrow,' she says. You point out that the robot has a better attitude. 'Only because nobody has asked it to attend a meeting.' When the machine finally clears the join, the two of you give it a quiet cheer it cannot possibly appreciate.",
                 "The joke fades without either of you forcing it to last. Beyond the garden gate, the last light from the work ring turns the metal leaves a dull gold. You have shared years of ordinary walks, half-finished arguments, and silences that never needed explaining. Tonight Sera is making space for a more difficult conversation, and the familiar path makes that both easier and harder.",
                 '“Whatever you do next, {friendName}, remember the people who have to live with it. You don’t have to be sure about everything, but at least look them in the eye.”'
@@ -1254,13 +1254,13 @@ var Tierfall;
         'c1-door': {
             id: 'c1-door', title: 'Someone Has Noticed', location: 'Thule · Checkpoint Nine', speaker: 'Narrator',
             text: [
-                'You are nearly home when the checkpoint light turns red. A guard you have never seen before steps across the passage, his clean coat and polished boots looking almost strange against the worn walls of the workers’ ring.',
+                'You are nearly home when the checkpoint light turns red. A checkpoint officer you have never met steps across the passage. His coat is cleaner than anything in the workers’ ring, but the corners of his small paper notebook are worn from use.',
                 '“There’s been a report about a missing transport,” he says. “You were at the records hall.” He moves to one side, but his position still blocks the narrow path. “I need to ask you a few questions.”',
                 'Two workers wait behind him to cross. One lowers their eyes, while the other looks at you for a moment before turning away. You cannot tell whether they are afraid for you or for themselves.',
                 'The guard glances at the thin scar through your left eyebrow and the pale crescent beneath your right jaw, checking your face against the description in his notebook.',
                 "The guard's scanner flashes green when a worker passes through the next lane. He is not shouting, and the people waiting behind him would probably describe the scene as routine. You have learned that routines can still be frightening when one person decides the questions and another person has to answer them. You hold your work badge where he can see it without offering him anything he has not asked for.",
                 "A cleaner pauses at the junction with a cart of empty containers. The guard moves the cart through before turning back to you. For a few seconds the corridor looks normal again, crowded with people trying to reach home. You do not know whether the interruption is kindness, habit, or only impatience. You do know that the questions have not ended.",
-                'The guard opens a notebook and reads your name without asking for it. “{formalName}. Did you see anything that proves a ship left Thule last night?” Your shift number is already written beside your name. You have no idea who gave it to him.'
+                'The officer squares the notebook against his palm, then reads your name without asking for it. “{formalName}. Did you see anything that proves a ship left Thule last night?” Your shift number is already written beside your name. You have no idea who gave it to him.'
             ],
             byFlag: [
                 { when: [{ key: 'route', equals: 'office' }], text: ['He turns the page. “You filed a request. Tell me what you were hoping to find.” Your name is written beneath the entry.'] },
@@ -1277,7 +1277,7 @@ var Tierfall;
         'c1-cost': {
             id: 'c1-cost', title: 'What You Can Carry', location: 'Thule · Home Passage', speaker: 'Narrator',
             text: [
-                'The guard finally lets you pass. He does not threaten you or raise his voice; he only says, “We may speak again.” Somehow, that makes the short walk home feel longer.',
+                'The officer finally lets you pass. He folds a corner of his notebook before closing it. “We may speak again,” he says, without raising his voice. Somehow, that makes the short walk home feel longer.',
                 'The workday is over, yet the missing transport has followed you from one end of Thule to the other. People remember a ship leaving, but the records say it never happened. Now the guards are asking who has been talking about it.',
                 'You think about what remains in your hands: perhaps a saved record, perhaps only a memory. There is also a witness who spoke because she was desperate, and a friend who may now be taking risks because you trusted her.',
                 "On the way home you pass a workshop where a tired mechanic is arguing with a young apprentice about an incorrectly stamped part. 'The part works,' the apprentice says. 'It does,' the mechanic answers, 'but the next person has to know what was changed.' You keep walking before they notice you listening. Their problem has nothing to do with the missing ship, and it sounds uncomfortably familiar.",
@@ -1308,6 +1308,12 @@ var Tierfall;
                 "You remember small moments from the day that will not appear in any report: a warm cup handed over without a question, a stranger trying to speak while a guard watched, an office full of people waiting their turn. None of those moments proves what happened to the ship. They tell you why the answer matters.",
                 'You place the card beside your bed, but the unanswered question stays with you. Someone knows you have been asking about Transit 17, and they have found a way to reach your door without being seen.'
             ],
+            byOrigin: {
+                ward: ['You keep seeing Mira Doss’s empty bed and the cup left beside it. The night nurse asked you not to put a name in a report; you still have no answer that would make the request easier to carry.'],
+                reclamation: ['You remember the control unit’s blinking light in the bin marked EMPTY. Your supervisor wanted it gone, but you cannot make yourself forget what its tag said.'],
+                farmer: ['You carried three of those food crates yourself. No correction on a shipment sheet can erase their weight from your arms, or explain why the totals were made to match.'],
+                cargo: ['You recognized the scratched-out driver’s initials. You still know them now, and the runner’s fear for his children gives you another reason to be careful with that knowledge.']
+            },
             byFlag: [
                 { when: [{ key: 'seraPromise', equals: true }], text: ['You remember your promise to Sera. It was easy to make beside a quiet garden; keeping it may be harder if the truth gives you a reason to run.'] },
                 { when: [{ key: 'homeCommitment', equals: 'care' }], text: ['Someone at home is safer or more comfortable because you made time for them today. You hope tomorrow gives you the chance to do it again.'] },
