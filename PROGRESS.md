@@ -122,3 +122,14 @@ The repository is public. Only player-safe character appearances may be uploaded
 - [ ] Next: private three-act outlining, with all future beats, callbacks and character secrets kept out of this public GitHub repository.
 - [ ] Before later integration, resolve or safely defer character-creation state compatibility, end-of-Chapter-1 save continuation and approved art metadata inconsistencies.
 - [x] No game source, existing scenes, portraits, saves or release configuration modified by Phase 1.
+
+## Phase 2 — protected narrative architecture (2026-11-21)
+- [x] Approved protagonist starting age **27–30** and confirmed Sera Venn remains **27**. Updated four player-safe reference documents; playable age selection remains a separate future implementation task.
+- [x] Queued a future **all-27-portrait and emotion-sheet consistency review** against approved character sheet; no live art replacement authorized.
+- [x] Built a protected three-act working outline covering 11 flexible chapters, within approved 8–12 range.
+- [x] Targeted ~7 hours total reading/decisions (Act I 100m, **Act II 230m**, Act III 90m); **these are estimates, not playtest results**.
+- [x] Built private narrative plans for 12 major and 15 secondary character arcs, 10 future chapter choice clusters, background/choice continuity, and a foreshadowing ledger.
+- [x] Ran 19/19 static Phase 2 checks. Readback-verified five private files in personal ChatGPT Library and private index Page with zero collaborators at verification.
+- [x] Published only player-safe summary: `docs/player_safe/PHASE2_OUTLINE_STATUS.md` (commit `9c41dea`), with no future plot, hidden character arc, twist or ending specifics.
+- [ ] Next phase: complete long-form chapter writing, editorial continuity review and later save-compatible game integration with actual playtime and path testing.
+- [x] Existing Prologue/Chapter 1 game code, published story, portraits, saved-game structure and Pages/release settings untouched.
