@@ -168,3 +168,16 @@ The repository is public. Do not upload unreleased narrative spoilers or replace
 - [ ] Remaining gate: real human-timed full Act I reading and subjective dialogue/pacing review; fresh official-source network fetch in a real player browser. Do not call these complete based on automated tests.
 - [ ] Once Act I is accepted, privately reconcile older Act II/III manuscripts into the approved 8+ and 5+ chapter minimums. These acts remain held.
 - [x] No public game code, published Prologue/Chapter 1 scenes, live portraits, releases or Pages changes.
+
+## Act II eight-chapter working candidate (2026-11-21; spoiler-safe)
+- [x] Checked GitHub sync/privacy policy, repository checkpoints, approved private five-chapter Act I, original protected Act II drafts and current story/cast authority.
+- [x] Reconciled and line-edited five older private Act II chapter scripts for Chapters 6, 8, 10, 11, 13; wrote three new substantial connecting private Chapters 7, 9, 12. Preserved original story secrets from PUBLIC GitHub.
+- [x] Built private playable Acts I–II reader with 112 Act II sections (6–13), 24 primary decision groups and one optional personal scene; save key separate from original public game.
+- [x] Preserved original published Ch1 choice graph, existing Act I private flags, old five/three-chapter private save migration, age-unknown original Chapter 1 import and old decision history.
+- [x] Removed author-facing prose and corrected consent-dependent witness text; private lore/character and chronological-reveal audit passed.
+- [x] End-to-end browser routes **48/48**, UI/old-save/mobile/export cases **8/8**, full Act II individual decision options **75/75**, lore and continuity guardrails **28/28**. Live public-source network and human-timed runs not yet validated.
+- [x] Uploaded private HTML/ZIP, all eight protected manuscripts, compiler, editorial review and test reports into personal ChatGPT Library. Re-downloaded and SHA-256 checked 12 key artifacts successfully.
+- [x] Published only spoiler-safe `docs/player_safe/ACT2_EIGHT_CHAPTER_WORKING_STATUS.md` (commit `9444093`) and `PROGRESS.md` (commit `c9989e4`), verified main branch readback.
+- [ ] **Next active Act II task:** Expand route-visible character and social life stories, enrich choice consequences, perform human-paced 3.5h minimum reading/playtest, and test live pinned public Chapter 1 source loading. Current reading-volume estimate alone does not meet/verify target.
+- [ ] Leave Act III on hold; preserve spoiler protection until repo confirmed private or another approved private route.
+- [x] No live portrait replacement, public game code/story change, release publication or Pages activation.
