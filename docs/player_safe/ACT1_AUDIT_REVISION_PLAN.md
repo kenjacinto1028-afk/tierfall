@@ -1,6 +1,6 @@
 # TierFall — Act I Audit Revision Plan (player-safe)
 
-**Approved decisions:** 2026-11-21. **Status:** revision approved; QA outstanding.
+**Approved decisions:** 2026-11-21. **Status:** Chapter 1 updated publicly; Chapters 2–5 revised privately and awaiting independent editorial review, human-timed acceptance and live end-to-end QA.
 
 ## Revision order
 
