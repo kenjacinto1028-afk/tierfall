@@ -43,3 +43,9 @@ The latest standalone HTML includes short reactions immediately after decisions,
 - **Writing priorities:** plan full-series beats and multi-character arcs, enforce world/timeline/character consistency, then draft longer coherent scenes and validate their branches.
 - The full **player-safe narrative development framework** is in [NARRATIVE_DEVELOPMENT_PLAN.md](NARRATIVE_DEVELOPMENT_PLAN.md). Keep actual unreleased story drafts in private storage, not the public repository.
 - This direction makes no changes to the existing Prologue, Chapter 1, portraits, or saves.
+
+## Character age clarification (21 November 2026)
+
+- **Protagonist's starting age: 27–30**, across every starting occupation and upbringing. Existing save files currently do not store age, so age-specific dialogue must remain deferred until a compatible age-selection update is implemented.
+- **Sera Venn remains age 27** and is the protagonist's established childhood friend; her approved visual identity and age are unchanged.
+- A separate future portrait task will reconcile approved character-sheet appearances against game portrait files. No automatic art replacement is authorized.
