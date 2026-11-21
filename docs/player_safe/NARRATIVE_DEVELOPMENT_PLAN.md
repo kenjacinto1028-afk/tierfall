@@ -48,7 +48,7 @@ The complete protected outline must be designed **before** drafting long scenes.
 ## Non-negotiable continuity rules
 
 1. **Setting:** Thule and the established Halcyon Reach. Five inherited social ranks: I Crestborn, II Steelward, III Brasswright, IV Copperhand, V Leadborn. Rank, job and political faction are separate. Three major factions contain internal disagreement; allegiances may change.
-2. **Protagonist:** Starts at Rank V; age 24–32; custom name/nickname/pronouns; one of Ward Attendant, Reclamation Worker, Farmer, Cargo Runner; one of Family, Communal, Estranged upbringings.
+2. **Protagonist:** Starts at Rank V; age 27–30; custom name/nickname/pronouns; one of Ward Attendant, Reclamation Worker, Farmer, Cargo Runner; one of Family, Communal, Estranged upbringings.
 3. **Permanent features:** Exactly the thin diagonal scar through the left eyebrow and pale crescent-shaped healed burn below the right jaw, acquired in the ordinary living-ring pressure-door accident at age twelve. The rank wrist identifier is separate. Do not retroactively invent secret destiny or supernatural origins.
 4. **Cast:** Preserve established identities, ages, ranks, occupations, character histories and approved visual directions for the 12 major and 15 secondary characters.
 5. **Existing choices:** Respect actual Chapter 1 decisions and their consequences. A later reveal may add meaning but cannot erase what the player did.
